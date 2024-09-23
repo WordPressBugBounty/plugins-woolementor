@@ -1,0 +1,16 @@
+/*Sortable_Select*/
+.elementor-control-sortable-wrapper {
+	display: block;
+	width: 100%;
+}
+ul.wl-sortable-control-panel {}
+.wl-sortable-control-panel li {
+	/* background: #d5d5d5; */
+	color: #2b2a2a;
+	padding: 10px;
+	margin: 10px 0;
+	cursor: ns-resize;
+	border-radius: 2px;
+	border: 1px solid #d5dadf;
+}
+/*Sortable_Select*/

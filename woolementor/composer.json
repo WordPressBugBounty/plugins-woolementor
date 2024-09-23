@@ -1,0 +1,24 @@
+{
+    "authors": [
+        {
+            "name": "Codexpert",
+            "email": "hi@codexpert.io"
+        }
+    ],
+    "require": {
+        "codexpert/plugin": "dev-master",
+        "pluggable/marketing": "dev-master",
+        "pluggable/plugin": "dev-master",
+        "nguyenary/qr-code-monkey": "1.0",
+        "chillerlan/php-qrcode": "4.3",
+        "picqer/php-barcode-generator": "2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Codexpert\\CoDesigner\\" : "classes/",
+            "Codexpert\\CoDesigner\\App\\" : "app/",
+            "Codexpert\\CoDesigner\\API\\" : "api/"
+        },
+        "files": []
+    }
+}

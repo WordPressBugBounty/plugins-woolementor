@@ -1,0 +1,47 @@
+.cd-bpd-wrapper{
+    padding: 10px;
+}
+.cd-single-discount-rule{
+    display: flex;
+    gap: 15px;
+    padding: 5px 0px;
+}
+.cd-add-row{
+    position: relative;
+    background: #6a36ff;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 4px 10px;
+    transition: 0.2s;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 1px solid #3a5a40;
+    cursor: pointer;
+}
+.cd-add-row:hover {
+  background: #fff;
+  border: 1px solid #222;
+  color: #222;
+  animation: box 3s infinite;
+}
+.cd-remove-row {
+    position: relative;
+    background: #bc4749;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 4px 10px;
+    transition: 0.2s;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 1px solid #bc4749;
+    transform: translateX(-5px);
+    cursor: pointer;
+}
+.cd-remove-row:hover {
+  background: #fff;
+  border: 1px solid #222;
+  color: #222;
+  animation: box 3s infinite;
+}

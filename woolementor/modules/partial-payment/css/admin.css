@@ -1,0 +1,19 @@
+.cd_partial_payment_block {
+    padding: 10px 0;
+}
+.cd_partial_payment_block p {
+    margin-bottom: 10px;
+}
+#cd_custom_payment {
+    width: 50%;
+}
+.partial_payment_tab a {
+    display: flex !important;
+    align-items: center;
+}
+.partial_payment_tab a::before {
+    content: "\f18e" !important;
+    font-size: 15px;
+    font-weight: bold !important;
+}
+

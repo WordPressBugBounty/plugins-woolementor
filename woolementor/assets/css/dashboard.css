@@ -1,0 +1,17 @@
+/* Notice css Start */
+.is-dismissible.codesigner-dismissible-notice {
+    align-items: center;
+    display: flex;
+    gap: 26px;
+}
+.codesigner-dismissible-notice p {
+    font-size: 14px;
+}
+.codesigner-dismissible-notice a {
+    text-decoration: none;
+}
+.codesigner-dismissible-notice button {
+    font-size: 14px;
+    font-weight: 700;
+}
+/* Notice css End */

@@ -1,0 +1,33 @@
+.theme-twentytwentythree
+.wcd-quick-checkout-button{
+	width: 35px;
+	height: 35px;
+	margin-left: 0px;
+	line-height: 32px;
+	display: inline-block;
+	font-size: 13px;
+	cursor: pointer;
+	background-color: white;		
+}
+
+.theme-twentytwentythree
+.wcd-quick-view-wrap button{
+	width: 35px;
+	height: 35px;
+	margin-left: 0px;
+	line-height: 32px;
+	display: inline-block;
+	font-size: 13px;
+	cursor: pointer;
+	background-color: white;
+	border-radius: 20px;		
+}
+.theme-twentytwentythree .wl-shop-flip .wl-sf-container .added_to_cart.wc-forward::after {
+	top: -11px;
+}
+
+.theme-twentytwentythree .wl-shop-beauty .wcd-quick-checkout-wrap,
+.theme-twentytwentythree .wl-shop-beauty .wcd-quick-view-wrap,
+.theme-twentytwentythree .wl-shop-beauty .wl-sb-product-fav {
+	margin-top: 20px;
+}

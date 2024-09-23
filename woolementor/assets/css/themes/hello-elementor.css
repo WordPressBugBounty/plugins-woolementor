@@ -1,0 +1,60 @@
+.theme-hello-elementor .wcd-quick-checkout-button{
+	width: 35px;
+	height: 35px;
+	margin-left: 0px;
+	line-height: 32px;
+	display: inline-block;
+	font-size: 13px;
+	cursor: pointer;
+	background-color: white;		
+}
+
+.theme-hello-elementor .wcd-quick-view-wrap button{
+	width: 35px;
+	height: 35px;
+	margin-left: 0px;
+	line-height: 32px;
+	display: inline-block;
+	font-size: 13px;
+	cursor: pointer;
+	background-color: white;
+	border-radius: 20px;
+	margin-left: 5px;
+	box-shadow: none;
+}
+.theme-hello-elementor .wcd-quick-view-wrap button:hover{
+	color: #584646;
+	background-color: white;
+		
+}
+.theme-hello-elementor .wl-sa-single-accordion {
+	margin-bottom: 10px !important;
+   position: relative !important;
+}
+.theme-hello-elementor .wl-ci .coupon label{
+   line-height: 3;
+}
+
+.theme-hello-elementor .wl-cart-items-classic .wl-cic-actions .input-text{
+	width: 50% !important;
+}
+.theme-hello-elementor .wl-sf-cart .added_to_cart.wc-forward {
+	top: 4px;
+}
+
+.theme-hello-elementor .wl-sm-product-iamge-cart-panel:hover .wl-sm-product-view {
+	transform: translateX(0);
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	-moz-transform: translateX(0);
+	opacity: 1;
+}
+
+.theme-hello-elementor.wl .wl-sm-product-iamge-cart-panel:hover .add_to_cart_button,
+.theme-hello-elementor.wl .wl-sm-product-iamge-cart-panel:hover .product_type_simple,
+.theme-hello-elementor.wl .wl-sm-product-iamge-cart-panel:hover .product_type_external,
+.theme-hello-elementor.wl .wl-sm-product-iamge-cart-panel:hover .product_type_grouped,
+.theme-hello-elementor.wl .wl-sm-product-iamge-cart-panel:hover .product_type_variable {
+	bottom: 98px!important;
+}

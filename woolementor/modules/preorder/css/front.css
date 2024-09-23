@@ -1,0 +1,15 @@
+.wl-shop-classic .wl-product-preorder{
+    position: absolute;
+    top: 310px !important;
+    left: 10px !important;
+    width: 94%;
+    font-weight: 600 !important;
+    padding: 5px 5px !important;
+    text-align: center;
+    z-index: 100;
+    font-size: 14px !important;
+}
+.preorder-text {
+    color: #77a464;
+    font-size: 1em;
+}

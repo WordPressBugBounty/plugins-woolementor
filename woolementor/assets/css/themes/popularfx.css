@@ -1,0 +1,53 @@
+.theme-popularfx .wl-sf-product-style .back .wl-sf-cart .added_to_cart.wc-forward {
+	top: 7px;
+}
+.theme-popularfx.woocommerce .wl-shop-accordion .wl-sa-accordion-area div.product {
+	margin-bottom: 6px;
+}
+.theme-popularfx .wl-st-main_table .product .wl-st-td .wl-st-info-icons a {
+	border: none!important;
+}
+.theme-popularfx .wl-sm-product-style .wl-sm-single-product .wl-sm-product-title-price-panel .pfx-star-rating-container,
+.theme-popularfx .wl-minimal-product-title-price-panel .pfx-star-rating-container,
+.theme-popularfx .wl-shopwix-product-iamge-cart-panel .pfx-star-rating-container,
+.theme-popularfx .wl-shopify-product-title-price-panel .pfx-star-rating-container {
+	display: none;
+}
+.theme-popularfx.woocommerce .wl-minimal-product-cart-panel a.button{
+	border: 1px solid #fdfcfc;
+}
+.theme-popularfx .wl-minimal-product-view .woocommerce-loop-product__link button {
+	padding: 10px !important;
+}
+.theme-popularfx.woocommerce .wl-order-review table.shop_table {
+	border-collapse: collapse;
+}
+.theme-popularfx.woocommerce .wl-order-review table.shop_table .product-name *,
+.theme-popularfx.woocommerce .cart_item table.shop_table .product-name *,
+	.woocommerce .wl-ci-cart-form table.shop_table .cart_item .wl-ci-product-name * {
+	text-decoration: none;
+}
+.theme-popularfx.woocommerce .wl-cic-table .cart_item a.remove,
+.theme-popularfx .wl-ci-cart-form .wl-ci-cart-table .wl-ci-coupon .button.wl-ci-coupon-button {
+	border: unset;
+}
+.theme-popularfx.wl.codesigner .wl-cart-items-classic .wl-cic-actions button {
+	height: 53px;
+}
+.theme-popularfx.wl.codesigner .wl-cart-items-classic .wl-cic-table .cart_item .actions .coupon .input-text {
+	margin-top: 4px;
+	height: 46px;
+}
+.theme-popularfx.wl.codesigner .wl-cart-items-classic #coupon_code {
+	margin-top: 4px;
+	min-height: 47px;
+}
+.theme-popularfx.wl .wl-cart-items-classic .button.wl-cic-update-cart-button {
+	border: none;
+	color: #040404;
+	background-color: #e9e6ed;
+	cursor: pointer;
+}
+.theme-popularfx .wl-ci .wl-ci-product-style .wl-ci-cart-form table thead tr.wl-ci-heading-nav th {
+	color: #e9e6ed;
+}

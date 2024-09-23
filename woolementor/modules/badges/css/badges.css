@@ -1,0 +1,32 @@
+/*  .wl-badge {
+    position: absolute;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    z-index: 999;
+    right: 8px;
+    top: 8px;
+    color: #FCFCFC;
+    font-family: "Montserrat", Sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0px 14px 0px 14px;
+} */
+.wl-badge p {
+	font-size: 12px;
+	transform: translateY(8px);
+	width: 75px;
+    height: 30px;
+    font-weight: bold;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+.wl-badge i {
+	font-size: 20px;
+	margin-right: -20px;
+    margin-top: 13px;
+}
+.wl-badge img {
+	margin-right: -45px;
+    margin-top: 10px;
+}

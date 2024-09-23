@@ -1,0 +1,1241 @@
+/* font-family: 'DM Sans', sans-serif; */
+
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,900&display=swap");
+
+/* REMOVE DEAFULT CSS  */
+.codesigner_page_codesigner-email_designer .cx-sections-wrapper,
+.codesigner_page_codesigner-invoice_builder .cx-sections-wrapper,
+.codesigner_page_codesigner-checkout_builder .cx-sections-wrapper {
+    padding: 0;
+    margin: 0;
+}
+.codesigner_page_codesigner-email_designer .cx-section,
+.codesigner_page_codesigner-invoice_builder .cx-section,
+.codesigner_page_codesigner-checkout_builder .cx-section {
+    padding: 0;
+}
+.codesigner_page_codesigner-email_designer .cx-subheading,
+.codesigner_page_codesigner-invoice_builder .cx-subheading,
+.codesigner_page_codesigner-checkout_builder .cx-subheading {
+    display: none;
+}
+.codesigner_page_codesigner-email_designer .cx-heading,
+.codesigner_page_codesigner-invoice_builder .cx-heading,
+.codesigner_page_codesigner-checkout_builder .cx-heading {
+    display: none;
+}
+
+/*========================*/
+/*===START HERO SECTION===*/
+/*========================*/
+.codesigner-hero-section-wrapper {
+    padding: 50px;
+    background: linear-gradient(
+        180deg,
+        #fff6f0 17.78%,
+        rgba(255, 243, 238, 0) 98.3%
+    );
+}
+.codesigner-hero-section-wrapper .codesigner-container {
+    border-radius: 32px;
+    background: #fff;
+    box-shadow: 0px 2px 6px 0px rgba(13, 26, 38, 0.22);
+}
+.codesigner-title-and-video-area {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 70px;
+}
+.codesigner-title-and-video-area .codesigner-title-btn-area {
+    margin-left: 46px;
+    margin-top: 62px;
+}
+.codesginer-hero-content-wrapper {
+    width: 532px;
+}
+.codesigner-title-and-video-area .codesigner-title-btn-area .codesigner-title {
+    color: #12173d;
+    font-family: "DM Sans", sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    padding: 0;
+}
+.codesigner-title-and-video-area
+    .codesigner-title-btn-area
+    .codesigner-bg-style {
+    background-image: url(../img/email-designer/h1-bg.svg);
+    background-position: left bottom;
+    background-repeat: no-repeat;
+}
+.codesigner-title-and-video-area
+    .codesigner-title-btn-area
+    .codesinger-email-designer {
+    margin-top: 15px;
+    color: #794aff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 50px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: 120%;
+    text-decoration-line: underline;
+}
+.codesigner-title-and-video-area
+    .codesigner-title-btn-area
+    .codesigner-hero-description {
+    color: #67657c;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150.2%;
+    margin-top: 32px;
+    margin-bottom: 40px;
+}
+.codesinger-get-start-btn-wrap {
+    display: flex;
+}
+.codesinger-get-start-btn-wrap a {
+    display: flex;
+    align-items: center;
+    padding: 14px 37px;
+    border-radius: 8px;
+    background: #f1ecfe;
+    text-decoration: none;
+    color: #865cff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    outline: 0;
+}
+.codesinger-get-start-btn-wrap a:hover {
+    opacity: 0.9;
+    background: #794aff;
+    color: #ffffff;
+    transition: 0.3s all ease;
+}
+.codesinger-get-start-btn-wrap .codesign-get-start-btn {
+    margin-right: 25px;
+    opacity: 0.9;
+    background: #794aff;
+    color: #ffffff;
+}
+.codesinger-get-start-btn-wrap a .codesigner-btn-icon {
+    margin-left: 10px;
+}
+.codesinger-get-start-btn-wrap a .codesigner-btn-icon-light {
+    display: none;
+    margin-left: 10px;
+}
+.codesinger-get-start-btn-wrap a:hover .codesigner-btn-icon {
+    display: none;
+}
+.codesinger-get-start-btn-wrap a:hover .codesigner-btn-icon-light {
+    display: block;
+    transition: 0.3s all ease;
+}
+.codesigner-title-and-video-area .codesigner-video-player-area {
+    margin-top: 48px;
+    margin-right: 46px;
+    width: 750px;
+    height: 483px;
+}
+.codesigner-title-and-video-area
+    .codesigner-video-player-area
+    .codesigner-iframe-area {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/email-designer/iframe-bg.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.1);
+    background-size: cover;
+}
+.codesigner-title-and-video-area
+    .codesigner-video-player-area
+    .codesigner-iframe-area
+    iframe {
+    width: 95%;
+    height: 83%;
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+}
+.codesigner-features-area {
+    max-width: 1114px;
+    margin: 0 auto;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding-bottom: 50px;
+}
+.codesigner-features-area .signle-featers {
+    width: 233px;
+    height: 192px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 4px 38px 9px rgba(13, 26, 38, 0.05);
+}
+.codesigner-features-area .signle-featers .icon {
+    width: 91px;
+    height: 85px;
+    border-radius: 16px;
+    background: #f7f4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*======================*/
+/*===END HERO SECTION===*/
+/*======================*/
+
+/*=========================*/
+/*===START EAMIL SECTION===*/
+/*=========================*/
+
+.codesigner-create-eamil-templte-wrapper {
+    padding: 35px 50px;
+}
+.codesigner-create-eamil-templte-wrapper .codesigner-container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.codesigner-email-tempalte-image-area {
+    width: 510px;
+}
+.codesigner-image-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.codesigner-image-area img {
+    width: 820px;
+}
+.codesigner-image-area .codesigner-step {
+    position: absolute;
+    top: 45px;
+    left: 60%;
+    transform: translateX(-50%);
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 69px;
+    background: #fff;
+    box-shadow: 0px 2px 6px 0px rgba(13, 26, 38, 0.22);
+    font-family: "DM Sans", sans-serif;
+    color: #00155a;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.1;
+    margin: 0;
+}
+.codesigner-email-tempalte-content-area {
+    width: calc(100% - 510px);
+    margin-top: 120px;
+    padding-top: 73px;
+    background: linear-gradient(280deg, #f7f5ff 0.43%, #fff 104.07%);
+    border-radius: 0 150px 0 0;
+    padding-right: 46px;
+    padding-bottom: 70px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 200px;
+}
+.codesigner-text-area {
+    width: 459px;
+}
+.codesigner-text-area .codesigner-email-editor-panel {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px 24px;
+    background: #f7f3ff;
+    position: relative;
+    color: #794aff;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 15px;
+}
+.codesigner-text-area .codesigner-email-editor-panel::before {
+    content: "\005F";
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+.codesigner-text-area h2 {
+    color: #12173d;
+    font-family: "DM Sans", sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 120%;
+    width: 375px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+.codesigner-text-area .codesigner-description {
+    color: #67657c;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150.2%;
+}
+.codesigner-reverse-email-template {
+    flex-direction: row-reverse;
+}
+.codesigner-reverse-email-template .codesigner-image-area {
+    top: 0;
+    right: 0;
+    left: auto;
+}
+.codesigner-reverse-email-template .codesigner-step {
+    top: 14px;
+    left: 50%;
+}
+.codesigner-reverse-email-template .codesigner-email-tempalte-content-area {
+    border-radius: 150px 0 0 0;
+    background: linear-gradient(89deg, #f7f5ff 0.43%, #fff 104.07%);
+}
+.codesigner-reverse-email-template .codesigner-text-area {
+    margin: 0;
+}
+.codesigner-beautiful-email {
+    margin-bottom: 90px;
+}
+.codesigner-beautiful-email .codesigner-step {
+    top: 36px;
+    left: 50%;
+}
+.codesigner-reverse-email-template .codesigner-email-tempalte-content-area {
+    justify-content: flex-start;
+    padding-left: 100px;
+}
+
+/*=======================*/
+/*===END EAMIL SECTION===*/
+/*=======================*/
+
+/*=================================*/
+/*===START EMAIL SETTING SECTION===*/
+/*=================================*/
+
+.codesigner-eamil-setting-templte-wrapper .codesigner-container {
+    flex-direction: row-reverse;
+}
+.codesigner-eamil-setting-templte-wrapper
+    .codesigner-container
+    .codesigner-image-area
+    .codesigner-step {
+    top: 5px;
+    left: 48%;
+}
+.codesigner-eamil-setting-templte-wrapper
+    .codesigner-container
+    .codesigner-text-area {
+    margin-top: 120px;
+    padding-top: 73px;
+    width: 60%;
+    background: linear-gradient(89deg, #f7f5ff 0.43%, #fcfbff 104.07%);
+    border-radius: 150px 0 0 0;
+    padding-right: 46px;
+    padding-left: 50px;
+}
+
+/*===============================*/
+/*===END EMAIL SETTING SECTION===*/
+/*===============================*/
+
+/*===================================*/
+/*===START BEAUTIFUL EAMIL SECTION===*/
+/*===================================*/
+.codesigner-beautiful-email-wrapper
+    .codesigner-container
+    .codesigner-image-area
+    .codesigner-step {
+    top: 19px;
+    left: 48%;
+}
+/*=================================*/
+/*===END BEAUTIFUL EAMIL SECTION===*/
+/*=================================*/
+
+/*=================================*/
+/*===START EMAIL BUILDER SECTION===*/
+/*=================================*/
+.codesigner-email-builder-wrapper {
+    width: 100%;
+    padding: 35px 0;
+}
+.codesigner-email-builder-wrapper .codesigner-container {
+    max-width: 1030px;
+    margin: auto;
+    text-align: center;
+}
+.codesigner-eamil-builder-till {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px 24px;
+    background: #f7f3ff;
+    position: relative;
+    color: #794aff;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 15px;
+}
+.codesigner-eamil-builder-till::before {
+    content: "\005F";
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+.codesigner-title-area {
+    width: 778px;
+    color: #00155a;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 60px;
+}
+.codesigner-widgets-grid {
+    display: grid;
+    column-gap: 32px;
+    row-gap: 40px;
+    grid-template-columns: auto auto auto;
+}
+.codesginer-single-widget {
+    position: relative;
+    width: 322px;
+    height: 126px;
+}
+.codesginer-single-widget .codesigner-single-widget-background {
+    width: 180px;
+    height: 126px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #806eff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.codesginer-single-widget .codesigner-single-widget-forgrand {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 318px;
+    height: 118px;
+    background-color: #ffffff;
+    box-shadow: 0px 10px 49px 0px rgba(0, 0, 0, 0.13);
+    border-radius: 12px;
+}
+.codesginer-single-widget:hover .codesigner-single-widget-forgrand {
+    transition: 0.3s all ease;
+}
+.codesginer-single-widget:hover .codesigner-single-widget-background {
+    width: 326px;
+    height: 126px;
+    transition: 0.5s all ease;
+    cursor: default;
+}
+.codesginer-single-widget
+    .codesigner-single-widget-forgrand
+    .codesigner-widget-content {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+.codesginer-single-widget
+    .codesigner-single-widget-forgrand
+    .codesigner-widget-content
+    h2 {
+    color: #00155a;
+    font-family: "DM Sans", sans-serif;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 0;
+    text-align: left;
+    width: 210px;
+    cursor: all-scroll;
+}
+.codesginer-single-widget
+    .codesigner-single-widget-forgrand
+    .codesigner-widget-content
+    img {
+    width: 64px;
+    height: 64px;
+    margin-right: 15px;
+}
+.codesigner-focus-widget .codesigner-single-widget-forgrand {
+    background: #806eff;
+    box-shadow: none;
+}
+.codesigner-focus-widget
+    .codesigner-single-widget-forgrand
+    .codesigner-widget-content
+    H2 {
+    color: #fff;
+}
+.codesigner-focus-widget .codesigner-single-widget-background {
+    width: 326px;
+    height: 126px;
+    flex-shrink: 0;
+    border-radius: 16px;
+    background: #806eff;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/*===============================*/
+/*===END EMAIL BUILDER SECTION===*/
+/*===============================*/
+
+/*===========================*/
+/*===START LETS GO SECTION===*/
+/*===========================*/
+.codesigner-lets-go-section-wrapper {
+    width: 95%;
+    margin: auto;
+}
+.codesigner-lets-go-section-wrapper .codesigner-container {
+    border-radius: 16px;
+    background: #faf9f9;
+    padding: 80px;
+    text-align: center;
+}
+.codesigner-lets-go-till {
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px 24px;
+    background: #f7f3ff;
+    position: relative;
+    color: #794aff;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin-bottom: 15px;
+}
+.codesigner-lets-go-till::before {
+    content: "\005F";
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+.codesigner-let-go-header {
+    color: #00155a;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    margin: 0;
+    margin-bottom: 25px;
+}
+.codesigner-let-go-header a {
+    color: #794aff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    text-decoration-line: underline;
+}
+.codesigner-btn {
+    display: inline-block;
+    padding: 14px 37px;
+    color: #fff;
+    font-family: "DM Sans", sans-serif;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
+    border-radius: 8px;
+    background: #794aff;
+    text-decoration: none;
+}
+.codesigner-btn:hover {
+    color: #fff;
+    text-decoration: underline;
+    transition: 0.3s all ease;
+}
+.codesigner-btn:focus {
+    color: #fff;
+    text-decoration: none;
+}
+/*===========================*/
+/*===END LETS GO SECTION===*/
+/*===========================*/
+
+/*==================================================*/
+/*==============Design for Checkout page============*/
+.codesigner-checkout-hero .codesigner-title-btn-area .codesigner-bg-style {
+    background-image: url(../img/checkout/h1-bg.svg);
+}
+.codesigner-checkout-hero
+    .codesigner-title-btn-area
+    .codesinger-email-designer {
+    color: #ff7441;
+}
+.codesigner-checkout-get-start .codesign-get-start-btn {
+    background-color: #ff7441;
+}
+.codesigner-checkout-get-start a {
+    background: #fff1ec;
+    color: #ff7441;
+}
+.codesigner-checkout-get-start a:hover {
+    background-color: #ff7441;
+}
+.codesigner-checkout-page-features .signle-featers .icon {
+    background: #fff1ec;
+}
+.codesigner-checkout-template .codesigner-email-tempalte-content-area {
+    background: linear-gradient(
+        80deg,
+        #fff6f0 5.52%,
+        rgba(255, 246, 240, 0) 116.47%
+    );
+}
+.codesigner-checkout-template-reserve .codesigner-email-tempalte-content-area {
+    background: linear-gradient(
+        240deg,
+        #fff6f0 5.52%,
+        rgba(255, 246, 240, 0) 116.47%
+    );
+}
+.codesigner-checkout-text-area .codesigner-email-editor-panel {
+    color: #ff8254;
+    background: #ffede7;
+}
+.codesigner-checkout-email-builder-till {
+    color: #ff8254;
+    background: #ffede7;
+}
+.codesigner-checkout-single-widget .codesigner-single-widget-background {
+    background: #ff8254;
+}
+.codesigner-checkout-single-widget-focus .codesigner-single-widget-background {
+    background: #ff8254;
+}
+.codesigner-checkout-single-widget-focus .codesigner-single-widget-forgrand {
+    background: #ff8254;
+}
+.codesigner-checkout-let-go-header a {
+    color: #ff8254;
+}
+.codesigner-checkout-btn {
+    background: #ff8254;
+}
+
+/*==================================================*/
+/*==============Design for Invoice page============*/
+.codesigner-invoice-hero-section {
+    background: linear-gradient(
+        180deg,
+        #d7ffe9 17.78%,
+        rgba(255, 243, 238, 0) 98.3%
+    );
+}
+.codesigner-invoice-hero .codesigner-title-btn-area .codesigner-bg-style {
+    background-image: url(../img/invoice/h1-bg.svg);
+}
+.codesigner-invoice-hero .codesigner-title-btn-area .codesinger-email-designer {
+    color: #00b04d;
+}
+.codesigner-invoice-get-start .codesign-get-start-btn {
+    background-color: #00b04d;
+}
+.codesigner-invoice-get-start a {
+    background: #e1ffee;
+    color: #00b04d;
+}
+.codesigner-invoice-get-start a:hover {
+    background-color: #00b04d;
+}
+.codesigner-invoice-page-features .signle-featers .icon {
+    background: #e1ffee;
+}
+.codesigner-invoice-template .codesigner-email-tempalte-content-area {
+    background: linear-gradient(82deg, #effaf4 4.35%, #fff 148.66%);
+}
+.codesigner-invoice-template-reserve .codesigner-email-tempalte-content-area {
+    background: linear-gradient(228deg, #effaf4 4.35%, #fff 148.66%);
+}
+.codesigner-invoice-text-area .codesigner-email-editor-panel {
+    color: #00b04d;
+    background: #e1ffee;
+}
+.codesigner-invoice-email-builder-till {
+    color: #00b04d;
+    background: #e1ffee;
+}
+.codesigner-invoice-let-go-header a {
+    color: #00b04d;
+}
+.codesigner-invoice-btn {
+    background: #00b04d;
+}
+.codesigner-invoice-template .codesigner-step {
+    top: 97px;
+    left: 41%;
+}
+.codesigner-invoice-template-reserve .codesigner-step {
+    top: 65px;
+    left: 50%;
+}
+.codesigner-checkout-template-reserve .codesigner-step {
+    top: 90px;
+    left: 52%;
+}
+.codesigner-invoice-email-template-wrapper {
+    padding-top: 0;
+}
+
+/* ================== START RESPONSIVE DESIGN ================ */
+@media (max-width: 1865px) {
+    .codesigner-image-area {
+        width: 52%;
+    }
+    .codesigner-image-area img {
+        width: 100%;
+    }
+    .codesigner-email-tempalte-content-area {
+        padding-right: 150px;
+    }
+}
+@media (max-width: 1700px) {
+    .codesigner-title-btn-area {
+        width: 40%;
+    }
+    .codesginer-hero-content-wrapper {
+        width: 100%;
+    }
+    .codesigner-title-and-video-area .codesigner-video-player-area {
+        width: 45%;
+        height: auto;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area {
+        height: 82%;
+    }
+
+    .codesigner-image-area {
+        width: 50%;
+    }
+    .codesigner-email-tempalte-content-area {
+        padding-right: 50px;
+    }
+}
+@media (max-width: 1399px) {
+    .codesigner-hero-section-wrapper .codesigner-container {
+        padding-bottom: 35px;
+    }
+    .codesigner-hero-section-wrapper {
+        padding: 20px;
+    }
+    .codesigner-title-btn-area {
+        width: 35%;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-title-btn-area
+        .codesigner-title {
+        font-size: 40px;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-title-btn-area
+        .codesigner-bg-style {
+        width: 215px;
+        background-size: contain;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-title-btn-area
+        .codesinger-email-designer {
+        font-size: 40px;
+    }
+    .codesinger-get-start-btn-wrap a {
+        padding: 14px 19px;
+    }
+    .codesigner-title-and-video-area .codesigner-video-player-area {
+        width: 50%;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area {
+        height: 80%;
+    }
+    .codesigner-features-area {
+        padding: 0 20px;
+    }
+    .codesigner-features-area .signle-featers {
+        width: 200px;
+        height: 175px;
+    }
+    .codesigner-email-tempalte-image-area {
+        width: 450px;
+    }
+    .codesigner-email-tempalte-content-area {
+        width: 40%;
+    }
+    .codesigner-email-tempalte-content-area {
+        margin-top: 50px;
+        padding-bottom: 35px;
+        padding-top: 35px;
+    }
+    .codesigner-create-eamil-templte-wrapper {
+        padding: 30px 20px;
+    }
+    .codesigner-email-tempalte-content-area {
+        padding-right: 35px;
+    }
+    .codesigner-image-area .codesigner-step {
+        top: 15px;
+    }
+    .codesigner-reverse-email-template .codesigner-email-tempalte-content-area {
+        padding-right: 0;
+        justify-content: flex-start;
+        padding-left: 50px;
+    }
+    .codesigner-reverse-email-template .codesigner-step {
+        top: -5px;
+    }
+    .codesigner-beautiful-email .codesigner-step {
+        top: 9px;
+    }
+    .codesginer-single-widget .codesigner-single-widget-forgrand {
+        width: 290px;
+    }
+    .codesginer-single-widget:hover .codesigner-single-widget-background {
+        width: 298px;
+    }
+    .codesigner-widgets-grid {
+        display: grid;
+        column-gap: 0;
+        row-gap: 35px;
+        grid-template-columns: auto auto auto;
+        padding: 15px;
+    }
+    .codesigner-focus-widget .codesigner-single-widget-background {
+        width: 298px;
+    }
+    .codesigner-title-area {
+        font-size: 32px;
+    }
+    .codesigner-let-go-header {
+        font-size: 32px;
+    }
+    .codesigner-lets-go-section-wrapper {
+        width: 90%;
+        margin: auto;
+    }
+}
+@media (max-width: 1199px) {
+    .codesigner-title-and-video-area .codesigner-title-btn-area {
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+    .codesigner-title-and-video-area .codesigner-video-player-area {
+        margin-top: 20px;
+        margin-right: 20px;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-title-btn-area
+        .codesigner-title {
+        font-size: 32px;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-title-btn-area
+        .codesinger-email-designer {
+        font-size: 32px;
+    }
+    .codesinger-get-start-btn-wrap a {
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+    .codesinger-get-start-btn-wrap a img {
+        margin-left: 5px;
+    }
+    .codesigner-title-btn-area {
+        width: 40%;
+    }
+    .codesigner-title-and-video-area .codesigner-video-player-area {
+        width: 53%;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area {
+        width: 100%;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area
+        iframe {
+        width: 90%;
+        height: 75%;
+    }
+    .codesinger-get-start-btn-wrap .codesign-get-start-btn {
+        margin-right: 10px;
+    }
+    .codesigner-features-area .signle-featers {
+        width: 160px;
+    }
+    .codesigner-features-area .signle-featers {
+        height: 145px;
+    }
+
+    .codesigner-features-area .signle-featers h3 {
+        margin-top: 15px;
+        margin-bottom: 0;
+    }
+    .codesigner-email-tempalte-image-area {
+        width: 260px;
+    }
+    .codesigner-text-area {
+        width: 320px;
+    }
+    .codesigner-text-area h2 {
+        font-size: 28px;
+        width: 330px;
+    }
+    .codesigner-email-tempalte-content-area {
+        margin-top: 0;
+    }
+    .codesigner-image-area {
+        margin-top: 50px;
+    }
+    .codesigner-image-area .codesigner-step {
+        padding: 8px 18px;
+        font-size: 16px;
+    }
+    .codesigner-title-area {
+        font-size: 28px;
+        max-width: 778px;
+        margin-bottom: 30px;
+    }
+    .codesigner-widgets-grid {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    .codesginer-single-widget
+        .codesigner-single-widget-forgrand
+        .codesigner-widget-content
+        img {
+        margin-right: 10px;
+    }
+    .codesginer-single-widget
+        .codesigner-single-widget-forgrand
+        .codesigner-widget-content
+        h2 {
+        font-size: 18px;
+    }
+    .codesginer-single-widget {
+        width: 300px;
+    }
+    .codesginer-single-widget .codesigner-single-widget-background {
+        height: 120px;
+    }
+    .codesginer-single-widget .codesigner-single-widget-forgrand {
+        height: 112px;
+    }
+    .codesginer-single-widget:hover .codesigner-single-widget-background {
+        height: 120px;
+    }
+    .codesigner-let-go-header {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+    .codesigner-btn {
+        padding: 12px 30px;
+        font-size: 16px;
+    }
+    .codesigner-lets-go-section-wrapper .codesigner-container {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-title-btn-area
+        .codesigner-bg-style {
+        width: 180px;
+    }
+}
+@media (max-width: 900px) {
+    .codesigner-title-and-video-area {
+        flex-direction: column;
+        padding-bottom: 30px;
+    }
+    .codesigner-title-btn-area {
+        width: 75%;
+    }
+    .codesigner-title-and-video-area .codesigner-video-player-area {
+        width: 95%;
+        height: 400px;
+        margin: 0;
+        padding: 20px;
+        margin-top: 30px;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area {
+        height: 100%;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area
+        iframe {
+        width: 95%;
+        height: 80%;
+    }
+    .codesinger-get-start-btn-wrap a {
+        padding: 10px 25px;
+    }
+    .codesigner-features-area .signle-featers .icon {
+        width: 80px;
+        height: 75px;
+    }
+    .codesigner-features-area .signle-featers h3 {
+        font-size: 16px;
+    }
+    .codesigner-features-area .signle-featers {
+        width: 140px;
+        height: 130px;
+    }
+    .codesigner-features-area {
+        flex-wrap: wrap;
+    }
+    .codesigner-create-eamil-templte-wrapper .codesigner-container {
+        flex-direction: column;
+    }
+    .codesigner-email-tempalte-image-area {
+        width: 100%;
+        height: auto;
+    }
+    .codesigner-image-area {
+        width: 100%;
+        position: static;
+    }
+    .codesigner-email-tempalte-content-area {
+        width: 95%;
+    }
+    .codesigner-text-area {
+        width: 100%;
+    }
+    .codesigner-create-eamil-templte-wrapper {
+        padding-bottom: 0;
+    }
+    .codesigner-image-area .codesigner-step {
+        top: 5%;
+        left: 50%;
+    }
+    .codesigner-reverse-email-template .codesigner-step {
+        top: 2%;
+    }
+    .codesigner-title-area {
+        width: 90%;
+        margin: auto;
+    }
+    .codesigner-lets-go-section-wrapper .codesigner-container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .codesigner-invoice-template {
+        margin-top: 30px;
+    }
+    .codesigner-checkout-template {
+        margin-top: 30px;
+    }
+}
+@media (max-width: 700px) {
+    .codesigner-title-btn-area {
+        width: 90%;
+    }
+    .codesigner-features-area .signle-featers {
+        width: 145px;
+        height: 130px;
+        margin-bottom: 25px;
+    }
+    .codesginer-single-widget .codesigner-single-widget-forgrand {
+        height: 90px;
+    }
+    .codesginer-single-widget .codesigner-single-widget-background {
+        height: 98px;
+    }
+    .codesginer-single-widget:hover .codesigner-single-widget-background {
+        height: 98px;
+    }
+    .codesginer-single-widget
+        .codesigner-single-widget-forgrand
+        .codesigner-widget-content
+        img {
+        width: 50px;
+        height: 50px;
+    }
+    .codesginer-single-widget
+        .codesigner-single-widget-forgrand
+        .codesigner-widget-content {
+        left: 10px;
+    }
+    .codesginer-single-widget {
+        height: 98px;
+    }
+    .codesigner-title-area {
+        margin-bottom: 30px;
+    }
+}
+@media (max-width: 500px) {
+    .codesigner-features-area .signle-featers {
+        width: 150px;
+        height: 135px;
+    }
+    .codesigner-title-and-video-area .codesigner-video-player-area {
+        width: 90%;
+        height: 280px;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area
+        iframe {
+        width: 90%;
+    }
+}
+@media (max-width: 400px) {
+    .codesigner-hero-section-wrapper {
+        padding: 0;
+        padding-top: 20px;
+    }
+    .codesigner-title-and-video-area .codesigner-title-btn-area {
+        margin: 0;
+        padding: 20px;
+    }
+    .codesinger-get-start-btn-wrap a {
+        padding: 8px 15px;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-title-btn-area
+        .codesigner-hero-description {
+        margin-bottom: 30px;
+    }
+    .codesigner-title-and-video-area .codesigner-video-player-area {
+        margin-top: 0;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area {
+        background: transparent;
+    }
+    .codesigner-title-and-video-area
+        .codesigner-video-player-area
+        .codesigner-iframe-area
+        iframe {
+        width: 85%;
+        height: 85%;
+    }
+    .codesigner-features-area .signle-featers {
+        width: 125px;
+        height: 125px;
+    }
+    .codesigner-features-area .signle-featers h3 {
+        font-size: 14px;
+        text-align: center;
+    }
+    .codesigner-create-eamil-templte-wrapper {
+        padding: 0;
+    }
+    .codesigner-email-tempalte-content-area {
+        padding: 20px;
+    }
+    .codesigner-text-area h2 {
+        width: 100%;
+    }
+    .codesigner-email-tempalte-content-area {
+        width: 85%;
+    }
+    .codesigner-image-area {
+        width: 95%;
+        position: static;
+        padding: 10px;
+    }
+    .codesigner-reverse-email-template .codesigner-email-tempalte-content-area {
+        padding-left: 25px;
+    }
+    .codesigner-email-tempalte-content-area {
+        border-radius: 0 60px 0 0;
+    }
+    .codesigner-reverse-email-template .codesigner-email-tempalte-content-area {
+        border-radius: 60px 0 0 0;
+    }
+
+    .codesginer-single-widget {
+        width: 268px;
+    }
+    .codesginer-single-widget .codesigner-single-widget-background {
+        width: 140px;
+    }
+    .codesigner-focus-widget .codesigner-single-widget-background {
+        width: 268px;
+    }
+    .codesginer-single-widget .codesigner-single-widget-forgrand {
+        width: 260px;
+    }
+    .codesginer-single-widget:hover .codesigner-single-widget-background {
+        width: 268px;
+    }
+    .codesginer-single-widget
+        .codesigner-single-widget-forgrand
+        .codesigner-widget-content
+        h2 {
+        font-size: 16px;
+    }
+    .codesigner-text-area h2 {
+        text-align: center;
+    }
+    .codesigner-text-area .codesigner-email-editor-panel {
+        margin-left: 15%;
+    }
+    .codesigner-text-area .codesigner-description {
+        text-align: center;
+    }
+    .codesigner-let-go-header a {
+        font-size: 28px;
+    }
+    .codesigner-let-go-header {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    .codesigner-btn {
+        padding: 10px 25px;
+    }
+}

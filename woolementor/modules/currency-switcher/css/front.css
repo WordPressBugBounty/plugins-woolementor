@@ -1,0 +1,32 @@
+#cd-currency-switcher-warpper{
+    position: fixed;
+    text-align: center;
+    z-index: 100;
+    bottom: 40%;
+    right: 0px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+#cd-currency-switcher-warpper img{
+    cursor: pointer;
+    border-radius: 50%;
+}
+#cd-currency-switcher-warpper [type=radio] { 
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#cd-currency-switcher-warpper [type=radio]:checked + .cd-single-currency {
+    background-color: #aeb7ff;
+}
+
+#cd-currency-switcher-warpper .cd-single-currency{
+    background-color: #ffffff;
+    padding: 10px;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+}

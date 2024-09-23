@@ -1,0 +1,23 @@
+/* Styling for the product-attribute class */
+.product-attribute {
+    margin-bottom: 20px;
+}
+
+.product-attribute h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.attribute-values {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    padding: 10px;
+    margin-right: 10px;
+    background-color: #f3ebeb;
+}
+
+.attribute-values li {
+    margin: 4px 5px;
+    font-size: 16px;
+}

@@ -1,0 +1,57 @@
+.cd-cs-wrapper{
+    padding: 10px;
+}
+.cd-single-currency{
+    display: flex;
+    gap: 15px;
+    padding: 5px 0px;
+}
+.cd-cs-add-row{
+    padding: 5px 11px;
+    background-color: #aaff81;
+    position: relative;
+    background: #6a36ff;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 4px 10px;
+    transition: 0.2s;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 1px solid #3a5a40;
+    cursor: pointer;
+}
+.cd-cs-add-row:hover {
+    background: #fff;
+    border: 1px solid #222;
+    color: #222;
+    animation: box 3s infinite;
+}
+.cd-cs-remove-row{
+    position: relative;
+    background: #bc4749;
+    color: #fff;
+    letter-spacing: 0.1rem;
+    font-size: 1rem;
+    padding: 4px 10px;
+    transition: 0.2s;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 1px solid #bc4749;
+    transform: translateX(-10px);
+    cursor: pointer;
+}
+.cd-cs-remove-row:hover {
+    background: #fff;
+    border: 1px solid #222;
+    color: #222;
+    animation: box 3s infinite;
+}
+.cd-cs-preview-image img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+.cd-cs-button{
+    padding: 6px;
+}

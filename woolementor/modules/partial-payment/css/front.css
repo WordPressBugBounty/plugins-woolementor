@@ -1,0 +1,18 @@
+.cd-cart-installment p {
+    margin-bottom: 10px;
+}
+.woocommerce-checkout
+    .woocommerce-checkout-review-order-table
+    .product-name
+    .variation {
+    width: 100%;
+}
+.woocommerce-cart .cart_totals .order-total.cd-order-total,
+.woocommerce-checkout
+    .woocommerce-checkout-review-order-table
+    .order-total.cd-order-total {
+    display: contents;
+}
+.order-total.cd-old {
+    display: contents !important;
+}

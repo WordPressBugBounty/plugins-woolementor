@@ -1,0 +1,205 @@
+.theme-astra .wcd-quick-checkout-button{
+	width: 35px;
+	height: 35px;
+	margin-left: 0px;
+	line-height: 32px;
+	display: inline-block;
+	font-size: 13px;
+	cursor: pointer;
+	background-color: white;		
+}
+
+.theme-astra .wcd-quick-view-wrap button{
+	width: 35px;
+	height: 35px;
+	margin-left: 0px;
+	line-height: 32px;
+	display: inline-block;
+	font-size: 13px;
+	cursor: pointer;
+	background-color: white;
+	border-radius: 20px;
+	box-shadow: none;	
+}
+.theme-astra .wl-sa-single-accordion {
+	margin-bottom: 10px !important;
+	position: relative !important;
+}
+.theme-astra .wl-shop-flip .wl-sf-container .added_to_cart.wc-forward::after {
+	margin-top: -6px;
+	top: 6px;
+}
+.theme-astra.woocommerce form.checkout_coupon{
+	width: 100%;
+}
+.theme-astra.ast-single-post .wl-gradient-button-area .wl-gradient-button{
+	text-decoration: none;
+}
+
+.theme-astra.woocommerce-page .ast-woocommerce-container .wl-product-gallery div.images{
+	width: 100% !important;
+}
+.theme-astra .wl-product-gallery .woocommerce-product-gallery--columns-4 .flex-control-thumbs li{
+	width: calc(15% - 0.75em) !important;
+}
+
+.theme-astra .wl-my-account-left .woocommerce-MyAccount-content{
+	margin-left: 15px;
+}
+.theme-astra .wcd-product-rating .woocommerce-product-rating a{
+	text-decoration: none;
+}
+.theme-astra .wlmc-modal-wrapper .wlmc-modal-body ul li.woocommerce-mini-cart-item.mini_cart_item a img {
+	float: left;
+	margin-right: 15px;
+	max-width: 80px;
+	width: 60px;
+}
+.theme-astra.ast-single-post .entry-content .wl-minimal-product-style .wl-minimal-single-product a {
+	text-decoration: none;
+}
+.theme-astra.ast-single-post .entry-content .wl-minimal-product-style .star-rating,
+.theme-astra.ast-single-post .entry-content .wl-minimal-product-style .ast-woo-product-category,
+.theme-astra.ast-single-post .entry-content .wl-minimal-product-style .wl-minimal-product-cart-panel .ast-on-card-button {
+	display: none;
+}
+.theme-astra .wl-minimal-single-product.product.center .astra-shop-summary-wrap{
+	color: var(--wl-black);
+	font-size: 13px;
+	text-align: center;
+}
+.theme-astra .wl-minimal-single-product .woocommerce-loop-product__title{
+	font-weight: 500;
+	font-family: "Montserrat", Sans-serif;
+}
+.theme-astra.wl .wl-sm-single-product .star-rating{
+	display: none;
+}
+.theme-astra .wl-minimal-single-product .wl-minimal-product-cart-panel .ahfb-svg-iconset{
+	display: none;
+}
+.theme-astra.woocommerce-page #content .wl-ci table.cart [name=coupon_code]{
+	max-height: 100%;
+}
+
+.theme-astra .wl-sc-product-cart i {
+	color: var(--wl-gray);
+	border: 1px solid var(--wl-light-border);
+	transition: .4s;
+}
+.theme-astra.woocommerce a.added_to_cart {
+	display: block !important;
+}
+.theme-astra .wl-gradient-heading {
+	text-decoration: none !important;
+}
+.theme-astra .wl-ss-product-cart .added {
+	visibility: hidden;
+}
+.theme-astra .wl-ss-product-cart .added_to_cart.wc-forward {
+	margin-top: -22px;
+	left: 0;
+}
+.theme-astra .wl-sf-cart .added_to_cart.wc-forward {
+	top: 5px;
+}
+.theme-astra .wl-str-single-product .wl-str-product-title a,
+.theme-astra .wl-scr-single-widget .wl-scr-product-name a,
+.theme-astra .wl-sb-product-details .wl-sb-cart-area a,
+.theme-astra .wl-sm-single-product .astra-shop-summary-wrap a,
+.theme-astra .wl-shopwix-single-product .astra-shop-summary-wrap a,
+.theme-astra .wl-shopify-single-product .wl-shopify-product-view a
+.theme-astra .wl-shopify-single-product .astra-shop-summary-wrap a {
+	text-decoration: none;
+}
+.theme-astra .wl-str-cart .added_to_cart.wc-forward {
+	top: -8px;
+}
+.theme-astra .wl-sa-product-cart .added_to_cart.wc-forward,
+.theme-astra .wl-st-info-icons .added_to_cart.wc-forward {
+	top: 0;
+}
+.theme-astra .wl-sm-single-product span.ast-onsale-card,
+.theme-astra .wl-shopwix-single-product .wl-shopwix-product-iamge-cart-panel span.ast-onsale-card {
+	width: 63px;
+	height: 33px;
+	text-align: center;
+	background-color: #f54337;
+	font-size: 15px;
+	line-height: -0.764;
+	color: #ffffff;
+	font-weight: 400;
+	font-family: "Poppins";
+}
+.theme-astra .wl-sm-product-style .ast-woo-product-category,
+.theme-astra .wl-shopify-single-product .ast-woo-product-category,
+.theme-astra .wl-sm-single-product .star-rating,
+.theme-astra .wl-sm-product-iamge-cart-panel .ast-onsale-card,
+.theme-astra .wl-sm-product-title-price-panel .ast-shop-product-out-of-stock,
+.theme-astra .wl-shopwix-product-style .ast-woo-product-category,
+.theme-astra .wl-shopwix-product-style .star-rating,
+.theme-astra .wl-shopify-product-iamge-cart-panel .star-rating,
+.theme-astra .wl-minimal-single-product .star-rating,
+.theme-astra .wl-shopify-single-product .wl-shopify-product-iamge-cart-panel .ast-on-card-button,
+.theme-astra .wl-minimal-single-product .out-of-stock,
+.theme-astra .wl-shopwix-single-product .wl-shopwix-product-iamge-cart-panel .ast-on-card-button,
+.theme-astra .wl-shopwix-single-product .wl-shopwix-product-title-price-panel .ast-shop-product-out-of-stock,
+.theme-astra .wl-shopify-single-product .wl-shopify-product-title-price-panel .ast-shop-product-out-of-stock,
+.theme-astra .wl-shopify-single-product .star-rating,
+.theme-astra .wl-minimal-product-cart-panel .ast-on-card-button.ast-onsale-card{
+	display: none;
+}
+.theme-astra .astra-shop-thumbnail-wrap:hover .wl-sm-product-view {
+	transform: translateX(0);
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	-moz-transform: translateX(0);
+	opacity: 1;
+}
+
+.theme-astra .wl-shopify-single-product .astra-shop-thumbnail-wrap:hover .wl-shopify-product-view,
+.theme-astra .wl-minimal-single-product .astra-shop-thumbnail-wrap:hover .wl-minimal-product-view,
+.theme-astra .wl-sm-single-product .wl-sm-product-iamge-cart-panel:hover .wl-sm-product-view,
+.theme-astra .wl-shopwix-single-product .astra-shop-thumbnail-wrap:hover .wl-shopwix-product-view {
+	transform: translateX(0);
+	-webkit-transform: translateX(0);
+	-ms-transform: translateX(0);
+	-o-transform: translateX(0);
+	-moz-transform: translateX(0);
+	opacity: 1;
+	-khtml-opacity: 1;
+	-webkit-opacity: 1;
+	-moz-opacity: 1;
+}
+.theme-astra .wl-shopify-single-product .astra-shop-thumbnail-wrap .wl-shopify-product-view a,
+.theme-astra .wl-shopwix-single-product .astra-shop-thumbnail-wrap .wl-shopwix-product-view a {
+	text-decoration: none;
+}
+
+.theme-astra.wl .wl-shopify-product-view {
+	bottom: 150px;
+}
+.theme-astra .wl-minimal-single-product .astra-shop-summary-wrap a {
+	display: none;
+}
+.theme-astra .wl-sm-product-iamge-cart-panel .ahfb-svg-iconset{
+	display: none;
+}
+.theme-astra .wl-sm-product-iamge-cart-panel .ast-card-action-tooltip{
+	opacity: 1;
+	left: 115px;
+	visibility: visible;
+	background-color : unset;
+	pointer-events : unset;
+	font-size: 16px;
+}
+.theme-astra.elementor-editor-active .wl-sm-product-iamge-cart-panel .ast-card-action-tooltip{
+	visibility: hidden;
+}
+.theme-astra .wl-sm-product-iamge-cart-panel .ast-card-action-tooltip:after {
+	display: none;
+}
+.theme-astra.wl .wl-cart-items-classic .actions{
+	padding: 10px;
+}
