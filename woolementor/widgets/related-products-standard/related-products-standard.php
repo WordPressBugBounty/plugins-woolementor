@@ -1456,11 +1456,15 @@ class Related_products_Standard extends Widget_Base {
 						 <div class="wl-rps-product-details">
 
 							<?php if ( 'yes' == $wishlist_show_hide ): ?>
-								<div class="wl-rps-product-fav"><i class="<?php echo esc_attr( $wishlist_icon['value'] );?> <?php echo esc_attr( $fav_item ); ?> ajax_add_to_wish" data-product_id="<?php esc_attr_e( $product_id ); ?>"></i></div>
+								<div class="wl-rps-product-fav">
+									<i class="<?php echo esc_attr( $wishlist_icon['value'] ); ?> <?php echo esc_attr( $fav_item ); ?> ajax_add_to_wish" data-product_id="<?php echo esc_attr( $product_id ); ?>"></i>
+								</div>
 							<?php endif; ?>
 
 							<div class="wl-rps-product-info">
-							   <div class="wl-rps-product-name"><a <?php echo $this->get_render_attribute_string( 'title_gradient_color' ); ?> href="<?php the_permalink( $product_id ); ?>"><?php echo esc_html( $product->get_name() ); ?></a></div>
+								<div class="wl-rps-product-name">
+									<a <?php echo $this->get_render_attribute_string( 'title_gradient_color' ); ?> href="<?php the_permalink( $product_id ); ?>"><?php echo esc_html( $product->get_name() ); ?></a>
+								</div>
 
 							   <?php if( 'yes' == $settings['short_description_show_hide'] ): ?>
 								   <div class="wl-rps-product-desc">
@@ -1478,7 +1482,7 @@ class Related_products_Standard extends Widget_Base {
 									if( 'simple' == $product->get_type() ) : ?>
 										<div class="wl-rps-product-cart">
 											<div class="wl-cart-area">
-												<a href="?add-to-cart=<?php esc_attr_e( $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+												<a href="?add-to-cart=<?php echo esc_attr( $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>"><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
 											</div>
 										</div>
 									<?php else: ?>

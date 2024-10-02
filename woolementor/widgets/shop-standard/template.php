@@ -6,7 +6,6 @@ if ( !wcd_is_pro_activated() && !wcd_is_preview_mode() && !wcd_is_edit_mode() ) 
 }
 
 $empty_message = __( 'No Product Found!', 'codesigner' );
-
 $settings   = $args['settings'];
 
 extract( $settings );
@@ -73,18 +72,22 @@ $wishlist = wcd_get_wishlist( $user_id );
 						 <div class="wl-ss-product-details">
 
 							<?php if ( 'yes' == $wishlist_show_hide ): ?>
-								<div class="wl-ss-product-fav"><i class="<?php echo esc_attr( $wishlist_icon['value'] );?> <?php echo esc_attr( $fav_item ); ?> ajax_add_to_wish" data-product_id="<?php echo esc_attr( $product_id ); ?>"></i></div>
+								<div class="wl-ss-product-fav">
+									<i class="<?php echo esc_attr( $wishlist_icon['value'] );?> <?php echo esc_attr( $fav_item ); ?> ajax_add_to_wish" data-product_id="<?php echo esc_attr( $product_id ); ?>"></i>
+								</div>
 							<?php endif; ?>
 
 							<div class="wl-ss-product-info">
                                 <?php do_action( 'codesigner_shop_loop_item_title' ); ?>
-							   	<div class="wl-ss-product-name"><a class="wl-gradient-heading" href="<?php the_permalink(); ?>"><?php echo esc_html( $product->get_name() ); ?></a></div>
+                                <div class="wl-ss-product-name">
+                                	<a class="wl-gradient-heading" href="<?php the_permalink(); ?>"><?php echo esc_html( $product->get_name() ); ?></a>
+							   	</div>
                                 <?php do_action( 'codesigner_after_shop_loop_item_title' ); ?>
 
 							   	<?php if( 'yes' == $short_description_show_hide ): ?>
-								   <div class="wl-ss-product-desc">
-									<p><?php echo wp_trim_words( wp_kses_post( $product->get_short_description() ), $product_desc_words_count ); ?></p>
-								   </div>
+							   		<div class="wl-ss-product-desc">
+							   			<p><?php echo wp_trim_words( wp_kses_post( $product->get_short_description() ), $product_desc_words_count ); ?></p>
+							   		</div>
 							   	<?php endif; ?>
 
 							</div>
@@ -121,7 +124,7 @@ $wishlist = wcd_get_wishlist( $user_id );
 
 		<?php endwhile; wp_reset_query(); else: 
 
-		echo '<p>' . __( 'No Product Found!', 'codesigner' ) . '</p>';
+		echo '<p>' . esc_html( __( 'No Product Found!', 'codesigner' ) ) . '</p>';
 
 		endif; ?>
 		</div>

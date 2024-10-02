@@ -5,7 +5,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.7
+ * Version: 4.7.1
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -168,15 +168,15 @@ final class Plugin {
 			$admin->filter('plugin_row_meta', 'plugin_row_meta', 10, 2);
 			$admin->action('admin_footer_text', 'footer_text');
 			$admin->action('after_setup_theme', 'setup');
-			$admin->action('admin_enqueue_scripts', 'enqueue_scripts');
 			$admin->action('plugins_loaded', 'settings_page_redirect');
 			$admin->filter('http_request_host_is_external', '__return_true', 10, 3);
 			$admin->action('admin_notices', 'admin_notices');
 			$admin->action('cx-plugin_after-nav-items', 'setting_navs_add_item');
 			$admin->filter('admin_body_class', 'admin_body_class');
-			// $admin->filter( 'admin_footer', 'admin_notice' );
+			//$admin->filter('admin_footer', 'admin_notice');
 			$admin->activate('codesigner_widgets_activation');
 			$admin->activate('codesigner_modules_activation');
+			//$admin->action('elementor/editor/after_enqueue_scripts', 'pro_alert_enqueue_scripts'); //
 
 			/**
 			 * Settings related hooks

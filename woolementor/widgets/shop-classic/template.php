@@ -6,7 +6,6 @@ if ( !wcd_is_pro_activated() && !wcd_is_preview_mode() && !wcd_is_edit_mode() ) 
 }
 
 $settings   = $args['settings'];
-
 $products   = wcd_query_products( $settings );     
 $user_id    = get_current_user_id();
 $wishlist   = wcd_get_wishlist( $user_id );
@@ -78,6 +77,7 @@ extract( $settings );
 
                                 <h2 class="wl-sc-price price"><?php echo wp_kses_post( $product->get_price_html() ); ?></h2>
                             </div>
+                            
                             <div class="wl-sc-info-icons">
                                 <?php // do_action( 'codesigner_badge', $settings, $product );
                                 if ( 'yes' == $wishlist_show_hide ): ?>
@@ -111,7 +111,7 @@ extract( $settings );
 
             <?php endwhile; wp_reset_query(); else: 
 
-            echo "<p>" . __( 'No Product Found!', 'codesigner' ) . "</p>";
+            echo "<p>" . esc_html( __( 'No Product Found!', 'codesigner' ) ) . "</p>";
 
         endif;
         ?>
