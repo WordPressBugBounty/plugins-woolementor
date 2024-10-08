@@ -958,7 +958,8 @@ class Order_Pay extends Widget_Base {
 	protected function render() {
         if( !current_user_can( 'edit_pages' ) ) return;
 
-        echo wcd_notice( sprintf( __( 'This beautiful widget, <strong>%s</strong> is a premium widget. Please upgrade to <strong>%s</strong> or activate your license if you already have upgraded!' ), $this->get_name(), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) );
+		// Translators: %1$s is the widget name, %2$s is the link to CoDesigner Pro.
+		echo wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), $this->get_name(), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) );
 
         if( file_exists( dirname( __FILE__ ) . '/assets/img/screenshot.png' ) ) {
             echo "<img src='" . plugins_url( 'assets/img/screenshot.png', __FILE__ ) . "' />";

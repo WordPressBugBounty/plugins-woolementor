@@ -47,7 +47,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'section_tabs',
 			[
-				'label' => __( 'Tabs', 'codesigner-pro' ),
+				'label' => __( 'Tabs', 'codesigner' ),
 			]
 		);
 
@@ -56,10 +56,10 @@ class Dynamic_Tabs extends Widget_Base {
 		$repeater->add_control(
 			'tab_title',
 			[
-				'label' => __( 'Title & Description', 'codesigner-pro' ),
+				'label' => __( 'Title & Description', 'codesigner' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Tab Title', 'codesigner-pro' ),
-				'placeholder' => __( 'Tab Title', 'codesigner-pro' ),
+				'default' => __( 'Tab Title', 'codesigner' ),
+				'placeholder' => __( 'Tab Title', 'codesigner' ),
 				'label_block' => true,
 			]
 		);
@@ -106,17 +106,17 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'tabs',
 			[
-				'label' => __( 'Tabs Items', 'codesigner-pro' ),
+				'label' => __( 'Tabs Items', 'codesigner' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => [
 					[
-						'tab_title' => __( 'Tab #1', 'codesigner-pro' ),
-						'tab_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'codesigner-pro' ),
+						'tab_title' => __( 'Tab #1', 'codesigner' ),
+						'tab_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'codesigner' ),
 					],
 					[
-						'tab_title' => __( 'Tab #2', 'codesigner-pro' ),
-						'tab_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'codesigner-pro' ),
+						'tab_title' => __( 'Tab #2', 'codesigner' ),
+						'tab_content' => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'codesigner' ),
 					],
 				],
 				'title_field' => '{{{ tab_title }}}',
@@ -126,7 +126,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'view',
 			[
-				'label' => __( 'View', 'codesigner-pro' ),
+				'label' => __( 'View', 'codesigner' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'traditional',
 			]
@@ -135,13 +135,13 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'navigation_position',
 			[
-				'label'		 	=> __( 'Navigation Position', 'codesigner-pro' ),
+				'label'		 	=> __( 'Navigation Position', 'codesigner' ),
 				'type' 			=> Controls_Manager::SELECT,
 				'default' 		=> 'top',
 				'options' 		=> [
-					'top' 		=> __( 'Top', 'codesigner-pro' ),
-					'left' 		=> __( 'Left', 'codesigner-pro' ),
-					'right' 	=> __( 'Right', 'codesigner-pro' ),
+					'top' 		=> __( 'Top', 'codesigner' ),
+					'left' 		=> __( 'Left', 'codesigner' ),
+					'right' 	=> __( 'Right', 'codesigner' ),
 				],
 				'prefix_class' 	=> 'wl-dynamic-tabs-view-',
 				'separator' 	=> 'before',
@@ -183,7 +183,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'section_tabs_style',
 			[
-				'label' => __( 'Tabs', 'codesigner-pro' ),
+				'label' => __( 'Tabs', 'codesigner' ),
 				'tab' => Controls_Manager::TAB_STYLE,
 			]
 		);
@@ -191,7 +191,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'heading_title',
 			[
-				'label' => __( 'Title', 'codesigner-pro' ),
+				'label' => __( 'Title', 'codesigner' ),
 				'type' => Controls_Manager::HEADING,
 				'separator' => 'before',
 			]
@@ -200,7 +200,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'tab_color',
 			[
-				'label' => __( 'Color', 'codesigner-pro' ),
+				'label' => __( 'Color', 'codesigner' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'.wl {{WRAPPER}} .wl-dynamic-tab-title, {{WRAPPER}} .wl-dynamic-tab-title a' => 'color: {{VALUE}};',
@@ -214,7 +214,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'tab_active_color',
 			[
-				'label' => __( 'Active Color', 'codesigner-pro' ),
+				'label' => __( 'Active Color', 'codesigner' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'.wl {{WRAPPER}} .wl-dynamic-tab-title.wl-dynamic-tab-active a' => 'color: {{VALUE}};',
@@ -239,7 +239,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'title_padding',
 			[
-				'label' => __( 'Padding', 'codesigner-pro' ),
+				'label' => __( 'Padding', 'codesigner' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -251,7 +251,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'navigation_width',
 			[
-				'label' => __( 'Navigation Width', 'codesigner-pro' ),
+				'label' => __( 'Navigation Width', 'codesigner' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'unit' => '%',
@@ -274,7 +274,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'border_width',
 			[
-				'label' => __( 'Border Width', 'codesigner-pro' ),
+				'label' => __( 'Border Width', 'codesigner' ),
 				'type' => Controls_Manager::SLIDER,
 				'default' => [
 					'size' => 1,
@@ -294,7 +294,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'border_color',
 			[
-				'label' => __( 'Border Color', 'codesigner-pro' ),
+				'label' => __( 'Border Color', 'codesigner' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'.wl {{WRAPPER}} .wl-dynamic-tab-mobile-title, {{WRAPPER}} .wl-dynamic-tab-desktop-title.wl-dynamic-tab-active, {{WRAPPER}} .wl-dynamic-tab-title:before, {{WRAPPER}} .wl-dynamic-tab-title:after, {{WRAPPER}} .wl-dynamic-tab-content, {{WRAPPER}} .wl-dynamic-tabs-content-wrapper' => 'border-color: {{VALUE}};',
@@ -305,7 +305,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'background_color',
 			[
-				'label' => __( 'Background Color', 'codesigner-pro' ),
+				'label' => __( 'Background Color', 'codesigner' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'.wl {{WRAPPER}} .wl-dynamic-tab-desktop-title.wl-dynamic-tab-active' => 'background-color: {{VALUE}};',
@@ -320,7 +320,7 @@ class Dynamic_Tabs extends Widget_Base {
         $this->start_controls_section(
         	'section_Content_style',
         	[
-        		'label' => __( 'Content', 'codesigner-pro' ),
+        		'label' => __( 'Content', 'codesigner' ),
         		'tab' => Controls_Manager::TAB_STYLE,
         	]
         );
@@ -328,7 +328,7 @@ class Dynamic_Tabs extends Widget_Base {
         $this->add_control(
 			'content_color',
 			[
-				'label' => __( 'Color', 'codesigner-pro' ),
+				'label' => __( 'Color', 'codesigner' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'.wl {{WRAPPER}} .wl-dynamic-tab-content' => 'color: {{VALUE}};',
@@ -342,7 +342,7 @@ class Dynamic_Tabs extends Widget_Base {
         $this->add_control(
 			'content_bg_color',
 			[
-				'label' => __( 'Background Color', 'codesigner-pro' ),
+				'label' => __( 'Background Color', 'codesigner' ),
 				'type' => Controls_Manager::COLOR,
 				'selectors' => [
 					'.wl {{WRAPPER}} .wl-dynamic-tab-content' => 'background: {{VALUE}};',
@@ -364,7 +364,7 @@ class Dynamic_Tabs extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			[
-				'label' => __( 'Padding', 'codesigner-pro' ),
+				'label' => __( 'Padding', 'codesigner' ),
 				'type' => Controls_Manager::DIMENSIONS,
 				'size_units' => [ 'px', '%', 'em' ],
 				'selectors' => [
@@ -378,9 +378,10 @@ class Dynamic_Tabs extends Widget_Base {
 
 	protected function render() {
         if( !current_user_can( 'edit_pages' ) ) return;
-
-        echo wcd_notice( sprintf( __( 'This beautiful widget, <strong>%s</strong> is a premium widget. Please upgrade to <strong>%s</strong> or activate your license if you already have upgraded!' ), $this->get_name(), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) );
-
+		
+		// Translators: %1$s is the name of the widget, %2$s is the link to CoDesigner Pro.
+		echo wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), $this->get_name(), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) );
+		
         if( file_exists( dirname( __FILE__ ) . '/assets/img/screenshot.png' ) ) {
             echo "<img src='" . plugins_url( '/assets/img/screenshot.png', __FILE__ ) . "' />";
         }

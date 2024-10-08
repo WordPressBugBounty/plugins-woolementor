@@ -325,90 +325,79 @@ class Admin extends Base {
 	}
 
 	// Turn on all widgets while activation
-	function codesigner_widgets_activation() {
-	    // Array to store in the options table
-	    $codesigner_widgets = array(
-	        'shop-classic' => 'on',
-	        'shop-standard' => 'on',
-	        'shop-curvy' => 'on',
-	        'shop-slider' => 'on',
-	        'filter-horizontal' => 'on',
-	        'product-title' => 'on',
-	        'product-price' => 'on',
-	        'product-rating' => 'on',
-	        'product-breadcrumbs' => 'on',
-	        'product-short-description' => 'on',
-	        'product-variations' => 'on',
-	        'product-add-to-cart' => 'on',
-	        'product-sku' => 'on',
-	        'product-stock' => 'on',
-	        'product-additional-information' => 'on',
-	        'product-tabs' => 'on',
-	        'product-meta' => 'on',
-	        'product-categories' => 'on',
-	        'product-tags' => 'on',
-	        'product-thumbnail' => 'on',
-	        'product-gallery' => 'on',
-	        'my-account' => 'on',
-	        'customer-reviews-classic' => 'on',
-	        'tabs-basic' => 'on',
-	        'tabs-classic' => 'on',
-	        'tabs-fancy' => 'on',
-	        'tabs-beauty' => 'on',
-	        'gradient-button' => 'on',
-	        'image-comparison' => 'on',
-	        'pricing-table-advanced' => 'on',
-	        'pricing-table-basic' => 'on',
-	        'related-products-classic' => 'on',
-	        'related-products-standard' => 'on',
-	        'related-products-curvy' => 'on',
-	        'gallery-fancybox' => 'on',
-	        'gallery-lc-lightbox' => 'on',
-	        'gallery-box-slider' => 'on',
-	        'cart-items' => 'on',
-	        'cart-items-classic' => 'on',
-	        'cart-overview' => 'on',
-	        'coupon-form' => 'on',
-	    );
+	public function codesigner_widgets_activation() {
 
-	    if ( ! get_option( 'codesigner_widgets' ) ) {
+		if ( ! get_option( 'codesigner_widgets' ) ) {
+
+			$codesigner_widgets = array(
+		        'shop-classic' => 'on',
+		        'shop-standard' => 'on',
+		        'shop-curvy' => 'on',
+		        'shop-slider' => 'on',
+		        'filter-horizontal' => 'on',
+		        'product-title' => 'on',
+		        'product-price' => 'on',
+		        'product-rating' => 'on',
+		        'product-breadcrumbs' => 'on',
+		        'product-short-description' => 'on',
+		        'product-variations' => 'on',
+		        'product-add-to-cart' => 'on',
+		        'product-sku' => 'on',
+		        'product-stock' => 'on',
+		        'product-additional-information' => 'on',
+		        'product-tabs' => 'on',
+		        'product-meta' => 'on',
+		        'product-categories' => 'on',
+		        'product-tags' => 'on',
+		        'product-thumbnail' => 'on',
+		        'product-gallery' => 'on',
+		        'my-account' => 'on',
+		        'customer-reviews-classic' => 'on',
+		        'tabs-basic' => 'on',
+		        'tabs-classic' => 'on',
+		        'tabs-fancy' => 'on',
+		        'tabs-beauty' => 'on',
+		        'gradient-button' => 'on',
+		        'image-comparison' => 'on',
+		        'pricing-table-advanced' => 'on',
+		        'pricing-table-basic' => 'on',
+		        'related-products-classic' => 'on',
+		        'related-products-standard' => 'on',
+		        'related-products-curvy' => 'on',
+		        'gallery-fancybox' => 'on',
+		        'gallery-lc-lightbox' => 'on',
+		        'gallery-box-slider' => 'on',
+		        'cart-items' => 'on',
+		        'cart-items-classic' => 'on',
+		        'cart-overview' => 'on',
+		        'coupon-form' => 'on',
+		    );
+
 	    	add_option( 'codesigner_widgets', $codesigner_widgets );
 	    }
 	}
 
+	// Turn on all modules while activation
+	public function codesigner_modules_activation() {
 
-	function codesigner_modules_activation() {
-	    // Array to store in the options table
-	    $codesigner_modules = array(
-	        'product-brands' => 'on',
-	        'cart-button-text' => 'on',
-	        'skip-cart-page' => 'on',
-	        'variation-swatches' => 'on',
-	        'flash-sale' => 'on',
-	        'partial-payment' => 'on',
-	        'backorder' => 'on',
-	        'preorder' => 'on',
-	        'bulk-purchase-discount' => 'on',
-	        'single-product-ajax' => 'on',
-	        'badges' => 'on',
-	        'currency-switcher' => 'on',
-	    );
+		if ( ! get_option( 'codesigner_modules' ) ) {
 
-	    // Save the array in the WordPress options table only if it doesn't exist (first time)
-	    if ( ! get_option( 'codesigner_modules' ) ) {
+			$codesigner_modules = array(
+				'product-brands' => 'on',
+				'cart-button-text' => 'on',
+				'skip-cart-page' => 'on',
+				'variation-swatches' => 'on',
+				'flash-sale' => 'on',
+				'partial-payment' => 'on',
+				'backorder' => 'on',
+				'preorder' => 'on',
+				'bulk-purchase-discount' => 'on',
+				'single-product-ajax' => 'on',
+				'badges' => 'on',
+				'currency-switcher' => 'on',
+			);
+
 	        add_option( 'codesigner_modules', $codesigner_modules );
 	    }
 	}
-
-
-
-
-
-
-
-
-
-
-
-
 }
