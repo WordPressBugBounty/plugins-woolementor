@@ -1,36 +1,66 @@
 [id*="codesigner"] .elementor-element-wrapper .icon {
 	color: #080205 !important;
 }
-.wl-pro-text{
-	color: #E9345F;
+.wl-pro-text {
+	color: #e9345f;
 }
 .elementor-control-non_shop_souce_tab {
-    display: none;
+	display: none;
 }
-.elementor-control-raw-html.elementor-alert._preview_important_note{
-    border-left: 5px solid #71d7f7;
-    padding-left: 7px;
+.elementor-control-raw-html.elementor-alert._preview_important_note {
+	border-left: 5px solid #71d7f7;
+	padding-left: 7px;
 }
 /*Woolemenor Branding Icon*/
-.elementor-control-codesigner_control_section:after ,
+.elementor-control-codesigner_control_section:after,
 .elementor-panel .elementor-element .icon .wlbi:after {
-    position: absolute;
-    top: 5px;
-    right: -3px;
-    content: "WL";
-    font-size: 16px;
-    opacity: .3;
-    background-image: url(../img/icon.png);
-    background-size: 16px;
-    background-repeat: no-repeat;
-    color: transparent;
+	position: absolute;
+	top: 5px;
+	right: -3px;
+	content: "WL";
+	font-size: 16px;
+	opacity: 0.3;
+	background-image: url(../img/icon.png);
+	background-size: 16px;
+	background-repeat: no-repeat;
+	color: transparent;
+}
+
+.elementor-panel .elementor-element .icon .wlbi-promo::after {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	content: "WL";
+	font-size: 16px;
+	opacity: 0.3;
+	background-image: url(../img/icon.png);
+	background-size: 16px;
+	background-repeat: no-repeat;
+	color: transparent;
 }
 .elementor-control-codesigner_control_section::after {
-    top: 10px;
-    right: 10px;
-    opacity: 1; 
+	top: 10px;
+	right: 10px;
+	opacity: 1;
 }
 .elementor-panel .elementor-element:hover .icon .wlbi:after,
 .elementor-panel .elementor-element:focus .icon .wlbi:after {
 	opacity: 1;
 }
+.non-editable-pro-widget {
+	pointer-events: none; /* Disables clicking and other pointer events */
+	opacity: 0.5; /* Visual cue that the widget is disabled */
+}
+.elementor-locked-widget {
+	cursor: not-allowed;
+	opacity: 0.5;
+}
+.dialog-confirm-container .codesigner-btn--promotion {
+	display: block !important;
+}
+/* .codesigner-icon-advanced-menu::before {
+	content: "\f0dd";
+}
+.codesigner-icon-content-timeline::before {
+	content: "\f017";
+} */

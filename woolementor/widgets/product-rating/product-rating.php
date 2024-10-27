@@ -214,16 +214,14 @@ class Product_Rating extends Widget_Base {
 
 		if ( ( wcd_is_edit_mode() || wcd_is_preview_mode() ) && $product->get_rating_count() < 1 ) {
 			$review_count = 5;
-			$average      = 5;
 			?>
 			<div class="wcd-demo-product-rating">
-				<?php echo esc_html( wcd_rating_html( 4 ) ); ?>
+				<?php echo wcd_rating_html( 4 ) ; ?>
 				<a href="#reviews" class="woocommerce-review-link" rel="nofollow">
-					(<?php printf( esc_html( _n( '%s customer review', '%s customer reviews', $review_count, 'woocommerce' ) ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)
+					(<?php printf( esc_html( _n( '%s customer review', '%s customer reviews', $review_count, 'codesigner' ) ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)
 				</a>
 			</div>
 		<?php }
-
 		wc_get_template( 'single-product/rating.php' );
 		echo "</div>";
 

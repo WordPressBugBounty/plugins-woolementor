@@ -243,7 +243,7 @@ class Product_Sku extends Widget_Base {
 		$this->add_control(
 			'payment_default_styles',
 			[
-				'label' 	=> __( 'Display', 'codesigner-pro' ),
+				'label' 	=> __( 'Display', 'codesigner' ),
 				'type' 		=> Controls_Manager::HIDDEN,
 				'selectors' => [
 					'.wl {{WRAPPER}} .wl-product-sku p.sku_wrapper' => 'margin: 0;',

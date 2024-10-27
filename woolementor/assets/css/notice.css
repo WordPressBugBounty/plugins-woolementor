@@ -1,5 +1,34 @@
 /* In 2024 New Banner Release for specific time period  */
-.cx-free-banner-img{
-    margin-top: 10px;
-    width: 102%;
+.cx-free-banner-img {
+	margin-top: 10px;
+	width: 102%;
+}
+.codesigner-dismissible-notice {
+	align-items: center;
+	justify-content: space-around;
+	display: flex;
+	gap: 0px;
+	background: url("../img/promo/year-end.png") no-repeat;
+	background-size: cover;
+	padding: 22px 0px 22px 0px;
+}
+.codesigner-dismissible-notice a {
+	text-decoration: none;
+}
+.codesigner-dismissible-notice .codesigner-dismissible-notice-button {
+	font-size: 16px;
+	font-weight: 600;
+	color: #000000;
+	background-color: #fcb60d;
+	border: none;
+	cursor: pointer;
+	padding: 10px 22px;
+	border-radius: 20px;
+	border-bottom: 4px solid #ffebbb;
+}
+.codesigner-dismissible-notice a:focus {
+	box-shadow: 0 0 0 0 !important;
+}
+.codesigner-dismissible-notice .codesigner-dismissible-notice-button:hover {
+	border-bottom: none;
 }

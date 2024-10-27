@@ -1481,13 +1481,13 @@ endif;
 if( !function_exists( 'wcd_product_source_type' ) ) :
 function wcd_product_source_type() {
 	$options = [
-		'shop'                  => __( 'Shop', 'codesigner-pro' ),
-		'related-products'      => __( 'Related Products', 'codesigner-pro' ),
-		'upsells'               => __( 'Up Sells', 'codesigner-pro' ),
-		'cross-sells'           => __( 'Cross Sells', 'codesigner-pro' ),
-		'cart-upsells'          => __( 'Cart Up Sells', 'codesigner-pro' ),
-		'cart-cross-sells'      => __( 'Cart Cross Sells', 'codesigner-pro' ),
-		'cart-related-products' => __( 'Cart Related Products', 'codesigner-pro' ),
+		'shop'                  => __( 'Shop', 'codesigner' ),
+		'related-products'      => __( 'Related Products', 'codesigner' ),
+		'upsells'               => __( 'Up Sells', 'codesigner' ),
+		'cross-sells'           => __( 'Cross Sells', 'codesigner' ),
+		'cart-upsells'          => __( 'Cart Up Sells', 'codesigner' ),
+		'cart-cross-sells'      => __( 'Cart Cross Sells', 'codesigner' ),
+		'cart-related-products' => __( 'Cart Related Products', 'codesigner' ),
 	];
 
 	return apply_filters( 'wcd_product_source_type', $options );
@@ -1871,33 +1871,33 @@ endif;
  * @since 1.0
  */
 if( !function_exists( 'wcd_checkout_fields' ) ) :
-function wcd_checkout_fields( $section = 'billing' ) {
-	if( !function_exists( 'WC' ) ) return [];
+	function wcd_checkout_fields( $section = 'billing' ) {
+		if( !function_exists( 'WC' ) ) return [];
 
-	if ( is_admin() ) {
-		WC()->session = new \WC_Session_Handler();
-		WC()->session->init();
-	}
-
-	$get_fields = WC()->checkout->get_checkout_fields();
-
-	$fields = [];
-	foreach ( $get_fields[ $section ] as $key => $field ) {
-		if( isset( $field['label'] ) ) {
-			$fields[] = [
-				"{$section}_input_label"        => $field['label'],
-				"{$section}_input_name"         => $key,
-				"{$section}_input_required"     => isset( $field['required'] ) ? $field['required'] : false,
-				"{$section}_input_type"         => isset( $field['type'] ) ? $field['type'] : 'text',
-				"{$section}_input_class"        => $field['class'] ,
-				"{$section}_input_autocomplete" => isset( $field['autocomplete'] ) ? $field['autocomplete'] : '' ,
-				"{$section}_input_placeholder"  => isset( $field['placeholder'] ) ? $field['placeholder'] : '' ,
-			];
+		if ( is_admin() ) {
+			WC()->session = new \WC_Session_Handler();
+			WC()->session->init();
 		}
-	}
 
-	return $fields;
-}
+		$get_fields = WC()->checkout->get_checkout_fields();
+
+		$fields = [];
+		foreach ( $get_fields[ $section ] as $key => $field ) {
+			if( isset( $field['label'] ) ) {
+				$fields[] = [
+					"{$section}_input_label"        => $field['label'],
+					"{$section}_input_name"         => $key,
+					"{$section}_input_required"     => isset( $field['required'] ) ? $field['required'] : false,
+					"{$section}_input_type"         => isset( $field['type'] ) ? $field['type'] : 'text',
+					"{$section}_input_class"        => $field['class'] ,
+					"{$section}_input_autocomplete" => isset( $field['autocomplete'] ) ? $field['autocomplete'] : '' ,
+					"{$section}_input_placeholder"  => isset( $field['placeholder'] ) ? $field['placeholder'] : '' ,
+				];
+			}
+		}
+
+		return $fields;
+	}
 endif;
 
 /**
@@ -2296,7 +2296,7 @@ endif;
 /**
  * 
  * 
- * @author Soikut <shadekur.rahman60@@gmail.com>
+ * @author Soikut <shadekur.rahman60@gmail.com>
  * @since 4.5.6
  */
 
@@ -2305,29 +2305,375 @@ if( ! function_exists( 'codesigner_notices_values' ) ) :
 
 		$current_time = date_i18n('U');
 
+		// return [
+		// 	'checkout_notice'=> [
+		// 		'text'		=> __( '<strong>70%</strong> of shoppers leave their cart before completing checkout. Make your Checkout conversion optimized and never lose a customer again.', 'codesigner' ),
+		// 		'from'		=> $current_time,
+		// 		'to'		=> $current_time + 48 * HOUR_IN_SECONDS,
+		// 		'button'	=> __( 'Customize Your Checkout', 'codesigner' ),
+		// 		'url'		=> "https://codexpert.io/codesigner/pricing/?utm_source=In-plugin&utm_medium=offer+notice&utm_campaign=Checkout"
+		// 	],
+		// 	'email_notice'=> [
+		// 		'text'		=> __( '<strong>9%</strong> of the total ecommerce website traffic comes from emails. Create and send awesome branded email campaigns with CoDesigner.', 'codesigner' ),
+		// 		'from'		=> $current_time + 120 * HOUR_IN_SECONDS,
+		// 		'to'		=> $current_time + 168 * HOUR_IN_SECONDS,
+		// 		'button'	=> __( 'Start Sending Awesome Emails', 'codesigner' ),
+		// 		'url'		=> "https://codexpert.io/codesigner/pricing/?utm_source=In-plugin&utm_medium=offer+notice&utm_campaign=Email"
+		// 	],
+		// 	'invoice_notice'=> [
+		// 		'text'			=> __( '<strong>57%</strong> of invoice data is entered manually. Automate your WooCommerce store invoicing with CoDesigner.', 'codesigner' ),
+		// 		'from'			=> $current_time + 240 * HOUR_IN_SECONDS,
+		// 		'to'			=>  $current_time + 288 * HOUR_IN_SECONDS,
+		// 		'button'		=> __( 'Automate Your Invoicing', 'codesigner' ),
+		// 		'url'		=> "https://codexpert.io/codesigner/pricing/?utm_source=In-plugin&utm_medium=offer+notice&utm_campaign=Invoice"
+		// 	],
+		// ];
 		return [
-			'checkout_notice'=> [
-				'text'		=> __( '<strong>70%</strong> of shoppers leave their cart before completing checkout. Make your Checkout conversion optimized and never lose a customer again.', 'codesigner' ),
-				'from'		=> $current_time,
-				'to'		=> $current_time + 48 * HOUR_IN_SECONDS,
-				'button'	=> __( 'Customize Your Checkout', 'codesigner' ),
-				'url'		=> "https://codexpert.io/codesigner/pricing/?utm_source=In-plugin&utm_medium=offer+notice&utm_campaign=Checkout"
-			],
-			'email_notice'=> [
-				'text'		=> __( '<strong>9%</strong> of the total ecommerce website traffic comes from emails. Create and send awesome branded email campaigns with CoDesigner.', 'codesigner' ),
-				'from'		=> $current_time + 120 * HOUR_IN_SECONDS,
-				'to'		=> $current_time + 168 * HOUR_IN_SECONDS,
-				'button'	=> __( 'Start Sending Awesome Emails', 'codesigner' ),
-				'url'		=> "https://codexpert.io/codesigner/pricing/?utm_source=In-plugin&utm_medium=offer+notice&utm_campaign=Email"
-			],
-			'invoice_notice'=> [
-				'text'			=> __( '<strong>57%</strong> of invoice data is entered manually. Automate your WooCommerce store invoicing with CoDesigner.', 'codesigner' ),
-				'from'			=> $current_time + 240 * HOUR_IN_SECONDS,
-				'to'			=>  $current_time + 288 * HOUR_IN_SECONDS,
-				'button'		=> __( 'Automate Your Invoicing', 'codesigner' ),
-				'url'		=> "https://codexpert.io/codesigner/pricing/?utm_source=In-plugin&utm_medium=offer+notice&utm_campaign=Invoice"
+			'promotional_image' => [
+				'from'   => $current_time,
+				'to'     => $current_time + 48 * HOUR_IN_SECONDS,
+				'button' => __('Grab Now', 'codesigner'),
+				'url'    => "https://codexpert.io/codesigner/pricing?utm_source=IN+PLUGIN&utm_medium=NOTICE&utm_campaign=OCTOBER+THRILLS",
 			],
 		];
 	}
 endif;
 
+/**
+ * 
+ * 
+ * @author Soikut <shadekur.rahman60@gmail.com>
+ * @since 4.7.1
+ */
+
+ if( ! function_exists( 'promotional_widgets' ) ) :
+ function promotional_widgets() {
+	$wlbi_promo = 'wlbi-promo'; 
+	return [
+		[
+			'name'       => 'codesigner-shop-flip',
+			'title'      => __( 'Shop Flip', 'codesigner' ),
+			'icon'       => 'eicon-flip-box' . ' ' . $wlbi_promo, 
+			'category' 	 => 'codesigner-shop',
+		],
+		[
+			'name'       => 'codesigner-shop-shopify',
+			'title'      => __( 'Shop Shopify', 'codesigner' ),
+			'icon'       => 'eicon-thumbnails-half' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-shop',
+		],
+		[
+			'name'       => 'codesigner-shop-trendy',
+			'title'      => __( 'Shop Trendy', 'codesigner' ),
+			'icon'       => 'eicon-products' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-shop',
+		],
+		[
+			'name'       => 'codesigner-shop-curvy-horizontal',
+			'title'      => __( 'Shop Curvy Horizontal' . ' ' . $wlbi_promo, 'codesigner' ),
+			'icon'       => 'eicon-posts-group',
+			'category' 	 => 'codesigner-shop',
+		],
+		[
+			'name'       => 'codesigner-shop-accordion',
+			'title'      => __( 'Shop Accordion', 'codesigner' ),
+			'icon'       => 'eicon-accordion' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-shop',
+		],
+		[
+			'name'       => 'codesigner-shop-table',
+			'title'      => __( 'Shop Table', 'codesigner' ),
+			'icon'       => 'eicon-table' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-shop',
+		],
+		[
+			'name'       => 'codesigner-shop-beauty',
+			'title'      => __( 'Shop Beauty', 'codesigner' ),
+			'icon'       => 'eicon-thumbnails-half' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-shop' . ' ' . $wlbi_promo,
+		],
+		[
+			'name'       => 'codesigner-shop-smart',
+			'title'      => __( 'Shop Smart', 'codesigner' ),
+			'icon'       => 'eicon-thumbnails-half' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-shop',
+		],
+		[
+			'name'       => 'codesigner-shop-minimal',
+			'title'      => __( 'Shop Minimal', 'codesigner' ),
+			'icon'       => 'eicon-thumbnails-half' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-shop',
+		],
+		[
+			'name'       => 'codesigner-shop-wix',
+			'title'      => __( 'Shop Wix', 'codesigner' ),
+			'icon'       => 'eicon-thumbnails-half' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-shop',
+		],
+		// [
+		// 	'name'       => 'codesigner-shop-shopify',
+		// 	'title'      => __( 'Shop Shopify', 'codesigner' ),
+		// 	'icon'       => 'eicon-thumbnails-half',
+		// 	'category' 	 => 'codesigner-shop',
+		// ],
+		[
+			'name'       => 'codesigner-filter-vertical',
+			'title'      => __( 'Filter Vertical', 'codesigner' ),
+			'icon'       => 'eicon-ellipsis-v' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-filter',
+		],
+		[
+			'name'       => 'codesigner-filter-advance',
+			'title'      => __( 'Filter Advance', 'codesigner' ),
+			'icon'       => 'eicon-filter' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-filter',
+		],
+		[
+			'name'       => 'codesigner-product-dynamic-tabs',
+			'title'      => __( 'Product Dynamic Tabs', 'codesigner' ),
+			'icon'       => 'eicon-product-tabs' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-single',
+		],
+		[
+			'name'       => 'codesigner-product-comparison-button',
+			'title'      => __( 'Add to Compare', 'codesigner' ),
+			'icon'       => 'eicon-cart' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-single',
+		],
+		[
+			'name'       => 'codesigner-ask-for-price',
+			'title'      => __( 'Ask for Price', 'codesigner' ),
+			'icon'       => 'eicon-cart' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-single',
+		],
+		[
+			'name'       => 'codesigner-quick-checkout-button',
+			'title'      => __( 'Quick Checkout Button', 'codesigner' ),
+			'icon'       => 'eicon-cart' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-single',
+		],
+		[
+			'name'       => 'codesigner-product-barcode',
+			'title'      => __( 'Product Barcode', 'codesigner' ),
+			'icon'       => 'eicon-barcode' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-single',
+		],
+		[
+			'name'       => 'codesigner-pricing-table-regular',
+			'title'      => __( 'Pricing Table Regular', 'codesigner' ),
+			'icon'       => 'eicon-price-table' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-pricing',
+		],
+		[
+			'name'       => 'codesigner-pricing-table-smart',
+			'title'      => __( 'Pricing Table Smart', 'codesigner' ),
+			'icon'       => 'eicon-price-table' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-pricing',
+		],
+		[
+			'name'       => 'codesigner-pricing-table-fancy',
+			'title'      => __( 'Pricing Table Fancy', 'codesigner' ),
+			'icon'       => 'eicon-price-table' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-pricing',
+		],
+		[
+			'name'       => 'codesigner-related-products-flip',
+			'title'      => __( 'Related Products Flip', 'codesigner' ),
+			'icon'       => 'eicon-flip-box' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-related',
+		],
+		[
+			'name'       => 'codesigner-related-products-trendy',
+			'title'      => __( 'Related Products Trendy', 'codesigner' ),
+			'icon'       => 'eicon-products' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-related',
+		],
+		[
+			'name'       => 'codesigner-related-products-accordion',
+			'title'      => __( 'Related Products Accordion', 'codesigner' ),
+			'icon'       => 'eicon-accordion' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-related',
+		],
+		[
+			'name'       => 'codesigner-related-products-table',
+			'title'      => __( 'Related Products Table', 'codesigner' ),
+			'icon'       => 'eicon-accordion' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-related',
+		],
+		[
+			'name'       => 'codesigner-floating-cart',
+			'title'      => __( 'Floating Cart' . ' ' . $wlbi_promo, 'codesigner' ),
+			'icon'       => 'eicon-product-meta',
+			'category' 	 => 'codesigner-cart',
+		],
+		[
+			'name'       => 'codesigner-billing-address',
+			'title'      => __( 'Billing Address', 'codesigner' ),
+			'icon'       => 'eicon-google-maps' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-checkout',
+		],
+		[
+			'name'       => 'codesigner-shipping-address',
+			'title'      => __( 'Shipping Address', 'codesigner' ),
+			'icon'       => 'eicon-google-maps' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-checkout',
+		],
+		[
+			'name'       => 'codesigner-order-notes',
+			'title'      => __( 'Order Notes', 'codesigner' ),
+			'icon'       => 'eicon-table-of-contents' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-checkout',
+		],
+		[
+			'name'       => 'codesigner-order-review',
+			'title'      => __( 'Order Review', 'codesigner' ),
+			'icon'       => 'eicon-product-info' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-checkout',
+		],
+		[
+			'name'       => 'codesigner-order-pay',
+			'title'      => __( 'Order Pay', 'codesigner' ),
+			'icon'       => 'eicon-product-info' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-checkout',
+		],
+		[
+			'name'       => 'codesigner-payment-methods',
+			'title'      => __( 'Payment Methods', 'codesigner' ),
+			'icon'       => 'eicon-product-upsell' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-checkout',
+		],
+		[
+			'name'       => 'codesigner-thankyou',
+			'title'      => __( 'Thank You', 'codesigner' ),
+			'icon'       => 'eicon-nerd' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-checkout',
+		],
+		[
+			'name'       => 'codesigner-checkout-login',
+			'title'      => __( 'Checkout Login', 'codesigner' ),
+			'icon'       => 'eicon-lock-user' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-checkout',
+		],
+		[
+			'name'       => 'codesigner-email-header',
+			'title'      => __( 'Email Header', 'codesigner' ),
+			'icon'       => 'eicon-header' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-email-footer',
+			'title'      => __( 'Email Footer', 'codesigner' ),
+			'icon'       => 'eicon-footer' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-email-item-details',
+			'title'      => __( 'Email Item Details', 'codesigner' ),
+			'icon'       => 'eicon-kit-details' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-email-billing-addresses',
+			'title'      => __( 'Email Billing Addresses', 'codesigner' ),
+			'icon'       => 'eicon-table-of-contents' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-email-shipping-addresses',
+			'title'      => __( 'Email Shipping Addresses', 'codesigner' ),
+			'icon'       => 'eicon-purchase-summary' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-email-customer-note',
+			'title'      => __( 'Email Customer Note', 'codesigner' ),
+			'icon'       => 'eicon-document-file' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-email-order-note',
+			'title'      => __( 'Email Order Note', 'codesigner' ),
+			'icon'       => 'eicon-document-file' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-email-description',
+			'title'      => __( 'Email Description', 'codesigner' ),
+			'icon'       => 'eicon-menu-toggle' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-email-reminder',
+			'title'      => __( 'Email Reminder', 'codesigner' ),
+			'icon'       => 'eicon-menu-toggle' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-email',
+		],
+		[
+			'name'       => 'codesigner-my-account-advanced',
+			'title'      => __( 'My Account Advanced', 'codesigner' ),
+			'icon'       => 'eicon-call-to-action' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-wishlist',
+			'title'      => __( 'Wishlist', 'codesigner' ),
+			'icon'       => 'eicon-heart-o' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-customer-reviews-standard',
+			'title'      => __( 'Customer Reviews Standard', 'codesigner' ),
+			'icon'       => 'eicon-review' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-customer-reviews-trendy',
+			'title'      => __( 'Customer Reviews Trendy', 'codesigner' ),
+			'icon'       => 'eicon-rating' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-faqs-accordion',
+			'title'      => __( 'FAQs Accordion', 'codesigner' ),
+			'icon'       => 'eicon-accordion' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-sales-notification',
+			'title'      => __( 'Sales Notification', 'codesigner' ),
+			'icon'       => 'eicon-posts-ticker' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-category',
+			'title'      => __( 'Shop Categories', 'codesigner' ),
+			'icon'       => 'eicon-flow' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-basic-menu',
+			'title'      => __( 'Basic Menu', 'codesigner' ),
+			'icon'       => 'eicon-nav-menu' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-dynamic-tabs',
+			'title'      => __( 'Dynamic Tabs', 'codesigner' ),
+			'icon'       => 'eicon-tabs' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-menu-cart',
+			'title'      => __( 'Menu Cart', 'codesigner' ),
+			'icon'       => 'eicon-cart' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner',
+		],
+		[
+			'name'       => 'codesigner-product-add-to-wishlist',
+			'title'      => __( 'Add to Wishlist', 'codesigner' ),
+			'icon'       => 'eicon-tags' . ' ' . $wlbi_promo,
+			'category' 	 => 'codesigner-single',
+		]
+	];
+}
+endif;

@@ -205,7 +205,7 @@ class Related_Products_Curvy extends Widget_Base {
 		$this->start_controls_section(
             'section_content_cart',
             [
-                'label' => __( 'Cart', 'codesigner' ) . wcd_pro_text(),
+                'label' => __( 'Cart', 'codesigner' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -230,7 +230,7 @@ class Related_Products_Curvy extends Widget_Base {
         $this->start_controls_section(
             'section_content_wishlist',
             [
-                'label' => __( 'Wishlist', 'codesigner' ) . wcd_pro_text(),
+                'label' => __( 'Wishlist', 'codesigner' ),
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );

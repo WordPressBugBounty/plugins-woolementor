@@ -55,17 +55,17 @@ class Widgets extends Base {
 		$this->active_controls 	= $this->active_widgets;
 		$this->assets 	= CODESIGNER_ASSETS;
 	}
-
-	public function enqueue_styles() {
+	public function enqueue_styles($class) {
 
 		// Are we in debug mode?
 		$min 	= defined( 'CODESIGNER_DEBUG' ) && CODESIGNER_DEBUG ? '' : '.min';
 
 		wp_enqueue_style( 'dashicons' );
-		wp_enqueue_style( "{$this->slug}-editor", "{$this->assets}/css/editor{$min}.css", '', $this->version, 'all' );
+		wp_enqueue_style( "{$this->slug}-editor", "{$this->assets}/css/editor.css", '', $this->version, 'all' );
 		wp_enqueue_style( 'codesigner-font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0', 'all' );
 		wp_enqueue_style( 'font-awesome-free', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css', '', $this->version, 'all' );
-
+		wp_enqueue_script('jquery-ui-dialog');
+		wp_enqueue_style('wp-jquery-ui-dialog');
 		$enable = Helper::get_option( 'codesigner_tools', 'cross_domain_copy_paste' );
 		if ( $enable == 'on' ) {
 			/**
@@ -75,9 +75,18 @@ class Widgets extends Base {
 			wp_enqueue_script( "{$this->slug}-xdLocalStorage", "{$this->assets}/third-party/xdLocalStorage/xdLocalStorage.min.js", [], $this->version, true );
 			wp_enqueue_script( "{$this->slug}-xd-copy-paste", "{$this->assets}/js/xd-copy-paste.js", [], $this->version, true );
 		}
-
-		wp_enqueue_script( "{$this->slug}-editor", "{$this->assets}/js/editor.js", [], $this->version, true );
-		
+		if (\Elementor\Plugin::$instance->editor->is_edit_mode()) {
+			$promotional_widgets = [];
+			if ( !defined( 'CODESIGNER_PRO_DIR' ) || !wcd_is_pro_activated() ) {
+				$promotional_widgets = promotional_widgets();
+			}
+	
+			wp_enqueue_script( "{$this->slug}-editor", "{$this->assets}/js/editor.js", [], $this->version, true );
+			wp_localize_script("{$this->slug}-editor", 'CODESIGNER', [
+				'widgetName' => $class,
+				'promotional_widgets' => $promotional_widgets,
+			]);
+		}		
 		// theme compatibilty
 		if( file_exists( CODESIGNER_DIR . '/assets/css/themes/' . ( $template = get_stylesheet() ) . "{$min}.css" ) ) {
 			wp_enqueue_style( "{$this->slug}-{$template}", "{$this->assets}/css/themes/{$template}{$min}.css", '', $this->version, 'all' );
@@ -116,6 +125,7 @@ class Widgets extends Base {
 			
 			$class	= str_replace( ' ', '_', ucwords( str_replace( array( '-', '.php' ), array( ' ', '' ), $active_widget ) ) );
 			$widget	= '';
+			$is_pro = wcd_is_pro_feature($active_widget);
 
 			if(
 				wcd_is_pro_feature( $active_widget ) &&
@@ -262,7 +272,7 @@ class Widgets extends Base {
 		$element->start_controls_section(
 		    'product_source_control',
 		    [
-		        'label' => __( 'Product Source', 'codesigner-pro' ),
+		        'label' => __( 'Product Source', 'codesigner' ),
 		        'tab'   => Controls_Manager::TAB_CONTENT,
 		    ]
 		);
@@ -271,7 +281,7 @@ class Widgets extends Base {
 		$element->add_control(
 		    'product_source',
 		    [
-		        'label'     => __( 'Source Type', 'codesigner-pro' ),
+		        'label'     => __( 'Source Type', 'codesigner' ),
 		        'type'      => Controls_Manager::SELECT,
 		        'default'   => 'shop',
 		        'options'   => wcd_product_source_type(),
@@ -295,18 +305,18 @@ class Widgets extends Base {
 		$element->start_controls_tab(
 		    'non_shop_souce_tab',
 		    [
-		        'label'     => __( '', 'codesigner-pro' ),
+		        'label'     => __( '', 'codesigner' ),
 		    ]
 		);
 
 		$element->add_control(
 		    'content_source',
 		    [
-		        'label' => __( 'Content Source', 'codesigner-pro' ),
+		        'label' => __( 'Content Source', 'codesigner' ),
 		        'type' => Controls_Manager::SELECT,
 		        'options' => [
-		            'current_product'   => __( 'Current Product', 'codesigner-pro' ),
-		            'different_product' => __( 'Custom', 'codesigner-pro' ),
+		            'current_product'   => __( 'Current Product', 'codesigner' ),
+		            'different_product' => __( 'Custom', 'codesigner' ),
 		        ],
 		        'default' => 'current_product' ,
 		        'label_block' => true,
@@ -336,7 +346,7 @@ class Widgets extends Base {
 		$element->add_control(
 		    'main_product_id',
 		    [
-		        'label'     => __( 'Product ID', 'codesigner-pro' ),
+		        'label'     => __( 'Product ID', 'codesigner' ),
 		        'type'      => Controls_Manager::NUMBER,
 		        'default'   => get_post_type( get_the_ID() ) == 'product' ? get_the_ID() : '',
 		        'description'  => __( 'Input the base product ID', 'codesigner-pro' ),
@@ -387,7 +397,7 @@ class Widgets extends Base {
 		$element->add_control(
 		    'ns_exclude_products',
 		    [
-		        'label'     => __( 'Exclude Products', 'codesigner-pro' ),
+		        'label'     => __( 'Exclude Products', 'codesigner' ),
 		        'type'      => Controls_Manager::TEXT,
 		        'separator' => 'before',
 		        'description'  => __( "Comma separated ID's of products that should be excluded", 'codesigner-pro' ),
@@ -592,4 +602,35 @@ class Widgets extends Base {
 		$element->end_controls_tabs();
 		$element->end_controls_section();
 	}
+
+	// public function promote_pro_elements( $config ) {
+	// 	// if ( $this->pro_enabled ) {
+	// 	// 	return $config;
+	// 	// }
+
+	// 	$promotion_widgets = [];
+
+	// 	if ( isset( $config['promotionWidgets'] ) ) {
+	// 		$promotion_widgets = $config['promotionWidgets'];
+	// 	}
+
+	// 	$combine_array = array_merge( $promotion_widgets, [
+	// 		[
+	// 			'name'       => 'codesigner-shop-beauty',
+	// 			'title'      => __( 'Shop Beauty', 'codesigner' ),
+	// 			'icon'       => 'codesigner-icon-advanced-menu',
+	// 			'categories' => '["codesigner-shop"]',
+	// 		],
+	// 		[
+	// 			'name'       => 'codesigner-shop-shopify',
+	// 			'title'      => __( 'Shop Shopify', 'codesigner' ),
+	// 			'icon'       => 'codesigner-icon-content-timeline',
+	// 			'categories' => '["codesigner-shop"]',
+	// 		],
+	// 	] );
+
+	// 	$config['promotionWidgets'] = $combine_array;
+
+	// 	return $config;
+	// }
 }

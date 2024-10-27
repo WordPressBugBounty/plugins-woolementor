@@ -372,7 +372,7 @@ class Filter_Horizontal extends Widget_Base {
 		$this->start_controls_section(
 			'fv_ajax_filter',
 			[
-				'label' 		=> __( 'AJAX Filter', 'codesigner-pro' ) . wcd_pro_text(),
+				'label' 		=> __( 'AJAX Filter', 'codesigner-pro' ),
 				'tab'   		=> Controls_Manager::TAB_CONTENT,
 			]
 		);

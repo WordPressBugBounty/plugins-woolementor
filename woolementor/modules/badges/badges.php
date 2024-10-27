@@ -185,7 +185,7 @@ class Badges extends Base {
         $widget_class->add_control(
             'badge_text_default_styles',
             [
-                'label'     => __( 'Display', 'codesigner-pro' ),
+                'label'     => __( 'Display', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-badge' => 'position: absolute; border-radius: 3px;letter-spacing: 1px;z-index: 999;right: 30px;',
@@ -414,7 +414,7 @@ class Badges extends Base {
         $widget_class->add_control(
             'badge_img_default_styles',
             [
-                'label'     => __( 'Display', 'codesigner-pro' ),
+                'label'     => __( 'Display', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-badge img' => 'position: absolute;z-index: 999;top: 30px;right: 36px;',
@@ -587,7 +587,7 @@ class Badges extends Base {
         $widget_class->add_control(
             'badge_icon_default_styles',
             [
-                'label'     => __( 'Display', 'codesigner-pro' ),
+                'label'     => __( 'Display', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-badge .icons' => 'position: absolute;z-index: 999;right:20px',

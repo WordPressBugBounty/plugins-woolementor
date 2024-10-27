@@ -61,17 +61,17 @@ class Admin extends Base {
 
 	public function upgrade(){
 		$current_time = date_i18n('U');
-		// if( ! get_option('codesigner_notice_done') ){
-		// 	foreach ( codesigner_notices_values() as $id => $notice ) {
-		// 		$data = [
-		// 			'from' => $notice['from'],
-		// 			'to' => $notice['to']
-		// 		];
+		if( ! get_option('codesigner_year_last_notice') ){
+			foreach ( codesigner_notices_values() as $id => $notice ) {
+				$data = [
+					'from' => $notice['from'],
+					'to' => $notice['to']
+				];
 			
-		// 		set_transient($id, $data, $notice['to']);
-		// 	}
-		// 	update_option( 'codesigner_notice_done', 1 );
-		// }
+				set_transient($id, $data, $notice['to']);
+			}
+			update_option( 'codesigner_year_last_notice', 1 );
+		}
 		
 		if (get_option('codesigner_install_time') == '') {
 			update_option('codesigner_install_time', date_i18n('U'));
@@ -206,9 +206,9 @@ class Admin extends Base {
 
 	public function admin_notices(){
 
-		// if ( !defined( 'CODESIGNER_PRO' ) && current_user_can( 'manage_options' ) ) {
+		if ( !defined( 'CODESIGNER_PRO' ) && current_user_can( 'manage_options' ) ) {
 			
-		// 	$current_screen = get_current_screen()->base;
+			$current_screen = get_current_screen()->base;
 
 		// 	if ( $current_screen == 'dashboard' || $current_screen == 'toplevel_page_codesigner' ) {
 		// 		if( isset( $_GET['dismiss'] ) && array_key_exists( $_GET['dismiss'], codesigner_notices_values() ) ) {
@@ -240,8 +240,36 @@ class Admin extends Base {
 		// 				break;
 		// 			}
 		// 		}
-		// 	}				
-		// }
+		// 	}
+			if ( $current_screen == 'dashboard' || $current_screen == 'toplevel_page_codesigner' ) {
+				if( isset( $_GET['dismiss'] ) && array_key_exists( $_GET['dismiss'], codesigner_notices_values() ) ) {
+					delete_transient( sanitize_text_field( $_GET['dismiss'] ) );
+				}
+				foreach ( codesigner_notices_values() as $id => $notice ) {
+					$transient = get_transient( $id );
+					$current_time = date_i18n('U');
+					// $current_time = strtotime( '2024-09-27 12:00:00' );
+					if ($transient && $transient['from'] < $current_time && $current_time < $transient['to']) {
+						printf(
+							'<div class="notice notice-info is-dismissible codesigner-dismissible-notice">
+								<p>
+									<a class="notice-dismiss" href="%1$s"></a>
+								</p>
+								<div class="button-wrapper">
+									<a href="%4$s" class="codesigner-dismissible-notice-button" data-id="%2$s">%3$s</a>
+								</div>
+							</div>',
+							esc_url( add_query_arg('dismiss', $id ) ),
+							esc_attr( $id ),
+							esc_html( $notice['button'] ),
+							esc_url( $notice['url'] )
+						);
+						break;	
+					}
+				}
+			}			
+		}
+
 	}
 
 	public function setting_navs_add_item($settings) {
@@ -330,47 +358,101 @@ class Admin extends Base {
 		if ( ! get_option( 'codesigner_widgets' ) ) {
 
 			$codesigner_widgets = array(
-		        'shop-classic' => 'on',
-		        'shop-standard' => 'on',
-		        'shop-curvy' => 'on',
-		        'shop-slider' => 'on',
-		        'filter-horizontal' => 'on',
-		        'product-title' => 'on',
-		        'product-price' => 'on',
-		        'product-rating' => 'on',
-		        'product-breadcrumbs' => 'on',
-		        'product-short-description' => 'on',
-		        'product-variations' => 'on',
-		        'product-add-to-cart' => 'on',
-		        'product-sku' => 'on',
-		        'product-stock' => 'on',
-		        'product-additional-information' => 'on',
-		        'product-tabs' => 'on',
-		        'product-meta' => 'on',
-		        'product-categories' => 'on',
-		        'product-tags' => 'on',
-		        'product-thumbnail' => 'on',
-		        'product-gallery' => 'on',
-		        'my-account' => 'on',
-		        'customer-reviews-classic' => 'on',
-		        'tabs-basic' => 'on',
-		        'tabs-classic' => 'on',
-		        'tabs-fancy' => 'on',
-		        'tabs-beauty' => 'on',
-		        'gradient-button' => 'on',
-		        'image-comparison' => 'on',
-		        'pricing-table-advanced' => 'on',
-		        'pricing-table-basic' => 'on',
-		        'related-products-classic' => 'on',
-		        'related-products-standard' => 'on',
-		        'related-products-curvy' => 'on',
-		        'gallery-fancybox' => 'on',
-		        'gallery-lc-lightbox' => 'on',
-		        'gallery-box-slider' => 'on',
-		        'cart-items' => 'on',
-		        'cart-items-classic' => 'on',
-		        'cart-overview' => 'on',
-		        'coupon-form' => 'on',
+			    'shop-classic' 						=> 'on',
+			    'shop-standard' 					=> 'on',
+			    'shop-flip' 						=> 'on',
+			    'shop-trendy' 						=> 'on',
+			    'shop-curvy' 						=> 'on',
+			    'shop-curvy-horizontal'				=> 'on',
+			    'shop-slider' 						=> 'on',
+			    'shop-accordion'					=> 'on',
+			    'shop-table' 						=> 'on',
+			    'shop-beauty' 						=> 'on',
+			    'shop-smart' 						=> 'on',
+			    'shop-minimal' 						=> 'on',
+			    'shop-wix' 							=> 'on',
+			    'shop-shopify' 						=> 'on',
+			    'filter-horizontal'					=> 'on',
+			    'filter-vertical'					=> 'on',
+			    'filter-advance'					=> 'on',
+			    'product-title'						=> 'on',
+			    'product-price'						=> 'on',
+			    'product-rating'					=> 'on',
+			    'product-breadcrumbs'				=> 'on',
+			    'product-short-description'			=> 'on',
+			    'product-variations'				=> 'on',
+			    'product-add-to-cart'				=> 'on',
+			    'product-sku'						=> 'on',
+			    'product-stock'						=> 'on',
+			    'product-additional-information'	=> 'on',
+			    'product-tabs'						=> 'on',
+			    'product-dynamic-tabs'				=> 'on',
+			    'product-meta'						=> 'on',
+			    'product-categories'				=> 'on',
+			    'product-tags'						=> 'on',
+			    'product-thumbnail'					=> 'on',
+			    'product-gallery'					=> 'on',
+			    'product-add-to-wishlist'			=> 'on',
+			    'product-comparison-button'			=> 'on',
+			    'ask-for-price'						=> 'on',
+			    'quick-checkout-button'				=> 'on',
+			    'product-barcode'					=> 'on',
+			    'my-account'						=> 'on',
+			    'my-account-advanced'				=> 'on',
+			    'wishlist'							=> 'on',
+			    'customer-reviews-classic'			=> 'on',
+			    'customer-reviews-standard'			=> 'on',
+			    'customer-reviews-trendy'			=> 'on',
+			    'faqs-accordion'					=> 'on',
+			    'tabs-basic'						=> 'on',
+			    'tabs-classic'						=> 'on',
+			    'tabs-fancy'						=> 'on',
+			    'tabs-beauty'						=> 'on',
+			    'gradient-button'					=> 'on',
+			    'sales-notification'				=> 'on',
+			    'category'							=> 'on',
+			    'basic-menu'						=> 'on',
+			    'dynamic-tabs'						=> 'on',
+			    'menu-cart'							=> 'on',
+			    'product-comparison'				=> 'on',
+			    'image-comparison'					=> 'on',
+			    'pricing-table-advanced'			=> 'on',
+			    'pricing-table-basic'				=> 'on',
+			    'pricing-table-regular'				=> 'on',
+			    'pricing-table-smart'				=> 'on',
+			    'pricing-table-fancy'				=> 'on',
+			    'related-products-classic'			=> 'on',
+			    'related-products-standard'			=> 'on',
+			    'related-products-flip'				=> 'on',
+			    'related-products-trendy'			=> 'on',
+			    'related-products-curvy'			=> 'on',
+			    'related-products-accordion'		=> 'on',
+			    'related-products-table'			=> 'on',
+			    'gallery-fancybox'					=> 'on',
+			    'gallery-lc-lightbox'				=> 'on',
+			    'gallery-box-slider'				=> 'on',
+			    'cart-items'						=> 'on',
+			    'cart-items-classic'				=> 'on',
+			    'cart-overview'						=> 'on',
+			    'coupon-form'						=> 'on',
+			    'floating-cart'						=> 'on',
+			    'billing-address'					=> 'on',
+			    'shipping-address'					=> 'on',
+			    'order-notes'						=> 'on',
+			    'order-review'						=> 'on',
+			    'order-pay'							=> 'on',
+			    'payment-methods'					=> 'on',
+			    'thankyou'							=> 'on',
+			    'checkout-login'					=> 'on',
+			    'email-header'						=> 'on',
+			    'email-footer'						=> 'on',
+			    'email-item-details'				=> 'on',
+			    'email-billing-addresses'			=> 'on',
+			    'email-shipping-addresses'			=> 'on',
+			    'email-customer-note'				=> 'on',
+			    'email-order-note'					=> 'on',
+			    'email-description'					=> 'on',
+			    'email-reminder'					=> 'on',
 		    );
 
 	    	add_option( 'codesigner_widgets', $codesigner_widgets );

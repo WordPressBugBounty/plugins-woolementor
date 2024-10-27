@@ -48,7 +48,7 @@ class Product_Dynamic_Tabs extends Widget_Base {
 		$this->start_controls_section(
 			'content_section',
 			[
-				'label' => __( 'Tabs Manager', 'codesigner-pro' ),
+				'label' => __( 'Tabs Manager', 'codesigner' ),
 				'tab' => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -57,11 +57,11 @@ class Product_Dynamic_Tabs extends Widget_Base {
 		$default_tabs = [];
 		if ( empty( $_tabs ) ) {
 			$default_tabs[] = [
-				'tab_title' => __( 'Tab One', 'codesigner-pro' ),
+				'tab_title' => __( 'Tab One', 'codesigner' ),
 				'priority' 	=> 40,
 			];
 			$default_tabs[] = [
-				'tab_title' => __( 'Tab Two', 'codesigner-pro' ),
+				'tab_title' => __( 'Tab Two', 'codesigner' ),
 				'priority' 	=> 50,
 			];
 		}else{
@@ -78,15 +78,15 @@ class Product_Dynamic_Tabs extends Widget_Base {
 
 		$repeater->add_control(
 			'tab_title', [
-				'label' => __( 'Tab Title', 'codesigner-pro' ),
+				'label' => __( 'Tab Title', 'codesigner' ),
 				'type' => Controls_Manager::TEXT,
-				'default' => __( 'Tab #1' , 'codesigner-pro' ),
+				'default' => __( 'Tab #1' , 'codesigner' ),
 			]
 		);
 
 		$repeater->add_control(
 			'tab_id', [
-				'label' => __( 'Tab ID', 'codesigner-pro' ),
+				'label' => __( 'Tab ID', 'codesigner' ),
 				'type' => Controls_Manager::HIDDEN,
 				'default' => 'tab_' . wp_rand(),
 			]
@@ -94,7 +94,7 @@ class Product_Dynamic_Tabs extends Widget_Base {
 
 		$repeater->add_control(
 			'priority', [
-				'label' => __( 'Priority', 'codesigner-pro' ),
+				'label' => __( 'Priority', 'codesigner' ),
 				'type' 	=> Controls_Manager::NUMBER,
 				'default' => 50
 			]
@@ -102,11 +102,11 @@ class Product_Dynamic_Tabs extends Widget_Base {
 
 		$repeater->add_control(
 			'content_type', [
-				'label' => __( 'Content Type', 'codesigner-pro' ),
+				'label' => __( 'Content Type', 'codesigner' ),
 				'type' 	=> Controls_Manager::SELECT,
 				'options' => [
-					'plain_text' 	=> __( 'Plain Text', 'codesigner-pro' ),
-					'template' 		=> __( 'Template', 'codesigner-pro' ),
+					'plain_text' 	=> __( 'Plain Text', 'codesigner' ),
+					'template' 		=> __( 'Template', 'codesigner' ),
 				],
 				'default' => 'plain_text',
 			]
@@ -114,9 +114,9 @@ class Product_Dynamic_Tabs extends Widget_Base {
 
 		$repeater->add_control(
 			'tab_content', [
-				'label' => __( 'Tab Content', 'codesigner-pro' ),
+				'label' => __( 'Tab Content', 'codesigner' ),
 				'type' => Controls_Manager::WYSIWYG,
-				'default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' , 'codesigner-pro' ),
+				'default' => __( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.' , 'codesigner' ),
 				'condition' => [
 					'content_type' => 'plain_text'
 				]
@@ -140,7 +140,7 @@ class Product_Dynamic_Tabs extends Widget_Base {
 		$this->add_control(
 			'tabs_list',
 			[
-				'label' => __( 'Product Tabs', 'codesigner-pro' ),
+				'label' => __( 'Product Tabs', 'codesigner' ),
 				'type' => Controls_Manager::REPEATER,
 				'fields' => $repeater->get_controls(),
 				'default' => $default_tabs,

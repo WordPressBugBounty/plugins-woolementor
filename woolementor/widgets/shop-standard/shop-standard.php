@@ -220,7 +220,7 @@ class Shop_Standard extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_cart',
 			[
-				'label' => __( 'Cart', 'codesigner' ) . wcd_pro_text(),
+				'label' => __( 'Cart', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -245,7 +245,7 @@ class Shop_Standard extends Widget_Base {
 		$this->start_controls_section(
 			'section_content_wishlist',
 			[
-				'label' => __( 'Wishlist', 'codesigner' ) . wcd_pro_text(),
+				'label' => __( 'Wishlist', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			]
 		);
@@ -479,8 +479,8 @@ class Shop_Standard extends Widget_Base {
 			[
 				'label'         => __( 'Show Content', 'codesigner' ),
 				'type'          => Controls_Manager::SWITCHER,
-				'label_on'      => __( 'Show', 'your-plugin' ),
-				'label_off'     => __( 'Hide', 'your-plugin' ),
+				'label_on'      => __( 'Show', 'codesigner' ),
+				'label_off'     => __( 'Hide', 'codesigner' ),
 				'return_value'  => 'yes',
 				'default'       => 'yes',
 			]

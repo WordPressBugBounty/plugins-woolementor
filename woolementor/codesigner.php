@@ -5,7 +5,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.7.2
+ * Version: 4.7.3
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -271,6 +271,7 @@ final class Plugin {
 		$widgets->action('pre_get_posts', 'set_filter_query');
 		$widgets->action('codesigner_shop_query_controls', 'shop_query_controls');
 		$widgets->filter('wcd_product_source_type', 'add_source_type');
+		// $widgets->filter('elementor/editor/localize_settings', 'promote_pro_elements');
 
 		/**
 		 * Modules related hooks

@@ -264,7 +264,7 @@ class Shop_Classic extends Widget_Base {
         $this->start_controls_section(
             'section_content_wishlist',
             [
-                'label' => __( 'Wishlist', 'codesigner' ) . wcd_pro_text(),
+                'label' => __( 'Wishlist', 'codesigner' ) ,
                 'tab'   => Controls_Manager::TAB_CONTENT,
             ]
         );
@@ -328,7 +328,7 @@ class Shop_Classic extends Widget_Base {
         $this->add_control(
             'widget_card_default_styles',
             [
-                'label'     => __( 'Default', 'codesigner-pro' ),
+                'label'     => __( 'Default', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-sc-product-style .button' => 'background: transparent;padding: 0px;',
@@ -501,7 +501,7 @@ class Shop_Classic extends Widget_Base {
         $this->add_control(
             'title_default_styles',
             [
-                'label'     => __( 'Display', 'codesigner-pro' ),
+                'label'     => __( 'Display', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-sc-product-name a' => 'letter-spacing: 1.3px; margin-bottom: 10px;display: inline-block;',
@@ -555,7 +555,7 @@ class Shop_Classic extends Widget_Base {
         $this->add_control(
             'price_default_styles',
             [
-                'label'     => __( 'Display', 'codesigner-pro' ),
+                'label'     => __( 'Display', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-sc-product-info h2.wl-sc-price ins' => 'background: transparent;text-decoration: none;',
@@ -601,8 +601,8 @@ class Shop_Classic extends Widget_Base {
 			[
 				'label'			=> __( 'Show Sale Price', 'codesigner' ),
 				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'Show', 'your-plugin' ),
-				'label_off' 	=> __( 'Hide', 'your-plugin' ),
+				'label_on' 		=> __( 'Show', 'codesigner' ),
+				'label_off' 	=> __( 'Hide', 'codesigner' ),
 				'return_value' 	=> 'block',
 				'default' 		=> 'none',
 				'separator' 	=> 'before',
@@ -705,7 +705,7 @@ class Shop_Classic extends Widget_Base {
         $this->add_control(
             'mage_default_styles',
             [
-                'label'     => __( 'Display', 'codesigner-pro' ),
+                'label'     => __( 'Display', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-sc-product-img' => 'overflow: hidden; height: auto; display: flex; align-items: center; justify-content: center;',
@@ -956,7 +956,7 @@ class Shop_Classic extends Widget_Base {
         $this->add_control(
             'ribbon_default_styles',
             [
-                'label'     => __( 'Display', 'codesigner-pro' ),
+                'label'     => __( 'Display', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-sc-corner-ribbon' => 'position: absolute;text-align: center;letter-spacing: 1px;z-index: 100;top:27px',
@@ -1167,7 +1167,7 @@ class Shop_Classic extends Widget_Base {
         $this->add_control(
             'stock_ribbon_default_styles',
             [
-                'label'     => __( 'Display', 'codesigner-pro' ),
+                'label'     => __( 'Display', 'codesigner' ),
                 'type'      => Controls_Manager::HIDDEN,
                 'selectors' => [
                     '.wl {{WRAPPER}} .wl-sc-stock' => 'position: absolute;text-align: center;letter-spacing: 1px;z-index: 100;top:53px',

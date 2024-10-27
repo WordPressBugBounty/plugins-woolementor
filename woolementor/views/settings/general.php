@@ -207,7 +207,7 @@ $pricing_redirect	= add_query_arg( $pricing_url, 'https://codexpert.io/codesigne
                                 <td><img src="<?php echo esc_url( $tick_yes ); ?>" alt="yes"></td>
                             </tr>
                             <tr>
-                                <td>My Account Advance</td>
+                                <td>My Account Advanced</td>
                                 <td><img src="<?php echo esc_url( $tick_no ); ?>" alt="no"></td>
                                 <td><img src="<?php echo esc_url( $tick_yes ); ?>" alt="yes"></td>
                             </tr>
@@ -592,7 +592,7 @@ $pricing_redirect	= add_query_arg( $pricing_url, 'https://codexpert.io/codesigne
                                 <td><img src="<?php echo esc_url( $tick_yes ); ?>" alt="yes"></td>
                             </tr>
                             <tr>
-                                <td>Quick Checkout ButtonPro</td>
+                                <td>Quick Checkout Button</td>
                                 <td><img src="<?php echo esc_url( $tick_no ); ?>" alt="no"></td>
                                 <td><img src="<?php echo esc_url( $tick_yes ); ?>" alt="yes"></td>
                             </tr>
