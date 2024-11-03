@@ -1,17 +1,84 @@
 /* Notice css Start */
 .is-dismissible.codesigner-dismissible-notice {
-    align-items: center;
-    display: flex;
-    gap: 26px;
+	align-items: center;
+	display: flex;
+	gap: 150px;
+	padding-right: 0px !important;
 }
 .codesigner-dismissible-notice p {
-    font-size: 14px;
+	font-size: 14px;
 }
 .codesigner-dismissible-notice a {
-    text-decoration: none;
+	text-decoration: none;
 }
 .codesigner-dismissible-notice button {
-    font-size: 14px;
-    font-weight: 700;
+	font-size: 14px;
+	font-weight: 700;
 }
+.codesigner-dismissible-notice-content {
+	display: flex;
+	align-items: center;
+	gap: 80px;
+}
+.codesigner-countdown {
+	margin-left: 100px;
+}
+.cx-count {
+	display: inline-block;
+	margin: 0 10px;
+	text-align: center;
+	width: 48px;
+	height: 42px;
+	background-image: radial-gradient(
+			circle at 100% 100%,
+			transparent 1px,
+			#ffffff 1px,
+			#ffffff 2px,
+			transparent 2px
+		),
+		linear-gradient(to right, #ffffff, #ffffff),
+		radial-gradient(
+			circle at 0% 100%,
+			transparent 1px,
+			#ffffff 1px,
+			#ffffff 2px,
+			transparent 2px
+		),
+		linear-gradient(to bottom, #ffffff, transparent),
+		radial-gradient(
+			circle at 0% 0%,
+			transparent 1px,
+			transparent 1px,
+			transparent 2px,
+			transparent 2px
+		),
+		linear-gradient(to left, transparent, transparent),
+		radial-gradient(
+			circle at 100% 0%,
+			transparent 1px,
+			transparent 1px,
+			transparent 2px,
+			transparent 2px
+		),
+		linear-gradient(to top, transparent, #ffffff);
+	background-size: 2px 2px, calc(100% - 2px) 1px, 2px 2px,
+		1px calc(100% - 2px);
+	background-position: top left, top center, top right, center right,
+		bottom right, bottom center, bottom left, center left;
+	background-repeat: no-repeat;
+	text-align: center;
+}
+
+.cx-count span {
+	display: block;
+	font-size: 18px;
+	font-weight: bold;
+	color: #ffffff;
+}
+
+.cx-count label {
+	font-size: 10px;
+	color: #ffffff;
+}
+
 /* Notice css End */

@@ -246,24 +246,30 @@ class Admin extends Base {
 					delete_transient( sanitize_text_field( $_GET['dismiss'] ) );
 				}
 				foreach ( codesigner_notices_values() as $id => $notice ) {
-					$transient = get_transient( $id );
-					$current_time = date_i18n('U');
-					// $current_time = strtotime( '2024-09-27 12:00:00' );
-					if ($transient && $transient['from'] < $current_time && $current_time < $transient['to']) {
+					$transient 		= get_transient( $id );
+					$current_time 	= date_i18n( 'U' );
+					// $current_time = date_i18n( 'Y/m/d H:i:s', strtotime( '2024-11-3 15:28:00' ) );
+					if ( $transient && $transient[ 'from' ] < $current_time && $current_time < strtotime( $transient[ 'to' ] ) ) {
 						printf(
 							'<div class="notice notice-info is-dismissible codesigner-dismissible-notice">
 								<p>
 									<a class="notice-dismiss" href="%1$s"></a>
 								</p>
-								<div class="button-wrapper">
-									<a href="%4$s" class="codesigner-dismissible-notice-button" data-id="%2$s">%3$s</a>
+								<div class="codesigner-dismissible-notice-content">
+									%5$s
+									<div class="button-wrapper">
+										<a href="%4$s" class="codesigner-dismissible-notice-button" data-id="%2$s">%3$s</a>
+									</div>
 								</div>
 							</div>',
-							esc_url( add_query_arg('dismiss', $id ) ),
+							esc_url( add_query_arg( 'dismiss', $id ) ),
 							esc_attr( $id ),
-							esc_html( $notice['button'] ),
-							esc_url( $notice['url'] )
+							esc_html( $notice[ 'button' ] ),
+							esc_url( $notice[ 'url' ] ),
+							get_codesigner_countdown_html( $notice[ 'from' ], $notice[ 'countdown_to' ] )
 						);
+
+
 						break;	
 					}
 				}

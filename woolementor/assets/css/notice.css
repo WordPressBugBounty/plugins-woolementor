@@ -9,8 +9,8 @@
 	display: flex;
 	gap: 0px;
 	background: url("../img/promo/year-end.png") no-repeat;
-	background-size: cover;
-	padding: 22px 0px 22px 0px;
+	background-size: contain;
+	padding: 11px 0px 9px 0px;
 }
 .codesigner-dismissible-notice a {
 	text-decoration: none;

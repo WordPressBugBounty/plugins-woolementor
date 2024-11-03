@@ -2302,8 +2302,8 @@ endif;
 
 if( ! function_exists( 'codesigner_notices_values' ) ) :
 	function codesigner_notices_values(){
+		$current_time 	= date_i18n( 'U' );
 
-		$current_time = date_i18n('U');
 
 		// return [
 		// 	'checkout_notice'=> [
@@ -2330,14 +2330,42 @@ if( ! function_exists( 'codesigner_notices_values' ) ) :
 		// ];
 		return [
 			'promotional_image' => [
-				'from'   => $current_time,
-				'to'     => $current_time + 48 * HOUR_IN_SECONDS,
-				'button' => __('Grab Now', 'codesigner'),
-				'url'    => "https://codexpert.io/codesigner/pricing?utm_source=IN+PLUGIN&utm_medium=NOTICE&utm_campaign=OCTOBER+THRILLS",
+				'from'   		=> $current_time,
+				// 'to'     		=> $current_time + 48 * HOUR_IN_SECONDS,
+				'to'     		=> date_i18n( 'Y/m/d H:i:s', strtotime( '2024-11-5 00:00:00' ) ),
+				'button' 		=> __('Grab Now', 'codesigner'),
+				'url'    		=> "https://codexpert.io/codesigner/pricing?utm_source=IN+PLUGIN&utm_medium=NOTICE&utm_campaign=OCTOBER+THRILLS",
+				'countdown_to' 	=> date_i18n( 'Y/m/d H:i:s', strtotime( '2024-11-5 00:00:00' ) ),
 			],
 		];
 	}
 endif;
+
+if( ! function_exists( 'get_codesigner_countdown_html' ) ) :
+	function get_codesigner_countdown_html( $from, $to ) {
+		return '
+		<div class="codesigner-countdown" id="codesigner-countdown" data-countdown-end="'.$to.'">
+			<div class="cx-count">
+				<span id="days"></span>
+				<label>DAYS</label>
+			</div>
+			<div class="cx-count">
+				<span id="hours"></span>
+				<label>HRS</label>
+			</div>
+			<div class="cx-count">
+				<span id="minutes"></span>
+				<label>MINS</label>
+			</div>
+			<div class="cx-count">
+				<span id="seconds"></span>
+				<label>SEC</label>
+			</div>
+		</div>';
+	}
+	
+endif;
+
 
 /**
  * 

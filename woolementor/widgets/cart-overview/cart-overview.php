@@ -129,11 +129,8 @@ class Cart_Overview extends Widget_Base {
 				'type' 			=> Controls_Manager::SWITCHER,
 				'label_on' 		=> __( 'Show', 'codesigner' ),
 				'label_off' 	=> __( 'Hide', 'codesigner' ),
-				'return_value' 	=> 'block',
-				'default' 		=> 'block',
-				'selectors' 	=> [
-					'{{WRAPPER}} .wc-proceed-to-checkout a.checkout-button' => 'display: {{VALUE}}!important',
-				],
+				'return_value' 	=> 'on',
+				'default' 		=> 'on',
 				'separator' 	=> 'before'
 			]
 		);

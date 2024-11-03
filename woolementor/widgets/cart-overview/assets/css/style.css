@@ -1,17 +1,19 @@
-.wl .wl-cart-overview .wl-co-title{
+.wl .wl-cart-overview .wl-co-title {
 	font-weight: 400;
 }
-.wl.theme-Divi table{
-	width: 100%
+.wl.theme-Divi table {
+	width: 100%;
 }
-.wl .wl-cart-overview table tr td, .wl .wl-cart-overview table tr th {
+.wl .wl-cart-overview table tr td,
+.wl .wl-cart-overview table tr th {
 	border: 1px solid #ccc;
 	background: transparent;
 }
-.wl .wl-cart-overview table tr:hover td, .wl .wl-cart-overview table tr:hover th{
+.wl .wl-cart-overview table tr:hover td,
+.wl .wl-cart-overview table tr:hover th {
 	background: #c1c1c13d;
 }
-.wl .wl-cart-overview table tr td ul{
+.wl .wl-cart-overview table tr td ul {
 	list-style: none;
 	padding-left: 20px;
 }
@@ -30,11 +32,12 @@
 	letter-spacing: 1px;
 	font-family: "Roboto", Sans-serif;
 	color: #fff;
-	background: #E9345F;
+	background: #e9345f;
 	cursor: pointer;
-	transition: .4s;
+	transition: 0.4s;
 	width: 100%;
 	text-align: center;
 	display: none;
 	margin-bottom: 0;
+	display: block;
 }
