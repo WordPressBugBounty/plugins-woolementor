@@ -1,11 +1,10 @@
 <?php
-
 /**
  * Plugin Name: CoDesigner
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.7.4
+ * Version: 4.7.5
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -170,7 +169,7 @@ final class Plugin {
 			$admin->action('after_setup_theme', 'setup');
 			$admin->action('plugins_loaded', 'settings_page_redirect');
 			$admin->filter('http_request_host_is_external', '__return_true', 10, 3);
-			$admin->action('admin_notices', 'admin_notices');
+			// $admin->action('admin_notices', 'admin_notices');
 			$admin->action('cx-plugin_after-nav-items', 'setting_navs_add_item');
 			$admin->filter('admin_body_class', 'admin_body_class');
 			//$admin->filter('admin_footer', 'admin_notice');

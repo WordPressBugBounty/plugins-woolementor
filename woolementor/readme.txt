@@ -4,7 +4,7 @@ Donate link: https://codexpert.io/codesigner/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 5.0
 Tested up to: 6.6
-Stable tag: 4.7.4
+Stable tag: 4.7.5
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -403,6 +403,9 @@ CoDesigner gets regular updates to ensure compatibility, security, and addition 
 Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/docs/codesigner/?utm_campaign=wporg)
 
 == Changelog ==
+
+= v4.7.5 – 2024-11-05 =
+* [fix] routine maintenance
 
 = v4.7.4 – 2024-11-03 =
 * [fix] cart overview widget's proceed to checkout button issue fixed

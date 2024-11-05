@@ -2530,8 +2530,8 @@ endif;
 		],
 		[
 			'name'       => 'codesigner-floating-cart',
-			'title'      => __( 'Floating Cart' . ' ' . $wlbi_promo, 'codesigner' ),
-			'icon'       => 'eicon-product-meta',
+			'title'      => __( 'Floating Cart', 'codesigner' ),
+			'icon'       => 'eicon-product-meta ' . ' ' . $wlbi_promo,
 			'category' 	 => 'codesigner-cart',
 		],
 		[
