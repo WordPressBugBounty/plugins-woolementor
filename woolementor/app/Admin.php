@@ -61,16 +61,16 @@ class Admin extends Base {
 
 	public function upgrade(){
 		$current_time = date_i18n('U');
-		if( ! get_option('codesigner_year_last_notice') ){
+		if( ! get_option('codesigner_black_notice') ){
 			foreach ( codesigner_notices_values() as $id => $notice ) {
 				$data = [
 					'from' => $notice['from'],
 					'to' => $notice['to']
 				];
-			
-				set_transient($id, $data, $notice['to']);
+				$expiration_duration 	= $notice['to'] - $current_time; 
+				set_transient( $id, $data,  $expiration_duration );
 			}
-			update_option( 'codesigner_year_last_notice', 1 );
+			update_option( 'codesigner_black_notice', 1 );
 		}
 		
 		if (get_option('codesigner_install_time') == '') {
@@ -158,12 +158,19 @@ class Admin extends Base {
 
 	public function action_links($links){
 		$this->admin_url = admin_url('admin.php');
+		$url = add_query_arg( 'page', $this->slug, 'https://help.codexpert.io/docs/codesigner/' );
 
 		$new_links = [
-			'settings'	=> sprintf('<a href="%1$s">' . __('Settings', 'codesigner') . '</a>', add_query_arg('page', $this->slug, $this->admin_url))
+			'settings'	=> sprintf('<a href="%1$s">' . __('Docs', 'codesigner') . '</a>', $url),
 		];
+		$support = [
+			'support'	=> sprintf('<a href="%1$s">' . __('Support', 'codesigner') . '</a>', 'https://help.codexpert.io/add-ticket/'),
+		];
+		if ( !defined( 'CODESIGNER_PRO' ) ) {
+			$new_links['codesigner-get-pro'] = '<a href="https://codexpert.io/wc-affiliate/pricing?utm_source=IN+PLUGIN&utm_medium=all+plugins+page&utm_campaign=Get+Pro">' . __('Black Friday Sale (Up to 80% OFF)', 'cx-plugin') . '</a>';
+		}
 
-		return array_merge($new_links, $links);
+		return array_merge( $support, $new_links, $links);
 	}
 
 	public function plugin_row_meta($plugin_meta, $plugin_file){
@@ -209,38 +216,6 @@ class Admin extends Base {
 		if ( !defined( 'CODESIGNER_PRO' ) && current_user_can( 'manage_options' ) ) {
 			
 			$current_screen = get_current_screen()->base;
-
-		// 	if ( $current_screen == 'dashboard' || $current_screen == 'toplevel_page_codesigner' ) {
-		// 		if( isset( $_GET['dismiss'] ) && array_key_exists( $_GET['dismiss'], codesigner_notices_values() ) ) {
-		// 			delete_transient( sanitize_text_field( $_GET['dismiss'] ) );
-		// 		}
-			
-		// 		foreach ( codesigner_notices_values() as $id => $notice ) {
-		// 			$transient = get_transient( $id );
-		// 			$current_time = date_i18n('U');
-		// 			// $current_time = strtotime( '2024-09-03 12:00:00' );
-
-		// 			if( $transient[ 'from' ] < $current_time && $current_time < $transient[ 'to' ] ) {
-		// 				printf(
-		// 					'<div class="notice notice-info is-dismissible codesigner-dismissible-notice">
-		// 						<p>
-		// 							<img src="%5$s" alt="Logo" style="max-height: 25px; margin-right: 10px; vertical-align: middle;" />
-		// 							%1$s
-		// 							<a class="notice-dismiss" href="%2$s"></a>
-		// 						</p>
-		// 						<button class="codesigner-dismissible-notice-button button-primary" data-id="%3$s">%4$s</button>
-		// 					</div>',
-		// 					wp_kses_post( $notice[ 'text' ] ),
-		// 					esc_url( add_query_arg('dismiss', $id ) ),
-		// 					esc_attr( $id ),
-		// 					esc_html( $notice[ 'button' ] ),
-		// 					CODESIGNER_ASSETS . '/img/icon.png'
-
-		// 				);
-		// 				break;
-		// 			}
-		// 		}
-		// 	}
 			if ( $current_screen == 'dashboard' || $current_screen == 'toplevel_page_codesigner' ) {
 				if( isset( $_GET['dismiss'] ) && array_key_exists( $_GET['dismiss'], codesigner_notices_values() ) ) {
 					delete_transient( sanitize_text_field( $_GET['dismiss'] ) );
@@ -248,8 +223,7 @@ class Admin extends Base {
 				foreach ( codesigner_notices_values() as $id => $notice ) {
 					$transient 		= get_transient( $id );
 					$current_time 	= date_i18n( 'U' );
-					// $current_time = date_i18n( 'Y/m/d H:i:s', strtotime( '2024-11-3 15:28:00' ) );
-					if ( $transient && $transient[ 'from' ] < $current_time && $current_time < strtotime( $transient[ 'to' ] ) ) {
+					if ( $transient && $transient[ 'from' ] < $current_time && $current_time < $transient[ 'to' ] ) {
 						printf(
 							'<div class="notice notice-info is-dismissible codesigner-dismissible-notice">
 								<p>
@@ -266,10 +240,9 @@ class Admin extends Base {
 							esc_attr( $id ),
 							esc_html( $notice[ 'button' ] ),
 							esc_url( $notice[ 'url' ] ),
-							get_codesigner_countdown_html( $notice[ 'from' ], $notice[ 'countdown_to' ] )
+							
+							get_codesigner_countdown_html( $notice[ 'from' ],  $notice[ 'countdown_to' ]  )
 						);
-
-
 						break;	
 					}
 				}

@@ -329,13 +329,13 @@ class Settings extends Base {
 		$pro_settings = [
 			'id'            => "{$this->slug}-pro",
 			'parent'        => $this->slug,
-			'label'         => defined( 'CODESIGNER_PRO' ) ? __( 'License', 'codesigner' ) : __( 'Get Pro <span style="font-weight: bold; color: #f78484;">(On Sale)</span>', 'codesigner' ),
-			'title'         => __( 'Get Pro (On Sale)', 'codesigner' ),
-			'header'        => __( 'Get Pro (On Sale)', 'codesigner' ),
+			'label'         => defined( 'CODESIGNER_PRO' ) ? __( 'License', 'codesigner' ) : __( ' <span style="font-weight: bold;">Black Friday Sale <br>(Up to 80% OFF)</span>', 'codesigner' ),
+			'title'         => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
+			'header'        => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
 			'sections'      => [
 				'codesigner_upgrade'	=> [
 					'id'        => 'codesigner_upgrade',
-					'label'     => __( 'Get Pro (On Sale)', 'codesigner' ),
+					'label'     => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
 					'icon'      => 'dashicons-buddicons-groups',
 					'hide_form'	=> true,
 					// 'template'  => CODESIGNER_DIR . '/views/settings/free-pro.php',
@@ -349,7 +349,7 @@ class Settings extends Base {
 	public function redirect_specific_admin_page() {
 		global $pagenow;
 		if ( $pagenow == 'admin.php' && isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'codesigner-pro' && !defined( 'CODESIGNER_PRO' ) ) {
-			wp_redirect( 'https://codexpert.io/codesigner/pricing?utm_source=plugin+dashboard&utm_medium=sidebar&utm_campaign=on+sale' );
+			wp_redirect( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=menu+bar&utm_campaign=black+friday+2024' );
 			exit;
 		}
 	}

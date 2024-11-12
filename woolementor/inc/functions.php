@@ -2329,13 +2329,13 @@ if( ! function_exists( 'codesigner_notices_values' ) ) :
 		// 	],
 		// ];
 		return [
-			'promotional_image' => [
+			'codesigner_promotional_campain' => [
 				'from'   		=> $current_time,
 				// 'to'     		=> $current_time + 48 * HOUR_IN_SECONDS,
-				'to'     		=> date_i18n( 'Y/m/d H:i:s', strtotime( '2024-11-5 00:00:00' ) ),
+				'to'     		=>  strtotime( '2024-12-1 00:00:00' ),
 				'button' 		=> __('Grab Now', 'codesigner'),
-				'url'    		=> "https://codexpert.io/codesigner/pricing?utm_source=IN+PLUGIN&utm_medium=NOTICE&utm_campaign=OCTOBER+THRILLS",
-				'countdown_to' 	=> date_i18n( 'Y/m/d H:i:s', strtotime( '2024-11-5 00:00:00' ) ),
+				'url'    		=> "https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=black+friday+2024",
+				'countdown_to' 	=>  strtotime( '2024-12-1 00:00:00' ),
 			],
 		];
 	}
@@ -2343,6 +2343,7 @@ endif;
 
 if( ! function_exists( 'get_codesigner_countdown_html' ) ) :
 	function get_codesigner_countdown_html( $from, $to ) {
+		$to = date_i18n( 'Y/m/d H:i:s', $to );
 		return '
 		<div class="codesigner-countdown" id="codesigner-countdown" data-countdown-end="'.$to.'">
 			<div class="cx-count">
