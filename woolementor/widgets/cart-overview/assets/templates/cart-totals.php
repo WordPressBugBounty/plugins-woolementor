@@ -166,13 +166,9 @@ WC()->cart->calculate_totals();
 
 	</table>
 
-	<?php if ( $settings['section_checkout_show_hide'] ) {
-		?>
 		<div class="wc-proceed-to-checkout">
 			<?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
 		</div>
-		<?php
-	} ?>
 
 	<?php do_action( 'woocommerce_after_cart_totals' ); ?>
 
