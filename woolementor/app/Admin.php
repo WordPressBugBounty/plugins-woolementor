@@ -167,7 +167,7 @@ class Admin extends Base {
 			'support'	=> sprintf('<a href="%1$s">' . __('Support', 'codesigner') . '</a>', 'https://help.codexpert.io/add-ticket/'),
 		];
 		if ( !defined( 'CODESIGNER_PRO' ) ) {
-			$new_links['codesigner-get-pro'] = '<a href="https://codexpert.io/wc-affiliate/pricing?utm_source=IN+PLUGIN&utm_medium=all+plugins+page&utm_campaign=Get+Pro">' . __('Black Friday Sale (Up to 80% OFF)', 'cx-plugin') . '</a>';
+			$new_links['codesigner-get-pro'] = '<a href="https://codexpert.io/codesigner/pricing/?utm_source=website&utm_medium=floating+bar&utm_campaign=black+friday+2024">' . __('Black Friday Sale (Up to 80% OFF)', 'cx-plugin') . '</a>';
 		}
 
 		return array_merge( $support, $new_links, $links);
