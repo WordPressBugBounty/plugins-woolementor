@@ -92,14 +92,13 @@ class Cart_Items extends Widget_Base {
 				'type' 			=> Controls_Manager::SWITCHER,
 				'label_on' 		=> __( 'Show', 'codesigner' ),
 				'label_off' 	=> __( 'Hide', 'codesigner' ),
-				'return_value' 	=> 'yes',
-				'desktop_default'	=> 'yes',
-				'tablet_default'	=> 'yes',
-				'mobile_default'	=> 'yes',
+				'return_value' 	=> 'block',
+				'desktop_default'	=> 'block',
+				'tablet_default'	=> 'block',
+				'mobile_default'	=> 'block',
 				'prefix_class' 	=> 'wl-product-image-show%s-',
 				'selectors' => [
-					'.wl {{WRAPPER}} .wl-ci-product-style table thead tr th.wl-product-thumbnail' => 'display: {{VALUE}}',
-					'.wl {{WRAPPER}} .wl-ci-product-style table tbody tr td.wl-ci-product-thumbnail' => 'display: {{VALUE}}',
+					'{{WRAPPER}} .wl-ci-product-thumbnail' => 'display: {{VALUE}}!important',
 				],
 			]
 		);
@@ -111,9 +110,9 @@ class Cart_Items extends Widget_Base {
 				'type' 			=> Controls_Manager::TEXT,
 				'default' 		=> __( 'Thumbnail', 'codesigner' ),
 				'placeholder' 	=> __( 'Type your title here', 'codesigner' ),
-				'condition' 	=> [
-					'product_image_show_hide' => 'yes'
-				],
+				// 'condition' 	=> [
+				// 	'product_image_show_hide' => 'yes'
+				// ],
 			]
 		);
 
@@ -128,9 +127,9 @@ class Cart_Items extends Widget_Base {
 					'product_page'  => __( 'Product Page', 'codesigner' ),
 				],
 				'default'   => 'none',
-				'condition' 	=> [
-					'product_image_show_hide' => 'yes'
-				],
+				// 'condition' 	=> [
+				// 	'product_image_show_hide' => 'yes'
+				// ],
 			]
 		);
 
@@ -1802,19 +1801,25 @@ class Cart_Items extends Widget_Base {
 
 														<td class="product-thumbnail wl-ci-product-thumbnail" data-title="<?php esc_attr_e( 'Thumbnail', 'woocommerce' ); ?>">
 
-															<?php 
-															$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+														<?php 
+								
+															$thumbnail = apply_filters('woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key);
 
-															if ( 'none' == $product_image_click ):
+															if ($product_image_click == 'zoom') {
+																?>
+																<a id="wl-sgs-product-image-zoom" href="<?php echo esc_url($image_url); ?>">
+																	<?php echo $thumbnail; ?>
+																</a>
+																<?php
+															} elseif ($product_image_click == 'product_page') {
+							
+																printf('<a href="%s">%s</a>', esc_url($product_permalink), $thumbnail);
+															} else {
 																echo $thumbnail;
-															elseif ( 'zoom' == $product_image_click ) : ?>
-																 <a id="wl-sgs-product-image-zoom" href="<?php echo esc_url( $image_url ); ?>">
-																 	<?php echo $thumbnail; ?>
-																 </a>
-															<?php elseif ( 'product_page' == $product_image_click ) :
-															 	printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail );
-															endif; 
-															?>
+															}
+														
+														?>
+
 														</td>
 
 														<td class="product-name wl-ci-product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
