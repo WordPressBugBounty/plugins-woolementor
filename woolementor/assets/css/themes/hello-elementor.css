@@ -69,3 +69,9 @@
 	.product_type_variable {
 	bottom: 98px !important;
 }
+.woocommerce #content table.wl-cic-table.cart .product-thumbnail,
+.woocommerce table.wl-cic-table.cart .product-thumbnail,
+.woocommerce-page #content table.wl-cic-table.cart .product-thumbnail,
+.woocommerce-page table.wl-cic-table.cart .product-thumbnail {
+	display: block;
+}
