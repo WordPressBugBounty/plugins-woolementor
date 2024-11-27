@@ -1668,7 +1668,7 @@
 	.toplevel_page_codesigner
 	.wp-submenu-wrap
 	li
-	a[href$="page=codesigner-pro"] {
+	a[href$="page=upgrade-to-pro"] {
 	background-color: #ff6640;
 	color: #ffffff;
 	padding: 5px 10px;

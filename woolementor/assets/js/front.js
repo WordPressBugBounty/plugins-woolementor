@@ -45,7 +45,7 @@ jQuery(function ($) {
             url: CODESIGNER.ajaxurl,
             data: {
                 action: "add-to-wish",
-                _wpnonce: CODESIGNER._nonce,
+                _wpnonce: CODESIGNER._wpnonce,
                 product_id: $product_id,
             },
             type: "POST",
