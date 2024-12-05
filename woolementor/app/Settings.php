@@ -323,32 +323,33 @@ class Settings extends Base {
 
 		// new Settings_API( apply_filters( 'codesigner-help_settings_args', $help_settings ) );
 
-		/**
-		 * Premium Features menu
-		 */
-		$pro_settings = [
-			'id'            => "upgrade-to-pro",
-			'parent'        => $this->slug,
-			'label'         => defined( 'CODESIGNER_PRO' ) ? __( 'License', 'codesigner' ) : __( ' <span style="font-weight: bold;">Black Friday Sale <br>(Up to 80% OFF)</span>', 'codesigner' ),
-			'title'         => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
-			'header'        => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
-			'sections'      => [
-				'upgrade-to-pro'	=> [
-					'id'        => 'upgrade-to-pro',
-					'label'     => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
-					'icon'      => 'dashicons-buddicons-groups',
-					'hide_form'	=> true,
-					// 'template'  => CODESIGNER_DIR . '/views/settings/free-pro.php',
-				],
-			]
-		];
 
-		new Settings_API( apply_filters( 'codesigner-pro_settings_args', $pro_settings ) );
+		if( ! defined( 'CODESIGNER_PRO' ) ) {
+		
+			$pro_settings = [
+				'id'            => "{$this->slug}-get-pro",
+				'parent'        => $this->slug,
+				'label'         =>  __( ' <span style="font-weight: bold;">Black Friday Sale <br>(Up to 80% OFF)</span>', 'codesigner' ),
+				// 'title'         => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
+				// 'header'        => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
+				// 'sections'      => [
+				// 	'codesigner_upgrade'	=> [
+				// 		'id'        => 'codesigner_upgrade',
+				// 		'label'     => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
+				// 		'icon'      => 'dashicons-buddicons-groups',
+				// 		'hide_form'	=> true,
+				// 		// 'template'  => CODESIGNER_DIR . '/views/settings/free-pro.php',
+				// 	],
+				// ]
+			];
+
+			new Settings_API( apply_filters( 'codesigner-pro_settings_args', $pro_settings ) );
+		}
 	}
 
 	public function redirect_specific_admin_page() {
 		global $pagenow;
-		if ( $pagenow == 'admin.php' && isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'upgrade-to-pro' && !defined( 'CODESIGNER_PRO' ) ) {
+		if ( $pagenow == 'admin.php' && isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'codesigner-get-pro' && !defined( 'CODESIGNER_PRO' ) ) {
 			wp_redirect( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=menu+bar&utm_campaign=black+friday+2024' );
 			exit;
 		}
