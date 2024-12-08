@@ -329,7 +329,7 @@ class Settings extends Base {
 			$pro_settings = [
 				'id'            => "{$this->slug}-get-pro",
 				'parent'        => $this->slug,
-				'label'         =>  __( ' <span style="font-weight: bold;">Black Friday Sale <br>(Up to 80% OFF)</span>', 'codesigner' ),
+				'label'         =>  __( ' <span style="font-weight: bold;">Upgrade to Pro</span>', 'codesigner' ),
 				// 'title'         => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
 				// 'header'        => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
 				// 'sections'      => [
@@ -350,7 +350,7 @@ class Settings extends Base {
 	public function redirect_specific_admin_page() {
 		global $pagenow;
 		if ( $pagenow == 'admin.php' && isset( $_GET[ 'page' ] ) && $_GET[ 'page' ] == 'codesigner-get-pro' && !defined( 'CODESIGNER_PRO' ) ) {
-			wp_redirect( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=menu+bar&utm_campaign=black+friday+2024' );
+			wp_redirect( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=menu+bar&utm_campaign=8dec24' );
 			exit;
 		}
 	}
