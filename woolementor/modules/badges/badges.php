@@ -19,16 +19,24 @@ class Badges extends Base {
      */
     public function __construct() {
 
-        $this->plugin   = get_plugin_data( CODESIGNER );
-        $this->slug     = $this->plugin['TextDomain'];
-        $this->version  = $this->plugin['Version'];
-
+        $this->action( 'init', 'init_plugin' );
         $this->action( 'codesigner_after_shop_content_controls', 'widget_content_section' );
         $this->action( 'codesigner_after_shop_style_controls', 'widget_style_section' );
         $this->action( 'codesigner_shop_before_flash_sale', 'widget_render', 10, 2 );
         $this->action( 'wp_enqueue_scripts', 'badges_enqueue_script' );
         $this->action( 'woocommerce_product_options_general_product_data', 'badge_simple_product_content' );
         $this->action( 'save_post', 'badge_save_data' );
+    }
+
+    /**
+     * Form WP version 6.7.0 Need to loade some 
+     * Data like TextDomain and other in init hook 
+     */
+
+    public function init_plugin(){
+        $this->plugin   = get_plugin_data( CODESIGNER );
+        $this->slug     = $this->plugin['TextDomain'];
+        $this->version  = $this->plugin['Version'];
     }
 
     public function __settings ( $settings ) {

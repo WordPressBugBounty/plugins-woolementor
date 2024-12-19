@@ -21,14 +21,13 @@ class Cart_Items extends Widget_Base {
 	
 	public $version;
 
+	public $widget;
+
 	public function __construct( $data = [], $args = null ) {
 	    parent::__construct( $data, $args );
 
 	    $this->id 		= wcd_get_widget_id( __CLASS__ );
 	    $this->widget 	= wcd_get_widget( $this->id );
-		$this->plugin	= get_plugin_data( CODESIGNER );
-		$this->slug		= $this->plugin['TextDomain'];
-		$this->version	= $this->plugin['Version'];
 	    
 		// Are we in debug mode?
 		$min = defined( 'CODESIGNER_DEBUG' ) && CODESIGNER_DEBUG ? '' : '.min';

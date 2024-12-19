@@ -18,10 +18,8 @@ class Preorder extends Base {
 	 * Constructor
 	 */
 	public function __construct() {
-		$this->plugin	= get_plugin_data( CODESIGNER );
-		$this->slug		= $this->plugin['TextDomain'];
-		$this->version	= $this->plugin['Version'];
 
+        $this->filter( 'init', 'init_plugin' );
         $this->filter( 'woocommerce_product_stock_status_options', 'add_pre_order_status_to_product', 10, 2 );
         $this->filter( 'woocommerce_product_stock_status_use_radio', 'use_radio' );
         $this->action( 'woocommerce_product_options_stock_status', 'fields' );
@@ -33,6 +31,17 @@ class Preorder extends Base {
         $this->action( 'admin_enqueue_scripts', 'admin_enqueue_script' );
         $this->action( 'wp_enqueue_scripts', 'front_enqueue_style' );
 	}
+
+    /**
+     * Form WP version 6.7.0 Need to loade some 
+     * Data like TextDomain and other in init hook 
+     */
+
+    public function init_plugin(){
+        $this->plugin   = get_plugin_data( CODESIGNER );
+        $this->slug     = $this->plugin['TextDomain'];
+        $this->version  = $this->plugin['Version'];
+    }
 
 	public function __settings ( $settings ) {
         $settings['sections'][ $this->id ] = [

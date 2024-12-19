@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.7.14
+ * Version: 4.7.15
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -122,13 +122,16 @@ final class Plugin {
 		 * @since 0.9
 		 * @var $plugin
 		 */
-		$this->plugin					= get_plugin_data(CODESIGNER);
-		$this->plugin['basename']		= plugin_basename(CODESIGNER);
-		$this->plugin['file']			= CODESIGNER;
-		$this->plugin['server']			= apply_filters('codesigner_server', 'https://my.pluggable.io');
-		$this->plugin['doc_id']			= 1960;
-		$this->plugin['icon']			= CODESIGNER_ASSETS . '/img/icon-128.png';
-		$this->plugin['depends']		= [
+		$this->plugin					= [];
+		$this->plugin['basename']	= plugin_basename(CODESIGNER);
+		$this->plugin['file']		= CODESIGNER;
+		$this->plugin['TextDomain']	= 'codesigner';
+		$this->plugin['Version']	= '4.7.14';
+		$this->plugin['Name']		= 'CoDesigner';
+		$this->plugin['server']		= apply_filters('codesigner_server', 'https://my.pluggable.io');
+		$this->plugin['doc_id']		= 1960;
+		$this->plugin['icon']		= CODESIGNER_ASSETS . '/img/icon-128.png';
+		$this->plugin['depends']	= [
 			'woocommerce/woocommerce.php'	=> __('WooCommerce', 'codesigner'),
 			'elementor/elementor.php'		=> __('Elementor', 'codesigner'),
 		];
@@ -160,7 +163,7 @@ final class Plugin {
 			$admin->activate('install');
 			$admin->action('admin_footer', 'upgrade');
 			$admin->action('admin_footer', 'modal');
-			$admin->action('plugins_loaded', 'i18n');
+			$admin->action('init', 'i18n');
 			$admin->action('admin_enqueue_scripts', 'enqueue_scripts');
 			$admin->action('admin_menu', 'add_menus');
 			$admin->filter("plugin_action_links_{$this->plugin['basename']}", 'action_links');
@@ -204,7 +207,7 @@ final class Plugin {
 			 *
 			 * @author Codexpert <hi@codexpert.io>
 			 */
-			$deactivator = new Deactivator(CODESIGNER);
+			$deactivator = new Deactivator( $this->plugin );
 
 			/**
 			 * Alters featured plugins
@@ -215,7 +218,7 @@ final class Plugin {
 			 * 
 			 * @author Codexpert <hi@codexpert.io>
 			 */
-			$feature = new Feature(CODESIGNER);
+			$feature = new Feature( $this->plugin );
 
 			/**
 			 * Asks to participate in a survey
@@ -226,7 +229,7 @@ final class Plugin {
 			 *
 			 * @author Codexpert <hi@codexpert.io>
 			 */
-			$survey = new Survey(CODESIGNER);
+			$survey = new Survey( $this->plugin );
 
 		else : // ! is_admin() ?
 

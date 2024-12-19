@@ -138,7 +138,7 @@ class Widgets extends Base {
 
 			}
 			elseif( file_exists( $file = CODESIGNER_DIR . "/widgets/{$active_widget}/{$active_widget}.php" ) ) {
-				require_once( $file );
+				require_once( $file );				
 				$widget = "Codexpert\\CoDesigner\\{$class}";
 			}
 
@@ -149,6 +149,7 @@ class Widgets extends Base {
 				  * @since 3.16
 				  */
 				$register = method_exists( $widgets_manager, 'register' ) ? 'register' : 'register_widget_type';
+
 				$widgets_manager->$register( new $widget() );
 			}
 		}

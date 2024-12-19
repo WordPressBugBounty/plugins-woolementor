@@ -16,10 +16,7 @@ class Partial_Payment extends Base {
 	 * Constructor
 	 */
 	public function __construct() {
-
-		$this->plugin	= get_plugin_data( CODESIGNER );
-		$this->slug		= $this->plugin['TextDomain'];
-		$this->version	= $this->plugin['Version'];
+        $this->action( 'init', 'init_plugin' );
 
         // register order status
         $this->action( 'woocommerce_register_shop_order_post_statuses', 'register_partial_payment_order_status' );
@@ -72,6 +69,17 @@ class Partial_Payment extends Base {
         $this->filter( 'woocommerce_get_order_item_totals', 'add_partial_payment_order_item_totals', 10, 3 );
         $this->filter( 'woocommerce_my_account_my_orders_actions', 'add_orders_list_due_payment_action', 10, 2 );
 	}
+
+    /**
+     * Form WP version 6.7.0 Need to loade some 
+     * Data like TextDomain and other in init hook 
+     */
+
+    public function init_plugin(){
+        $this->plugin   = get_plugin_data( CODESIGNER );
+        $this->slug     = $this->plugin['TextDomain'];
+        $this->version  = $this->plugin['Version'];
+    }
 
 	public function __settings ( $settings ) {
         $settings['sections'][ $this->id ] = [

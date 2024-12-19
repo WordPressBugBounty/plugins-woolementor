@@ -20,10 +20,7 @@ class Bulk_Purchase_Discount extends Base {
 
 		require_once( __DIR__ . '/inc/functions.php' );
 
-		$this->plugin	= get_plugin_data( CODESIGNER );
-		$this->slug		= $this->plugin['TextDomain'];
-		$this->version	= $this->plugin['Version'];
-
+		$this->action( 'init', 'init_plugin' );
 		$this->action( 'woocommerce_product_options_general_product_data', 'simple_product_content' );
 		$this->action( 'woocommerce_product_after_variable_attributes', 'variable_product_content', 10, 3 );
 		$this->action( 'save_post', 'save_data' );
@@ -33,6 +30,17 @@ class Bulk_Purchase_Discount extends Base {
 		$this->action( 'woocommerce_before_add_to_cart_form', 'add_discount_text' );
 		$this->action( 'cd_after_add_to_cart_style', 'elementor_controls' );
 	}
+
+	/**
+     * Form WP version 6.7.0 Need to loade some 
+     * Data like TextDomain and other in init hook 
+     */
+
+    public function init_plugin(){
+        $this->plugin   = get_plugin_data( CODESIGNER );
+        $this->slug     = $this->plugin['TextDomain'];
+        $this->version  = $this->plugin['Version'];
+    }
 
 	public function simple_product_content() {
 

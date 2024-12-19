@@ -26,9 +26,9 @@ class Cart_Items_Classic extends Widget_Base {
 
 	    $this->id 		= wcd_get_widget_id( __CLASS__ );
 	    $this->widget 	= wcd_get_widget( $this->id );
-		$this->plugin	= get_plugin_data( CODESIGNER );
-		$this->slug		= $this->plugin['TextDomain'];
-		$this->version	= $this->plugin['Version'];
+
+	    // $this->action( 'init', 'init_plugin' );
+	    
 		$min 			= defined( 'CODESIGNER_DEBUG' ) && CODESIGNER_DEBUG ? '' : '.min';
 		$qty_btn_fix 	= Helper::get_option('codesigner_tools','quantity_input');
 
@@ -38,6 +38,17 @@ class Cart_Items_Classic extends Widget_Base {
 
 		wp_register_style( "codesigner-{$this->id}", plugins_url( "assets/css/style{$min}.css", __FILE__ ), [], $this->version );
 	}
+
+	/**
+     * Form WP version 6.7.0 Need to loade some 
+     * Data like TextDomain and other in init hook 
+     */
+
+    // public function init_plugin(){
+    //     $this->plugin   = get_plugin_data( CODESIGNER );
+    //     $this->slug     = $this->plugin['TextDomain'];
+    //     $this->version  = $this->plugin['Version'];
+    // }
 
 	public function get_script_depends() {
 		$troubleshoot = Helper::get_option( 'wcd_troubleshoot', 'quantity_input' );

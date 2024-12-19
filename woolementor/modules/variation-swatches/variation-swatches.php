@@ -12,16 +12,26 @@ class Variation_Swatches extends Base {
     public function __construct() {
 	
 		require_once( __DIR__ . '/inc/functions.php' );
-		
-		$this->plugin	= get_plugin_data( CODESIGNER );
-		$this->slug		= $this->plugin['TextDomain'];
-		$this->version	= $this->plugin['Version'];
+
+
+		$this->action( 'init', 'init_plugin' );
 
 		/**
 		 * Runs actual hooks
 		 */
 		$this->hook();
 
+    }
+
+    /**
+     * Form WP version 6.7.0 Need to loade some 
+     * Data like TextDomain and other in init hook 
+     */
+
+    public function init_plugin(){
+        $this->plugin   = get_plugin_data( CODESIGNER );
+        $this->slug     = $this->plugin['TextDomain'];
+        $this->version  = $this->plugin['Version'];
     }
 
 	private function hook() {
