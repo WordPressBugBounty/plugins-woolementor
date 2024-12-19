@@ -323,15 +323,14 @@ class Settings extends Base {
 
 		// new Settings_API( apply_filters( 'codesigner-help_settings_args', $help_settings ) );
 
-
 		if( ! defined( 'CODESIGNER_PRO' ) ) {
 		
 			$pro_settings = [
 				'id'            => "{$this->slug}-get-pro",
 				'parent'        => $this->slug,
 				'label'         =>  __( ' <span style="font-weight: bold;">Upgrade to Pro</span>', 'codesigner' ),
-				// 'title'         => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
-				// 'header'        => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
+				'title'         => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
+				'header'        => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
 				// 'sections'      => [
 				// 	'codesigner_upgrade'	=> [
 				// 		'id'        => 'codesigner_upgrade',
