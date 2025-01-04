@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '50fd648724ffae3d08166c3807783f523d824a2d',
+        'reference' => '32081b249c7ceeed597e9d0429d3c0b52bdd01cd',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '50fd648724ffae3d08166c3807783f523d824a2d',
+            'reference' => '32081b249c7ceeed597e9d0429d3c0b52bdd01cd',
             'dev_requirement' => false,
         ),
         'chillerlan/php-qrcode' => array(

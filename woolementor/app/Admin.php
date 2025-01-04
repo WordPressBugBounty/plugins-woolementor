@@ -61,7 +61,7 @@ class Admin extends Base {
 
 	public function upgrade(){
 		$current_time = date_i18n('U');
-		if( ! get_option('codesigner_black_notice') ){
+		if( ! get_option('codesigner_year_first_notice') ){
 			foreach ( codesigner_notices_values() as $id => $notice ) {
 				$data = [
 					'from' => $notice['from'],
@@ -70,7 +70,7 @@ class Admin extends Base {
 				$expiration_duration 	= $notice['to'] - $current_time; 
 				set_transient( $id, $data,  $expiration_duration );
 			}
-			update_option( 'codesigner_black_notice', 1 );
+			update_option( 'codesigner_year_first_notice', 1 );
 		}
 		
 		if (get_option('codesigner_install_time') == '') {
@@ -223,6 +223,7 @@ class Admin extends Base {
 				foreach ( codesigner_notices_values() as $id => $notice ) {
 					$transient 		= get_transient( $id );
 					$current_time 	= date_i18n( 'U' );
+					// $current_time 	= strtotime( '2024-12-31 12:00:00' );
 					if ( $transient && $transient[ 'from' ] < $current_time && $current_time < $transient[ 'to' ] ) {
 						printf(
 							'<div class="notice notice-info is-dismissible codesigner-dismissible-notice">
@@ -230,7 +231,6 @@ class Admin extends Base {
 									<a class="notice-dismiss" href="%1$s"></a>
 								</p>
 								<div class="codesigner-dismissible-notice-content">
-									%5$s
 									<div class="button-wrapper">
 										<a href="%4$s" class="codesigner-dismissible-notice-button" data-id="%2$s">%3$s</a>
 									</div>
@@ -239,9 +239,7 @@ class Admin extends Base {
 							esc_url( add_query_arg( 'dismiss', $id ) ),
 							esc_attr( $id ),
 							esc_html( $notice[ 'button' ] ),
-							esc_url( $notice[ 'url' ] ),
-							
-							get_codesigner_countdown_html( $notice[ 'from' ],  $notice[ 'countdown_to' ]  )
+							esc_url( $notice[ 'url' ] )
 						);
 						break;	
 					}

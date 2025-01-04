@@ -2328,17 +2328,15 @@ if( ! function_exists( 'codesigner_notices_values' ) ) :
 		// 		'url'		=> "https://codexpert.io/codesigner/pricing/?utm_source=In-plugin&utm_medium=offer+notice&utm_campaign=Invoice"
 		// 	],
 		// ];
-		return [
-			'codesigner_promotional_campain' => [
-				'from'   		=> $current_time,
-				// 'to'     		=> $current_time + 48 * HOUR_IN_SECONDS,
-				'to'     		=>  strtotime( '2024-12-1 00:00:00' ),
-				'button' 		=> __('Grab Now', 'codesigner'),
-				'url'    		=> "https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=black+friday+2024",
-				'countdown_to' 	=>  strtotime( '2024-12-1 00:00:00' ),
-			],
-		];
-	}
+        return [
+            'codesigner_promotional_campain' => [
+                'from'   => $current_time,
+                'to'     => strtotime( '2025-01-10 00:00:00' ),
+                'button' => __('Grab Now', 'codesigner'),
+                'url'    => "https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=new-year-2025",
+            ],
+        ];
+    }
 endif;
 
 if( ! function_exists( 'get_codesigner_countdown_html' ) ) :

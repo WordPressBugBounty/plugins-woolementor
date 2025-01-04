@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.7.16
+ * Version: 4.7.17.2
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -34,7 +34,7 @@ use Pluggable\Marketing\Deactivator;
 /**
  * if accessed directly, exit.
  */
-if (! defined('ABSPATH')) {
+if ( ! defined('ABSPATH') ) {
 	exit;
 }
 
@@ -64,7 +64,7 @@ final class Plugin {
 	 * @since 0.9
 	 */
 
-	private function __construct(){
+	private function __construct() {
 
 		/**
 		 * Includes require_onced files
@@ -90,9 +90,9 @@ final class Plugin {
 	 * @uses composer
 	 * @uses psr-4
 	 */
-	private function include(){
-		require_once(dirname(__FILE__) . '/inc/functions.php');
-		require_once(dirname(__FILE__) . '/vendor/autoload.php');
+	private function include() {
+		require_once( dirname(__FILE__) . '/inc/functions.php' );
+		require_once( dirname(__FILE__) . '/vendor/autoload.php' );
 	}
 
 	/**
@@ -103,18 +103,18 @@ final class Plugin {
 	 * @uses get_plugin_data
 	 * @uses plugin_basename
 	 */
-	private function define(){
+	private function define() {
 
 		/**
 		 * Define some constants
 		 * 
 		 * @since 0.9
 		 */
-		define('CODESIGNER', __FILE__);
-		define('CODESIGNER_DIR', dirname(CODESIGNER));
-		define('CODESIGNER_ASSETS', plugins_url('assets', CODESIGNER));
-		define('CODESIGNER_DEBUG', apply_filters('codesigner_debug', true));
-		define('CODESIGNER_LIB_URL', 'https://codexpert.io/codesigner-library/wp-json/templates/v3');
+		define( 'CODESIGNER', __FILE__ );
+		define( 'CODESIGNER_DIR', dirname(CODESIGNER) );
+		define( 'CODESIGNER_ASSETS', plugins_url('assets', CODESIGNER));
+		define( 'CODESIGNER_DEBUG', apply_filters('codesigner_debug', true) );
+		define( 'CODESIGNER_LIB_URL', 'https://codexpert.io/codesigner-library/wp-json/templates/v3' );
 
 		/**
 		 * The plugin data
@@ -123,17 +123,17 @@ final class Plugin {
 		 * @var $plugin
 		 */
 		$this->plugin					= [];
-		$this->plugin['basename']	= plugin_basename(CODESIGNER);
-		$this->plugin['file']		= CODESIGNER;
-		$this->plugin['TextDomain']	= 'codesigner';
-		$this->plugin['Version']	= '4.7.14';
-		$this->plugin['Name']		= 'CoDesigner';
-		$this->plugin['server']		= apply_filters('codesigner_server', 'https://my.pluggable.io');
-		$this->plugin['doc_id']		= 1960;
-		$this->plugin['icon']		= CODESIGNER_ASSETS . '/img/icon-128.png';
-		$this->plugin['depends']	= [
-			'woocommerce/woocommerce.php'	=> __('WooCommerce', 'codesigner'),
-			'elementor/elementor.php'		=> __('Elementor', 'codesigner'),
+		$this->plugin[ 'basename' ]		= plugin_basename(CODESIGNER);
+		$this->plugin[ 'file' ]			= CODESIGNER;
+		$this->plugin[ 'TextDomain' ]	= 'codesigner';
+		$this->plugin[ 'Version' ]		= '4.7.14';
+		$this->plugin[ 'Name' ]			= 'CoDesigner';
+		$this->plugin[ 'server' ]		= apply_filters('codesigner_server', 'https://my.pluggable.io');
+		$this->plugin[ 'doc_id' ]		= 1960;
+		$this->plugin[ 'icon' ]			= CODESIGNER_ASSETS . '/img/icon-128.png';
+		$this->plugin[ 'depends' ]		= [
+			'woocommerce/woocommerce.php'	=> __( 'WooCommerce', 'codesigner' ),
+			'elementor/elementor.php'		=> __( 'Elementor', 'codesigner' ),
 		];
 	}
 
@@ -154,40 +154,40 @@ final class Plugin {
 	 */
 	private function hook(){
 
-		if (is_admin()) :
+		if ( is_admin() ) :
 
 			/**
 			 * Admin facing hooks
 			 */
-			$admin = new App\Admin($this->plugin);
-			$admin->activate('install');
-			$admin->action('admin_footer', 'upgrade');
-			$admin->action('admin_footer', 'modal');
-			$admin->action('init', 'i18n');
-			$admin->action('admin_enqueue_scripts', 'enqueue_scripts');
-			$admin->action('admin_menu', 'add_menus');
-			$admin->filter("plugin_action_links_{$this->plugin['basename']}", 'action_links');
-			$admin->filter('plugin_row_meta', 'plugin_row_meta', 10, 2);
-			$admin->action('admin_footer_text', 'footer_text');
-			$admin->action('after_setup_theme', 'setup');
-			$admin->action('plugins_loaded', 'settings_page_redirect');
-			$admin->filter('http_request_host_is_external', '__return_true', 10, 3);
-			$admin->action('admin_notices', 'admin_notices');
-			$admin->action('cx-plugin_after-nav-items', 'setting_navs_add_item');
-			$admin->filter('admin_body_class', 'admin_body_class');
+			$admin = new App\Admin( $this->plugin );
+			$admin->activate( 'install' );
+			$admin->action('admin_footer', 'upgrade' );
+			$admin->action('admin_footer', 'modal' );
+			$admin->action( 'init', 'i18n' );
+			$admin->action( 'admin_enqueue_scripts', 'enqueue_scripts' );
+			$admin->action( 'admin_menu', 'add_menus' );
+			$admin->filter( "plugin_action_links_{$this->plugin['basename']}", 'action_links' );
+			$admin->filter( 'plugin_row_meta', 'plugin_row_meta', 10, 2 );
+			$admin->action( 'admin_footer_text', 'footer_text' );
+			$admin->action( 'after_setup_theme', 'setup' );
+			$admin->action( 'plugins_loaded', 'settings_page_redirect' );
+			$admin->filter( 'http_request_host_is_external', '__return_true', 10, 3 );
+			$admin->action( 'admin_notices', 'admin_notices' );
+			$admin->action( 'cx-plugin_after-nav-items', 'setting_navs_add_item' );
+			$admin->filter( 'admin_body_class', 'admin_body_class' );
 			//$admin->filter('admin_footer', 'admin_notice');
-			$admin->activate('codesigner_widgets_activation');
-			$admin->activate('codesigner_modules_activation');
+			$admin->activate( 'codesigner_widgets_activation' );
+			$admin->activate( 'codesigner_modules_activation' );
 			//$admin->action('elementor/editor/after_enqueue_scripts', 'pro_alert_enqueue_scripts'); //
 
 			/**
 			 * Settings related hooks
 			 */
 			$settings = new App\Settings($this->plugin);
-			$settings->action('plugins_loaded', 'init_menu', 11);
-			$settings->action('cx-settings-saved', 'reset', 10, 2);
-			$settings->action('admin_init', 'redirect_specific_admin_page');
-			$settings->action("{$this->plugin['TextDomain']}_upgraded", 'migrate_settings', 10, 2);
+			$settings->action( 'plugins_loaded', 'init_menu', 11 );
+			$settings->action( 'cx-settings-saved', 'reset', 10, 2 );
+			$settings->action( 'admin_init', 'redirect_specific_admin_page' );
+			$settings->action( "{$this->plugin['TextDomain']}_upgraded", 'migrate_settings', 10, 2 );
 
 			/**
 			 * Renders different notices
@@ -196,7 +196,7 @@ final class Plugin {
 			 * 
 			 * @author Codexpert <hi@codexpert.io>
 			 */
-			$notice = new Notice($this->plugin);
+			$notice = new Notice( $this->plugin );
 
 			/**
 			 * Shows a popup window asking why a user is deactivating the plugin
@@ -236,18 +236,18 @@ final class Plugin {
 			/**
 			 * Front facing hooks
 			 */
-			$front = new App\Front($this->plugin);
-			$front->action('wp_footer', 'modal');
-			$front->action('wp_head', 'head');
-			$front->action('wp_enqueue_scripts', 'enqueue_scripts');
-			$front->action('after_setup_theme', 'setup');
-			$front->action('admin_bar_menu', 'add_admin_bar', 70);
-			$front->filter('body_class', 'body_class');
-			$front->filter('woocommerce_checkout_fields', 'regenerate_fields');
-			$front->filter('woocommerce_product_add_to_cart_text', 'add_to_cart_text');
-			$front->filter('woocommerce_product_single_add_to_cart_text', 'add_to_cart_text');
-			$front->filter('woocommerce_add_to_cart_redirect', 'redirect_to_checkout');
-			$front->action('codesigner_after_main_content', 'collect_usage');
+			$front = new App\Front( $this->plugin );
+			$front->action( 'wp_footer', 'modal' );
+			$front->action( 'wp_head', 'head' );
+			$front->action( 'wp_enqueue_scripts', 'enqueue_scripts' );
+			$front->action( 'after_setup_theme', 'setup' );
+			$front->action( 'admin_bar_menu', 'add_admin_bar', 70 );
+			$front->filter( 'body_class', 'body_class' );
+			$front->filter( 'woocommerce_checkout_fields', 'regenerate_fields' );
+			$front->filter( 'woocommerce_product_add_to_cart_text', 'add_to_cart_text' );
+			$front->filter( 'woocommerce_product_single_add_to_cart_text', 'add_to_cart_text' );
+			$front->filter( 'woocommerce_add_to_cart_redirect', 'redirect_to_checkout' );
+			$front->action( 'codesigner_after_main_content', 'collect_usage' );
 
 		endif;
 
@@ -255,64 +255,64 @@ final class Plugin {
 		 * Templates and library
 		 */
 		$library = new App\Library($this->plugin);
-		$library->action('elementor/ajax/register_actions', 'register_ajax_actions', 20);
-		$library->action('elementor/editor/before_enqueue_scripts', 'enqueue_scripts');
-		$library->action('elementor/preview/enqueue_styles', 'enqueue_scripts');
-		$library->action('elementor/editor/footer', 'print_template_views');
+		$library->action( 'elementor/ajax/register_actions', 'register_ajax_actions', 20) ;
+		$library->action( 'elementor/editor/before_enqueue_scripts', 'enqueue_scripts' );
+		$library->action( 'elementor/preview/enqueue_styles', 'enqueue_scripts' );
+		$library->action( 'elementor/editor/footer', 'print_template_views' );
 
 		/**
 		 * Widgets related hooks
 		 */
-		$widgets = new App\Widgets($this->plugin);
-		$widgets->action('elementor/widgets/widgets_registered', 'register_widgets'); // for Elementor < 3.5.0
-		$widgets->action('elementor/widgets/register', 'register_widgets');
-		$widgets->action('elementor/controls/controls_registered', 'register_controls');
-		$widgets->action('elementor/elements/categories_registered', 'register_category');
-		$widgets->action('elementor/editor/after_enqueue_scripts', 'enqueue_styles');
-		$widgets->action('elementor/frontend/the_content', 'the_content');
-		$widgets->action('pre_get_posts', 'set_filter_query');
-		$widgets->action('codesigner_shop_query_controls', 'shop_query_controls');
-		$widgets->filter('wcd_product_source_type', 'add_source_type');
+		$widgets = new App\Widgets( $this->plugin );
+		$widgets->action( 'elementor/widgets/widgets_registered', 'register_widgets' ); // for Elementor < 3.5.0
+		$widgets->action( 'elementor/widgets/register', 'register_widgets' );
+		$widgets->action( 'elementor/controls/controls_registered', 'register_controls' );
+		$widgets->action( 'elementor/elements/categories_registered', 'register_category' );
+		$widgets->action( 'elementor/editor/after_enqueue_scripts', 'enqueue_styles' );
+		$widgets->action( 'elementor/frontend/the_content', 'the_content' );
+		$widgets->action( 'pre_get_posts', 'set_filter_query' );
+		$widgets->action( 'codesigner_shop_query_controls', 'shop_query_controls' );
+		$widgets->filter( 'wcd_product_source_type', 'add_source_type' );
 		// $widgets->filter('elementor/editor/localize_settings', 'promote_pro_elements');
 
 		/**
 		 * Modules related hooks
 		 */
-		$modules = new App\Modules($this->plugin);
-		$modules->action('plugins_loaded', 'init');
+		$modules = new App\Modules( $this->plugin );
+		$modules->action( 'plugins_loaded', 'init' );
 
 		/**
 		 * The setup wizard
 		 */
-		$wizard = new App\Wizard($this->plugin);
-		$wizard->action('admin_print_styles', 'enqueue_styles');
-		$wizard->action('admin_print_scripts', 'enqueue_scripts');
-		$wizard->action('plugins_loaded', 'render');
-		$wizard->filter("plugin_action_links_{$this->plugin['basename']}", 'action_links');
+		$wizard = new App\Wizard( $this->plugin );
+		$wizard->action( 'admin_print_styles', 'enqueue_styles' );
+		$wizard->action( 'admin_print_scripts', 'enqueue_scripts' );
+		$wizard->action( 'plugins_loaded', 'render' );
+		$wizard->filter( "plugin_action_links_{$this->plugin['basename']}", 'action_links' );
 
 		/**
 		 * Cron facing hooks
 		 */
-		$cron = new App\Cron($this->plugin);
-		$cron->activate('install');
-		$cron->deactivate('uninstall');
+		$cron = new App\Cron( $this->plugin );
+		$cron->activate( 'install' );
+		$cron->deactivate( 'uninstall' );
 
 		/**
 		 * AJAX related hooks
 		 */
-		$ajax = new App\AJAX($this->plugin);
-		$ajax->priv('codesigner-docs_json', 'fetch_docs');
-		$ajax->all('add-to-wish', 'add_to_wish');
-		$ajax->all('add-variations-to-cart', 'add_variations_to_cart');
-		$ajax->all('multiple-product-add-to-cart', 'multiple_product_add_to_cart');
-		$ajax->priv('wcd-template-sync', 'template_sync');
-		$ajax->all('wl_single_insert_to_cart', 'wl_single_cart');
-		$ajax->all('codesigner_admin_notice', 'admin_notice');
-		$ajax->all('complete-setting-close', 'complete_setting_close');
-		$ajax->all('dismiss_notice_checkout', 'dismiss_notice_checkout');
-		$ajax->all('dismiss_notice_email', 'dismiss_notice_email');
-		$ajax->all('dismiss_notice_invoice', 'dismiss_notice_invoice');
-		$ajax->all('codesigner_dismiss_notice', 'codesigner_dismiss_notice_callback');
+		$ajax = new App\AJAX( $this->plugin );
+		$ajax->priv( 'codesigner-docs_json', 'fetch_docs' );
+		$ajax->all( 'add-to-wish', 'add_to_wish' );
+		$ajax->all( 'add-variations-to-cart', 'add_variations_to_cart' );
+		$ajax->all( 'multiple-product-add-to-cart', 'multiple_product_add_to_cart' );
+		$ajax->priv( 'wcd-template-sync', 'template_sync' );
+		$ajax->all( 'wl_single_insert_to_cart', 'wl_single_cart' );
+		$ajax->all( 'codesigner_admin_notice', 'admin_notice' );
+		$ajax->all( 'complete-setting-close', 'complete_setting_close' );
+		$ajax->all( 'dismiss_notice_checkout', 'dismiss_notice_checkout' );
+		$ajax->all( 'dismiss_notice_email', 'dismiss_notice_email' );
+		$ajax->all( 'dismiss_notice_invoice', 'dismiss_notice_invoice' );
+		$ajax->all( 'codesigner_dismiss_notice', 'codesigner_dismiss_notice_callback' );
 	}
 
 	/**
@@ -336,8 +336,8 @@ final class Plugin {
 	 * 
 	 * @return $_instance
 	 */
-	public static function instance(){
-		if (is_null(self::$_instance)) {
+	public static function instance() {
+		if ( is_null( self::$_instance) ) {
 			self::$_instance = new self();
 		}
 		return self::$_instance;
