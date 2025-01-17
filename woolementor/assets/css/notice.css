@@ -12,6 +12,7 @@
 	background-size: contain;
 	background: url("../img/promo/kik-off.png") no-repeat;
 	background-position-y: center;
+	background-size: cover;
 }
 .codesigner-dismissible-notice a {
 	text-decoration: none;
@@ -35,7 +36,7 @@
 	transform: scale(1.2);
 }
 .notice.notice-info.is-dismissible.codesigner-dismissible-notice {
-	padding-right: 50px;
+	padding-right: 115px;
 }
 .row-actions .codesigner-get-pro a {
 	color: #ff6640;

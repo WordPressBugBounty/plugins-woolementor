@@ -5,9 +5,9 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '32081b249c7ceeed597e9d0429d3c0b52bdd01cd',
+        'reference' => '80f3df809273a438d1c7b8568ac9310001295bfd',
         'name' => '__root__',
-        'dev' => true,
+        'dev' => false,
     ),
     'versions' => array(
         '__root__' => array(
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '32081b249c7ceeed597e9d0429d3c0b52bdd01cd',
+            'reference' => '80f3df809273a438d1c7b8568ac9310001295bfd',
             'dev_requirement' => false,
         ),
         'chillerlan/php-qrcode' => array(
@@ -83,7 +83,7 @@
             'aliases' => array(
                 0 => '9999999-dev',
             ),
-            'reference' => '3896fda5be32bdc47c88a9b94ef93f2c4f08e8f8',
+            'reference' => '4e553e5024fec2c6a059df3356e043e47d4351e9',
             'dev_requirement' => false,
         ),
         'pluggable/plugin' => array(

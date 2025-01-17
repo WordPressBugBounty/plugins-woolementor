@@ -2331,7 +2331,7 @@ if( ! function_exists( 'codesigner_notices_values' ) ) :
         return [
             'codesigner_promotional_campain' => [
                 'from'   => $current_time,
-                'to'     => strtotime( '2025-01-10 00:00:00' ),
+                'to'     => strtotime( '2025-01-20 00:00:00' ),
                 'button' => __('Grab Now', 'codesigner'),
                 'url'    => "https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=new-year-2025",
             ],
