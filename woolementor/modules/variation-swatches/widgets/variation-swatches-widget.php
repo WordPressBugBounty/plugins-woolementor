@@ -27,13 +27,13 @@ class Variation_Swatches_Widget extends Widget_Base {
 	}
 
 	protected function register_controls() {
-		echo codesigner_get_variation_swatches_view( 'controls', $this );
+		codesigner_get_variation_swatches_view( 'controls', $this, false );
 	}
 
 	protected function render() {
 		
 		$settings 	= $this->get_settings_for_display();
-		echo codesigner_get_variation_swatches_view( 'swatches', $settings );   	
+		codesigner_get_variation_swatches_view( 'swatches', $settings, false );   	
 	}
 
 }

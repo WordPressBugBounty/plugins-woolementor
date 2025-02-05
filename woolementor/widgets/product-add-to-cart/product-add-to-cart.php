@@ -771,7 +771,7 @@ class Product_Add_To_Cart extends Widget_Base {
 		}
 
 		if ( ! $product ) {
-			_e( 'This is not a product or an invalid ID is provided.', 'codesigner' );
+			esc_html_e( 'This is not a product or an invalid ID is provided.', 'codesigner' );
 			return;
 		}
 

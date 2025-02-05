@@ -34,7 +34,9 @@ foreach ( $widgets as $id => $widget ) {
 
 		$category = str_replace( 'CoDesigner - ', '', $category_names[ $_category ]['title'] );
 
-		echo "<h3 class='wl-widget-category'>" . esc_html( $category ) . "</h3>";
+		?>
+		<h3 class='wl-widget-category'><?php echo esc_html( $category ); ?></h3>
+		<?php
 
 		printf( '<div id="wl-widgets-group-%s" class="wl-widgets-group">', esc_attr( $_category ) );
 		foreach ( $widgets as $id => $widget ) {
@@ -83,18 +85,17 @@ foreach ( $widgets as $id => $widget ) {
 			$keywords = implode( ' ', $widget['keywords'] ) . " {$widget['title']}";
 
 			$title = str_replace( 'Shop - ', '', $widget['title'] );
-			echo "
-			    <div id='wl-{$id}' class='wl-widget {$_class} {$_active}' data-keywords='{$keywords}'>
-			        <label class='wl-widget-title' for='codesigner-checkbox-{$id}'>{$title}</label>
-			        {$_button}
+			?>
+			    <div id='wl-<?php echo esc_attr( $id ); ?>' class='wl-widget <?php echo esc_attr( $_class ); ?> <?php echo esc_attr( $_active ); ?>' data-keywords='<?php echo esc_attr( $keywords ); ?>'>
+			        <label class='wl-widget-title' for='codesigner-checkbox-{$id}'><?php echo esc_html( $title ); ?></label>
+			        <?php echo esc_html( $_button ); ?>
 			    </div>
-			";
-
+			<?php
 		}
 		
-		echo '</div><!-- .wl-widgets-group -->';
+		echo wp_kses_post( '</div>' );
 
-		echo '</div><!-- .wl-dashboard-widgets -->';
+		echo wp_kses_post( '</div>' );
 
         $flag++;
 	}
@@ -114,7 +115,7 @@ foreach ( $widgets as $id => $widget ) {
 	<button id="wl-pro-popup-hide" type="button">&times;</button>
 	<h2 class="wl-pro-popup-title"><?php esc_html__( 'This is a Premium Feature', 'codesigner' ); ?></h2>
 	<img class="wl-pro-popup-img" src="<?php echo esc_url( CODESIGNER_ASSETS . '/img/pro-rocket.png' ); ?>">
-	<p class="wl-pro-popup-txt"><?php echo 'Get <b>50+ premium features</b> along with this one and create your dream WooCommerce site in no time.'; ?></p>
+	<p class="wl-pro-popup-txt"><?php echo wp_kses_post( 'Get <b>50+ premium features</b> along with this one and create your dream WooCommerce site in no time.' ); ?></p>
 	<p>
         <a id="wl-pro-popup-btn" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-popup" target="_blank">
 		    <span class="dashicons dashicons-unlock"></span>

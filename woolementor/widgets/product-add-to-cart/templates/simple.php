@@ -21,7 +21,7 @@ if ( ! $product->is_purchasable() ) {
 	return;
 }
 
-echo wc_get_stock_html( $product ); // WPCS: XSS ok.
+echo wp_kses_post( wc_get_stock_html( $product ) ); // WPCS: XSS ok.
 
 if ( $product->is_in_stock() ) :
 
@@ -44,7 +44,7 @@ if ( $product->is_in_stock() ) :
 
 		printf( '<button type="submit" name="add-to-cart" value="%s" %s>%s</button>',
 			esc_attr( $product->get_id() ),
-			$this->get_render_attribute_string( 'add_to_cart_text' ),
+			wp_kses_post( $this->get_render_attribute_string( 'add_to_cart_text' ) ),
 			esc_html( $button_text )
 		);
 
@@ -52,7 +52,9 @@ if ( $product->is_in_stock() ) :
 
 		<?php 
 		if ( $settings['cd_hide_default_vs_table'] ) {
-			echo '<input type="hidden" name="variation_id" class="variation_id" value="0">';
+			?>
+				<input type="hidden" name="variation_id" class="variation_id" value="0">
+			<?php
 		}
 		?>
 	</form>

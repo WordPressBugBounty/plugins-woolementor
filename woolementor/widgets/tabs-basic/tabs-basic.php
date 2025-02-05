@@ -389,13 +389,14 @@ class Tabs_Basic extends Widget_Base {
         ?>
 
         <div class="wl-product-tabs <?php echo esc_attr( $settings['tabs_type'] ); ?>">
-
         	<div class="wl-pt-navigation-wrapper">
 	        	<ul>
 	        		<?php 
-	        		foreach ( $settings['tabs_list'] as $tab ) {
-	        			echo '<li><a href="#tab-'. esc_attr( $tab['_id'] ) .'">'. esc_html( $tab['tab_name'] ) .'</a></li>';
-	        		}
+						foreach ( $settings['tabs_list'] as $tab ) {
+							?>
+								<li><a href="#tab-<?php echo esc_attr( $tab['_id'] ); ?>"><?php echo esc_html( $tab['tab_name'] ); ?></a></li>
+							<?php
+						}
 	        		?>
 	        	</ul>
         	</div>
@@ -406,7 +407,7 @@ class Tabs_Basic extends Widget_Base {
         			<div id="tab-<?php echo esc_attr( $tab['_id'] ); ?>">
 		        		<?php 
 		        		if ( 'static_texts' == $tab['tab_content_source'] ) {
-		        			echo wpautop( wp_kses_post( $tab['tab_content'] ) ); 
+		        			echo wp_kses_post( wpautop( $tab['tab_content'] ) ); 
 		        		}
 		        		else{
 		        			$value = get_post_meta( $post_id, $tab['tab_content_meta'], true );
@@ -415,7 +416,7 @@ class Tabs_Basic extends Widget_Base {
 		        				echo wp_kses_post( $value );
 		        			}
 		        			else{
-		        				echo __( 'Array', 'codesigner' );
+		        				esc_html_e( 'Array', 'codesigner' );
 		        			}
 		        		}
 		        		?>

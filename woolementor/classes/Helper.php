@@ -22,17 +22,19 @@ class Helper {
 
 		if( $admin_only && ! current_user_can( 'manage_options' ) ) return;
 
-		echo '<pre>';
+		echo wp_kses_post( '<pre>' );
 		if( is_object( $data ) || is_array( $data ) ) {
 			print_r( $data );
 		}
 		else {
 			var_dump( $data );
 		}
-		echo '</pre>';
+		echo wp_kses_post( '</pre>' );
 
 		if( is_admin() && $hide_adminbar ) {
-			echo '<style>#adminmenumain{display:none;}</style>';
+			?>
+				<style>#adminmenumain{display:none;}</style>
+			<?php
 		}
 	}
 
@@ -109,7 +111,7 @@ class Helper {
 	 * @param string $sub_dir sub-directory under base directory
 	 * @param array $fields fields of the form
 	 */
-	public static function get_template( $slug, $base = 'views', $args = null ) {
+	public static function get_template( $slug, $base = 'views', $args = null, $is_return = true ) {
 
 		// templates can be placed in this directory
 		$overwrite_template_dir = apply_filters( 'codesigner_template_overwrite_dir', get_stylesheet_directory() . '/codesigner/', $slug, $base, $args );
@@ -122,6 +124,16 @@ class Helper {
 		
 		// full path of a template file in overwrite directory
 		$overwrite_template_path =  $overwrite_template_dir . $slug . '.php';
+
+		if( ! $is_return ) {
+			if( file_exists( $overwrite_template_path ) ) {
+				include $overwrite_template_path;
+			}
+			if( file_exists( $plugin_template_path ) ) {
+				include $plugin_template_path;
+			}
+			return;
+		}
 
 		// if template is found in overwrite directory
 		if( file_exists( $overwrite_template_path ) ) {

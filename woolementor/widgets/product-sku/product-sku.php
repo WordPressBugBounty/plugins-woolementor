@@ -375,7 +375,7 @@ class Product_Sku extends Widget_Base {
 
         			<?php 
 	        			printf( '<span %s>%s</span>',
-							$this->get_render_attribute_string( 'sku_label' ),
+							wp_kses_post( $this->get_render_attribute_string( 'sku_label' ) ),
 							esc_html( $settings['sku_label'] )
 						);
         			?>
@@ -390,12 +390,12 @@ class Product_Sku extends Widget_Base {
 
 	        		<?php 
 	        			printf( '<span %s>%s</span>',
-							$this->get_render_attribute_string( 'sku_label' ),
+						wp_kses_post( $this->get_render_attribute_string( 'sku_label' ) ),
 							esc_html( $settings['sku_label'] )
 						);
 
 	        			printf( '<span %s>%s</span>',
-							$this->get_render_attribute_string( 'product_custom_sku' ),
+						wp_kses_post( $this->get_render_attribute_string( 'product_custom_sku' ) ),
 							esc_html( $settings['product_custom_sku'] )
 						);
         			?>

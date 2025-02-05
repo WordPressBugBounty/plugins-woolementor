@@ -167,7 +167,9 @@ class Product_Brands extends Base {
 
     $terms = get_the_terms( $product->get_id(), 'brand' );
         if ( $terms ) {         
-            echo '<span class="brand_wrapper">';
+            ?>
+            <span class="brand_wrapper">
+                <?php
             echo esc_html_e( Helper::get_option( 'codesigner_product_brands', 'pb_singular_name' ) . ' : ', 'codesigner' );
             foreach ( $terms as $key => $term ) {
                 $term_links[ esc_url( get_term_link( $term, Helper::get_option( 'codesigner_product_brands', 'pb_singular_name' ) ) ) ]  = esc_html( $term->name );                
@@ -179,7 +181,9 @@ class Product_Brands extends Base {
                 }
             }
             echo wp_kses_post( implode( ', ', $links ) );
-            echo '</span>';
+            ?>
+                </span>
+            <?php
         }
     }
 }

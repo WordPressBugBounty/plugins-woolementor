@@ -116,8 +116,10 @@ $products = wcd_query_products( $settings );
 
                <?php endwhile; wp_reset_query(); else: 
 
-               echo '<p>' . __( 'No Product Found!', 'codesigner' ) . '</p>';
+        ?>
+            <p><?php echo esc_html( 'No Product Found!', 'codesigner' ); ?></p>
 
+               <?php
            endif; ?>
        </div>
     </div>
@@ -132,12 +134,14 @@ if ( 'yes' == $pagination_show_hide ):
         $class = 'wl-ajax-filter-pagination';
     }
 
-    echo "<div class='wl-scr-pagination ".esc_attr( $class )."'>";
+    ?>
+        <div class='wl-scr-pagination <?php echo esc_attr( $class ); ?>'>
+    <?php
     
     /**
     * codesigner pagination
     */
     wcd_pagination( $products, $pagination_left_icon, $pagination_right_icon ); 
 
-    echo '</div>';
+    echo wp_kses_post( '</div>' );
 endif;

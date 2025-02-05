@@ -436,9 +436,11 @@ class Gallery_Box_Slider extends Widget_Base {
 						foreach ( $image_gallery as $image ): 
 							$thumbnail 		= wp_get_attachment_image_src( $image['id'], $image_thumbnail_size );
 
-							echo'<div class="wl-gbs-slide">';
-							echo '<img src="'. esc_url( $thumbnail[0] ) .'" />';
-							echo'</div>';
+							?>
+								<div class="wl-gbs-slide">
+								<img src="<?php echo esc_url( $thumbnail[0] ); ?>" />
+								</div>
+							<?php
 						endforeach; ?>
 
 					</div>

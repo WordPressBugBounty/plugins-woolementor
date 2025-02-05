@@ -1,15 +1,15 @@
 <?php
 use Codexpert\CoDesigner\Helper;
 
-$widgets 		= codesigner_widgets();
+$widgets        = codesigner_widgets();
 $active_widgets = wcd_active_widgets();
 
 // sort by category first
-$widget_categories = [];
-$category_names = wcd_widget_categories();
+$widget_categories = array();
+$category_names    = wcd_widget_categories();
 foreach ( $widgets as $id => $widget ) {
 	$categories = $widget['categories'];
-	if( count( $categories ) > 0 ) {
+	if ( count( $categories ) > 0 ) {
 		$widget_categories[ $categories[0] ][ $id ] = $widget;
 	}
 }
@@ -36,8 +36,8 @@ foreach ( $widgets as $id => $widget ) {
 		<div class="wl-toggle-group">
 			<h4 class="wl-disable"><?php esc_attr_e( 'Disable All', 'codesigner' ); ?></h4>
 			<label class="wl-toggle-all-wrap">
-			  	<input type="checkbox">
-			  	<span class="wl-toggle-all"></span>
+					<input type="checkbox">
+					<span class="wl-toggle-all"></span>
 			</label>
 			<h4 class="wl-enable"><?php esc_attr_e( 'Enable All', 'codesigner' ); ?></h4>
 		</div>
@@ -56,12 +56,12 @@ foreach ( $widgets as $id => $widget ) {
 
 			$_class = isset( $widget['pro_feature'] ) && $widget['pro_feature'] ? 'pro' : 'free';
 
-			$_active	= in_array( $id, $active_widgets ) ? 'active' : '';
-			$_checked	= in_array( $id, $active_widgets ) ? 'checked' : '';
+			$_active  = in_array( $id, $active_widgets ) ? 'active' : '';
+			$_checked = in_array( $id, $active_widgets ) ? 'checked' : '';
 
-			$pro_html 	= '';
+			$pro_html = '';
 			if ( $_class == 'pro' ) {
-				$pro_html = '<span class="wl-pro-ribbon">'. __( 'Pro', 'codesigner' ) .'</span>';
+				$pro_html = '<span class="wl-pro-ribbon">' . __( 'Pro', 'codesigner' ) . '</span>';
 			}
 
 			$_demo = sprintf(
@@ -75,7 +75,7 @@ foreach ( $widgets as $id => $widget ) {
 				__( 'View Demo', 'codesigner' ),
 			);
 
-			$_button	= "
+			$_button = "
 			{$pro_html}
 			<label class='wl-toggle-switch'>
 				{$_demo}
@@ -84,8 +84,8 @@ foreach ( $widgets as $id => $widget ) {
 			</label>
 			";
 
-			if( ! wcd_is_pro_activated() && $_class == 'pro' ) {
-				$_button	= "
+			if ( ! wcd_is_pro_activated() && $_class == 'pro' ) {
+				$_button = "
 				{$pro_html}
 				<label class='wl-toggle-switch wl-pro-popup-show'>
 					{$_demo}
@@ -98,16 +98,40 @@ foreach ( $widgets as $id => $widget ) {
 			$keywords = implode( ' ', $widget['keywords'] ) . " {$widget['title']}";
 
 			$title = str_replace( 'Shop - ', '', $widget['title'] );
-			echo "<div id='wl-" . esc_attr( $id ) . "' class='wl-widget " . esc_attr( $_class ) . " " . esc_attr( $_active ) . "' data-keywords='" . esc_attr( $keywords ) . "'>
-			    <label class='wl-widget-title' for='codesigner-checkbox-" . esc_attr( $id ) . "'>" . esc_html( $title ) . "</label>
-			    " . $_button . "
-			</div>";
+			?>
+			<div id='wl-<?php echo esc_attr( $id ); ?>' class='wl-widget <?php echo esc_attr( $_class ); ?> <?php echo esc_attr( $_active ); ?>' data-keywords='<?php echo esc_attr( $keywords ); ?>'>
+				<label class='wl-widget-title' for='codesigner-checkbox-<?php echo esc_attr( $id ); ?>'><?php echo esc_html( $title ); ?></label>
+				<?php
+
+					$allowed_html = array(
+						'label' => array(
+							'class' => array(),
+						),
+						'input' => array(
+							'type'    => array(),
+							'class'   => array(),
+							'id'      => array(),
+							'name'    => array(),
+							'checked' => array(),
+						),
+						'span'  => array(
+							'class'     => array(),
+							'data-demo' => array(),
+						),
+					);
+
+					echo wp_kses( $_button, $allowed_html );
+
+					?>
+			</div>
+
+			<?php
 
 		}
-		
-		echo '</div><!-- .wl-widgets-group -->';
 
-		echo '</div><!-- .wl-dashboard-widgets -->';
+		echo wp_kses_post( '</div>' );
+		echo wp_kses_post( '</div>' );
+
 	}
 	?>
 
@@ -124,3 +148,4 @@ foreach ( $widgets as $id => $widget ) {
 		<?php esc_attr_e( 'Unlock Premium Features', 'codesigner' ); ?>
 	</a></p>
 </div>
+<?php

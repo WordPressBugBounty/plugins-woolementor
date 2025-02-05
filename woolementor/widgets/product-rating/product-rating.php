@@ -206,7 +206,7 @@ class Product_Rating extends Widget_Base {
 			$product    = wc_get_product( $product_id );
 		}
 
-		echo "<div class='wcd-product-rating' >";
+		echo wp_kses_post( "<div class='wcd-product-rating' >" );
 
 		if ( empty( $product ) ) {
 			return;
@@ -216,14 +216,15 @@ class Product_Rating extends Widget_Base {
 			$review_count = 5;
 			?>
 			<div class="wcd-demo-product-rating">
-				<?php echo wcd_rating_html( 4 ) ; ?>
+				<?php echo wp_kses( wcd_rating_html( 4 ), ['span' => array('class' => array())] ) ; ?>
 				<a href="#reviews" class="woocommerce-review-link" rel="nofollow">
 					(<?php printf( esc_html( _n( '%s customer review', '%s customer reviews', $review_count, 'codesigner' ) ), '<span class="count">' . esc_html( $review_count ) . '</span>' ); ?>)
 				</a>
 			</div>
 		<?php }
 		wc_get_template( 'single-product/rating.php' );
-		echo "</div>";
+
+		echo wp_kses_post( "</div>" );
 
 		do_action( 'codesigner_after_main_content', $this );
 	}

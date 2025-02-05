@@ -1524,10 +1524,12 @@ class Pricing_Table_Smart extends Widget_Base {
 	protected function render() {
         if( !current_user_can( 'edit_pages' ) ) return;
 
-        echo wcd_notice( sprintf( __( 'This beautiful widget, <strong>%s</strong> is a premium widget. Please upgrade to <strong>%s</strong> or activate your license if you already have upgraded!' ), $this->get_name(), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) );
+        echo wp_kses_post( wcd_notice( sprintf( __( 'This beautiful widget, <strong>%s</strong> is a premium widget. Please upgrade to <strong>%s</strong> or activate your license if you already have upgraded!' ), $this->get_name(), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) ) );
 
         if( file_exists( dirname( __FILE__ ) . '/assets/img/screenshot.png' ) ) {
-            echo "<img src='" . plugins_url( 'assets/img/screenshot.png', __FILE__ ) . "' />";
+            ?>
+                <img src='<?php echo esc_url( plugins_url( 'assets/img/screenshot.png', __FILE__ ) ); ?>' />
+            <?php
         }
     }
 }

@@ -2118,46 +2118,54 @@ class Pricing_Table_Advanced extends Widget_Base {
 					<div class="wl-pt-pricing-icon">
                         <?php if ( $pricing_table_icon['library'] == 'svg' ){
                             $svg = esc_url( $pricing_table_icon['value']['url'] );
-                            echo "<img class='wl-pt-pricing-icon-svg' src='{$svg}' />";
+                            echo wp_kses_post( "<img class='wl-pt-pricing-icon-svg' src='{$svg}' />" );
                         }
                         else{
                             $icon = esc_attr( $pricing_table_icon['value'] );
-                            echo "<i class='{$icon}'></i>";
+                            echo wp_kses_post( "<i class='{$icon}'></i>" );
                         } ?>                        
                     </div>
-					<div <?php echo $this->get_render_attribute_string( 'pricing_table_title' ); ?> ><?php echo esc_html( $pricing_table_title ); ?></div>
+					<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_title' ) ); ?> ><?php echo esc_html( $pricing_table_title ); ?></div>
 					<div class="wl-pt-pricing-wrap">
 
                         <?php if ( 'left' == $pricing_table_currency_alignment ):
 
-                            echo 'yes' == $show_saleprice ? '<del>' : '' ?>
+                            echo wp_kses_post( 'yes' == $show_saleprice ? '<del>' : '' ); ?>
                             <div class="wl-pt-regular-price ">
-                                <sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo $this->get_render_attribute_string( 'pricing_table_price' ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><span <?php echo $this->get_render_attribute_string( 'pricing_table_period' ); ?> ><?php echo esc_html( $pricing_table_period ); ?>
+                                <sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_price' ) ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_period' ) ); ?> ><?php echo esc_html( $pricing_table_period ); ?>
                                     
                                 </span>
                             </div>
-                            <?php echo 'yes' == $show_saleprice ? '</del>' : '';
+                            <?php echo wp_kses_post( 'yes' == $show_saleprice ? '</del>' : '' );
 
                             if( 'yes' == $show_saleprice ): ?>
                                 <div class="wl-pt-sale-price-wrap">
 
-                                    <sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo $this->get_render_attribute_string( 'pricing_table_sale_price' ); ?> ><?php echo esc_html( $pricing_table_sale_price ); ?></span><span <?php echo $this->get_render_attribute_string( 'pricing_table_period' ); ?> ><?php echo esc_html( $pricing_table_period ); ?>
+                                    <sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_sale_price' ) ); ?> ><?php echo esc_html( $pricing_table_sale_price ); ?></span><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_period' ) ); ?> ><?php echo esc_html( $pricing_table_period ); ?>
                                 </div>
                             <?php endif;
                         endif;
 
                         if ( 'right' == $pricing_table_currency_alignment ):
-                            echo 'yes' == $show_saleprice ? '<del>' : ''; ?>
+                            echo wp_kses_post( 'yes' == $show_saleprice ? '<del>' : '' ); ?>
 
                             <div class="wl-pt-regular-price">
-                                <span <?php echo $this->get_render_attribute_string( 'pricing_table_price' ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo $this->get_render_attribute_string( 'pricing_table_period' ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span>
+                                <span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_price' ) ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_period' ) ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span>
                             </div>
 
-                            <?php echo 'yes' == $show_saleprice ? '</del>' : '';
+                            <?php echo wp_kses_post( 'yes' == $show_saleprice ? '</del>' : '' );
 
                             if( 'yes' == $show_saleprice ): ?>
                                 <div class="wl-pt-sale-price-wrap">
-                                    <span <?php echo $this->get_render_attribute_string( 'pricing_table_sale_price' ); ?> ><?php echo esc_html( $pricing_table_sale_price ); ?></span><sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo $this->get_render_attribute_string( 'pricing_table_period' ); ?> ><?php echo esc_html( $pricing_table_period ); ?>
+                                    <span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_sale_price' ) ); ?> >
+                                        <?php echo esc_html( $pricing_table_sale_price ); ?>
+                                    </span>
+                                    <sup>
+                                        <?php echo esc_html( $pricing_table_currency ); ?>
+                                    </sup>
+                                    <span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_period' ) ); ?> >
+                                        <?php echo esc_html( $pricing_table_period ); ?>
+                                    </span>
                                 </div>
                             <?php endif;
                         endif; ?>
@@ -2170,13 +2178,13 @@ class Pricing_Table_Advanced extends Widget_Base {
 							<li><?php 
                                 if ( $feature['pricing_table_features_icon']['library'] == 'svg' ) {
                                     $svg = esc_url( $feature['pricing_table_features_icon']['value']['url'] );
-                                    echo "<img class='wl-pta-pricing-icon-svg' src='{$svg}' />";
+                                    echo wp_kses_post( "<img class='wl-pta-pricing-icon-svg' src='{$svg}' />" );
                                 }
                                 else{
                                     $icon = esc_attr( $feature['pricing_table_features_icon']['value'] );
-                                    echo "<i class='{$icon}'></i>";
+                                    echo wp_kses_post( "<i class='{$icon}'></i>" );
                                 }
-                             ?><span><?php echo $feature['pricing_table_features_text']; ?></span></li>
+                             ?><span><?php echo wp_kses_post( $feature['pricing_table_features_text'] ); ?></span></li>
 						<?php endforeach; ?>
 					</ul>
 				</div>
@@ -2185,7 +2193,7 @@ class Pricing_Table_Advanced extends Widget_Base {
                 if ( 'yes' == $_section_footer_switcher ):
 
                     printf( '<a %s>%s</a>',
-                        $this->get_render_attribute_string( 'pricing_table_footer_button_text' ),
+                        wp_kses_post( $this->get_render_attribute_string( 'pricing_table_footer_button_text' ) ),
                         esc_html( $pricing_table_footer_button_text )
                     );
 

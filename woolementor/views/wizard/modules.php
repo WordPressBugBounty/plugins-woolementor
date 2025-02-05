@@ -20,7 +20,7 @@ $active_modules = get_option( 'codesigner_modules', [] );
 
 		<?php $flag = 1; ?>
 		<?php foreach( $modules as $key=>$module ) : ?>
-			<div class="<?php echo $flag > 12 ? 'wl-widget cd-wizard-module-block cd-hide-module' : 'wl-widget cd-wizard-module-block'; ?>">
+			<div class="<?php echo esc_attr( $flag > 12 ? 'wl-widget cd-wizard-module-block cd-hide-module' : 'wl-widget cd-wizard-module-block' ); ?>">
 				<div class="cx-label-wrap">
 					<label for="<?php echo esc_attr( 'codesigner_modules-' . $key ); ?>">
 						<?php echo esc_html( $module['title'] ); ?>
@@ -29,7 +29,9 @@ $active_modules = get_option( 'codesigner_modules', [] );
 				</div>
 				<?php                 
 				if ( $module['pro'] ) {
-					echo '<span class="wl-pro-ribbon">Pro</span>';
+					?>
+						<span class="wl-pro-ribbon"><?php echo esc_html( 'Pro' ); ?></span>
+					<?php
 				}
 				?>
 				<div class="cx-field-wrap ">
@@ -64,7 +66,7 @@ $active_modules = get_option( 'codesigner_modules', [] );
 	<button id="wl-pro-popup-hide" type="button">&times;</button>
 	<h2 class="wl-pro-popup-title"><?php echo esc_html__( 'This is a Premium Feature', 'codesigner' ); ?></h2>
 	<img class="wl-pro-popup-img" src="<?php echo esc_url( CODESIGNER_ASSETS . '/img/pro-rocket.png' ); ?>">
-	<p class="wl-pro-popup-txt"><?php echo 'Get <b>50+ premium features</b> along with this one and create your dream WooCommerce site in no time.'; ?></p>
+	<p class="wl-pro-popup-txt"><?php echo wp_kses_post( 'Get <b>50+ premium features</b> along with this one and create your dream WooCommerce site in no time.' ); ?></p>
 	<p>
 		<a id="wl-pro-popup-btn" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-popup" target="_blank">
 			<span class="dashicons dashicons-unlock"></span>

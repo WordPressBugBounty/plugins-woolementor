@@ -191,7 +191,7 @@ class Product_Gallery extends Widget_Base {
 		wp_enqueue_style( 'woocommerce-general' );
 		wp_enqueue_script('wc-single-product');
 
-		echo '<div class="wl-product-gallery product">';
+		echo wp_kses_post( '<div class="wl-product-gallery product">' );
 
 		if ( 'yes' === $settings['sale_flash'] ) {
 			wc_get_template( 'loop/sale-flash.php' );
@@ -199,7 +199,7 @@ class Product_Gallery extends Widget_Base {
 
 		wc_get_template( 'single-product/product-image.php' );
 
-		echo '</div>';
+		echo wp_kses_post( '</div>' );
 
 		do_action( 'codesigner_after_main_content', $this );
 

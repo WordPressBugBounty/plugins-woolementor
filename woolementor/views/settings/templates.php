@@ -22,8 +22,9 @@ $args = [
 ];
 $tab_links = apply_filters( 'wcd_help_tab_link', $args );
 
-echo "";
-echo "";
+echo wp_kses_post("");
+echo wp_kses_post("");
+
 ?>
 <div class='wcd_tab_btns wcd-tmpl-btns'>
 	<ul class='wcd_template_tabs wcd-tmpl-content'>

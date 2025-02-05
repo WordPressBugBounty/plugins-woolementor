@@ -413,16 +413,16 @@ class Product_Categories extends Widget_Base {
     				$product 	= $product_id != '' ? wc_get_product( $product_id ) : '';
 
     				if( $product_id == '' || !$product ) {
-    					echo "Input valid Product ID"; return;
+    					echo esc_html( "Input valid Product ID" ); return;
     				}
     			}
         		?>
 
 	        	<span class="categories_wrapper">
 		        	<?php 
-		        	if ( $product ) {
-		        		echo wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( '<span '. $this->get_render_attribute_string( 'cat_label' ) .'>'.esc_html( $settings['cat_label'] ).'</span>', '<span '. $this->get_render_attribute_string( 'cat_label' ) .'>'.esc_html( $settings['cat_label'] ).'</span>', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ); 
-		        	}
+						if ( $product ) {
+							echo wp_kses( wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( '<span '. $this->get_render_attribute_string( 'cat_label' ) .'>'.esc_html( $settings['cat_label'] ).'</span>', '<span '. $this->get_render_attribute_string( 'cat_label' ) .'>'.esc_html( $settings['cat_label'] ).'</span>', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ), [ 'a' => [ 'href' => [], 'rel' => [], 'target' => [] ] ] ); 
+						}
 		        	?>
 		        </span>
 
@@ -430,10 +430,10 @@ class Product_Categories extends Widget_Base {
 	        	<span class="categories_wrapper">
 
 	        		<?php 
-        			printf( '<span %s>%s</span>',
-						$this->get_render_attribute_string( 'cat_label' ),
-						esc_html( $settings['cat_label'] )
-					);
+						printf( '<span %s>%s</span>',
+							wp_kses_post( $this->get_render_attribute_string( 'cat_label' ) ),
+							esc_html( $settings['cat_label'] )
+						);
         			?>
 
 	        		<span class="cat-items">
@@ -443,7 +443,9 @@ class Product_Categories extends Widget_Base {
 	        				$separator 	= isset( $category['_id'] ) && $category['_id'] != $last_item['_id'] ? ', ' : '';
 	        				$target 	= isset( $category['is_external'] ) && $category['is_external'] ? ' target="_blank"' : '';
     						$nofollow 	= isset( $category['nofollow'] ) && $category['nofollow'] ? ' rel="nofollow"' : '';
-	        				echo '<a href="'. esc_url( $category['cat_link']['url'] ) .'" '. esc_attr( $target ) . esc_attr( $nofollow ) .' class="cat-item">'.  esc_html( $category['cat_name'] ) . esc_html( $separator ) .'</a>';
+							?>
+	        				<a href="<?php echo esc_url( $category['cat_link']['url'] ); ?>" <?php echo esc_attr( $target ); ?> <?php echo esc_attr( $nofollow ); ?> class="cat-item"><?php echo  esc_html( $category['cat_name'] ); ?> <?php echo esc_html( $separator ); ?></a>
+							<?php
 	        			}
 	        			 ?>
 	        		</span>

@@ -395,13 +395,15 @@ class Product_Tags extends Widget_Base {
         					$tags 		= wc_get_product_tag_list( $product_id );
 
         					if ( ! $tags ) {
-        						echo "<span class='tags_wrapper'>
-        							<span class='tag-label'>" . esc_html( $settings['tag_label'] ) . "</span>
+								?>
+        						<span class='tags_wrapper'>
+        							<span class='tag-label'><?php echo esc_html( $settings['tag_label'] ); ?></span>
         							<span class='tag-items'>
-        								<a href='#'>" . esc_html__( 'tag #1', 'codesigner' ) . "</a>,
-        								<a href='#'>" . esc_html__( 'tag #2', 'codesigner' ) . "</a>
+        								<a href='#'><?php esc_html_e( 'tag #1', 'codesigner' ); ?></a>,
+        								<a href='#'><?php esc_html_e( 'tag #2', 'codesigner' ); ?></a>
         							</span>
-        						</span>";
+        						</span>
+								<?php
         					}
         				}
         			}
@@ -417,7 +419,7 @@ class Product_Tags extends Widget_Base {
         			if( $product && is_object( $product ) ){
         				?>
         				<span class="tags_wrapper">
-				        	<?php echo wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( '<span '. $this->get_render_attribute_string( 'tag_label' ) .'>'. esc_html( $settings['tag_label'] ) .'</span>', '<span '. $this->get_render_attribute_string( 'tag_label' ) .'>'. esc_html( $settings['tag_label'] ) .'</span>', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ); ?>
+				        	<?php echo wp_kses_post( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( '<span '. $this->get_render_attribute_string( 'tag_label' ) .'>'. esc_html( $settings['tag_label'] ) .'</span>', '<span '. $this->get_render_attribute_string( 'tag_label' ) .'>'. esc_html( $settings['tag_label'] ) .'</span>', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ) ); ?>
 				        </span>
         				<?php
         			}
@@ -428,7 +430,7 @@ class Product_Tags extends Widget_Base {
 
 	        		<?php 
         			printf( '<span %s>%s</span>',
-						$this->get_render_attribute_string( 'tag_label' ),
+						wp_kses_post( $this->get_render_attribute_string( 'tag_label' ) ),
 						esc_html( $settings['tag_label'] )
 					);
         			?>

@@ -1193,7 +1193,9 @@ class Related_Products_Curvy extends Widget_Base {
                     else: 
 
                         if ( 'cart_items' != $content_source || ( wcd_is_preview_mode() || wcd_is_edit_mode() ) ) {
-                             echo '<p>' . esc_html__( 'No Related Product Found!', 'codesigner' ) . '</p>';
+                            ?>
+                                <p><?php esc_html_e( 'No Related Product Found!', 'codesigner' ); ?></p>
+                             <?php
                         }
 
                 endif; ?>

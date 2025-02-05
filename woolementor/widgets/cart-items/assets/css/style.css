@@ -408,7 +408,6 @@ input[type="reset"][disabled]:hover,
 	background: transparent;
 	color: #27263c;
 	font-size: 14px;
-	display: none;
 }
 .wl .wl-ci-product-style table tbody tr td {
 	display: none;

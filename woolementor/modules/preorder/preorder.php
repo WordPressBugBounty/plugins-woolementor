@@ -82,13 +82,18 @@ class Preorder extends Base {
 
 	public function fields() {
 
-        echo '<div class="show_if_simple">';
+        ?>
+        <div class="show_if_simple">
+            <?php
             woocommerce_wp_text_input( array(
                 'id'    => 'cd_preorder_time',
                 'label' => 'PreOrder Available Date',
                 'type'  => 'date',
             ) );
-        echo "</div>";
+            ?>
+
+        </div>
+        <?php
     }
 
     public function save_fields( $post_id ) {
@@ -105,7 +110,9 @@ class Preorder extends Base {
         if ( $product->get_stock_status() == 'pre_order' && $product->get_meta( 'cd_preorder_time' ) && $show_preorder == 'on' && $preorder_text ) {
             $available_date     = $product->get_meta( 'cd_preorder_time' );
 			$final_text         = str_replace( '%%available_date%%', $available_date, $preorder_text );
-            echo "<p><span class='preorder-text'>". esc_html( $final_text ) ."</span></p>";
+            ?>
+                <p><span class='preorder-text'><?php echo esc_html( $final_text ); ?></span></p>
+            <?php
         }
     }
 
@@ -355,9 +362,13 @@ class Preorder extends Base {
 		if ( $stock_status == 'pre_order' && $preorder_text ) {
 			$available_date = get_post_meta( $product->get_id(), 'cd_preorder_time', true );
 			$text 			= str_replace(  '%%available_date%%', $available_date, $preorder_text );
-			echo "<div class='wl-product-preorder'>";
-				esc_html( $text );
-			echo "</div>";
+            ?>
+			<div class='wl-product-preorder'>
+                <?php
+				echo esc_html( $text );
+                ?>
+			</div>
+            <?php
 		}
 	}
 

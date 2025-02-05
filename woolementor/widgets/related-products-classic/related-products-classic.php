@@ -1424,7 +1424,7 @@ class Related_Products_Classic extends Widget_Base {
 								<div class="wl-rpc-corner-ribbon">
 									<?php
 									printf( '<span %1$s>%2$s</span>',
-									    $this->get_render_attribute_string( 'sale_ribbon_text' ),
+									    wp_kses_post( $this->get_render_attribute_string( 'sale_ribbon_text' ) ),
 									    esc_html( $settings['sale_ribbon_text' ] )
 									);
 									?>
@@ -1449,7 +1449,7 @@ class Related_Products_Classic extends Widget_Base {
 
 							<div class="wl-rpc-product-details">
 								<div class="wl-rpc-product-info">
-									<div class="wl-rpc-product-name"><a <?php echo $this->get_render_attribute_string( 'title_gradient_color' ); ?> href="<?php the_permalink( $product_id ); ?>"><?php echo esc_html( $product->get_name() ); ?></a></div>
+									<div class="wl-rpc-product-name"><a <?php echo wp_kses_post( $this->get_render_attribute_string( 'title_gradient_color' ) ); ?> href="<?php esc_url( the_permalink( $product_id ) ); ?>"><?php echo esc_html( $product->get_name() ); ?></a></div>
 
                                     <h2 class="wl-rpc-price"><?php echo wp_kses_post( $product->get_price_html() ); ?></h2>
 								</div>
@@ -1468,7 +1468,7 @@ class Related_Products_Classic extends Widget_Base {
                                             </div>
                                         <?php else: ?>
                                             <div class="wl-cart-area">
-                                                <a href="<?php echo get_permalink( $product_id ); ?>" data-quantity="1" class="wl-rpc-product-cart button product_type_<?php echo esc_attr( $product->get_type() ); ?>" data-product_id="<?php esc_attr_e( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+                                                <a href="<?php echo esc_url( get_permalink( $product_id ) ); ?>" data-quantity="1" class="wl-rpc-product-cart button product_type_<?php echo esc_attr( $product->get_type() ); ?>" data-product_id="<?php esc_attr_e( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
                                             </div>
                                         <?php endif;
                                     endif ?>
@@ -1481,7 +1481,9 @@ class Related_Products_Classic extends Widget_Base {
                 else: 
 
                     if ( 'cart_items' != $content_source || ( wcd_is_preview_mode() || wcd_is_edit_mode() ) ) {
-			             echo '<p>' . __( 'No Related Product Found!', 'codesigner' ) . '</p>';   
+                        ?>
+			                <p><?php esc_html_e( 'No Related Product Found!', 'codesigner' ); ?></p>
+                         <?php
                     }
 
 			endif; ?>

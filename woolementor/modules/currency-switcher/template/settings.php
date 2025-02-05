@@ -25,7 +25,9 @@ if ( get_option( 'codesigner_currency_switcher', true ) ) {
                         $currency_options['none']	= 'None';
                         foreach ( $currency_options as $currency_code => $currency_name ) {
                             $selected = ( esc_attr( $values['cd_cs_name'] ) == $currency_code ) ? 'selected' : '';
-                            echo '<option value="' . esc_attr( $currency_code ) . '" ' . esc_attr( $selected ) . '>' . esc_html( $currency_name ) . '</option>';
+                            ?>
+                            <option value="<?php echo esc_attr( $currency_code ); ?> <?php echo esc_attr( $selected ); ?>><?php echo esc_html( $currency_name ); ?></option>
+                            <?php
                         }
                     }
                     ?>

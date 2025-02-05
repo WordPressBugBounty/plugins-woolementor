@@ -160,10 +160,13 @@ class Product_Additional_Information extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		$_hide 	= isset( $settings['show_heading'] ) && $settings['show_heading'] != 'yes' ? 'hide-wlpai-heading' : '';
+		?>
 		
-		echo "<div class='wl-product-additional-information " . esc_attr( $_hide ) . "'>";
+		<div class='wl-product-additional-information <?php echo esc_attr( $_hide ); ?>'>
+
+		<?php
 		wc_get_template( 'single-product/tabs/additional-information.php' );
-		echo "</div>";
+		echo wp_kses_post( "</div>" );
 
 		do_action( 'codesigner_after_main_content', $this );
 	}

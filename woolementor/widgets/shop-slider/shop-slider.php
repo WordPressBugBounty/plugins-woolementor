@@ -2050,10 +2050,13 @@ class Shop_Slider extends Widget_Base {
 
         do_action( 'codesigner_before_main_content' );
 
-        echo '<div class="wl-shop wl-'. esc_attr( $widget_id ) .'" data-settings="'. esc_attr( serialize( $data ) ) .'">';
-        echo Helper::get_template( 'template', "widgets/{$this->id}", [ 'widget_id' => $widget_id, 'section_id' => $section_id, 'settings' => $settings ] );
-        echo '</div>';
+		?>
+		
+        <div class="wl-shop wl-<?php echo esc_attr( $widget_id ); ?>" data-settings="<?php echo esc_attr( serialize( $data ) ); ?>">
+        <?php Helper::get_template( 'template', "widgets/{$this->id}", [ 'widget_id' => $widget_id, 'section_id' => $section_id, 'settings' => $settings ], false ); ?>
+        </div>
 
+		<?php
 
         update_post_meta( get_the_ID(), 'codesigner_quick_checkout', 0 );
         if ( wcd_is_pro_activated() && 'yes' == $quick_checkout_show_hide ) {

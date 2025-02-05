@@ -29,8 +29,12 @@ $config = [
 ];
 
 $table = new Table( $config );
-echo '<form method="post">';
+?>
+<form method="post">
+	<?php
 $table->prepare_items();
 $table->search_box( 'Search', 'search' );
 $table->display();
-echo '</form>';
+?>
+</form>
+<?php

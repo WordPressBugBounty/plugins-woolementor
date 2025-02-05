@@ -94,13 +94,13 @@ $pro_features	= [
 					$demo_txt = __( 'View Demo', 'codesigner' );
 					$demo_url = add_query_arg( $utm, $widget['demo'] );
 					$title = in_array( $id, $fire_features ) ? "{$widget['title']} 🔥" : $widget['title'];
-					echo "
-					<a href='" . esc_url( $demo_url ) . "' title='" . esc_attr( $demo_txt ) . "' target='_blank'>
+					?>
+					<a href='<?php echo esc_url( $demo_url ); ?>' title='<?php echo esc_attr( $demo_txt ); ?>' target='_blank'>
 						<div class='wl-pro-widget'>
-							<i class='" . esc_attr( $widget['icon'] ) . "'></i> " . esc_html( $title ) . "
+							<i class='<?php echo esc_attr( $widget['icon'] ); ?>'></i><?php echo esc_html( $title ); ?>
 						</div>
 					</a>
-					";
+					<?php
 				}
 			}
 			?>

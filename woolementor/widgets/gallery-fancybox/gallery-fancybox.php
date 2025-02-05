@@ -399,12 +399,14 @@ class Gallery_Fancybox extends Widget_Base {
 					 	foreach ( $image_gallery as $image ): 
 					 		$thumbnail 		= wp_get_attachment_image_src( $image['id'], $settings['image_thumbnail_size'] );
 					 		$thumbnail_full = wp_get_attachment_image_src( $image['id'], 'full' );
-					 		echo'<div class="wl-gf-single-wrapper">';
-					 		echo '<span class="wl-gf-single-image" href="'. esc_url( $thumbnail_full[0] ) .'" title="'. esc_attr( wp_get_attachment_caption( $image['id'] ) ) .'">
-					 		    <img src="'. esc_url( $thumbnail[0] ) .'" />
-					 		</span>';
-					 		echo'</div>';
+							?>
+					 		<div class="wl-gf-single-wrapper">
+								<span class="wl-gf-single-image" href="<?php echo esc_url( $thumbnail_full[0] ); ?>" title="<?php echo esc_attr( wp_get_attachment_caption( $image['id'] ) ); ?>">
+									<img src="<?php echo esc_url( $thumbnail[0] ); ?>" />
+								</span>
+					 		</div>
 
+							<?php
 					 	 endforeach;
 					 } 
 					 ?>

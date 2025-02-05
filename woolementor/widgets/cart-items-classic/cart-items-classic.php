@@ -1419,12 +1419,24 @@ class Cart_Items_Classic extends Widget_Base {
 									<td class="product-thumbnail">
 									<?php
 									$thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+								
+									$allowed_html = array(
+										'img' => array(
+											'src'    => true,
+											'alt'    => true,
+											'width'  => true,
+											'height' => true,
+											'class'  => true,
+											'srcset' => true,
+											'sizes'  => true,
+										),
+									);
 
-									if ( ! $product_permalink ) {
-										echo $thumbnail; // PHPCS: XSS ok.
+									if ( ! $product_permalink ) {									
+										echo wp_kses( $thumbnail, $allowed_html ); // PHPCS: XSS ok.
 									} 
 									else {
-										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $thumbnail ); // PHPCS: XSS ok.
+										printf( '<a href="%s">%s</a>', esc_url( $product_permalink ), wp_kses( $thumbnail, $allowed_html ) ); // PHPCS: XSS ok.
 									}
 									?>
 									</td>
@@ -1442,7 +1454,7 @@ class Cart_Items_Classic extends Widget_Base {
 									do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
 									// Meta data.
-									echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
+									echo wp_kses_post( wc_get_formatted_cart_item_data( $cart_item ) ); // PHPCS: XSS ok.
 
 									// Backorder notification.
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
@@ -1453,7 +1465,7 @@ class Cart_Items_Classic extends Widget_Base {
 
 									<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
 										<?php
-											echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+											echo wp_kses_post( apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
 										?>
 									</td>
 
@@ -1476,13 +1488,38 @@ class Cart_Items_Classic extends Widget_Base {
 										);
 									}
 
-									echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
+									$allowed_tags = [
+										'div' => [
+											'class' => true,
+										],
+										'input' => [
+											'type'        => true,
+											'value'       => true,
+											'class'       => true,
+											'id'          => true,
+											'name'        => true,
+											'aria-label'  => true,
+											'min'         => true,
+											'max'         => true,
+											'step'        => true,
+											'placeholder' => true,
+											'inputmode'   => true,
+											'autocomplete'=> true,
+										],
+										'label' => [
+											'class' => true,
+											'for'   => true,
+										],
+									];
+									
+
+									echo wp_kses( apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ), $allowed_tags ); // PHPCS: XSS ok.
 									?>
 									</td>
 
 									<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
 										<?php
-											echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+											echo wp_kses_post( apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
 										?>
 									</td>
 								</tr>
@@ -1526,10 +1563,10 @@ class Cart_Items_Classic extends Widget_Base {
 					if ( $settings['tab_content_source'] == 'template' ) {
 						$template_id = $settings['tab_template'];
 						$elementor_instance = \Elementor\Plugin::instance();
-						echo $elementor_instance->frontend->get_builder_content_for_display( $template_id );
+						echo wp_kses_post( $elementor_instance->frontend->get_builder_content_for_display( $template_id ) );
 					}
 					else {
-						echo $this->parse_text_editor( $settings['tab_content'] );
+						echo wp_kses_post( $this->parse_text_editor( $settings['tab_content'] ) );
 					}
 				endif;
 
@@ -1537,10 +1574,14 @@ class Cart_Items_Classic extends Widget_Base {
 					if ( $settings['tab_content_source'] == 'template' ) {
 						$template_id = $settings['tab_template'];
 						$elementor_instance = \Elementor\Plugin::instance();
-						echo $elementor_instance->frontend->get_builder_content_for_display( $template_id );
+						echo wp_kses_post( $elementor_instance->frontend->get_builder_content_for_display( $template_id ) );
 					}
 					else {
-						echo "<div class='wl-cic-empty-cart-notice'>".$this->parse_text_editor( $settings['tab_content'] )."</div>";
+						?>
+							<div class='wl-cic-empty-cart-notice'>
+								<?php echo wp_kses_post( $this->parse_text_editor( $settings['tab_content'] ) ); ?>
+							</div>
+						<?php
 					}
 				}
 				?>

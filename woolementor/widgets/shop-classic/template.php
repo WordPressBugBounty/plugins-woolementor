@@ -111,7 +111,11 @@ extract( $settings );
 
             <?php endwhile; wp_reset_query(); else: 
 
-            echo "<p>" . esc_html( __( 'No Product Found!', 'codesigner' ) ) . "</p>";
+            ?>
+
+            <p><?php echo esc_html( __( 'No Product Found!', 'codesigner' ) ); ?></p>
+
+            <?php
 
         endif;
         ?>

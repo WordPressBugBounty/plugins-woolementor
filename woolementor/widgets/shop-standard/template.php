@@ -86,7 +86,7 @@ $wishlist = wcd_get_wishlist( $user_id );
 
 							   	<?php if( 'yes' == $short_description_show_hide ): ?>
 							   		<div class="wl-ss-product-desc">
-							   			<p><?php echo wp_trim_words( wp_kses_post( $product->get_short_description() ), $product_desc_words_count ); ?></p>
+							   			<p><?php echo wp_kses_post( wp_trim_words( $product->get_short_description(), $product_desc_words_count ) ); ?></p>
 							   		</div>
 							   	<?php endif; ?>
 
@@ -109,7 +109,7 @@ $wishlist = wcd_get_wishlist( $user_id );
 										</div>
 									<?php else: ?>
 										<div class="wl-ss-product-cart">
-											<a href="<?php echo get_permalink( $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?>" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+											<a href="<?php echo esc_url( get_permalink( $product_id ) ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?>" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
 										</div>
 									<?php endif;
 								endif;
@@ -124,8 +124,9 @@ $wishlist = wcd_get_wishlist( $user_id );
 
 		<?php endwhile; wp_reset_query(); else: 
 
-		echo '<p>' . esc_html( __( 'No Product Found!', 'codesigner' ) ) . '</p>';
-
+		?>
+			<p><?php echo esc_html( __( 'No Product Found!', 'codesigner' ) ); ?></p>
+		<?php
 		endif; ?>
 		</div>
 	</div>
@@ -139,11 +140,17 @@ if ( 'yes' == $pagination_show_hide ):
     if ( defined('DOING_AJAX') && DOING_AJAX ) {
         $class = 'wl-ajax-filter-pagination';
     }
-    echo "<div class='wl-ss-pagination ".esc_attr( $class )."'>";   
+	?>
+    <div class='wl-ss-pagination <?php echo esc_attr( $class ); ?>'>  
+
+	<?php
+
     /**
     * codesigner pagination
     */
     wcd_pagination( $products, $pagination_left_icon, $pagination_right_icon ); 
 
-    echo '</div>';
+	?>
+    </div>
+	<?php
 endif;

@@ -1158,8 +1158,10 @@ class Filter_Horizontal extends Widget_Base {
 			<?php 
 			if ( wcd_is_pro_activated() ) {
 				if ( 'yes' == $fv_enable_ajax_filter ) {
-					echo '<input type="hidden" name="action" value="ajax-filter">';
-					echo '<input type="hidden" name="widget_id" value="'. esc_attr( $fv_ajax_filter_widget ) .'">';
+					?>
+						<input type="hidden" name="action" value="ajax-filter">
+						<input type="hidden" name="widget_id" value="<?php echo esc_attr( $fv_ajax_filter_widget ); ?>">
+					<?php
 					wp_nonce_field( 'codesigner-shop' );
 				}
 			}
@@ -1171,7 +1173,7 @@ class Filter_Horizontal extends Widget_Base {
 
 						<?php 
 						printf( '<h3 %s>%s</h3>',
-				            $this->get_render_attribute_string( 'filter_horizontal_title' ),
+				            wp_kses_post( $this->get_render_attribute_string( 'filter_horizontal_title' ) ),
 				            esc_html( $filter_horizontal_title ) 
 				        );
 						?>
@@ -1190,8 +1192,8 @@ class Filter_Horizontal extends Widget_Base {
 								else {
 									global $wp;
 									printf( '<a %s href="%s" class="wl-fh-clear-btn">%s</a>',
-					            		$this->get_render_attribute_string( 'clear_btn_text' ),
-							            home_url( $wp->request ),
+									wp_kses_post( $this->get_render_attribute_string( 'clear_btn_text' ) ),
+							            esc_url( home_url( $wp->request ) ),
 							            esc_html( $clear_btn_text ) 
 							        );
 								}
@@ -1205,7 +1207,7 @@ class Filter_Horizontal extends Widget_Base {
 								
 								<?php 
 								printf( '<button %s type="submit">%s</button>',
-				            		$this->get_render_attribute_string( 'apply_btn_text' ),
+								wp_kses_post( $this->get_render_attribute_string( 'apply_btn_text' ) ),
 						            esc_html( $apply_btn_text ) 
 						        );
 								?>
@@ -1320,17 +1322,17 @@ class Filter_Horizontal extends Widget_Base {
 										<div>
 											<input id="order_asc" class="wl-fh-radio-custom" 
 											name="filter[order]" type="radio" <?php echo esc_attr( $asc ); ?> 
-											value="<?php _e( 'ASC', 'codesigner' ) ?>">
+											value="<?php esc_html_e( 'ASC', 'codesigner' ) ?>">
 											<label for="order_asc" class="wl-fh-radio-custom-label">
-												<span><?php _e( 'ASC', 'codesigner' ); ?></span>
+												<span><?php esc_html_e( 'ASC', 'codesigner' ); ?></span>
 											</label>
 										</div>
 										<div>
 											<input id="order_desc" class="wl-fh-radio-custom" 
 											name="filter[order]" type="radio" <?php echo esc_attr( $desc ); ?> 
-											value="<?php _e( 'DESC', 'codesigner' ) ?>">
+											value="<?php esc_html_e( 'DESC', 'codesigner' ) ?>">
 											<label for="order_desc" class="wl-fh-radio-custom-label">
-												<span><?php _e( 'DESC', 'codesigner' ); ?></span>
+												<span><?php esc_html_e( 'DESC', 'codesigner' ); ?></span>
 											</label>
 										</div>
 

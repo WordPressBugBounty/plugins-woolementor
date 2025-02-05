@@ -398,10 +398,12 @@ class Product_Dynamic_Tabs extends Widget_Base {
         if( !current_user_can( 'edit_pages' ) ) return;
 
         // Translators: 1: Widget title, 2: Link to CoDesigner Pro.
-        echo wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), esc_html( $this->get_title() ), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) );
+        echo wp_kses_post( wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), esc_html( $this->get_title() ), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) ) );
 
         if( file_exists( dirname( __FILE__ ) . '/assets/img/screenshot.png' ) ) {
-            echo "<img src='" . plugins_url( 'assets/img/screenshot.png', __FILE__ ) . "' />";
+			?>
+            <img src='<?php echo esc_url( plugins_url( 'assets/img/screenshot.png', __FILE__ ) ); ?>' />
+			<?php
         }
     }
 }

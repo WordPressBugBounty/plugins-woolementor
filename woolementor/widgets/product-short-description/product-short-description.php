@@ -253,7 +253,7 @@ class Product_Short_Description extends Widget_Base {
 			}
 			else {
 				printf( '<p %s>%s</p>',
-		            $this->get_render_attribute_string( 'pd_product_description' ),
+		            wp_kses_post( $this->get_render_attribute_string( 'pd_product_description' ) ),
 		            esc_html( stripcslashes( wp_filter_post_kses( $settings['pd_product_description'] ) ) )
 		        );
 			}

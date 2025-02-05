@@ -413,7 +413,7 @@ class Product_Meta extends Widget_Base {
 			<?php do_action( 'woocommerce_product_meta_start' ); ?>
 
 			<?php if ( wc_product_sku_enabled() && ( $sku || $product->is_type( 'variable' ) ) ) : ?>
-				<span class="sku_wrapper detail-container"><span class="detail-label"><?php echo esc_html( $sku_caption ); ?></span> <span class="sku"><?php echo esc_html( $sku ) ? $sku : esc_html( $sku_missing ); ?></span></span>
+				<span class="sku_wrapper detail-container"><span class="detail-label"><?php echo esc_html( $sku_caption ); ?></span> <span class="sku"><?php echo esc_html( $sku  ? $sku : $sku_missing ); ?></span></span>
 			<?php endif; ?>
 
 			<?php if ( count( $product->get_category_ids() ) ) : ?>

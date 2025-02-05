@@ -38,27 +38,29 @@ $active_modules = get_option( 'codesigner_modules', [] );
 	</div>
 
     <div class="cd-settings-modules-container">
-        <div class="<?php echo count( $active_modules ) == 0 ? "cd-settings-modules-list" : "cd-settings-modules-list cd-list-column-2"; ?>">
+        <div class="<?php echo esc_attr( count( $active_modules ) == 0 ? "cd-settings-modules-list" : "cd-settings-modules-list cd-list-column-2" ); ?>">
 
         <?php foreach( $modules as $key=>$module ) : ?>
             <?php $module_class = $module['pro'] ? 'pro' : 'free'; ?>
-            <div class="<?php echo 'wl-widget cd-settings-module-block ' . esc_attr( $module_class ); ?>">
+            <div class="<?php echo esc_attr( 'wl-widget cd-settings-module-block ' .  $module_class ); ?>">
                 <div class="cx-label-wrap">
-                    <label for="<?php echo 'codesigner_modules-' . esc_attr( $key ); ?>">
+                    <label for="<?php echo esc_attr( 'codesigner_modules-' . $key ); ?>">
                         <?php echo esc_html__( $module['title'], 'codesigner' ); ?>
                     </label>
                     <p class="cd-module-desc"><?php echo wp_kses_post( $module['desc'] ); ?></p>
                 </div>
                 <?php                 
                 if ( $module['pro'] ) {
-                    echo '<span class="wl-pro-ribbon">Pro</span>';
+                    ?>
+                        <span class="wl-pro-ribbon">Pro</span>
+                    <?php
                 }
                 ?>
                 <div class="cx-field-wrap">
                     <label class="cx-toggle">
                         <input 
                             type="checkbox" name="<?php echo esc_attr( $key ); ?>" 
-                            id="<?php echo 'codesigner_modules-'. esc_attr( $module['id'] ); ?>" 
+                            id="<?php echo esc_attr( 'codesigner_modules-'. $module['id'] ); ?>" 
                             class="cx-toggle-checkbox cx-field cx-field-switch" value="on" 
 
                             <?php 

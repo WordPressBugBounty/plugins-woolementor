@@ -1432,7 +1432,7 @@ class Related_products_Standard extends Widget_Base {
 							<div class="wl-rps-corner-ribbon">
 								<?php
 								printf( '<span %1$s>%2$s</span>',
-									$this->get_render_attribute_string( 'sale_ribbon_text' ),
+									wp_kses_post( $this->get_render_attribute_string( 'sale_ribbon_text' ) ),
 									esc_html( $settings['sale_ribbon_text' ] )
 								);
 								?>
@@ -1463,12 +1463,12 @@ class Related_products_Standard extends Widget_Base {
 
 							<div class="wl-rps-product-info">
 								<div class="wl-rps-product-name">
-									<a <?php echo $this->get_render_attribute_string( 'title_gradient_color' ); ?> href="<?php the_permalink( $product_id ); ?>"><?php echo esc_html( $product->get_name() ); ?></a>
+									<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'title_gradient_color' ) ); ?> href="<?php echo esc_url( get_the_permalink( $product_id ) ); ?>"><?php echo esc_html( $product->get_name() ); ?></a>
 								</div>
 
 							   <?php if( 'yes' == $settings['short_description_show_hide'] ): ?>
 								   <div class="wl-rps-product-desc">
-									<p><?php echo wp_trim_words( wp_kses_post( $product->get_short_description() ), $product_desc_words_count ); ?></p>
+									<p><?php echo wp_kses_post( wp_trim_words( wp_kses_post( $product->get_short_description() ) ), $product_desc_words_count ); ?></p>
 								   </div>
 							   <?php endif; ?>
 
@@ -1487,7 +1487,7 @@ class Related_products_Standard extends Widget_Base {
 										</div>
 									<?php else: ?>
 										<div class="wl-rps-product-cart">
-											<a href="<?php echo get_permalink( $product_id ); ?>"><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+											<a href="<?php echo esc_url( get_permalink( $product_id ) ); ?>"><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
 										</div>
 									<?php endif;
 								endif; ?>
@@ -1500,7 +1500,9 @@ class Related_products_Standard extends Widget_Base {
 			 else: 
 
 				if ( 'cart_items' != $content_source || ( wcd_is_preview_mode() || wcd_is_edit_mode() ) ) {
-		             echo '<p>' . __( 'No Related Product Found!', 'codesigner' ) . '</p>';   
+					?>
+		             	<p><?php esc_html_e( 'No Related Product Found!', 'codesigner' ); ?></p>   
+					 <?php
 	            }
 
 			endif; ?>

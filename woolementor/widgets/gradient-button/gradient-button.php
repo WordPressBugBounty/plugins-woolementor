@@ -362,7 +362,7 @@ class Gradient_Button extends Widget_Base {
 		$href 		= isset( $gb_link['url'] ) ? $gb_link['url'] : '#';
 		?>
 
-		<div <?php echo $this->get_render_attribute_string( 'button' ); ?> >
+		<div <?php echo esc_attr( $this->get_render_attribute_string( 'button' ) ); ?> >
 			<a class="wl-gradient-button" href="<?php echo esc_url( $href ) ; ?>" <?php echo esc_attr( $target ).' '. esc_attr( $nofollow ) ?> >
 				<?php if ( 'left' == $gradient_button_icon_align ): ?>
 					<i class="<?php echo esc_attr( $gradient_button_icon['value'] ); ?>" aria-hidden="true"></i>

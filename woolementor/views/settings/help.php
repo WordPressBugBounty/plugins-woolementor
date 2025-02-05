@@ -47,7 +47,9 @@ $buttons 	= apply_filters( 'wcd_help_tab_link', $buttons );
 		        <?php
 		    }
 		    else:
-				echo '<p>' . esc_attr__( 'Something is wrong! Refreshing the page might help.', 'codesigner' ) . '</p>';
+				?>
+					<p><?php echo esc_attr__( 'Something is wrong! Refreshing the page might help.', 'codesigner' ); ?></p>
+				<?php
 		    endif;
 		    ?>
 		    </div>
@@ -56,7 +58,9 @@ $buttons 	= apply_filters( 'wcd_help_tab_link', $buttons );
 	<div class="wcd-help-links">
 		<?php 
 		foreach ( $buttons as $key => $button ) {
-			echo "<a target='_blank' href='" . esc_url( $button['url'] ) . "' class='wcd-help-link'>" . esc_html( $button['label'] ) . "</a>";
+			?>
+				<a target='_blank' href='<?php echo esc_url( $button['url'] ); ?>' class='wcd-help-link'><?php echo esc_html( $button['label'] ); ?></a>
+			<?php
 		}
 		?>
 	</div>

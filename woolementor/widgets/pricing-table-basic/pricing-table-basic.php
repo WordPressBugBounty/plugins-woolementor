@@ -1507,30 +1507,30 @@ class Pricing_Table_Basic extends Widget_Base {
 		<div class="wl-ptb-pricing-table-area">
 			<div class="wl-ptb-single-pricing">
 				<div class="wl-ptb-pricing-box">
-					<div <?php echo $this->get_render_attribute_string( 'pricing_table_title' ); ?> ><?php echo esc_html( $pricing_table_title ); ?></div>
+					<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_title' ) ); ?> ><?php echo esc_html( $pricing_table_title ); ?></div>
 					<div class="wl-ptb-pricing-price-full <?php echo esc_attr( $sale_price_on ); ?>">
 
                         <?php if ( 'left' == $pricing_table_currency_alignment ): ?>
 
                             <span class="wl-ptb-regular-price">
-                                <sup><?php echo esc_html( $pricing_table_currency ); ?></sup><?php echo $del_start; ?><span <?php echo $this->get_render_attribute_string( 'pricing_table_price' ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><span <?php echo $this->get_render_attribute_string( 'pricing_table_period' ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span><?php echo $del_close; ?>
+                                <sup><?php echo esc_html( $pricing_table_currency ); ?></sup><?php echo wp_kses_post( $del_start ); ?><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_price' ) ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_period' ) ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span><?php echo wp_kses_post( $del_close ); ?>
                             </span>
 
                             <?php if( 'yes' == $show_sale_price ): ?>
                                 <span class="wl-ptb-current-price">
-                                    <sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo $this->get_render_attribute_string( 'pricing_table_price' ); ?> ><?php echo esc_html( $pricing_table_sale_price ); ?></span><span <?php echo $this->get_render_attribute_string( 'pricing_table_period' ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span>
+                                    <sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_price' ) ); ?> ><?php echo esc_html( $pricing_table_sale_price ); ?></span><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_period' ) ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span>
                                 </span>
                             <?php endif;
                         endif;
 
                         if ( 'right' == $pricing_table_currency_alignment ): ?>
                             <span class="wl-ptb-regular-price">
-                                <?php echo $del_start; ?><span <?php echo $this->get_render_attribute_string( 'pricing_table_price' ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><?php echo $del_close; ?><sup><?php echo esc_html( $pricing_table_currency ); ?></sup><?php echo $del_start; ?><span <?php echo $this->get_render_attribute_string( 'pricing_table_period' ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span><?php echo $del_close; ?>
+                                <?php echo wp_kses_post( $del_start ); ?><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_price' ) ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><?php echo wp_kses_post( $del_close ); ?><sup><?php echo esc_html( $pricing_table_currency ); ?></sup><?php echo wp_kses_post( $del_start ); ?><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_period' ) ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span><?php echo wp_kses_post( $del_close ); ?>
                             </span>
 
                             <?php if( 'yes' == $show_sale_price ): ?>
                             <span class="wl-ptb-current-price">
-                                <span <?php echo $this->get_render_attribute_string( 'pricing_table_sale_price' ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo $this->get_render_attribute_string( 'pricing_table_period' ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span>
+                                <span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_sale_price' ) ); ?> ><?php echo esc_html( $pricing_table_price ); ?></span><sup><?php echo esc_html( $pricing_table_currency ); ?></sup><span <?php echo wp_kses_post( $this->get_render_attribute_string( 'pricing_table_period' ) ); ?> ><?php echo esc_html( $pricing_table_period ); ?></span>
                             </span>
                             <?php endif;
                         endif; ?>
@@ -1543,10 +1543,14 @@ class Pricing_Table_Basic extends Widget_Base {
 							<li>
                                 <?php 
                                     if ( $feature['pricing_table_features_icon']['library'] == 'svg' ) {
-                                        echo "<img class='wl-ptb-pricing-icon-svg' src='". esc_url( $feature['pricing_table_features_icon']['value']['url'] ) ."' />";
+                                        ?>
+                                            <img class='wl-ptb-pricing-icon-svg' src='<?php echo esc_url( $feature['pricing_table_features_icon']['value']['url'] ); ?>' />
+                                        <?php
                                     }
-                                    else{
-                                        echo "<i class='". esc_attr( $feature['pricing_table_features_icon']['value'] ) ."'></i>";
+                                    else {
+                                        ?>
+                                            <i class='<?php echo esc_attr( $feature['pricing_table_features_icon']['value'] ); ?>'></i>
+                                        <?php
                                     }
                                  ?><span><?php echo esc_html( $feature['pricing_table_features_text'] ) ?></span></li>
 						<?php endforeach; ?>
@@ -1555,7 +1559,7 @@ class Pricing_Table_Basic extends Widget_Base {
 
                 <?php 
                     printf( '<a %s>%s</a>',
-                        $this->get_render_attribute_string( 'pricing_table_footer_button_text' ),
+                        wp_kses_post( $this->get_render_attribute_string( 'pricing_table_footer_button_text' ) ),
                         esc_html( $pricing_table_footer_button_text )
                     );
                 ?>

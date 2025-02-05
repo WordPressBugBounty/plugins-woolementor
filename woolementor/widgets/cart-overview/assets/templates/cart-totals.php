@@ -71,7 +71,7 @@ if( is_null( WC()->cart ) ) {
 }
 WC()->cart->calculate_totals();
 ?>
-<div class="cart_totals <?php echo ( WC()->customer->has_calculated_shipping() ) ? 'calculated_shipping' : ''; ?>">
+<div class="cart_totals <?php echo esc_attr( WC()->customer->has_calculated_shipping() ? 'calculated_shipping' : '' ); ?>">
 
 	<?php 
 		do_action( 'woocommerce_before_cart_totals' );
@@ -80,7 +80,7 @@ WC()->cart->calculate_totals();
 
 			printf( '<%1$s %2$s class="wl-co-title">%3$s</%1$s>',
 				esc_attr( $settings['section_heading_tag'] ),
-				$this->get_render_attribute_string( 'section_heading_text' ),
+				wp_kses_post( $this->get_render_attribute_string( 'section_heading_text' ) ),
 				esc_html( $settings['section_heading_text'] )
 			);
 

@@ -308,7 +308,9 @@ class Product_Tabs extends Widget_Base {
 
 		wp_enqueue_style( 'woocommerce-general' );
 
-		echo '<div class="wl-product-data-tabs product">';
+		?>
+			<div class="wl-product-data-tabs product">
+		<?php
 
 		setup_postdata( $product->get_id() );
 
@@ -320,7 +322,9 @@ class Product_Tabs extends Widget_Base {
 
 		wc_get_template( 'single-product/tabs/tabs.php' );
 
-		echo '</div>';
+		?>
+			</div>
+		<?php
 
 		do_action( 'codesigner_after_main_content', $this );
 

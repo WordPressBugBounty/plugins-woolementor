@@ -135,7 +135,9 @@ extract( $settings );
 
 				<?php endwhile; wp_reset_query(); else: 
 
-				echo '<p>' . esc_html__( 'No Product Found!', 'codesigner' ) . '</p>';
+				?>
+					<p><?php echo esc_html__( 'No Product Found!', 'codesigner' ); ?></p>
+				<?php
 
 			endif; ?>
 		</div>
@@ -196,7 +198,7 @@ $slick_config = [
     		var $nextArrow = false
     	}
 
-    	$('.wl-ssl-slick-<?php echo $section_id; ?>' ).slick({
+    	$('.wl-ssl-slick-<?php echo esc_attr($section_id); ?>' ).slick({
 		  	infinite: $loop,
 		  	autoplay: $autoplay,
 		  	autoplaySpeed: config.autoplay_speed,

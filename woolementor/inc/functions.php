@@ -946,7 +946,6 @@ endif;
  * 
  * Home Url Link
  */
-
 if( ! function_exists( 'wcd_home_link' ) ) :
 function wcd_home_link() {
 	return 'https://codexpert.io/codesigner';

@@ -27,7 +27,7 @@ defined( 'ABSPATH' ) || exit;
 	do_action( 'woocommerce_after_add_to_cart_quantity' );
 
 	printf( '<button type="submit" %s>%s</button>',
-		$this->get_render_attribute_string( 'add_to_cart_text' ),
+		wp_kses_post( $this->get_render_attribute_string( 'add_to_cart_text' ) ),
 		esc_html( $button_text )
 	);
 

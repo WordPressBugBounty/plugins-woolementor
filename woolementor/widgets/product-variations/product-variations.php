@@ -762,7 +762,7 @@ class Product_Variations extends Widget_Base {
         }
 
 		if( 'product' != get_post_type( $product_id ) ) {
-			echo wcd_notice( 'This is not a product.' );
+			echo wp_kses_post( wcd_notice( 'This is not a product.' ) );
 			return;
 		}
 
@@ -772,7 +772,7 @@ class Product_Variations extends Widget_Base {
         $variation_ids = $variable->get_children();
 
 		if ( count( $variation_ids ) < 1 ) {
-			echo wcd_notice( 'No Variation Found. May be this is not a variable product.' );
+			echo wp_kses_post( wcd_notice( 'No Variation Found. May be this is not a variable product.' ) );
 			return;
 		}
 		?>
@@ -800,7 +800,7 @@ class Product_Variations extends Widget_Base {
 							<div class="wl-pl-item-name">
 								<h4><?php echo esc_html( $product->get_name() ); ?></h4>
 								<?php if ( 'yes' == $settings['variation_desc_show_hide'] && $description != '' ):?>
-									<span class="wl-pl-item-desc"><span class="wl-pl-item-desc-text"><?php echo wp_trim_words( $description, codesigner_sanitize_number( $settings['product_desc_words_count'] ) ); ?></span></span>
+									<span class="wl-pl-item-desc"><span class="wl-pl-item-desc-text"><?php echo wp_kses_post( wp_trim_words( $description, codesigner_sanitize_number( $settings['product_desc_words_count'] ) ) ); ?></span></span>
 								<?php endif; ?>
 							</div>
 
@@ -834,7 +834,7 @@ class Product_Variations extends Widget_Base {
 													<tr>
 														<td>
 															<select name="attributes[<?php echo esc_attr( $variation_id ); ?>][<?php echo esc_attr( $key ); ?>]" class="wl-pl-variation-select" required="true">
-																	<option value="<?php _e( 'Not Selected', 'codesigner' ); ?>"><?php _e( 'Select ', 'codesigner' ); echo esc_html( ucfirst( $name ) ); ?></option>
+																	<option value="<?php esc_attr_e( 'Not Selected', 'codesigner' ); ?>"><?php esc_html_e( 'Select ', 'codesigner' ); echo esc_html( ucfirst( $name ) ); ?></option>
 																<?php foreach( $attributes as $attribute ): ?>
 																	<option value="<?php echo esc_attr( $attribute ); ?>"><?php echo esc_html( $attribute ); ?></option>
 																<?php endforeach; ?>
@@ -845,7 +845,7 @@ class Product_Variations extends Widget_Base {
 											</table>
 										</div>
 									<?php endif; ?>
-									<div style="display: <?php echo 'yes' == $settings['variation_qty_show_hide'] ? '' : 'none'; ?>" class="wl-pl-item-quantity-div">
+									<div style="display: <?php echo esc_attr( 'yes' == $settings['variation_qty_show_hide'] ? '' : 'none' ); ?>" class="wl-pl-item-quantity-div">
 										<div class="wl-pl-item-quantity">
 											<input type="number" name="variation[<?php echo esc_attr( $variation_id ); ?>]" min="0" max="<?php echo esc_attr( $stock ); ?>" value=1>
 										</div>
@@ -865,7 +865,7 @@ class Product_Variations extends Widget_Base {
 				<!-- pricelist bottom -->
 				<div class="wl-pl-pricelist-bottom">
 					<?php if( 'yes' == $settings['variation_price_show_hide'] ): ?>
-						<strong class="wl-pl-total"><?php echo esc_html( $currency ); ?> <span class="wl-pl-<?php echo esc_attr( $product_id ); ?>-total-price"><?php _e( '00.00', 'codesigner' ) ?></span></strong>
+						<strong class="wl-pl-total"><?php echo esc_html( $currency ); ?> <span class="wl-pl-<?php echo esc_attr( $product_id ); ?>-total-price"><?php esc_html_e( '00.00', 'codesigner' ) ?></span></strong>
 					<?php endif; ?>
 					<button class="wl-pl-btn add-variations-to-cart" type="submit"><span class="wl-pl-btn-text"><?php echo esc_html( $settings['atc_btn_text'] ); ?></span></button>
 				</div>

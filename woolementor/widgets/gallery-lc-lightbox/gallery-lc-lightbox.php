@@ -559,14 +559,16 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 						$thumbnail 		= wp_get_attachment_image_src( $image['id'], $settings['image_thumbnail_size'] );
 						$thumbnail_full = wp_get_attachment_image_src( $image['id'], 'full' );
 						$attachment 	= wcd_get_attachment( $image['id'] );
+						?>
 
-						echo'<div class="wl-gll-single-wrapper">';
+						<div class="wl-gll-single-wrapper">
 						
-						echo '<span class="wl-gll-single-image" href="'. esc_url( $thumbnail_full[0] ) .'" title="'. esc_attr( wp_get_attachment_caption( $image['id'] ) ) .'" data-lcl-txt="'. esc_attr( $attachment['description'] ) .'">
-						    <img src="'. esc_url( $thumbnail[0] ) .'" />
-						</span>';
+						<span class="wl-gll-single-image" href="<?php echo esc_url( $thumbnail_full[0] ); ?>" title="<?php echo esc_attr( wp_get_attachment_caption( $image['id'] ) ); ?>" data-lcl-txt="<?php echo esc_attr( $attachment['description'] ); ?>">
+						    <img src="<?php echo esc_url( $thumbnail[0] ); ?>" />
+						</span>
 
-						echo'</div>';
+						</div>
+						<?php
 					endforeach; 
 				}
 				?>

@@ -287,7 +287,7 @@ class Variation_Swatches extends Base {
 
 	public function swatches_on_archive( $settings, $product ) {
 		if ( $product->get_type() == 'variable' && Helper::get_option( 'codesigner_variation_swatches', 'vs-archive-widget' ) ) {
-			echo codesigner_get_variation_swatches_view( 'swatches', $settings );
+			codesigner_get_variation_swatches_view( 'swatches', $settings, false );
 		}
 	}
 
@@ -311,7 +311,7 @@ class Variation_Swatches extends Base {
 
 	public function widget_controls( $widget ) {
 		if ( Helper::get_option( 'codesigner_variation_swatches', 'vs-archive-widget' ) == '' || $widget->id == 'shop-beauty' || $widget->id == 'shop-table' ||  $widget->id == 'shop-flip' ||  $widget->id == 'shop-minimal' ||  $widget->id == 'shop-smart' ) return;
-		echo codesigner_get_variation_swatches_view( 'controls', $widget );
+		codesigner_get_variation_swatches_view( 'controls', $widget, false );
 	}
 
 }

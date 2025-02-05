@@ -73,20 +73,25 @@ class Bulk_Purchase_Discount extends Base {
 		if ( empty( $cd_bpd_rules ) || ! is_array( $cd_bpd_rules ) ) {
 			$cd_bpd_rules = array( array( 'cd_bpd_quantatity' => '', 'cd_bpd_amount' => '' ) );
 		}
+		?>
 	
-		echo '<div class="cd-bpd-wrapper">';
-		echo '<h4>' . esc_attr( __( "CoDesigner bulk Purchase Discount Rules", 'codesigner' ) ) . '</h4>';
+		<div class="cd-bpd-wrapper">
+		<h4><?php echo esc_attr( __( "CoDesigner bulk Purchase Discount Rules", 'codesigner' ) ); ?></h4>
+
+		<?php
 	
 		foreach ( $cd_bpd_rules as $index => $values ) {
-			echo '<div class="cd-single-discount-rule">';
-			echo '<input type="text" name="cd_bpd_rules[' . esc_attr( $index ) . '][cd_bpd_quantatity]" value="' . esc_attr( $values['cd_bpd_quantatity'] ) . '" placeholder="'. esc_attr( 'Quantity' ) .'" />';
-			echo '<input type="text" name="cd_bpd_rules[' . esc_attr( $index ) . '][cd_bpd_amount]" value="' . esc_attr( $values['cd_bpd_amount'] ) . '" placeholder="'. esc_attr( 'Discount Amount' ) .'" />';
-			echo '<a class="cd-add-row">+</a>';
-			echo '<a class="cd-remove-row">-</a>';
-			echo '</div>';
+			?>
+				<div class="cd-single-discount-rule">
+					<input type="text" name="cd_bpd_rules[' . esc_attr( $index ) . '][cd_bpd_quantatity]" value="' . esc_attr( $values['cd_bpd_quantatity'] ) . '" placeholder="'. esc_attr( 'Quantity' ) .'" />
+					<input type="text" name="cd_bpd_rules[' . esc_attr( $index ) . '][cd_bpd_amount]" value="' . esc_attr( $values['cd_bpd_amount'] ) . '" placeholder="'. esc_attr( 'Discount Amount' ) .'" />
+					<a class="cd-add-row">+</a>
+					<a class="cd-remove-row">-</a>
+				</div>
+			<?php
 		}
 	
-		echo '</div>';
+		echo wp_kses_post( '</div>' );
 	}
 
 	public function save_data( $post_id ) {
@@ -134,8 +139,10 @@ class Bulk_Purchase_Discount extends Base {
 		if ( $product->get_meta( 'cd_bpd_rules' ) ) {
 
 			$rules			= $product->get_meta( 'cd_bpd_rules' );
-			
-			echo "<table style='width: 350px;' class='codesigner-bpd-table'>";
+
+			?>			
+			<table style='width: 350px;' class='codesigner-bpd-table'>
+			<?php
 
 			printf("<tr style='background-color: #118ab2; color: #fff;'><th>%s</th><th>%s</th></tr>", esc_attr( __( 'Quantity', 'codesigner') ), esc_attr( __( 'Discount','codesigner' ) ) );
 
@@ -144,7 +151,8 @@ class Bulk_Purchase_Discount extends Base {
 				$amount		= $rule['cd_bpd_amount'];
 				printf( "<tr style='text-align: center' class='col-item'><td>%s</td><td>$%s</td></tr>", esc_attr( $quantatity ), esc_attr( $amount ) );		
 			}
-			echo "</table>";
+
+			echo wp_kses_post( "</table>" );
 		}
 	}
 

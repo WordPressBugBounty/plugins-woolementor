@@ -288,7 +288,7 @@ class Product_Title extends Widget_Base {
         else {
         	printf( '<%1$s %2$s>%3$s</%1$s>',
 	            esc_attr( $settings['title_tag'] ),
-	            $this->get_render_attribute_string( 'product_title' ),
+	            wp_kses_post( $this->get_render_attribute_string( 'product_title' ) ),
 	            esc_html( $product_title ) 
 	        );
         }

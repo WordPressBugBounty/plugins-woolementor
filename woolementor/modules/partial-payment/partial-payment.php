@@ -192,7 +192,9 @@ class Partial_Payment extends Base {
         $fixed_payment_amount       = get_post_meta( get_the_ID(), 'cd_fixed_payment_amount', true );
         $minimum_payment_amount     = get_post_meta( get_the_ID(), 'cd_minimum_payment_amount', true );
 
-        echo '<div id="partial_payment_tab_content" class="panel woocommerce_options_panel">';
+        ?>
+        <div id="partial_payment_tab_content" class="panel woocommerce_options_panel">
+            <?php
             woocommerce_wp_checkbox( array(
                 'id'            => 'cd_enable_partial_payment',
                 'label'         => __( 'Enable Partial Payment', 'codesigner' ),
@@ -201,7 +203,9 @@ class Partial_Payment extends Base {
                 'desc_tip'      => 'true',
             ) );
 
-            echo '<div id="partial_payment_options" style="display:none;">';
+            ?>
+            <div id="partial_payment_options" style="display:none;">
+                <?php
             woocommerce_wp_select( array(
                 'id'            => 'cd_partial_amount_type',
                 'label'         => __( 'Partial Amount Type', 'codesigner' ),
@@ -215,7 +219,9 @@ class Partial_Payment extends Base {
                 'value'         => $partial_payment_type ? $partial_payment_type : 'percentage',
             ));
 
-            echo '<div id="cd_percentage_payment">';
+            ?>
+            <div id="cd_percentage_payment">
+                <?php
             woocommerce_wp_text_input( array(
                 'id'            => 'cd_percentage_payment_amount',
                 'label'         => __( 'Percentage Amount', 'codesigner' ),
@@ -223,9 +229,11 @@ class Partial_Payment extends Base {
                 'desc_tip'      => 'true',
                 'value'         => $percentage_payment_amount ? $percentage_payment_amount : Helper::get_option( 'codesigner_partial_payment', 'pp-default-percentage', 50 ),
             ));
-            echo '</div>';
+            ?>
+            </div>
             
-            echo '<div id="cd_fixed_payment">';
+            <div id="cd_fixed_payment">
+                <?php
             woocommerce_wp_text_input( array(
                 'id'            => 'cd_fixed_payment_amount',
                 'label'         => __( 'Fixed Payment Amount', 'codesigner' ),
@@ -233,9 +241,11 @@ class Partial_Payment extends Base {
                 'desc_tip'      => 'true',
                 'value'         => $fixed_payment_amount ? $fixed_payment_amount : Helper::get_option( 'codesigner_partial_payment', 'pp-default-fixed', 5 ),
             ));
-            echo '</div>';
+            ?>
+            </div>
 
-            echo '<div id="cd_custom_payment" style="display:none;">';
+            <div id="cd_custom_payment" style="display:none;">
+                <?php
             woocommerce_wp_text_input( array(
                 'id'            => 'cd_minimum_payment_amount',
                 'label'         => __( 'Minimum Payment Amount', 'codesigner' ),
@@ -243,15 +253,19 @@ class Partial_Payment extends Base {
                 'desc_tip'      => 'true',
                 'value'         => $minimum_payment_amount ? $minimum_payment_amount : Helper::get_option( 'codesigner_partial_payment', 'pp-default-custom', 10 ),
             ));
-            echo '</div>';
+            ?>
+            </div>
 
+            <?php
             woocommerce_wp_note( array(
                 'id'            => 'cd_partial_payment_note',
                 'label'         => __( 'Note', 'codesigner' ),
                 'message'       => __( 'Disable guest checkout and Cash on Delivery from WooCommerce Settings for Partial Payment.', 'codesigner' ),
             ));
-            echo '</div>';
-        echo '</div>';
+            ?>
+            </div>
+        </div>
+        <?php
     }
 
     public function save_partial_payment_data( $post_id ) {
@@ -669,11 +683,17 @@ class Partial_Payment extends Base {
 				$due_payment_url
 			);
 
-            echo '<p>';
+            ?>
+            <p>
+                <?php
             echo esc_attr( __( 'Pay Due Amount: ', 'codesigner' ) );
-            echo '<a href="' . esc_url( $due_payment_url ) . '">';
-            echo esc_attr( __( 'Pay Now', 'codesigner' ) );
-            echo '</a></p>';
+            ?>
+            <a href="<?php echo esc_url( $due_payment_url ); ?>">
+            <?php
+                esc_html_e( __( 'Pay Now', 'codesigner' ) );
+            ?>
+            </a></p>
+            <?php
         }
     }
 

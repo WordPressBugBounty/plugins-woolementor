@@ -117,10 +117,11 @@ class Front extends Base {
 	}
 
 	public function modal() {
-		echo '
-		<div id="codesigner-modal" style="display: none">
-			<img id="codesigner-modal-loader" alt="Loader" src="' . esc_attr( CODESIGNER_ASSETS . '/img/loader.gif' ) . '" />
-		</div>';
+		?>
+			<div id="codesigner-modal" style="display: none">
+				<img id="codesigner-modal-loader" alt="Loader" src="<?php echo esc_url( CODESIGNER_ASSETS . '/img/loader.gif' ); ?>" />
+			</div>
+		<?php
 	}
 
 	/**

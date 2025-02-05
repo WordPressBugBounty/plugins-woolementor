@@ -73,13 +73,17 @@ class Backorder extends Base {
 
 	public function fields() {
 
-        echo '<div class="show_if_simple show_if_variable">';
-            woocommerce_wp_text_input( array(
-                'id'    => 'cd_backorder_time',
-                'label' => 'BackOrder Available Date',
-                'type'  => 'date',
-            ) );
-        echo "</div>";
+        ?>
+        <div class="show_if_simple show_if_variable">
+            <?php
+                woocommerce_wp_text_input( array(
+                    'id'    => 'cd_backorder_time',
+                    'label' => 'BackOrder Available Date',
+                    'type'  => 'date',
+                ) );
+            ?>
+        </div>
+        <?php
     }
 
     public function save_fields( $post_id ) {
@@ -351,9 +355,9 @@ class Backorder extends Base {
 		if ( $stock_status == 'onbackorder' && $backorder_text ) {
 			$available_date = get_post_meta( $product->get_id(), 'cd_backorder_time', true );
 			$text 			= str_replace( '%%available_date%%', $available_date, $backorder_text );
-			echo "<div class='wl-product-backorder'>";
-				esc_html( $text );
-			echo "</div>";
+			echo wp_kses( "<div class='wl-product-backorder'>", array( 'div' => array( 'class' => array() ) ) );
+				echo esc_html( $text );
+			echo wp_kses_post( "</div>" );
 		}
 	}
 

@@ -1352,7 +1352,7 @@ class customer_Reviews_Classic extends Widget_Base {
 		?>
 
 		<div class="wl-crvc-review-area">
-			<div class="wl-crvc-review-silder reviews-carousel-<?php echo esc_attr( $id ) ?>">
+			<div class="wl-crvc-review-silder reviews-carousel-<?php echo esc_attr( $id ); ?>">
 				
 				<?php foreach ( $review_repeater_items as $item ): ?>
 
@@ -1364,8 +1364,10 @@ class customer_Reviews_Classic extends Widget_Base {
 									if ( !empty( $item['review_repeater_photo']['id'] ) ) {
 										echo wp_get_attachment_image( $item['review_repeater_photo']['id'], $review_photo_thumbnail_size );
 									}
-									else{
-										echo '<img src="'. esc_url( $item['review_repeater_photo']['url'] ) .'">';
+									else {
+										?>
+											<img src="<?php echo esc_url( $item['review_repeater_photo']['url'] ); ?>">
+										<?php
 									}
 								?>
 							</div>
@@ -1391,10 +1393,14 @@ class customer_Reviews_Classic extends Widget_Base {
 											<?php for ( $i = 0; $i < 5; $i++ ) { 
 
 												if ( $i < $item['review_repeater_rating'] ) {
-													echo '<i class="'. esc_attr( $review_rating_blockicon['value'] ) .'"></i>';
+													?>
+														<i class="<?php echo esc_attr( $review_rating_blockicon['value'] ); ?>"></i>
+													<?php
 												}
-												else{
-													echo '<i class="'. esc_attr( $review_rating_empty_icon['value'] ) .'"></i>';
+												else {
+													?>
+														<i class="<?php echo esc_attr( $review_rating_empty_icon['value'] ); ?>"></i>
+													<?php
 												}
 											} ?>
 											<strong><?php echo esc_html( $item['review_repeater_rating'] ); ?>/5</strong>

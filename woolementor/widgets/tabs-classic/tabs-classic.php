@@ -292,10 +292,10 @@ class Tabs_Classic extends Widget_Base {
 		        			$value = get_post_meta( $post_id, $tab['tab_content_meta'], true );
 		        			
 		        			if ( !is_array( $value ) ) {
-		        				echo $value;
+		        				echo esc_html( $value );
 		        			}
 		        			else{
-		        				echo __( 'Array', 'codesigner' );
+		        				esc_html_e( 'Array', 'codesigner' );
 		        			}
 		        		}
 		        		?>

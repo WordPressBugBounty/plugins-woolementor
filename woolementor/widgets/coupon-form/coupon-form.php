@@ -426,7 +426,7 @@ class Coupon_Form extends Widget_Base {
 
 							<?php 
 							printf( '<button %1$s type="submit" name="apply_coupon" value="%2$s">%2$s</button>',
-								$this->get_render_attribute_string( 'coupon_button_text' ),
+								wp_kses_post( $this->get_render_attribute_string( 'coupon_button_text' ) ),
 								esc_html( $settings['coupon_button_text'] )
 							);
 							?>

@@ -90,8 +90,11 @@ $variation_data = array(
             $prefix = "attribute_pa_";
             $_name  = substr( $attr_name, strlen ( $prefix ) );
             $name   = $settings[$_name] ? $settings[$_name] : $_name;
-            echo '<div class="' . esc_attr( $attr_name ) . ' codesigner-vs-wrapper">';
-            echo '<p class="codesigner-tax-name">' . esc_html( ucfirst( $name ) ) . '</p>';
+            ?>
+            <div class="<?php echo esc_attr( $attr_name ); ?> codesigner-vs-wrapper">
+            <p class="codesigner-tax-name"><?php echo esc_html( ucfirst( $name ) ); ?></p>
+
+            <?php
             
             foreach ( $values as $term_name ) {
                 $data = '';

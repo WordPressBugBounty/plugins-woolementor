@@ -176,7 +176,9 @@ class Product_Stock extends Widget_Base {
 			$stock_qty 		= $product->get_stock_quantity();
 
 			if ( $stock_status == 'instock' && is_null( $stock_qty ) ) {
-				echo "<div class='wl-product-stock'><p class='stock' >100 in stock</p></div>";
+				?>
+				<div class='wl-product-stock'><p class='stock' >100 in stock</p></div>
+				<?php
 			}
 		}
 
@@ -196,9 +198,12 @@ class Product_Stock extends Widget_Base {
 		else{
 			$text =  wc_get_stock_html( $product );
 		}
-		echo "<div class='wl-product-stock'>";
-		echo $text;
-		echo "</div>";
+		?>
+		<div class='wl-product-stock'>
+		<?php echo wp_kses_post( $text ); ?>
+		</div>
+
+		<?php
 
 		do_action( 'codesigner_after_main_content', $this );
 	}
