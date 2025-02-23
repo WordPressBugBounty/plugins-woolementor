@@ -4,7 +4,7 @@ Donate link: https://codexpert.io/codesigner/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 5.0
 Tested up to: 6.7
-Stable tag: 4.8.1
+Stable tag: 4.8.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -404,8 +404,8 @@ Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/
 
 == Changelog ==
 
-= v4.8.1 - 2025-02-05 =
-* [add] Code improved
+= v4.8.2 - 2025-02-05 =
+* [add] Notice Add for EasyCommerce
 
 = v4.8.0 - 2025-02-05 =
 * [fix] Fixed Vulnerabilities

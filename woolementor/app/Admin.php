@@ -76,7 +76,7 @@ class Admin extends Base {
 			        </p>
 			        <div class="codesigner-dismissible-notice-content">
 						<img src="' . $image_path . '" alt="CoDesigner" class="codesigner-notice-image" >
-						<p class="codesigner-notice-title"> Introducing <span>EasyCommerce</span> -  Our Revolutionary WordPress Ecommerce Plugin </p>
+						<p class="codesigner-notice-title"> Introducing <span>EasyCommerce</span> -  A Revolutionary WordPress Ecommerce Plugin </p>
 			            <div class="button-wrapper">
 			                <a href="' . esc_url( $url ) . '" class="codesigner-dismissible-notice-button" data-id="' . esc_attr( $data_id ) . '">Check it Out</a>
 			            </div>
