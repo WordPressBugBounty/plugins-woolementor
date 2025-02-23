@@ -19,6 +19,9 @@
 	display: flex;
 	align-items: center;
 	gap: 80px;
+	margin: 0px auto;
+	gap: 170px;
+	padding: 5px;
 }
 .codesigner-countdown {
 	margin-left: 100px;

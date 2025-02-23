@@ -293,4 +293,13 @@ jQuery(function ($) {
 		$(".wl-accordion-item").not($(this).parent()).removeClass("active");
 		$(".wl-accordion-content").not($(this).next()).slideUp(300);
 	});
+
+	 $(".notice-dismiss").on("click", function (e) {
+        e.preventDefault();
+
+		var parentNotice = $(this).closest(".notice[data-notice-id='easycommerce_campain']");
+		parentNotice.fadeOut(300, function () {
+            $(this).remove(); 
+        });
+    });
 });

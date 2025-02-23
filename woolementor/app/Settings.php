@@ -328,13 +328,13 @@ class Settings extends Base {
 			$pro_settings = [
 				'id'            => "{$this->slug}-get-pro",
 				'parent'        => $this->slug,
-				'label'         =>  __( ' <span style="font-weight: bold;">New Year Sale (Up to 70% OFF)</span>', 'codesigner' ),
-				'title'         => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
-				'header'        => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
+				'label'         =>  __( ' <span style="font-weight: bold;">Upgrade to Pro (Up to 70% OFF)</span>', 'codesigner' ),
+				'title'         => __( 'Upgrade to Pro (Up to 80% OFF)', 'codesigner' ),
+				'header'        => __( 'Upgrade to Pro (Up to 80% OFF)', 'codesigner' ),
 				// 'sections'      => [
 				// 	'codesigner_upgrade'	=> [
 				// 		'id'        => 'codesigner_upgrade',
-				// 		'label'     => __( 'Black Friday Sale(Up to 80% OFF)', 'codesigner' ),
+				// 		'label'     => __( 'Upgrade to Pro (Up to 80% OFF)', 'codesigner' ),
 				// 		'icon'      => 'dashicons-buddicons-groups',
 				// 		'hide_form'	=> true,
 				// 		// 'template'  => CODESIGNER_DIR . '/views/settings/free-pro.php',

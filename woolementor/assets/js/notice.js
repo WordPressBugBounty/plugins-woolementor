@@ -68,28 +68,28 @@ jQuery(function ($) {
 
 	// Dismiss notice
 
-	$(document).on(
-		"click",
-		".codesigner-dismissible-notice-button",
-		function () {
-			var noticeType = $(".codesigner-dismissible-notice-button").data(
-				"id"
-			);
+	// $(document).on(
+	// 	"click",
+	// 	".codesigner-dismissible-notice-button",
+	// 	function () {
+	// 		var noticeType = $(".codesigner-dismissible-notice-button").data(
+	// 			"id"
+	// 		);
 
-			$.ajax({
-				url: CODESIGNER_NOTICE.ajaxurl,
-				type: "post",
-				data: {
-					action: "codesigner_dismiss_notice",
-					notice_type: noticeType,
-					_wpnonce: CODESIGNER_NOTICE._wpnonce,
-				},
-				success: function (resp) {
-					window.location.href = resp.url;
-				},
-			});
-		}
-	);
+	// 		$.ajax({
+	// 			url: CODESIGNER_NOTICE.ajaxurl,
+	// 			type: "post",
+	// 			data: {
+	// 				action: "codesigner_dismiss_notice",
+	// 				notice_type: noticeType,
+	// 				_wpnonce: CODESIGNER_NOTICE._wpnonce,
+	// 			},
+	// 			success: function (resp) {
+	// 				window.location.href = resp.url;
+	// 			},
+	// 		});
+	// 	}
+	// );
 });
 document.addEventListener("DOMContentLoaded", function () {
 	var countdownElements = document.querySelectorAll(".codesigner-countdown");
