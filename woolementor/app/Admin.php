@@ -123,7 +123,6 @@ class Admin extends Base {
 			'_wpnonce'   => wp_create_nonce(),
 			'api_base'   => get_rest_url(),
 			'rest_nonce' => wp_create_nonce( 'wp_rest' ),
-			'cd_welcome' => $this->get_pointers(),
 		);
 
 		wp_localize_script( $this->slug, 'CODESIGNER', apply_filters( "{$this->slug}-localized", $localized ) );
@@ -195,7 +194,7 @@ class Admin extends Base {
 
 		$ec_notice = new Notice( $ec_notice_id );
 
-		$ec_notice->set_intervals( array( 0 ) ); // Show at 0s (immediately)
+		$ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
 		$ec_notice->set_expiry( 3 * DAY_IN_SECONDS ); // Don't show after 3 days
 
 		$message = sprintf(
