@@ -21,17 +21,18 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
 <form class="cart" action="<?php echo esc_url( $product_url ); ?>" method="get">
 
-	<?php 
+	<?php
 	do_action( 'woocommerce_before_add_to_cart_button' );
 
-	printf( '<button type="submit" %s>%s</button>',
+	printf(
+		'<button type="submit" %s>%s</button>',
 		wp_kses_post( $this->get_render_attribute_string( 'add_to_cart_text' ) ),
 		esc_html( $button_text )
 	);
 
 	wc_query_string_form_fields( $product_url );
 
-	do_action( 'woocommerce_after_add_to_cart_button' ); 
+	do_action( 'woocommerce_after_add_to_cart_button' );
 	?>
 </form>
 

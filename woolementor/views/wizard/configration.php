@@ -1,14 +1,14 @@
-<?php 
+<?php
 use Codexpert\CoDesigner\Helper;
-$add_to_cart 		= CODESIGNER_ASSETS . '/img/Add-to-cart.png';
-$cross_domain 		= CODESIGNER_ASSETS . '/img/cross-domain-copy-paste.png';
-$redirect_checkout 	= CODESIGNER_ASSETS . '/img/redirect-checkout.png';
-$add_to_cart_text	= Helper::get_option( 'codesigner_tools', 'add-to-cart-text' );
-$add_cart_checked 	= ( $add_to_cart_text != '' ) ? 'checked' : '' ;
-$checkout			= Helper::get_option( 'codesigner_tools', 'redirect_to_checkout' );
-$redirect_checked 	= ( $checkout != '' ) ? 'checked' : '' ;
-$cross_domain_copy	= Helper::get_option( 'codesigner_tools', 'cross_domain_copy_paste' );
-$cross_domain_checked = ( $cross_domain_copy != '' ) ? 'checked' : '' ;
+$add_to_cart          = CODESIGNER_ASSETS . '/img/Add-to-cart.png';
+$cross_domain         = CODESIGNER_ASSETS . '/img/cross-domain-copy-paste.png';
+$redirect_checkout    = CODESIGNER_ASSETS . '/img/redirect-checkout.png';
+$add_to_cart_text     = Helper::get_option( 'codesigner_tools', 'add-to-cart-text' );
+$add_cart_checked     = ( $add_to_cart_text != '' ) ? 'checked' : '';
+$checkout             = Helper::get_option( 'codesigner_tools', 'redirect_to_checkout' );
+$redirect_checked     = ( $checkout != '' ) ? 'checked' : '';
+$cross_domain_copy    = Helper::get_option( 'codesigner_tools', 'cross_domain_copy_paste' );
+$cross_domain_checked = ( $cross_domain_copy != '' ) ? 'checked' : '';
 
 ?>
 <div class="setup-wizard-configration-panel">
@@ -21,11 +21,11 @@ $cross_domain_checked = ( $cross_domain_copy != '' ) ? 'checked' : '' ;
 			<div class="setup-wizard-configration-content">
 				<div class="cx-field-wrap">
 					<label class="cx-toggle">
-						  <input type="checkbox" <?php echo esc_attr( $add_cart_checked ); ?> name="enable_add-to-cart" id="codesigner_tools-add-to-cart" class="cx-toggle-checkbox cx-field cx-field-switch" value="on">
+							<input type="checkbox" <?php echo esc_attr( $add_cart_checked ); ?> name="enable_add-to-cart" id="codesigner_tools-add-to-cart" class="cx-toggle-checkbox cx-field cx-field-switch" value="on">
 						<div class="cx-toggle-switch"></div>
 					</label>
 					<div class="cx-hide-fields" style="display: none;">
-						<input class="cx-input" type="text" name="add-to-cart-text" value="<?php echo esc_attr( $add_to_cart_text); ?>">
+						<input class="cx-input" type="text" name="add-to-cart-text" value="<?php echo esc_attr( $add_to_cart_text ); ?>">
 					</div>
 
 					<p class="cx-desc"><?php esc_html( 'Enable this if you want to replace the text of the \'Add to cart\' button with something else. E.g. \'Buy Now\' or \'Purchase\'.', 'codesigner' ); ?></p>

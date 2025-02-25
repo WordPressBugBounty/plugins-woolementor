@@ -13,19 +13,19 @@ class Product_Tags extends Widget_Base {
 
 	public $id;
 
-	public function __construct( $data = [], $args = null ) {
-	    parent::__construct( $data, $args );
+	public function __construct( $data = array(), $args = null ) {
+		parent::__construct( $data, $args );
 
-	    $this->id = wcd_get_widget_id( __CLASS__ );
-	    $this->widget = wcd_get_widget( $this->id );
+		$this->id     = wcd_get_widget_id( __CLASS__ );
+		$this->widget = wcd_get_widget( $this->id );
 	}
 
 	public function get_script_depends() {
-		return [];
+		return array();
 	}
 
 	public function get_style_depends() {
-		return [];
+		return array();
 	}
 
 	public function get_name() {
@@ -51,409 +51,412 @@ class Product_Tags extends Widget_Base {
 		 */
 		$this->start_controls_section(
 			'_sectio_tag',
-			[
-				'label' 		=> __( 'Content', 'codesigner' ),
-				'tab' 			=> Controls_Manager::TAB_CONTENT,
-			]
-		);
-
-        $this->add_control(
-			'product_tag_type',
-			[
-				'label' 		=> __( 'Content Source', 'codesigner' ),
-				'type' 			=> Controls_Manager::SELECT2,
-				'options' 		=> [
-					'current_product'  	=> __( 'Current Product', 'codesigner' ),
-					'custom_product'  	=> __( 'Custom Product', 'codesigner' ),
-					'custom_tag' 		=> __( 'Custom Text', 'codesigner' ),
-				],
-				'default' 		=> 'current_product',
-				'label_block' 	=> true,
-			]
+			array(
+				'label' => __( 'Content', 'codesigner' ),
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
 		);
 
 		$this->add_control(
-            'product_id',
-            [
-                'label' 		=> __( 'Product Id', 'codesigner' ),
-                'type' 			=> Controls_Manager::NUMBER,
-                'default' 		=> 'Product id',
-                'condition' 	=> [
-                    'product_tag_type' => 'custom_product'
-                ],
-				'label_block' 	=> true,
-            ]
-        );
+			'product_tag_type',
+			array(
+				'label'       => __( 'Content Source', 'codesigner' ),
+				'type'        => Controls_Manager::SELECT2,
+				'options'     => array(
+					'current_product' => __( 'Current Product', 'codesigner' ),
+					'custom_product'  => __( 'Custom Product', 'codesigner' ),
+					'custom_tag'      => __( 'Custom Text', 'codesigner' ),
+				),
+				'default'     => 'current_product',
+				'label_block' => true,
+			)
+		);
 
-        $this->add_control(
-            'tag_label',
-            [
-                'label' 		=> __( 'Label', 'codesigner' ),
-                'type' 			=> Controls_Manager::TEXT,
-                'default' 		=> 'Tag: ',                
-				'label_block' 	=> true,
-            ]
-        );
+		$this->add_control(
+			'product_id',
+			array(
+				'label'       => __( 'Product Id', 'codesigner' ),
+				'type'        => Controls_Manager::NUMBER,
+				'default'     => 'Product id',
+				'condition'   => array(
+					'product_tag_type' => 'custom_product',
+				),
+				'label_block' => true,
+			)
+		);
 
-        $repeater = new Repeater();
+		$this->add_control(
+			'tag_label',
+			array(
+				'label'       => __( 'Label', 'codesigner' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => 'Tag: ',
+				'label_block' => true,
+			)
+		);
+
+		$repeater = new Repeater();
 
 		$repeater->add_control(
-			'tag_name', [
-				'label' => __( 'Tag Name', 'codesigner' ),
-				'type' => Controls_Manager::TEXT,
-				'default' => __( 'New tag' , 'codesigner' ),
+			'tag_name',
+			array(
+				'label'       => __( 'Tag Name', 'codesigner' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => __( 'New tag', 'codesigner' ),
 				'label_block' => true,
-			]
+			)
 		);
 
 		$repeater->add_control(
 			'tag_link',
-			[
-				'label' 		=> __( 'Link', 'codesigner' ),
-				'type' 			=> Controls_Manager::URL,
-				'placeholder' 	=> __( 'https://your-link.com', 'codesigner' ),
+			array(
+				'label'         => __( 'Link', 'codesigner' ),
+				'type'          => Controls_Manager::URL,
+				'placeholder'   => __( 'https://your-link.com', 'codesigner' ),
 				'show_external' => true,
-				'default' => [
-					'url' => '',
+				'default'       => array(
+					'url'         => '',
 					'is_external' => false,
-					'nofollow' => false,
-				],
-			]
+					'nofollow'    => false,
+				),
+			)
 		);
 
 		$this->add_control(
 			'tags_list',
-			[
-				'label' => __( 'Tag List', 'codesigner' ),
-				'type' => Controls_Manager::REPEATER,
-				'fields' => $repeater->get_controls(),
-				'default' => [
-					[
+			array(
+				'label'       => __( 'Tag List', 'codesigner' ),
+				'type'        => Controls_Manager::REPEATER,
+				'fields'      => $repeater->get_controls(),
+				'default'     => array(
+					array(
 						'tag_name' => __( 'tag #1', 'codesigner' ),
-						'tag_link' => [
-							'url' => 'https://codexpert.io/codesigner',
+						'tag_link' => array(
+							'url'         => 'https://codexpert.io/codesigner',
 							'is_external' => false,
-							'nofollow' => false,
-						],
-					],
-					[
+							'nofollow'    => false,
+						),
+					),
+					array(
 						'tag_name' => __( 'tag #2', 'codesigner' ),
-						'tag_link' => [
-							'url' => 'https://codexpert.io/codesigner',
+						'tag_link' => array(
+							'url'         => 'https://codexpert.io/codesigner',
 							'is_external' => false,
-							'nofollow' => false,
-						],
-					],
-				],
-                'condition' 	=> [
-                    'product_tag_type' => 'custom_tag'
-                ],
+							'nofollow'    => false,
+						),
+					),
+				),
+				'condition'   => array(
+					'product_tag_type' => 'custom_tag',
+				),
 				'title_field' => '{{{ tag_name }}}',
-			]
+			)
 		);
 
-
-        $this->add_responsive_control(
-            'align',
-            [
-                'label' 		=> __( 'Alignment', 'codesigner' ),
-                'type' 			=> Controls_Manager::CHOOSE,
-                'options' => [
-					'left' => [
+		$this->add_responsive_control(
+			'align',
+			array(
+				'label'     => __( 'Alignment', 'codesigner' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => array(
+					'left'   => array(
 						'title' => __( 'Left', 'codesigner' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
+						'icon'  => 'eicon-text-align-left',
+					),
+					'center' => array(
 						'title' => __( 'Center', 'codesigner' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'right' => [
+						'icon'  => 'eicon-text-align-center',
+					),
+					'right'  => array(
 						'title' => __( 'Right', 'codesigner' ),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-                'toggle' 		=> true,
-                'default' 		=> 'left',
-				'separator' 	=> 'before',
-                'selectors' 	=> [
-                    '{{WRAPPER}} .wl-product-tags' => 'text-align: {{VALUE}};'
-                ]
-            ]
-        );
+						'icon'  => 'eicon-text-align-right',
+					),
+				),
+				'toggle'    => true,
+				'default'   => 'left',
+				'separator' => 'before',
+				'selectors' => array(
+					'{{WRAPPER}} .wl-product-tags' => 'text-align: {{VALUE}};',
+				),
+			)
+		);
 
-        $this->end_controls_section();
+		$this->end_controls_section();
 
-        /**
+		/**
 		 * Product sku label Style
 		 */
 		$this->start_controls_section(
 			'section_style_tag_lable',
-			[
+			array(
 				'label' => __( 'Label', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
-			]
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
-			[
-				'name' => 'tag_label_background',
-				'label' => __( 'Background', 'codesigner' ),
-				'types' => [ 'classic', 'gradient' ],
+			array(
+				'name'     => 'tag_label_background',
+				'label'    => __( 'Background', 'codesigner' ),
+				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .wl-product-tags .tag-label',
-			]
+			)
 		);
 
 		$this->add_control(
 			'tag_label_color',
-			[
-				'label' => __( 'Text Color', 'codesigner' ),
-				'type' => Controls_Manager::COLOR,
+			array(
+				'label'     => __( 'Text Color', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
 				'separator' => 'before',
-				'default' => '#000',
-				'selectors' => [
+				'default'   => '#000',
+				'selectors' => array(
 					'{{WRAPPER}} .wl-product-tags .tag-label' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
-			[
-				'name' 		=> 'tag_lable_typography',
-				'label' 	=> __( 'Typography', 'codesigner' ),
-				'global' => [
+			array(
+				'name'           => 'tag_lable_typography',
+				'label'          => __( 'Typography', 'codesigner' ),
+				'global'         => array(
 					'default' => Global_Typography::TYPOGRAPHY_TEXT,
-				],
-				'selector' 	=> '{{WRAPPER}} .wl-product-tags .tag-label',
-				'fields_options' 	=> [
-					'typography' 	=> [ 'default' => 'yes' ],
-				    'font_family' 	=> [ 'default' => 'Montserrat' ],
-				    'font_weight' 	=> [ 'default' => 400 ],
-				],
-			]
+				),
+				'selector'       => '{{WRAPPER}} .wl-product-tags .tag-label',
+				'fields_options' => array(
+					'typography'  => array( 'default' => 'yes' ),
+					'font_family' => array( 'default' => 'Montserrat' ),
+					'font_weight' => array( 'default' => 400 ),
+				),
+			)
 		);
 
 		$this->add_responsive_control(
 			'tag_label_border_radius',
-			[
-				'label' 		=> __( 'Border Radius', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Border Radius', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-product-tags .tag-label' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'separator'		=> 'after',
-			]
+				),
+				'separator'  => 'after',
+			)
 		);
 
 		$this->add_responsive_control(
 			'tag_lable_padding',
-			[
-				'label' 		=> __( 'Padding', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Padding', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-product-tags .tag-label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'separator'		=> 'before',
-			]
+				),
+				'separator'  => 'before',
+			)
 		);
 
 		$this->add_responsive_control(
 			'tag_lable_margin',
-			[
-				'label' 		=> __( 'Margin', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Margin', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-product-tags .tag-label' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
+				),
+			)
 		);
 
-		$this->end_controls_section(); 
+		$this->end_controls_section();
 
 		/**
 		 * Product categories Style
 		 */
 		$this->start_controls_section(
 			'section_style_tag',
-			[
+			array(
 				'label' => __( 'Tags', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
-			]
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Background::get_type(),
-			[
-				'name' => 'tag_background',
-				'label' => __( 'Background', 'codesigner' ),
-				'types' => [ 'classic', 'gradient' ],
+			array(
+				'name'     => 'tag_background',
+				'label'    => __( 'Background', 'codesigner' ),
+				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .wl-product-tags .tags_wrapper a',
-			]
+			)
 		);
 
 		$this->add_control(
 			'tag_color',
-			[
-				'label' => __( 'Text Color', 'codesigner' ),
-				'type' => Controls_Manager::COLOR,
+			array(
+				'label'     => __( 'Text Color', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
 				'separator' => 'before',
-				'default' => '#E9345F',
-				'selectors' => [
+				'default'   => '#E9345F',
+				'selectors' => array(
 					'{{WRAPPER}} .wl-product-tags .tags_wrapper a' => 'color: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
-			[
-				'name' 		=> 'tag_typography',
-				'label' 	=> __( 'Typography', 'codesigner' ),
-				'global' => [
+			array(
+				'name'           => 'tag_typography',
+				'label'          => __( 'Typography', 'codesigner' ),
+				'global'         => array(
 					'default' => Global_Typography::TYPOGRAPHY_TEXT,
-				],
-				'selector' 	=> '{{WRAPPER}} .wl-product-tags .tags_wrapper a',
-				'fields_options' 	=> [
-					'typography' 	=> [ 'default' => 'yes' ],
-				    'font_family' 	=> [ 'default' => 'Montserrat' ],
-				    'font_weight' 	=> [ 'default' => 400 ],
-				],
-			]
+				),
+				'selector'       => '{{WRAPPER}} .wl-product-tags .tags_wrapper a',
+				'fields_options' => array(
+					'typography'  => array( 'default' => 'yes' ),
+					'font_family' => array( 'default' => 'Montserrat' ),
+					'font_weight' => array( 'default' => 400 ),
+				),
+			)
 		);
 
 		$this->add_responsive_control(
 			'tag_border_radius',
-			[
-				'label' 		=> __( 'Border Radius', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Border Radius', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-product-tags .tags_wrapper a' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'separator'		=> 'after',
-			]
+				),
+				'separator'  => 'after',
+			)
 		);
 
 		$this->add_responsive_control(
 			'tag_padding',
-			[
-				'label' 		=> __( 'Padding', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Padding', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-product-tags .tags_wrapper a' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'separator'		=> 'before',
-			]
+				),
+				'separator'  => 'before',
+			)
 		);
 
 		$this->add_responsive_control(
 			'tag_margin',
-			[
-				'label' 		=> __( 'Margin', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Margin', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-product-tags .tags_wrapper a' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
+				),
+			)
 		);
 
-		$this->end_controls_section(); 
+		$this->end_controls_section();
 	}
 
 	protected function render() {
 
 		$settings = $this->get_settings_for_display();
 
-        $this->render_editing_attributes();
-        $product_tag_type = $settings['product_tag_type'];
-        ?>
+		$this->render_editing_attributes();
+		$product_tag_type = $settings['product_tag_type'];
+		?>
 
-        <div class="wl-product-tags">
+		<div class="wl-product-tags">
 
-        	<?php do_action( 'wcd_product_tag_start' );
-        	
-        	 if( function_exists( 'is_checkout' ) && ( $product_tag_type == 'current_product' || $product_tag_type == 'custom_product' ) ): 
-        			if( $product_tag_type == 'current_product' ) {
+			<?php
+			do_action( 'wcd_product_tag_start' );
 
-        				$product_id = get_the_ID();
-        				$product 	= wc_get_product( $product_id );
+			if ( function_exists( 'is_checkout' ) && ( $product_tag_type == 'current_product' || $product_tag_type == 'custom_product' ) ) :
+				if ( $product_tag_type == 'current_product' ) {
 
-        				if ( isset( $_POST['product_id'] ) ) {
+					$product_id = get_the_ID();
+					$product    = wc_get_product( $product_id );
+
+					if ( isset( $_POST['product_id'] ) ) {
 							$product_id = codesigner_sanitize_number( $_POST['product_id'] );
-							$product 	= wc_get_product( $product_id );
-						}
-        				
-        				if ( empty( $product ) && ( wcd_is_edit_mode() || wcd_is_preview_mode() ) ) {
-        					$product_id = wcd_get_product_id();
-        					$product 	= wc_get_product( $product_id );
-        					$tags 		= wc_get_product_tag_list( $product_id );
+							$product    = wc_get_product( $product_id );
+					}
 
-        					if ( ! $tags ) {
-								?>
-        						<span class='tags_wrapper'>
-        							<span class='tag-label'><?php echo esc_html( $settings['tag_label'] ); ?></span>
-        							<span class='tag-items'>
-        								<a href='#'><?php esc_html_e( 'tag #1', 'codesigner' ); ?></a>,
-        								<a href='#'><?php esc_html_e( 'tag #2', 'codesigner' ); ?></a>
-        							</span>
-        						</span>
+					if ( empty( $product ) && ( wcd_is_edit_mode() || wcd_is_preview_mode() ) ) {
+						$product_id = wcd_get_product_id();
+						$product    = wc_get_product( $product_id );
+						$tags       = wc_get_product_tag_list( $product_id );
+
+						if ( ! $tags ) {
+							?>
+								<span class='tags_wrapper'>
+									<span class='tag-label'><?php echo esc_html( $settings['tag_label'] ); ?></span>
+									<span class='tag-items'>
+										<a href='#'><?php esc_html_e( 'tag #1', 'codesigner' ); ?></a>,
+										<a href='#'><?php esc_html_e( 'tag #2', 'codesigner' ); ?></a>
+									</span>
+								</span>
 								<?php
-        					}
-        				}
-        			}
-        			if( $product_tag_type == 'custom_product' ) {
-        				$product_id = codesigner_sanitize_number( $product_id );
-        				$product 	= $product_id != '' ? wc_get_product( $product_id ) : '';
+						}
+					}
+				}
+				if ( $product_tag_type == 'custom_product' ) {
+					$product_id = codesigner_sanitize_number( $product_id );
+					$product    = $product_id != '' ? wc_get_product( $product_id ) : '';
 
-        				if( $product_id == '' || !$product ) {
-        					echo "Input valid Product ID"; return;
-        				}
-        			}
+					if ( $product_id == '' || ! $product ) {
+							echo 'Input valid Product ID';
+						return;
+					}
+				}
 
-        			if( $product && is_object( $product ) ){
-        				?>
-        				<span class="tags_wrapper">
-				        	<?php echo wp_kses_post( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( '<span '. $this->get_render_attribute_string( 'tag_label' ) .'>'. esc_html( $settings['tag_label'] ) .'</span>', '<span '. $this->get_render_attribute_string( 'tag_label' ) .'>'. esc_html( $settings['tag_label'] ) .'</span>', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ) ); ?>
-				        </span>
-        				<?php
-        			}
-        		?>
+				if ( $product && is_object( $product ) ) {
+					?>
+						<span class="tags_wrapper">
+						<?php echo wp_kses_post( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( '<span ' . $this->get_render_attribute_string( 'tag_label' ) . '>' . esc_html( $settings['tag_label'] ) . '</span>', '<span ' . $this->get_render_attribute_string( 'tag_label' ) . '>' . esc_html( $settings['tag_label'] ) . '</span>', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ) ); ?>
+						</span>
+						<?php
+				}
+				?>
 
-	        <?php elseif( $product_tag_type == 'custom_tag' ): ?>
-	        	<span class="tags_wrapper">
+			<?php elseif ( $product_tag_type == 'custom_tag' ) : ?>
+				<span class="tags_wrapper">
 
-	        		<?php 
-        			printf( '<span %s>%s</span>',
+					<?php
+					printf(
+						'<span %s>%s</span>',
 						wp_kses_post( $this->get_render_attribute_string( 'tag_label' ) ),
 						esc_html( $settings['tag_label'] )
 					);
-        			?>
+					?>
 
-	        		<span class="tag-items">
-	        			<?php 
-	        			$last_item = end( $settings['tags_list'] );
-	        			foreach ($settings['tags_list'] as $key => $tag) {
-	        				$separator = isset( $tag['_id'] ) && $tag['_id'] != $last_item['_id'] ? ', ' : '';
-	        				$target = isset( $tag['is_external'] ) && $tag['is_external'] ? ' target="_blank"' : '';
-    						$nofollow = isset( $tag['nofollow'] ) && $tag['nofollow'] ? ' rel="nofollow"' : '';
-	        				echo '<a href="'. esc_url( $tag['tag_link']['url'] ) .'" '. esc_attr( $target ) . esc_attr( $nofollow  ).' class="tag-item">'.  esc_html( $tag['tag_name'] ) . esc_html( $separator ) .'</a>';
-	        			}
-	        			 ?>
-	        		</span>
-	        	</span>
-	        <?php endif; ?>
+					<span class="tag-items">
+						<?php
+						$last_item = end( $settings['tags_list'] );
+						foreach ( $settings['tags_list'] as $key => $tag ) {
+							$separator = isset( $tag['_id'] ) && $tag['_id'] != $last_item['_id'] ? ', ' : '';
+							$target    = isset( $tag['is_external'] ) && $tag['is_external'] ? ' target="_blank"' : '';
+							$nofollow  = isset( $tag['nofollow'] ) && $tag['nofollow'] ? ' rel="nofollow"' : '';
+							echo '<a href="' . esc_url( $tag['tag_link']['url'] ) . '" ' . esc_attr( $target ) . esc_attr( $nofollow ) . ' class="tag-item">' . esc_html( $tag['tag_name'] ) . esc_html( $separator ) . '</a>';
+						}
+						?>
+					</span>
+				</span>
+			<?php endif; ?>
 
-        	<?php do_action( 'wcd_product_tag_end', $this ); ?>
+			<?php do_action( 'wcd_product_tag_end', $this ); ?>
 
-        </div>
+		</div>
 
-        <?php
+		<?php
 	}
 
 	private function render_editing_attributes() {

@@ -1901,24 +1901,27 @@ class Cart_Items extends Widget_Base {
 															);
 														}
 
-														$allowed_tags = [
-															'div'    => ['class' => []],
-															'input'  => [
-																'type'        => [],
-																'value'       => [],
-																'class'       => [],
-																'id'          => [],
-																'name'        => [],
-																'min'         => [],
-																'max'         => [],
-																'step'        => [],
-																'placeholder' => [],
-																'inputmode'   => [],
-																'autocomplete'=> [],
-																'aria-label'  => [],
-															],
-															'label'  => ['class' => [], 'for' => []],
-														];
+														$allowed_tags = array(
+															'div'    => array( 'class' => array() ),
+															'input'  => array(
+																'type'        => array(),
+																'value'       => array(),
+																'class'       => array(),
+																'id'          => array(),
+																'name'        => array(),
+																'min'         => array(),
+																'max'         => array(),
+																'step'        => array(),
+																'placeholder' => array(),
+																'inputmode'   => array(),
+																'autocomplete' => array(),
+																'aria-label'  => array(),
+															),
+															'label'  => array(
+																'class' => array(),
+																'for'   => array(),
+															),
+														);
 
 														echo wp_kses( apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ), $allowed_tags ); // PHPCS: XSS ok.
 														?>

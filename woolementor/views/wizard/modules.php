@@ -2,7 +2,7 @@
 use Codexpert\CoDesigner\Helper;
 
 $modules        = codesigner_modules();
-$active_modules = get_option( 'codesigner_modules', [] );
+$active_modules = get_option( 'codesigner_modules', array() );
 
 // Helper::pri( $active_modules );
 
@@ -15,11 +15,11 @@ $active_modules = get_option( 'codesigner_modules', [] );
 	</div>
 
 	<div class="cd-wizard-modules-container">
-		<h3 class='wl-widget-category'><?php echo esc_html__( 'All Modules', 'codesigner' ) ?></h3>
+		<h3 class='wl-widget-category'><?php echo esc_html__( 'All Modules', 'codesigner' ); ?></h3>
 		<div class="cd-wizard-modules-list">
 
 		<?php $flag = 1; ?>
-		<?php foreach( $modules as $key=>$module ) : ?>
+		<?php foreach ( $modules as $key => $module ) : ?>
 			<div class="<?php echo esc_attr( $flag > 12 ? 'wl-widget cd-wizard-module-block cd-hide-module' : 'wl-widget cd-wizard-module-block' ); ?>">
 				<div class="cx-label-wrap">
 					<label for="<?php echo esc_attr( 'codesigner_modules-' . $key ); ?>">
@@ -27,7 +27,7 @@ $active_modules = get_option( 'codesigner_modules', [] );
 					</label>
 					<p class="cd-module-desc"><?php echo esc_html( $module['desc'] ); ?></p>
 				</div>
-				<?php                 
+				<?php
 				if ( $module['pro'] ) {
 					?>
 						<span class="wl-pro-ribbon"><?php echo esc_html( 'Pro' ); ?></span>
@@ -40,20 +40,20 @@ $active_modules = get_option( 'codesigner_modules', [] );
 							type="checkbox" name="<?php echo esc_attr( $key ); ?>" 
 							id="<?php echo esc_attr( 'codesigner_modules-' . $module['id'] ); ?>" 
 							class="cx-toggle-checkbox cx-field cx-field-switch" value="on" 
-							<?php echo array_key_exists( $key, $active_modules ) && $active_modules[$key] === 'on' ? 'checked' : ''; ?>
+							<?php echo array_key_exists( $key, $active_modules ) && $active_modules[ $key ] === 'on' ? 'checked' : ''; ?>
 							<?php echo ! wcd_is_pro_activated() && $module['pro'] ? 'disabled' : ''; ?>
 						>
-						<div class="<?php echo ! wcd_is_pro_activated() && $module['pro'] ? 'cx-toggle-switch pro' : 'cx-toggle-switch' ?>"></div>
+						<div class="<?php echo ! wcd_is_pro_activated() && $module['pro'] ? 'cx-toggle-switch pro' : 'cx-toggle-switch'; ?>"></div>
 					</label>
 				</div>
 			</div>
-		<?php $flag++ ?>
+			<?php ++$flag; ?>
 		<?php endforeach; ?>
 		</div>
 
 		<div class="cd-wizard-view-all">
 			<button class="cd-view-all-btn" id="cd-view-modules-btn" type="button">
-				<?php echo esc_html__( 'View All Modules', 'codesigner' ) ?>
+				<?php echo esc_html__( 'View All Modules', 'codesigner' ); ?>
 				<svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 23 23" fill="none">
 					<path d="M16.692 5.19202L15.6675 6.21656L20.2265 10.7756H0V12.2245H20.2265L15.6675 16.7835L16.692 17.808L23 11.5L16.692 5.19202Z" fill="#FA5542"/>
 				</svg>

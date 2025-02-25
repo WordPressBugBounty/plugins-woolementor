@@ -10,7 +10,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-if ( ! defined( 'ELEMENTOR_VERSION' ) ) return;
+if ( ! defined( 'ELEMENTOR_VERSION' ) ) {
+	return;
+}
 
 /**
  * @package Plugin
@@ -69,10 +71,10 @@ class Library_Source extends Source_Base {
 		return new \WP_Error( 'invalid_request', 'Cannot export template from a CoDesigner library' );
 	}
 
-	public function get_items( $args = [] ) {
+	public function get_items( $args = array() ) {
 		$library_data = self::get_library_data();
 
-		$templates = [];
+		$templates = array();
 
 		if ( ! empty( $library_data['templates'] ) ) {
 			foreach ( $library_data['templates'] as $template_data ) {
@@ -86,13 +88,13 @@ class Library_Source extends Source_Base {
 	public function get_tags() {
 		$library_data = self::get_library_data();
 
-		return ( ! empty( $library_data['tags'] ) ? $library_data['tags'] : [] );
+		return ( ! empty( $library_data['tags'] ) ? $library_data['tags'] : array() );
 	}
 
 	public function get_type_tags() {
 		$library_data = self::get_library_data();
 
-		return ( ! empty( $library_data['type_tags'] ) ? $library_data['type_tags'] : [] );
+		return ( ! empty( $library_data['type_tags'] ) ? $library_data['type_tags'] : array() );
 	}
 
 	/**
@@ -102,7 +104,7 @@ class Library_Source extends Source_Base {
 	 * @return array
 	 */
 	private function prepare_template( array $template_data ) {
-		return [
+		return array(
 			'template_id' => $template_data['id'],
 			'title'       => $template_data['title'],
 			'type'        => $template_data['type'],
@@ -111,7 +113,7 @@ class Library_Source extends Source_Base {
 			'tags'        => $template_data['tags'],
 			'isPro'       => $template_data['is_pro'],
 			'url'         => $template_data['url'],
-		];
+		);
 	}
 
 	/**
@@ -126,14 +128,20 @@ class Library_Source extends Source_Base {
 		if ( $force_update || false === $data ) {
 			$timeout = ( $force_update ) ? 25 : 8;
 
-			$data = [ 'code' => 'success', 'message' => '' ];
+			$data = array(
+				'code'    => 'success',
+				'message' => '',
+			);
 
-			$categories_response = wp_remote_get( self::API_CATEGORIES_INFO_URL, [
-				'timeout' => $timeout,
-			] );
+			$categories_response = wp_remote_get(
+				self::API_CATEGORIES_INFO_URL,
+				array(
+					'timeout' => $timeout,
+				)
+			);
 
 			if ( is_wp_error( $categories_response ) || 200 !== (int) wp_remote_retrieve_response_code( $categories_response ) ) {
-				update_option( self::LIBRARY_CACHE_KEY, [] );
+				update_option( self::LIBRARY_CACHE_KEY, array() );
 				return false;
 			}
 
@@ -144,61 +152,67 @@ class Library_Source extends Source_Base {
 
 			$data['categories'] = $categories_data['data'];
 
-
 			/**
 			 * Pages
 			 */
-			$page_response = wp_remote_get( self::API_TEMPLATES_INFO_URL . '?type=page', [
-				'timeout' => $timeout,
-			] );
+			$page_response = wp_remote_get(
+				self::API_TEMPLATES_INFO_URL . '?type=page',
+				array(
+					'timeout' => $timeout,
+				)
+			);
 
 			if ( is_wp_error( $page_response ) || 200 !== (int) wp_remote_retrieve_response_code( $page_response ) ) {
-				update_option( self::LIBRARY_CACHE_KEY, [] );
+				update_option( self::LIBRARY_CACHE_KEY, array() );
 				return false;
 			}
-			
+
 			$pages_data = json_decode( wp_remote_retrieve_body( $page_response ), true );
 
 			// $data['pages'] = $pages_data['data'];
 
-
 			/**
 			 * Pages
 			 */
-			$product_response = wp_remote_get( self::API_TEMPLATES_INFO_URL . '?type=product', [
-				'timeout' => $timeout,
-			] );
+			$product_response = wp_remote_get(
+				self::API_TEMPLATES_INFO_URL . '?type=product',
+				array(
+					'timeout' => $timeout,
+				)
+			);
 
 			if ( is_wp_error( $product_response ) || 200 !== (int) wp_remote_retrieve_response_code( $product_response ) ) {
-				update_option( self::LIBRARY_CACHE_KEY, [] );
+				update_option( self::LIBRARY_CACHE_KEY, array() );
 				return false;
 			}
-			
+
 			$products_data = json_decode( wp_remote_retrieve_body( $product_response ), true );
 
 			// $data['pages'] = $products_data['data'];
 
 			$data['pages'] = array_merge( $pages_data['data'], $products_data['data'] );
 
-
 			/**
 			 * Blocks
 			 */
-			$blocks_response = wp_remote_get( self::API_TEMPLATES_INFO_URL . '?type=block', [
-				'timeout' => $timeout,
-			] );
+			$blocks_response = wp_remote_get(
+				self::API_TEMPLATES_INFO_URL . '?type=block',
+				array(
+					'timeout' => $timeout,
+				)
+			);
 
 			if ( is_wp_error( $blocks_response ) || 200 !== (int) wp_remote_retrieve_response_code( $blocks_response ) ) {
-				update_option( self::LIBRARY_CACHE_KEY, [] );
+				update_option( self::LIBRARY_CACHE_KEY, array() );
 				return false;
 			}
-			
+
 			$blocks_data = json_decode( wp_remote_retrieve_body( $blocks_response ), true );
 
 			$data['blocks'] = $blocks_data['data'];
 
 			if ( empty( $data ) || ! is_array( $data ) ) {
-				update_option( self::LIBRARY_CACHE_KEY, [] );
+				update_option( self::LIBRARY_CACHE_KEY, array() );
 				return false;
 			}
 
@@ -214,13 +228,14 @@ class Library_Source extends Source_Base {
 	 * @param boolean $force_update
 	 * @return array
 	 */
-	public static function get_library_data( $force_update = false ) { // false
+	public static function get_library_data( $force_update = false ) {
+		// false
 		self::request_library_data( $force_update );
 
 		$data = get_option( self::LIBRARY_CACHE_KEY );
 
 		if ( empty( $data ) ) {
-			return [];
+			return array();
 		}
 
 		return $data;
@@ -246,22 +261,22 @@ class Library_Source extends Source_Base {
 			return;
 		}
 
-		$body = [
+		$body = array(
 			'home_url' => trailingslashit( home_url() ),
-			'version' => '3.0.0',
-		];
+			'version'  => '3.0.0',
+		);
 
 		// if ( ha_has_pro() ) {
-		// 	$body['has_pro'] = 1;
-		// 	$body['pro_version'] = false;
+		// $body['has_pro'] = 1;
+		// $body['pro_version'] = false;
 		// }
 
 		$response = wp_remote_get(
 			self::API_TEMPLATE_DATA_URL . $template_id,
-			[
-				'body' => $body,
-				'timeout' => 25
-			]
+			array(
+				'body'    => $body,
+				'timeout' => 25,
+			)
 		);
 
 		return wp_remote_retrieve_body( $response );
@@ -286,9 +301,9 @@ class Library_Source extends Source_Base {
 		$data['content'] = $this->replace_elements_ids( $data['content'] );
 		$data['content'] = $this->process_export_import_content( $data['content'], 'on_import' );
 
-		$post_id = $args['editor_post_id'];
+		$post_id   = $args['editor_post_id'];
 		$elementor = \Elementor\Plugin::instance();
-		$document = $elementor->documents->get( $post_id );
+		$document  = $elementor->documents->get( $post_id );
 
 		if ( $document ) {
 			$data['content'] = $document->get_elements_raw_data( $data['content'], true );

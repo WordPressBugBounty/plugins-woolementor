@@ -32,16 +32,15 @@ if ( ! function_exists( 'codesigner_get_variation_swatches_view' ) ) :
 		$variation_swatches_dir  = dirname( CODESIGNER ) . '/modules/variation-swatches/views/';
 		$variation_swatches_path = $variation_swatches_dir . $name . '.php';
 
-        if ( file_exists( $variation_swatches_path ) ) {
-            if( ! $is_return ) {
-                include $variation_swatches_path;
-            } else {
-                ob_start();
-                include $variation_swatches_path;
-                return ob_get_clean();
-            }
-        }
-
+		if ( file_exists( $variation_swatches_path ) ) {
+			if ( ! $is_return ) {
+				include $variation_swatches_path;
+			} else {
+				ob_start();
+				include $variation_swatches_path;
+				return ob_get_clean();
+			}
+		}
 	}
 endif;
 /**

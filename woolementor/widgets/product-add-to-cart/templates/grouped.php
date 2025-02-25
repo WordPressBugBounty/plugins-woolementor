@@ -106,7 +106,7 @@ do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 					do_action( 'woocommerce_grouped_product_list_after_' . $column_id, $grouped_product_child );
 				}
 
-				echo wp_kses( '</tr>', [ 'tr'    => [] ] );
+				echo wp_kses( '</tr>', array( 'tr' => array() ) );
 			}
 			$post = $previous_post; // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 			setup_postdata( $post );

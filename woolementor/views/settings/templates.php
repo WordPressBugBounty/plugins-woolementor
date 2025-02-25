@@ -3,39 +3,39 @@ use Codexpert\CoDesigner\Helper;
 use Codexpert\CoDesigner\App\Library_Source;
 wp_enqueue_style( 'codesigner-library' );
 
-$library = [];
+$library = array();
 
 if ( defined( 'ELEMENTOR_VERSION' ) ) {
 	$library = Library_Source::get_library_data();
 }
 
-$pages 		= isset( $library['pages'] ) ? $library['pages'] : [];
-$blocks 	= isset( $library['blocks'] ) ? $library['blocks'] : [];
-$categories = isset( $library['categories'] ) ? $library['categories'] : [];
+$pages      = isset( $library['pages'] ) ? $library['pages'] : array();
+$blocks     = isset( $library['blocks'] ) ? $library['blocks'] : array();
+$categories = isset( $library['categories'] ) ? $library['categories'] : array();
 ?>
 
 <?php
 
-$args = [
-	'tmpl_blocks' 	=> __( 'Blocks', 'codesigner' ),
-	'tmpl_pages' 	=> __( 'Pages', 'codesigner' ),
-];
+$args      = array(
+	'tmpl_blocks' => __( 'Blocks', 'codesigner' ),
+	'tmpl_pages'  => __( 'Pages', 'codesigner' ),
+);
 $tab_links = apply_filters( 'wcd_help_tab_link', $args );
 
-echo wp_kses_post("");
-echo wp_kses_post("");
+echo wp_kses_post( '' );
+echo wp_kses_post( '' );
 
 ?>
 <div class='wcd_tab_btns wcd-tmpl-btns'>
 	<ul class='wcd_template_tabs wcd-tmpl-content'>
 		<?php
-		$count 	= 0;
+		$count = 0;
 		foreach ( $tab_links as $id => $tab_label ) :
 			$active = $count == 0 ? 'active' : '';
 			?>
 			<li class='wcd_template_tab <?php echo esc_attr( $active ); ?>' id="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $tab_label ); ?></li>
 			<?php
-			$count++;
+			++$count;
 		endforeach;
 		?>
 	</ul>
@@ -82,13 +82,13 @@ echo wp_kses_post("");
 
 <div id="tmpl_pages_content" class="wcd_template_content">
 	<div id="codesigner-templates" class="wcd-tmpl-wrapper">
-		<?php 
-		foreach ( $pages as $page ):
-			$categories = !is_null( $page['subtype'] ) ? implode(',', array_keys( $page['subtype'] ) ) : '';
-			$keywords 	= !is_null( $page['keywords'] ) ? implode(',', array_keys( $page['keywords'] ) ) : '';
+		<?php
+		foreach ( $pages as $page ) :
+			$categories = ! is_null( $page['subtype'] ) ? implode( ',', array_keys( $page['subtype'] ) ) : '';
+			$keywords   = ! is_null( $page['keywords'] ) ? implode( ',', array_keys( $page['keywords'] ) ) : '';
 			?>
 			<div class="import-this elementor-template-library-template-remote" title="<?php echo esc_html( $page['title'] ); ?>">		
-				<span style="display:none;"><?php echo  esc_html( $categories ) . " " . esc_html( $keywords ) ?></span>
+				<span style="display:none;"><?php echo esc_html( $categories ) . ' ' . esc_html( $keywords ); ?></span>
 				<div class="elementor-template-library-template-body">
 					<div class="elementor-template-library-template-screenshot" style="background-image: url(<?php echo esc_url( $page['thumbnail'] ); ?>);"></div>
 					
@@ -104,23 +104,23 @@ echo wp_kses_post("");
 				</div>
 			</div>
 			<?php
-		endforeach; 
+		endforeach;
 		?>
 	</div>
 	<div class="tmpl-wl-templates-modal-preview-iframe">
-    	<iframe></iframe> 
+		<iframe></iframe> 
 	</div>
 </div>
 
 <div id="tmpl_blocks_content" class="wcd_template_content active">
 	<div id="codesigner-templates" class="wcd-tmpl-wrapper">
-		<?php 
-		foreach ( $blocks as $block ):
-			$categories = !is_null( $block['subtype'] ) ? implode(',', array_keys( $block['subtype'] ) ) : '';
-			$keywords 	= !is_null( $block['keywords'] ) ? implode(',', array_keys( $block['keywords'] ) ) : '';
+		<?php
+		foreach ( $blocks as $block ) :
+			$categories = ! is_null( $block['subtype'] ) ? implode( ',', array_keys( $block['subtype'] ) ) : '';
+			$keywords   = ! is_null( $block['keywords'] ) ? implode( ',', array_keys( $block['keywords'] ) ) : '';
 			?>
 			<div class="import-this elementor-template-library-template-remote" title="<?php echo esc_html( $block['title'] ); ?>">
-				<span style="display:none;"><?php echo esc_html( $categories ) . " " . esc_html( $keywords ) ?></span>
+				<span style="display:none;"><?php echo esc_html( $categories ) . ' ' . esc_html( $keywords ); ?></span>
 				<div class="elementor-template-library-template-body">
 					<div class="elementor-template-library-template-screenshot" style="background-image: url(<?php echo esc_url( $block['thumbnail'] ); ?>);"></div>
 					
@@ -136,11 +136,11 @@ echo wp_kses_post("");
 				</div>
 			</div>
 			<?php
-		endforeach; 
+		endforeach;
 		?>
 	</div>
 	<div class="tmpl-wl-templates-modal-preview-iframe">
-    	<iframe></iframe> 
+		<iframe></iframe> 
 	</div>
 </div>
 

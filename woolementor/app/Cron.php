@@ -26,10 +26,10 @@ class Cron extends Base {
 	 * Constructor function
 	 */
 	public function __construct( $plugin ) {
-		$this->plugin	= $plugin;
-		$this->slug		= $this->plugin['TextDomain'];
-		$this->name		= $this->plugin['Name'];
-		$this->version	= $this->plugin['Version'];
+		$this->plugin  = $plugin;
+		$this->slug    = $this->plugin['TextDomain'];
+		$this->name    = $this->plugin['Name'];
+		$this->version = $this->plugin['Version'];
 	}
 
 	/**
@@ -42,7 +42,7 @@ class Cron extends Base {
 		 * Schedule an event to sync help docs
 		 */
 		if ( ! wp_next_scheduled( 'codexpert-daily' ) ) {
-		    wp_schedule_event( time(), 'daily', 'codexpert-daily' );
+			wp_schedule_event( time(), 'daily', 'codexpert-daily' );
 		}
 	}
 

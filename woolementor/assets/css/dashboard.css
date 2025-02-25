@@ -5,13 +5,7 @@
 	gap: 150px;
 	padding-right: 0px !important;
 } */
-.codesigner-dismissible-notice p {
-	font-size: 14px;
-}
-.codesigner-dismissible-notice a {
-	text-decoration: none;
-}
-.codesigner-dismissible-notice button {
+.notice-dismiss.button {
 	font-size: 14px;
 	font-weight: 700;
 }
@@ -22,6 +16,7 @@
 	margin: 0px auto;
 	gap: 170px;
 	padding: 5px;
+	width: 86%;
 }
 .codesigner-countdown {
 	margin-left: 100px;
@@ -86,3 +81,16 @@
 }
 
 /* Notice css End */
+@media (max-width: 1440px) {
+    .codesigner-dismissible-notice-content {
+        gap: 70px;
+        width: 86%;
+    }
+}
+@media (max-width: 1024px) {
+    .codesigner-dismissible-notice-content {
+        gap: 0px;
+        width: 97%;
+    }
+}
+

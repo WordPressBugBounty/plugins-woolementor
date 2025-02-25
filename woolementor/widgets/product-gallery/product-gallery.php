@@ -11,19 +11,19 @@ class Product_Gallery extends Widget_Base {
 
 	public $id;
 
-	public function __construct( $data = [], $args = null ) {
-	    parent::__construct( $data, $args );
+	public function __construct( $data = array(), $args = null ) {
+		parent::__construct( $data, $args );
 
-	    $this->id = wcd_get_widget_id( __CLASS__ );
-	    $this->widget = wcd_get_widget( $this->id );
+		$this->id     = wcd_get_widget_id( __CLASS__ );
+		$this->widget = wcd_get_widget( $this->id );
 	}
 
 	public function get_script_depends() {
-		return [ "codesigner-{$this->id}", "fancybox", "wc-single-product" ];
+		return array( "codesigner-{$this->id}", 'fancybox', 'wc-single-product' );
 	}
 
 	public function get_style_depends() {
-		return [ "codesigner-{$this->id}", "fancybox" ];
+		return array( "codesigner-{$this->id}", 'fancybox' );
 	}
 
 	public function get_name() {
@@ -46,125 +46,125 @@ class Product_Gallery extends Widget_Base {
 
 		$this->start_controls_section(
 			'payment_section_title',
-			[
+			array(
 				'label' => __( 'Sale', 'codesigner-pro' ),
-				'tab' => Controls_Manager::TAB_CONTENT,
-			]
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
 		);
 
 		$this->add_control(
 			'sale_flash',
-			[
-				'label' => __( 'Sale Flash', 'codesigner' ),
-				'type' => Controls_Manager::SWITCHER,
-				'label_on' => __( 'Show', 'codesigner' ),
-				'label_off' => __( 'Hide', 'codesigner' ),
-				'render_type' => 'template',
+			array(
+				'label'        => __( 'Sale Flash', 'codesigner' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
+				'render_type'  => 'template',
 				'return_value' => 'yes',
-				'default' => 'yes',
+				'default'      => 'yes',
 				'prefix_class' => '',
-			]
+			)
 		);
 
 		$this->end_controls_section();
 
 		$this->start_controls_section(
 			'section_product_gallery_style',
-			[
+			array(
 				'label' => __( 'Thumbnail', 'codesigner' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
 		);
 
 		// start default style
 		$this->add_control(
 			'product_gallery_default_styles',
-			[
-				'label' 	=> __( 'Display', 'codesigner-pro' ),
-				'type' 		=> Controls_Manager::HIDDEN,
-				'selectors' => [
+			array(
+				'label'     => __( 'Display', 'codesigner-pro' ),
+				'type'      => Controls_Manager::HIDDEN,
+				'selectors' => array(
 					'.wl {{WRAPPER}} .wl-product-gallery .woocommerce-product-gallery' => 'width: 100%;',
-				],
-				'default' => 'traditional',
-			]
+				),
+				'default'   => 'traditional',
+			)
 		);
 		// end default css
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
-			[
-				'name' => 'image_border',
-				'selector' => '.wl {{WRAPPER}} .woocommerce-product-gallery__trigger + .woocommerce-product-gallery__wrapper,
+			array(
+				'name'      => 'image_border',
+				'selector'  => '.wl {{WRAPPER}} .woocommerce-product-gallery__trigger + .woocommerce-product-gallery__wrapper,
 				.wl {{WRAPPER}} .flex-viewport, .wl {{WRAPPER}} .flex-control-thumbs img',
 				'separator' => 'before',
-			]
+			)
 		);
 
 		$this->add_responsive_control(
 			'image_border_radius',
-			[
-				'label' => __( 'Border Radius', 'codesigner' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
-				'selectors' => [
+			array(
+				'label'      => __( 'Border Radius', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .woocommerce-product-gallery__trigger + .woocommerce-product-gallery__wrapper,
 					.wl {{WRAPPER}} .flex-viewport' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'spacing',
-			[
-				'label' => __( 'Spacing', 'codesigner' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em' ],
-				'selectors' => [
+			array(
+				'label'      => __( 'Spacing', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .flex-viewport:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'heading_thumbs_style',
-			[
-				'label' => __( 'Thumbnails', 'codesigner' ),
-				'type' => Controls_Manager::HEADING,
+			array(
+				'label'     => __( 'Thumbnails', 'codesigner' ),
+				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
-			]
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
-			[
-				'name' => 'thumbs_border',
+			array(
+				'name'     => 'thumbs_border',
 				'selector' => '.wl {{WRAPPER}} .flex-control-thumbs img',
-			]
+			)
 		);
 
 		$this->add_responsive_control(
 			'thumbs_border_radius',
-			[
-				'label' => __( 'Border Radius', 'codesigner' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%' ],
-				'selectors' => [
+			array(
+				'label'      => __( 'Border Radius', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .flex-control-thumbs img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_control(
 			'spacing_thumbs',
-			[
-				'label' => __( 'Spacing', 'codesigner' ),
-				'type' => Controls_Manager::SLIDER,
-				'size_units' => [ 'px', 'em' ],
-				'selectors' => [
+			array(
+				'label'      => __( 'Spacing', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .flex-control-thumbs li' => 'padding-right: calc({{SIZE}}{{UNIT}} / 2); padding-left: calc({{SIZE}}{{UNIT}} / 2); padding-bottom: {{SIZE}}{{UNIT}}',
 					'.wl {{WRAPPER}} .flex-control-thumbs' => 'margin-right: calc(-{{SIZE}}{{UNIT}} / 2); margin-left: calc(-{{SIZE}}{{UNIT}} / 2)',
-				],
-			]
+				),
+			)
 		);
 
 		$this->end_controls_section();
@@ -174,14 +174,16 @@ class Product_Gallery extends Widget_Base {
 		global $product;
 
 		$settings = $this->get_settings_for_display();
-		
-		if ( ! is_woocommerce_activated() ) return;
+
+		if ( ! is_woocommerce_activated() ) {
+			return;
+		}
 
 		$product = wc_get_product();
 
 		if ( isset( $_POST['product_id'] ) ) {
 			$product_id = codesigner_sanitize_number( $_POST['product_id'] );
-			$product 	= wc_get_product( $product_id );
+			$product    = wc_get_product( $product_id );
 		}
 
 		if ( empty( $product ) ) {
@@ -189,7 +191,7 @@ class Product_Gallery extends Widget_Base {
 		}
 
 		wp_enqueue_style( 'woocommerce-general' );
-		wp_enqueue_script('wc-single-product');
+		wp_enqueue_script( 'wc-single-product' );
 
 		echo wp_kses_post( '<div class="wl-product-gallery product">' );
 
@@ -203,23 +205,23 @@ class Product_Gallery extends Widget_Base {
 
 		do_action( 'codesigner_after_main_content', $this );
 
-        /**
-         * Load Script
-         */
-        $this->render_script();
+		/**
+		 * Load Script
+		 */
+		$this->render_script();
 	}
 
 	protected function render_script() {
 		if ( wp_doing_ajax() ) {
 			?>
 			<script>
-	            jQuery(function($){
-	                $( '.woocommerce-product-gallery' ).each( function() {
+				jQuery(function($){
+					$( '.woocommerce-product-gallery' ).each( function() {
 						$(this).wc_product_gallery();
 					} );
-	            })
-	        </script>
+				})
+			</script>
 			<?php
 		}
-    }
+	}
 }

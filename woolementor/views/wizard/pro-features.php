@@ -1,9 +1,9 @@
 <?php
-$checkout 			= CODESIGNER_ASSETS . '/img/customizable-checkout.png';
-$emails 			= CODESIGNER_ASSETS . '/img/customizable-transactional-emails.png';
-$header_footer 		= CODESIGNER_ASSETS . '/img/header-footer-archive.png';
-$restriction 		= CODESIGNER_ASSETS . '/img/content-restriction-setup.png';
-$features_bg 		= CODESIGNER_ASSETS . '/img/features-bg.png';
+$checkout      = CODESIGNER_ASSETS . '/img/customizable-checkout.png';
+$emails        = CODESIGNER_ASSETS . '/img/customizable-transactional-emails.png';
+$header_footer = CODESIGNER_ASSETS . '/img/header-footer-archive.png';
+$restriction   = CODESIGNER_ASSETS . '/img/content-restriction-setup.png';
+$features_bg   = CODESIGNER_ASSETS . '/img/features-bg.png';
 ?>
 <div class="setup-wizard-pro-features-panel">
 	<h2><?php echo esc_html__( '8+ premium features and 54+ widgets.', 'codesigner' ); ?></h2>
@@ -14,9 +14,16 @@ $features_bg 		= CODESIGNER_ASSETS . '/img/features-bg.png';
 			</div>
 			<div class="setup-wizard-pro-features-content">
 				<h4><?php echo esc_html__( 'Customizable Checkout', 'codesigner' ); ?> 🔥</h4>
-				<p><?php echo esc_html__( 'Helps you customize your checkout page. Adding new billing
+				<p>
+				<?php
+				echo esc_html__(
+					'Helps you customize your checkout page. Adding new billing
 				or shipping fields, changing field attributes, 
-				styling your own.. You name it.', 'codesigner' ); ?></p>
+				styling your own.. You name it.',
+					'codesigner'
+				);
+				?>
+				</p>
 				<a target="_blank" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
 			</div>
 		</div>

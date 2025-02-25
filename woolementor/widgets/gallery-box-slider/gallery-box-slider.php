@@ -13,24 +13,24 @@ class Gallery_Box_Slider extends Widget_Base {
 
 	public $id;
 
-	public function __construct( $data = [], $args = null ) {
-	    parent::__construct( $data, $args );
+	public function __construct( $data = array(), $args = null ) {
+		parent::__construct( $data, $args );
 
-	    $this->id = wcd_get_widget_id( __CLASS__ );
-	    $this->widget = wcd_get_widget( $this->id );
-	    
+		$this->id     = wcd_get_widget_id( __CLASS__ );
+		$this->widget = wcd_get_widget( $this->id );
+
 		// Are we in debug mode?
 		$min = defined( 'CODESIGNER_DEBUG' ) && CODESIGNER_DEBUG ? '' : '.min';
 
-		wp_register_style( "codesigner-{$this->id}", plugins_url( "assets/css/style{$min}.css", __FILE__ ), [], '1.1' );
+		wp_register_style( "codesigner-{$this->id}", plugins_url( "assets/css/style{$min}.css", __FILE__ ), array(), '1.1' );
 	}
 
 	public function get_script_depends() {
-		return [ "codesigner-{$this->id}", 'box-slider', 'modernizr' ];
+		return array( "codesigner-{$this->id}", 'box-slider', 'modernizr' );
 	}
 
 	public function get_style_depends() {
-		return [ "codesigner-{$this->id}" ];
+		return array( "codesigner-{$this->id}" );
 	}
 
 	public function get_name() {
@@ -56,93 +56,93 @@ class Gallery_Box_Slider extends Widget_Base {
 		 */
 		$this->start_controls_section(
 			'_section_settings',
-			[
+			array(
 				'label' => __( 'Animation', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
-			]
+			)
 		);
 
 		$this->add_control(
 			'animation_effect',
-			[
-				'label' 	=> __( 'Animation Effect', 'codesigner' ),
-				'type' 		=> Controls_Manager::SELECT2,
-				'options' 	=> [
+			array(
+				'label'   => __( 'Animation Effect', 'codesigner' ),
+				'type'    => Controls_Manager::SELECT2,
+				'options' => array(
 					// 'scrollVert3d'  => __( 'Scroll Vertical 3D', 'codesigner' ),
 					// 'scrollHorz3d'  => __( 'Scroll Horizontal 3D', 'codesigner' ),
-					'tile3d'  		=> __( 'Tile 3D', 'codesigner' ),
-					'tile'  		=> __( 'Tile', 'codesigner' ),
-					'scrollVert'  	=> __( 'Scroll Vertical', 'codesigner' ),
-					'scrollHorz'  	=> __( 'Scroll Horizontal', 'codesigner' ),
-					'blindLeft'  	=> __( 'Blind Left', 'codesigner' ),
-					'blindDown'  	=> __( 'Blind Down', 'codesigner' ),
-					'fade'  		=> __( 'Fade', 'codesigner' ),
-				],
-				'default' 	=> 'scrollHorz',
-			]
+					'tile3d'     => __( 'Tile 3D', 'codesigner' ),
+					'tile'       => __( 'Tile', 'codesigner' ),
+					'scrollVert' => __( 'Scroll Vertical', 'codesigner' ),
+					'scrollHorz' => __( 'Scroll Horizontal', 'codesigner' ),
+					'blindLeft'  => __( 'Blind Left', 'codesigner' ),
+					'blindDown'  => __( 'Blind Down', 'codesigner' ),
+					'fade'       => __( 'Fade', 'codesigner' ),
+				),
+				'default' => 'scrollHorz',
+			)
 		);
 
 		$this->add_control(
 			'animation_responsive',
-			[
-				'label' 		=> __( 'Responsive', 'codesigner' ),
-				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'On', 'codesigner' ),
-				'label_off' 	=> __( 'Off', 'codesigner' ),
-				'return_value' 	=> 'yes',
-				'default' 		=> 'yes',
-			]
+			array(
+				'label'        => __( 'Responsive', 'codesigner' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'On', 'codesigner' ),
+				'label_off'    => __( 'Off', 'codesigner' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
 		);
 
 		// $this->add_control(
-		// 	'animation_pauseOnHover',
-		// 	[
-		// 		'label' 		=> __( 'PauseOnHover', 'codesigner' ),
-		// 		'type' 			=> Controls_Manager::SWITCHER,
-		// 		'label_on' 		=> __( 'On', 'codesigner' ),
-		// 		'label_off' 	=> __( 'Off', 'codesigner' ),
-		// 		'return_value' 	=> 'yes',
-		// 		'default' 		=> 'yes',
-		// 	]
+		// 'animation_pauseOnHover',
+		// [
+		// 'label'         => __( 'PauseOnHover', 'codesigner' ),
+		// 'type'          => Controls_Manager::SWITCHER,
+		// 'label_on'      => __( 'On', 'codesigner' ),
+		// 'label_off'     => __( 'Off', 'codesigner' ),
+		// 'return_value'  => 'yes',
+		// 'default'       => 'yes',
+		// ]
 		// );
 
 		$this->add_control(
 			'animation_autoScroll',
-			[
-				'label' 		=> __( 'AutoScroll', 'codesigner' ),
-				'type' 			=> Controls_Manager::SWITCHER,
-				'label_on' 		=> __( 'On', 'codesigner' ),
-				'label_off' 	=> __( 'Off', 'codesigner' ),
-				'return_value' 	=> 'yes',
-				'default' 		=> 'yes',
-			]
+			array(
+				'label'        => __( 'AutoScroll', 'codesigner' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'On', 'codesigner' ),
+				'label_off'    => __( 'Off', 'codesigner' ),
+				'return_value' => 'yes',
+				'default'      => 'yes',
+			)
 		);
 
 		$this->add_control(
 			'animation_speed',
-			[
-				'label' 		=> __( 'Speed', 'codesigner' ),
-				'type' 			=> Controls_Manager::NUMBER,
-				'default' 		=> 800,
-			]
+			array(
+				'label'   => __( 'Speed', 'codesigner' ),
+				'type'    => Controls_Manager::NUMBER,
+				'default' => 800,
+			)
 		);
 
 		$this->add_control(
 			'animation_timeout',
-			[
-				'label' 		=> __( 'Timeout', 'codesigner' ),
-				'type' 			=> Controls_Manager::NUMBER,
-				'default' 		=> 500,
-			]
+			array(
+				'label'   => __( 'Timeout', 'codesigner' ),
+				'type'    => Controls_Manager::NUMBER,
+				'default' => 500,
+			)
 		);
 
 		$this->add_control(
 			'animation_perspective',
-			[
-				'label' 		=> __( 'Perspective', 'codesigner' ),
-				'type' 			=> Controls_Manager::NUMBER,
-				'default' 		=> 1000,
-			]
+			array(
+				'label'   => __( 'Perspective', 'codesigner' ),
+				'type'    => Controls_Manager::NUMBER,
+				'default' => 1000,
+			)
 		);
 
 		$this->end_controls_section();
@@ -152,47 +152,47 @@ class Gallery_Box_Slider extends Widget_Base {
 		 */
 		$this->start_controls_section(
 			'section_image_gallery',
-			[
-				'label' 		=> __( 'Gallery', 'plugin-name' ),
-				'tab' 			=> Controls_Manager::TAB_CONTENT,
-			]
+			array(
+				'label' => __( 'Gallery', 'plugin-name' ),
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
 		);
 
 		$this->add_control(
 			'image_source',
-			[
-				'label' => __( 'Image Source', 'codesigner' ),
-				'type' => Controls_Manager::SELECT2,
-				'options' => [
+			array(
+				'label'       => __( 'Image Source', 'codesigner' ),
+				'type'        => Controls_Manager::SELECT2,
+				'options'     => array(
 					'current_product'  => __( 'From Current Product', 'codesigner' ),
 					'custom_selection' => __( 'Custom Selection', 'codesigner' ),
-				],
-				'default' => [ 'current_product' ],
+				),
+				'default'     => array( 'current_product' ),
 				'label_block' => true,
-			]
+			)
 		);
 
 		$this->add_control(
 			'image_gallery_current_product',
-			[
-				'label' 		=> __( 'Add Images', 'codesigner' ),
-				'type' 			=> Controls_Manager::GALLERY,
-				'default' 		=> wcd_product_gallery_images( get_the_ID() ),
-                'condition' 	=> [
-                    'image_source' => 'current_product'
-                ],
-			]
+			array(
+				'label'     => __( 'Add Images', 'codesigner' ),
+				'type'      => Controls_Manager::GALLERY,
+				'default'   => wcd_product_gallery_images( get_the_ID() ),
+				'condition' => array(
+					'image_source' => 'current_product',
+				),
+			)
 		);
 
 		$this->add_control(
 			'image_gallery_custom_selection',
-			[
-				'label' 		=> __( 'Add Images', 'codesigner' ),
-				'type' 			=> Controls_Manager::GALLERY,
-                'condition' 	=> [
-                    'image_source' => 'custom_selection'
-                ],
-			]
+			array(
+				'label'     => __( 'Add Images', 'codesigner' ),
+				'type'      => Controls_Manager::GALLERY,
+				'condition' => array(
+					'image_source' => 'custom_selection',
+				),
+			)
 		);
 
 		$this->end_controls_section();
@@ -202,209 +202,210 @@ class Gallery_Box_Slider extends Widget_Base {
 		 */
 		$this->start_controls_section(
 			'section_style_image',
-			[
+			array(
 				'label' => __( 'Image', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
-			]
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Image_Size::get_type(),
-			[
-				'name' 		=> 'image_thumbnail',
-				'default' 	=> 'full',
-			]
+			array(
+				'name'    => 'image_thumbnail',
+				'default' => 'full',
+			)
 		);
 
 		$this->add_responsive_control(
 			'image_height',
-			[
-				'label' 	=> __( 'Image Height', 'codesigner' ),
-				'type' 		=> Controls_Manager::SLIDER,
-				'size_units'=> [ 'px', '%', 'em' ],
-				'selectors' => [
+			array(
+				'label'      => __( 'Image Height', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} #wl-gbs-box' => 'height: {{SIZE}}{{UNIT}} !important',
 					'{{WRAPPER}} .wl-gbs-box > .wl-gbs-slide img' => 'height: {{SIZE}}{{UNIT}} !important',
-				],
-				'range' 	=> [
-					'px' 	=> [
-						'min' 	=> 1,
-						'max' 	=> 1000
-					],
-					'em' 	=> [
-						'min' 	=> 1,
-						'max' 	=> 30
-					],
-				],
-			]
+				),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 1000,
+					),
+					'em' => array(
+						'min' => 1,
+						'max' => 30,
+					),
+				),
+			)
 		);
 
 		$this->add_responsive_control(
 			'image_width',
-			[
-				'label' 	=> __( 'Image Width', 'codesigner' ),
-				'type' 		=> Controls_Manager::SLIDER,
-				'size_units'=> [ 'px', '%', 'em' ],
-				'selectors' => [
+			array(
+				'label'      => __( 'Image Width', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} #wl-gbs-box' => 'width: {{SIZE}}{{UNIT}} !important',
-				],
-				'range' 	=> [
-					'px' 	=> [
-						'min' 	=> 1,
-						'max' 	=> 1000
-					],
-					'em' 	=> [
-						'min' 	=> 1,
-						'max' 	=> 30
-					],
-				],
-			]
+				),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 1000,
+					),
+					'em' => array(
+						'min' => 1,
+						'max' => 30,
+					),
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
-			[
-				'name' 		=> 'image_border',
-				'label' 	=> __( 'Border', 'codesigner' ),
-				'selector' 	=> '{{WRAPPER}} .wl-gbs-slide img',
-			]
+			array(
+				'name'     => 'image_border',
+				'label'    => __( 'Border', 'codesigner' ),
+				'selector' => '{{WRAPPER}} .wl-gbs-slide img',
+			)
 		);
 
 		$this->add_responsive_control(
 			'image_border_radius',
-			[
-				'label' 		=> __( 'Border Radius', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Border Radius', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-gbs-slide img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' 		=> 'image_box_shadow',
-				'label' 	=> __( 'Box Shadow', 'codesigner' ),
-				'selector' 	=> '{{WRAPPER}} .wl-gbs-slide img',
-			]
+			array(
+				'name'     => 'image_box_shadow',
+				'label'    => __( 'Box Shadow', 'codesigner' ),
+				'selector' => '{{WRAPPER}} .wl-gbs-slide img',
+			)
 		);
 
 		$this->add_control(
 			'image_box_padding',
-			[
-				'label' => __( 'Padding', 'codesigner' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors' => [
+			array(
+				'label'      => __( 'Padding', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-gbs-slide' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'separator' => 'before'
-			]
+				),
+				'separator'  => 'before',
+			)
 		);
 
 		$this->add_control(
 			'image_box_margin',
-			[
-				'label' => __( 'Margin', 'codesigner' ),
-				'type' => Controls_Manager::DIMENSIONS,
-				'size_units' => [ 'px', '%', 'em' ],
-				'selectors' => [
+			array(
+				'label'      => __( 'Margin', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'{{WRAPPER}} .wl-gbs-slide' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->start_controls_tabs(
 			'image_effects',
-			[
-				'separator' => 'before'
-			]
+			array(
+				'separator' => 'before',
+			)
 		);
 
 		$this->start_controls_tab(
 			'image_effects_normal',
-			[
-				'label' 	=> __( 'Normal', 'codesigner' ),
-			]
+			array(
+				'label' => __( 'Normal', 'codesigner' ),
+			)
 		);
 
 		$this->add_control(
 			'image_opacity',
-			[
-				'label' 	=> __( 'Opacity', 'codesigner' ),
-				'type' 		=> Controls_Manager::SLIDER,
-				'range' 	=> [
-					'px' 	=> [
-						'max' 	=> 1,
-						'min' 	=> 0.10,
-						'step' 	=> 0.01,
-					],
-				],
-				'selectors' => [
+			array(
+				'label'     => __( 'Opacity', 'codesigner' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'max'  => 1,
+						'min'  => 0.10,
+						'step' => 0.01,
+					),
+				),
+				'selectors' => array(
 					'{{WRAPPER}} .wl-gbs-slide img' => 'opacity: {{SIZE}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Css_Filter::get_type(),
-			[
-				'name' 		=> 'image_css_filters',
-				'selector' 	=> '{{WRAPPER}} .wl-gbs-slide img',
-			]
+			array(
+				'name'     => 'image_css_filters',
+				'selector' => '{{WRAPPER}} .wl-gbs-slide img',
+			)
 		);
 
 		$this->end_controls_tab();
 
-		$this->start_controls_tab( 'image_hover',
-			[
-				'label' 	=> __( 'Hover', 'codesigner' ),
-			]
+		$this->start_controls_tab(
+			'image_hover',
+			array(
+				'label' => __( 'Hover', 'codesigner' ),
+			)
 		);
 
 		$this->add_control(
 			'image_opacity_hover',
-			[
-				'label' 	=> __( 'Opacity', 'codesigner' ),
-				'type' 		=> Controls_Manager::SLIDER,
-				'range' 	=> [
-					'px' 	=> [
-						'max' 	=> 1,
-						'min' 	=> 0.10,
-						'step' 	=> 0.01,
-					],
-				],
-				'selectors' => [
+			array(
+				'label'     => __( 'Opacity', 'codesigner' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'max'  => 1,
+						'min'  => 0.10,
+						'step' => 0.01,
+					),
+				),
+				'selectors' => array(
 					'{{WRAPPER}} .wl-gbs-slide img:hover' => 'opacity: {{SIZE}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Css_Filter::get_type(),
-			[
-				'name' 		=> 'image_css_filters_hover',
-				'selector' 	=> '{{WRAPPER}} .wl-gbs-slide img:hover',
-			]
+			array(
+				'name'     => 'image_css_filters_hover',
+				'selector' => '{{WRAPPER}} .wl-gbs-slide img:hover',
+			)
 		);
 
 		$this->add_control(
 			'image_hover_transition',
-			[
-				'label' 	=> __( 'Transition Duration', 'codesigner' ),
-				'type' 		=> Controls_Manager::SLIDER,
-				'range' 	=> [
-					'px' 	=> [
-						'max' 	=> 3,
-						'step' 	=> 0.1,
-					],
-				],
-				'selectors' => [
+			array(
+				'label'     => __( 'Transition Duration', 'codesigner' ),
+				'type'      => Controls_Manager::SLIDER,
+				'range'     => array(
+					'px' => array(
+						'max'  => 3,
+						'step' => 0.1,
+					),
+				),
+				'selectors' => array(
 					'{{WRAPPER}} .wl-gbs-slide img:hover' => 'transition-duration: {{SIZE}}s',
-				],
-			]
+				),
+			)
 		);
 
 		$this->end_controls_tab();
@@ -414,44 +415,45 @@ class Gallery_Box_Slider extends Widget_Base {
 
 	protected function render() {
 
-		$settings 	= $this->get_settings_for_display();
+		$settings = $this->get_settings_for_display();
 		extract( $settings );
 
-		if( 'custom_selection' == $image_source ) {
+		if ( 'custom_selection' == $image_source ) {
 			$image_gallery = $image_gallery_custom_selection;
-		}
-		else{
+		} else {
 			$image_gallery = $image_gallery_current_product;
 		}
 
 		if ( count( $image_gallery ) > 0 ) :
-		?>
+			?>
 		
 		<div class="wl-gbs-gallery">
 			<section>
 				<div id="wl-gbs-viewport">
 					<div id="wl-gbs-box" class="wl-gbs-box">
 
-						<?php 
-						foreach ( $image_gallery as $image ): 
-							$thumbnail 		= wp_get_attachment_image_src( $image['id'], $image_thumbnail_size );
+						<?php
+						foreach ( $image_gallery as $image ) :
+							$thumbnail = wp_get_attachment_image_src( $image['id'], $image_thumbnail_size );
 
 							?>
 								<div class="wl-gbs-slide">
 								<img src="<?php echo esc_url( $thumbnail[0] ); ?>" />
 								</div>
 							<?php
-						endforeach; ?>
+						endforeach;
+						?>
 
 					</div>
 				</div>
 			</section>
 		</div>
 		
-		<?php endif;
+			<?php
+		endif;
 
 		do_action( 'codesigner_after_main_content', $this );
-		
+
 		/**
 		 * Load Script
 		 */
@@ -460,15 +462,15 @@ class Gallery_Box_Slider extends Widget_Base {
 
 	protected function render_script( $settings ) {
 
-		$_config = [
-        	'animation_effect'			=> $settings['animation_effect'],
-        	'animation_responsive'		=> $settings['animation_responsive'],
-        	// 'animation_pauseOnHover'	=> $settings['animation_pauseOnHover'],
-        	'animation_autoScroll'		=> $settings['animation_autoScroll'],
-        	'animation_speed'			=> $settings['animation_speed'],
-        	'animation_timeout'			=> $settings['animation_timeout'],
-        	'animation_perspective'		=> $settings['animation_perspective'],
-        ];
+		$_config = array(
+			'animation_effect'      => $settings['animation_effect'],
+			'animation_responsive'  => $settings['animation_responsive'],
+			// 'animation_pauseOnHover' => $settings['animation_pauseOnHover'],
+			'animation_autoScroll'  => $settings['animation_autoScroll'],
+			'animation_speed'       => $settings['animation_speed'],
+			'animation_timeout'     => $settings['animation_timeout'],
+			'animation_perspective' => $settings['animation_perspective'],
+		);
 		?>
 
 		<script>

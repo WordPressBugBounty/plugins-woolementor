@@ -5,10 +5,10 @@
 
 // If uninstall is not called, exit
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
-    exit;
+	exit;
 }
 
-$deletable_options = [ 'codesigner_version', 'codesigner_install_time', 'codesigner_docs_json', 'codexpert-blog-json' ];
+$deletable_options = array( 'codesigner_version', 'codesigner_install_time', 'codesigner_docs_json', 'codexpert-blog-json' );
 foreach ( $deletable_options as $option ) {
-    delete_option( $option );
+	delete_option( $option );
 }

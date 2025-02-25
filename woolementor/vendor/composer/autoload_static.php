@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitbaf67a2c3d808e16689705f24509c184
+class ComposerStaticInit06f298ff9e1527e6943ffaea8ab0a8cf
 {
     public static $prefixLengthsPsr4 = array (
         'n' => 
@@ -70,6 +70,18 @@ class ComposerStaticInitbaf67a2c3d808e16689705f24509c184
     );
 
     public static $classMap = array (
+        'Codexpert\\CoDesigner\\App\\AJAX' => __DIR__ . '/../..' . '/app/AJAX.php',
+        'Codexpert\\CoDesigner\\App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
+        'Codexpert\\CoDesigner\\App\\Cron' => __DIR__ . '/../..' . '/app/Cron.php',
+        'Codexpert\\CoDesigner\\App\\Front' => __DIR__ . '/../..' . '/app/Front.php',
+        'Codexpert\\CoDesigner\\App\\Library' => __DIR__ . '/../..' . '/app/Library.php',
+        'Codexpert\\CoDesigner\\App\\Library_Source' => __DIR__ . '/../..' . '/app/Library_Source.php',
+        'Codexpert\\CoDesigner\\App\\Modules' => __DIR__ . '/../..' . '/app/Modules.php',
+        'Codexpert\\CoDesigner\\App\\Settings' => __DIR__ . '/../..' . '/app/Settings.php',
+        'Codexpert\\CoDesigner\\App\\Widgets' => __DIR__ . '/../..' . '/app/Widgets.php',
+        'Codexpert\\CoDesigner\\App\\Wizard' => __DIR__ . '/../..' . '/app/Wizard.php',
+        'Codexpert\\CoDesigner\\Helper' => __DIR__ . '/../..' . '/classes/Helper.php',
+        'Codexpert\\CoDesigner\\Notice' => __DIR__ . '/../..' . '/classes/Notice.php',
         'Codexpert\\Plugin\\Base' => __DIR__ . '/..' . '/codexpert/plugin/src/Base.php',
         'Codexpert\\Plugin\\Fields' => __DIR__ . '/..' . '/codexpert/plugin/src/Fields.php',
         'Codexpert\\Plugin\\Metabox' => __DIR__ . '/..' . '/codexpert/plugin/src/Metabox.php',
@@ -79,20 +91,97 @@ class ComposerStaticInitbaf67a2c3d808e16689705f24509c184
         'Codexpert\\Plugin\\Table' => __DIR__ . '/..' . '/codexpert/plugin/src/Table.php',
         'Codexpert\\Plugin\\Widget' => __DIR__ . '/..' . '/codexpert/plugin/src/Widget.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'Curl\\Curl' => __DIR__ . '/..' . '/curl/curl/src/Curl/Curl.php',
+        'Picqer\\Barcode\\Barcode' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Barcode.php',
+        'Picqer\\Barcode\\BarcodeBar' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/BarcodeBar.php',
+        'Picqer\\Barcode\\BarcodeGenerator' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/BarcodeGenerator.php',
+        'Picqer\\Barcode\\BarcodeGeneratorDynamicHTML' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/BarcodeGeneratorDynamicHTML.php',
+        'Picqer\\Barcode\\BarcodeGeneratorHTML' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/BarcodeGeneratorHTML.php',
+        'Picqer\\Barcode\\BarcodeGeneratorJPG' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/BarcodeGeneratorJPG.php',
+        'Picqer\\Barcode\\BarcodeGeneratorPNG' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/BarcodeGeneratorPNG.php',
+        'Picqer\\Barcode\\BarcodeGeneratorSVG' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/BarcodeGeneratorSVG.php',
+        'Picqer\\Barcode\\Exceptions\\BarcodeException' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Exceptions/BarcodeException.php',
+        'Picqer\\Barcode\\Exceptions\\InvalidCharacterException' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Exceptions/InvalidCharacterException.php',
+        'Picqer\\Barcode\\Exceptions\\InvalidCheckDigitException' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Exceptions/InvalidCheckDigitException.php',
+        'Picqer\\Barcode\\Exceptions\\InvalidFormatException' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Exceptions/InvalidFormatException.php',
+        'Picqer\\Barcode\\Exceptions\\InvalidLengthException' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Exceptions/InvalidLengthException.php',
+        'Picqer\\Barcode\\Exceptions\\UnknownTypeException' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Exceptions/UnknownTypeException.php',
+        'Picqer\\Barcode\\Helpers\\BinarySequenceConverter' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Helpers/BinarySequenceConverter.php',
+        'Picqer\\Barcode\\Types\\TypeCodabar' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCodabar.php',
+        'Picqer\\Barcode\\Types\\TypeCode11' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode11.php',
+        'Picqer\\Barcode\\Types\\TypeCode128' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode128.php',
+        'Picqer\\Barcode\\Types\\TypeCode128A' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode128A.php',
+        'Picqer\\Barcode\\Types\\TypeCode128B' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode128B.php',
+        'Picqer\\Barcode\\Types\\TypeCode128C' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode128C.php',
+        'Picqer\\Barcode\\Types\\TypeCode39' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode39.php',
+        'Picqer\\Barcode\\Types\\TypeCode39Checksum' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode39Checksum.php',
+        'Picqer\\Barcode\\Types\\TypeCode39Extended' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode39Extended.php',
+        'Picqer\\Barcode\\Types\\TypeCode39ExtendedChecksum' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode39ExtendedChecksum.php',
+        'Picqer\\Barcode\\Types\\TypeCode93' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeCode93.php',
+        'Picqer\\Barcode\\Types\\TypeEan13' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeEan13.php',
+        'Picqer\\Barcode\\Types\\TypeEan8' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeEan8.php',
+        'Picqer\\Barcode\\Types\\TypeEanUpcBase' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeEanUpcBase.php',
+        'Picqer\\Barcode\\Types\\TypeIntelligentMailBarcode' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeIntelligentMailBarcode.php',
+        'Picqer\\Barcode\\Types\\TypeInterface' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeInterface.php',
+        'Picqer\\Barcode\\Types\\TypeInterleaved25' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeInterleaved25.php',
+        'Picqer\\Barcode\\Types\\TypeInterleaved25Checksum' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeInterleaved25Checksum.php',
+        'Picqer\\Barcode\\Types\\TypeKix' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeKix.php',
+        'Picqer\\Barcode\\Types\\TypeMsi' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeMsi.php',
+        'Picqer\\Barcode\\Types\\TypeMsiChecksum' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeMsiChecksum.php',
+        'Picqer\\Barcode\\Types\\TypePharmacode' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypePharmacode.php',
+        'Picqer\\Barcode\\Types\\TypePharmacodeTwoCode' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypePharmacodeTwoCode.php',
+        'Picqer\\Barcode\\Types\\TypePlanet' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypePlanet.php',
+        'Picqer\\Barcode\\Types\\TypePostnet' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypePostnet.php',
+        'Picqer\\Barcode\\Types\\TypeRms4cc' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeRms4cc.php',
+        'Picqer\\Barcode\\Types\\TypeStandard2of5' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeStandard2of5.php',
+        'Picqer\\Barcode\\Types\\TypeStandard2of5Checksum' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeStandard2of5Checksum.php',
+        'Picqer\\Barcode\\Types\\TypeUpcA' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeUpcA.php',
+        'Picqer\\Barcode\\Types\\TypeUpcE' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeUpcE.php',
+        'Picqer\\Barcode\\Types\\TypeUpcExtension2' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeUpcExtension2.php',
+        'Picqer\\Barcode\\Types\\TypeUpcExtension5' => __DIR__ . '/..' . '/picqer/php-barcode-generator/src/Types/TypeUpcExtension5.php',
         'Pluggable\\Marketing\\Deactivator' => __DIR__ . '/..' . '/pluggable/marketing/src/Deactivator.php',
         'Pluggable\\Marketing\\Feature' => __DIR__ . '/..' . '/pluggable/marketing/src/Feature.php',
         'Pluggable\\Marketing\\Survey' => __DIR__ . '/..' . '/pluggable/marketing/src/Survey.php',
         'Pluggable\\Plugin\\License' => __DIR__ . '/..' . '/pluggable/plugin/src/License.php',
         'Pluggable\\Plugin\\Update' => __DIR__ . '/..' . '/pluggable/plugin/src/Update.php',
+        'chillerlan\\QRCode\\Data\\AlphaNum' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/AlphaNum.php',
+        'chillerlan\\QRCode\\Data\\Byte' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/Byte.php',
+        'chillerlan\\QRCode\\Data\\Kanji' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/Kanji.php',
+        'chillerlan\\QRCode\\Data\\MaskPatternTester' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/MaskPatternTester.php',
+        'chillerlan\\QRCode\\Data\\Number' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/Number.php',
+        'chillerlan\\QRCode\\Data\\QRCodeDataException' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/QRCodeDataException.php',
+        'chillerlan\\QRCode\\Data\\QRDataAbstract' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/QRDataAbstract.php',
+        'chillerlan\\QRCode\\Data\\QRDataInterface' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/QRDataInterface.php',
+        'chillerlan\\QRCode\\Data\\QRMatrix' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Data/QRMatrix.php',
+        'chillerlan\\QRCode\\Helpers\\BitBuffer' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Helpers/BitBuffer.php',
+        'chillerlan\\QRCode\\Helpers\\Polynomial' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Helpers/Polynomial.php',
+        'chillerlan\\QRCode\\Output\\QRCodeOutputException' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Output/QRCodeOutputException.php',
+        'chillerlan\\QRCode\\Output\\QRFpdf' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Output/QRFpdf.php',
+        'chillerlan\\QRCode\\Output\\QRImage' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Output/QRImage.php',
+        'chillerlan\\QRCode\\Output\\QRImagick' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Output/QRImagick.php',
+        'chillerlan\\QRCode\\Output\\QRMarkup' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Output/QRMarkup.php',
+        'chillerlan\\QRCode\\Output\\QROutputAbstract' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Output/QROutputAbstract.php',
+        'chillerlan\\QRCode\\Output\\QROutputInterface' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Output/QROutputInterface.php',
+        'chillerlan\\QRCode\\Output\\QRString' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/Output/QRString.php',
+        'chillerlan\\QRCode\\QRCode' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/QRCode.php',
+        'chillerlan\\QRCode\\QRCodeException' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/QRCodeException.php',
+        'chillerlan\\QRCode\\QROptions' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/QROptions.php',
+        'chillerlan\\QRCode\\QROptionsTrait' => __DIR__ . '/..' . '/chillerlan/php-qrcode/src/QROptionsTrait.php',
+        'chillerlan\\Settings\\SettingsContainerAbstract' => __DIR__ . '/..' . '/chillerlan/php-settings-container/src/SettingsContainerAbstract.php',
+        'chillerlan\\Settings\\SettingsContainerInterface' => __DIR__ . '/..' . '/chillerlan/php-settings-container/src/SettingsContainerInterface.php',
+        'nguyenary\\QRCodeMonkey\\Constants\\Constant' => __DIR__ . '/..' . '/nguyenary/qr-code-monkey/src/Constants/Constant.php',
+        'nguyenary\\QRCodeMonkey\\QRCode' => __DIR__ . '/..' . '/nguyenary/qr-code-monkey/src/QRCode.php',
+        'nguyenary\\QRCodeMonkey\\Request\\Data' => __DIR__ . '/..' . '/nguyenary/qr-code-monkey/src/Request/Data.php',
+        'nguyenary\\QRCodeMonkey\\Request\\Request' => __DIR__ . '/..' . '/nguyenary/qr-code-monkey/src/Request/Request.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitbaf67a2c3d808e16689705f24509c184::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitbaf67a2c3d808e16689705f24509c184::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitbaf67a2c3d808e16689705f24509c184::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitbaf67a2c3d808e16689705f24509c184::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit06f298ff9e1527e6943ffaea8ab0a8cf::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit06f298ff9e1527e6943ffaea8ab0a8cf::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit06f298ff9e1527e6943ffaea8ab0a8cf::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit06f298ff9e1527e6943ffaea8ab0a8cf::$classMap;
 
         }, null, ClassLoader::class);
     }

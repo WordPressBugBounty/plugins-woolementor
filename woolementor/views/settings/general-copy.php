@@ -1,21 +1,33 @@
-<?php 
-$banner 			= CODESIGNER_ASSETS . '/img/settings-header-banner.gif';
-$footer_banner 		= CODESIGNER_ASSETS . '/img/settings-footer-banner.png';
-$support 			= CODESIGNER_ASSETS . '/img/customer-support.png';
-$documentation 		= CODESIGNER_ASSETS . '/img/documentation.png';
-$love 				= CODESIGNER_ASSETS . '/img/love.png';
-$logo 				= CODESIGNER_ASSETS . '/img/codesigner-logo.png';
-$contribute 		= CODESIGNER_ASSETS . '/img/contribute.png';
-$video 				= CODESIGNER_ASSETS . '/img/codesigner_video.png';
+<?php
+$banner        = CODESIGNER_ASSETS . '/img/settings-header-banner.gif';
+$footer_banner = CODESIGNER_ASSETS . '/img/settings-footer-banner.png';
+$support       = CODESIGNER_ASSETS . '/img/customer-support.png';
+$documentation = CODESIGNER_ASSETS . '/img/documentation.png';
+$love          = CODESIGNER_ASSETS . '/img/love.png';
+$logo          = CODESIGNER_ASSETS . '/img/codesigner-logo.png';
+$contribute    = CODESIGNER_ASSETS . '/img/contribute.png';
+$video         = CODESIGNER_ASSETS . '/img/codesigner_video.png';
 
-$utm				= [ 'utm_source' => 'In-plugin', 'utm_medium' => 'In-plugin+overview', 'utm_campaign' => 'at+a+glance' ];
-$pro_link			= add_query_arg( $utm, 'https://codexpert.io/codesigner' );
+$utm      = array(
+	'utm_source'   => 'In-plugin',
+	'utm_medium'   => 'In-plugin+overview',
+	'utm_campaign' => 'at+a+glance',
+);
+$pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner' );
 
-$home_url			= [ 'source' => 'dashboard', 'medium' => 'settings', 'url' => 'home-url' ];
-$home_redirect		= add_query_arg( $home_url, 'https://codexpert.io/codesigner/' );
+$home_url      = array(
+	'source' => 'dashboard',
+	'medium' => 'settings',
+	'url'    => 'home-url',
+);
+$home_redirect = add_query_arg( $home_url, 'https://codexpert.io/codesigner/' );
 
-$pricing_url		= [ 'source' => 'dashboard', 'medium' => 'settings', 'url' => 'pricing-url' ];
-$pricing_redirect	= add_query_arg( $pricing_url, 'https://codexpert.io/codesigner/pricing' );
+$pricing_url      = array(
+	'source' => 'dashboard',
+	'medium' => 'settings',
+	'url'    => 'pricing-url',
+);
+$pricing_redirect = add_query_arg( $pricing_url, 'https://codexpert.io/codesigner/pricing' );
 ?>
 <div class="wl-content-panel">
 	<div class="wl-header-banner">
@@ -49,7 +61,7 @@ $pricing_redirect	= add_query_arg( $pricing_url, 'https://codexpert.io/codesigne
 				</div>
 				<div class="wl-single-service-content yellow">
 					<h4><?php esc_attr_e( 'Customer Support', 'woocommerce' ); ?></h4>
-					<p><?php esc_attr_e( 'We have a super friendly support team to provide you with technical assistance and answers.', 'codesigner' )	; ?></p>
+					<p><?php esc_attr_e( 'We have a super friendly support team to provide you with technical assistance and answers.', 'codesigner' ); ?></p>
 					<a target="_blank" href="<?php echo esc_url( 'https://help.codexpert.io/tickets/' ); ?>"><?php esc_attr_e( 'Support', 'codesigner' ); ?></a>
 				</div>
 			</div>

@@ -19,11 +19,11 @@ class Variation_Swatches_Widget extends Widget_Base {
 	}
 
 	public function get_categories() {
-		return [ 'codesigner-single' ];
+		return array( 'codesigner-single' );
 	}
 
 	public function get_keywords() {
-		return [ 'variation', 'swatches' ];
+		return array( 'variation', 'swatches' );
 	}
 
 	protected function register_controls() {
@@ -31,9 +31,8 @@ class Variation_Swatches_Widget extends Widget_Base {
 	}
 
 	protected function render() {
-		
-		$settings 	= $this->get_settings_for_display();
-		codesigner_get_variation_swatches_view( 'swatches', $settings, false );   	
-	}
 
+		$settings = $this->get_settings_for_display();
+		codesigner_get_variation_swatches_view( 'swatches', $settings, false );
+	}
 }

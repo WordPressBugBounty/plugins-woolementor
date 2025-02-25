@@ -17,24 +17,24 @@ class Image_Comparison extends Widget_Base {
 
 	public $id;
 
-	public function __construct( $data = [], $args = null ) {
-	    parent::__construct( $data, $args );
+	public function __construct( $data = array(), $args = null ) {
+		parent::__construct( $data, $args );
 
-	    $this->id = wcd_get_widget_id( __CLASS__ );
-	    $this->widget = wcd_get_widget( $this->id );
-	    
+		$this->id     = wcd_get_widget_id( __CLASS__ );
+		$this->widget = wcd_get_widget( $this->id );
+
 		// Are we in debug mode?
 		$min = defined( 'CODESIGNER_DEBUG' ) && CODESIGNER_DEBUG ? '' : '.min';
 
-		wp_register_style( "codesigner-{$this->id}", plugins_url( "assets/css/style{$min}.css", __FILE__ ), [], '1.1' );
+		wp_register_style( "codesigner-{$this->id}", plugins_url( "assets/css/style{$min}.css", __FILE__ ), array(), '1.1' );
 	}
 
 	public function get_script_depends() {
-		return [ "codesigner-{$this->id}" ];
+		return array( "codesigner-{$this->id}" );
 	}
 
 	public function get_style_depends() {
-		return [ "codesigner-{$this->id}" ];
+		return array( "codesigner-{$this->id}" );
 	}
 
 	public function get_name() {
@@ -59,314 +59,314 @@ class Image_Comparison extends Widget_Base {
 		 * Image controls
 		 */
 		$this->start_controls_section(
-            'imgcomp_image',
-            [
-                'label' => __( 'Image', 'codesigner' ),
-                'tab'   => Controls_Manager::TAB_CONTENT,
-            ]
-        );
-
-        $this->add_control(
-			'imgcomp_first_image',
-			[
-				'label' 	=> esc_html__( 'First Image', 'codesigner' ),
-				'type' 		=> Controls_Manager::MEDIA,
-				'default' 	=> [
-					'url' 	=> Utils::get_placeholder_image_src(),
-				],
-			]
-		);
-
-        $this->add_control(
-			'imgcomp_second_image',
-			[
-				'label' 	=> esc_html__( 'Second Image', 'codesigner' ),
-				'type' 		=> Controls_Manager::MEDIA,
-				'default' 	=> [
-					'url' 	=> Utils::get_placeholder_image_src(),
-				],
-			]
+			'imgcomp_image',
+			array(
+				'label' => __( 'Image', 'codesigner' ),
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
 		);
 
 		$this->add_control(
-            'imgcomp_slide_icon',
-            [
-                'label'         => __( 'Icon', 'codesigner' ),
-                'type'          => Controls_Manager::ICONS,
-            ]
-        );
+			'imgcomp_first_image',
+			array(
+				'label'   => esc_html__( 'First Image', 'codesigner' ),
+				'type'    => Controls_Manager::MEDIA,
+				'default' => array(
+					'url' => Utils::get_placeholder_image_src(),
+				),
+			)
+		);
+
+		$this->add_control(
+			'imgcomp_second_image',
+			array(
+				'label'   => esc_html__( 'Second Image', 'codesigner' ),
+				'type'    => Controls_Manager::MEDIA,
+				'default' => array(
+					'url' => Utils::get_placeholder_image_src(),
+				),
+			)
+		);
+
+		$this->add_control(
+			'imgcomp_slide_icon',
+			array(
+				'label' => __( 'Icon', 'codesigner' ),
+				'type'  => Controls_Manager::ICONS,
+			)
+		);
 
 		$this->end_controls_section();
 
 		/**
-         * Image style
-         */
+		 * Image style
+		 */
 		$this->start_controls_section(
 			'imgcomp_image_style',
-			[
+			array(
 				'label' => __( 'Image', 'codesigner' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
 		);
 
-        $this->add_responsive_control(
-            'imgcomp_image_box_height',
-            [
-                'label' 	=> __( 'Image Box Height', 'codesigner' ),
-                'type' 		=> Controls_Manager::SLIDER,
-				'size_units'=> [ 'px', 'em' ],
-                'selectors' => [
-                    '.wl {{WRAPPER}} .wl-img-comp-container' => 'height: {{SIZE}}{{UNIT}}',
-                ],
-                'range'     => [
-                    'px'    => [
-                        'min'   => 1,
-                        'max'   => 1000
-                    ],
-                    'em'    => [
-                        'min'   => 1,
-                        'max'   => 100
-                    ],
-                ],
-            ]
-        );
+		$this->add_responsive_control(
+			'imgcomp_image_box_height',
+			array(
+				'label'      => __( 'Image Box Height', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em' ),
+				'selectors'  => array(
+					'.wl {{WRAPPER}} .wl-img-comp-container' => 'height: {{SIZE}}{{UNIT}}',
+				),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 1000,
+					),
+					'em' => array(
+						'min' => 1,
+						'max' => 100,
+					),
+				),
+			)
+		);
 
 		$this->add_responsive_control(
-            'imgcomp_image_width',
-            [
-                'label' 	=> __( 'Image Width', 'codesigner' ),
-                'type' 		=> Controls_Manager::SLIDER,
-				'size_units'=> [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '.wl {{WRAPPER}} .wl-img-comp-img img' => 'width: {{SIZE}}{{UNIT}}',
-                ],
-                'range'     => [
-                    'px'    => [
-                        'min'   => 1,
-                        'max'   => 1000
-                    ],
-                    'em'    => [
-                        'min'   => 1,
-                        'max'   => 100
-                    ],
-                ],
-            ]
-        );
+			'imgcomp_image_width',
+			array(
+				'label'      => __( 'Image Width', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
+					'.wl {{WRAPPER}} .wl-img-comp-img img' => 'width: {{SIZE}}{{UNIT}}',
+				),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 1000,
+					),
+					'em' => array(
+						'min' => 1,
+						'max' => 100,
+					),
+				),
+			)
+		);
 
-        $this->add_responsive_control(
-            'imgcomp_image_height',
-            [
-                'label' 	=> __( 'Image Height', 'codesigner' ),
-                'type' 		=> Controls_Manager::SLIDER,
-				'size_units'=> [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '.wl {{WRAPPER}} .wl-img-comp-img img' => 'height: {{SIZE}}{{UNIT}}',
-                ],
-                'range'     => [
-                    'px'    => [
-                        'min'   => 1,
-                        'max'   => 1000
-                    ],
-                    'em'    => [
-                        'min'   => 1,
-                        'max'   => 100
-                    ],
-                ],
-            ]
-        );
+		$this->add_responsive_control(
+			'imgcomp_image_height',
+			array(
+				'label'      => __( 'Image Height', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
+					'.wl {{WRAPPER}} .wl-img-comp-img img' => 'height: {{SIZE}}{{UNIT}}',
+				),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 1000,
+					),
+					'em' => array(
+						'min' => 1,
+						'max' => 100,
+					),
+				),
+			)
+		);
 
 		$this->add_responsive_control(
 			'imgcomp_image_margin',
-			[
-				'label' 		=> __( 'Margin', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Margin', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .wl-img-comp-img img' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-                'separator' 	=> 'before',
-			]
+				),
+				'separator'  => 'before',
+			)
 		);
 
 		$this->add_responsive_control(
 			'imgcomp_image_padding',
-			[
-				'label' 		=> __( 'Padding', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Padding', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .wl-img-comp-img img' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
-			[
-				'name' 		=> 'imgcomp_image_border',
-				'label' 	=> __( 'Border', 'codesigner' ),
-				'selector' 	=> '.wl {{WRAPPER}} .wl-img-comp-img img',
-			]
+			array(
+				'name'     => 'imgcomp_image_border',
+				'label'    => __( 'Border', 'codesigner' ),
+				'selector' => '.wl {{WRAPPER}} .wl-img-comp-img img',
+			)
 		);
 
 		$this->add_responsive_control(
-            'imgcomp_image_border_radius',
-            [
-                'label' 		=> __( 'Border Radius', 'codesigner' ),
-                'type' 			=> Controls_Manager::DIMENSIONS,
-                'size_units' 	=> [ 'px', '%' ],
-                'selectors' 	=> [
-                    '.wl {{WRAPPER}} .wl-img-comp-img img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
+			'imgcomp_image_border_radius',
+			array(
+				'label'      => __( 'Border Radius', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
+					'.wl {{WRAPPER}} .wl-img-comp-img img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' 		=> 'imgcomp_image_box_shadow',
-				'label' 	=> __( 'Box Shadow', 'codesigner' ),
-				'selector' 	=> '.wl {{WRAPPER}} .wl-img-comp-img img',
-			]
+			array(
+				'name'     => 'imgcomp_image_box_shadow',
+				'label'    => __( 'Box Shadow', 'codesigner' ),
+				'selector' => '.wl {{WRAPPER}} .wl-img-comp-img img',
+			)
 		);
 
 		$this->end_controls_section();
 
 		/**
-         * Slider style
-         */
+		 * Slider style
+		 */
 		$this->start_controls_section(
 			'imgcomp_slider_style',
-			[
+			array(
 				'label' => __( 'Slider', 'codesigner' ),
-				'tab' => Controls_Manager::TAB_STYLE,
-			]
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
 		);
 
 		$this->add_control(
 			'imgcomp_icon_heading',
-			[
-				'label' 	=> esc_html__( 'Icon', 'codesigner' ),
-				'type' 		=> Controls_Manager::HEADING,
-			]
+			array(
+				'label' => esc_html__( 'Icon', 'codesigner' ),
+				'type'  => Controls_Manager::HEADING,
+			)
 		);
 
-        $this->add_control(
-            'imgcomp_icon_color',
-            [
-                'label'     => __( 'Color', 'codesigner' ),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '.wl {{WRAPPER}} .wl-img-comp-slider i' => 'color: {{VALUE}}',
-                ],
-            ]
-        );
+		$this->add_control(
+			'imgcomp_icon_color',
+			array(
+				'label'     => __( 'Color', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .wl-img-comp-slider i' => 'color: {{VALUE}}',
+				),
+			)
+		);
 
-        $this->add_responsive_control(
-            'imgcomp_icon_size',
-            [
-                'label'     => __( 'Size', 'codesigner' ),
-                'type'      => Controls_Manager::SLIDER,
-                'size_units'=> [ 'px', 'em' ],
-                'selectors' => [
-                    '.wl {{WRAPPER}} .wl-img-comp-slider i' => 'font-size: {{SIZE}}{{UNIT}};',
-                ],
-            ]
-        );
+		$this->add_responsive_control(
+			'imgcomp_icon_size',
+			array(
+				'label'      => __( 'Size', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', 'em' ),
+				'selectors'  => array(
+					'.wl {{WRAPPER}} .wl-img-comp-slider i' => 'font-size: {{SIZE}}{{UNIT}};',
+				),
+			)
+		);
 
 		$this->add_control(
 			'imgcomp_slider_heading',
-			[
-				'label' 	=> esc_html__( 'Slider', 'codesigner' ),
-				'type' 		=> Controls_Manager::HEADING,
+			array(
+				'label'     => esc_html__( 'Slider', 'codesigner' ),
+				'type'      => Controls_Manager::HEADING,
 				'separator' => 'before',
-			]
+			)
 		);
 
-        $this->add_control(
-            'imgcomp_slider_bg',
-            [
-                'label'     => __( 'Background', 'codesigner' ),
-                'type'      => Controls_Manager::COLOR,
-                'selectors' => [
-                    '.wl {{WRAPPER}} .wl-img-comp-slider' => 'background: {{VALUE}}',
-                ],
-            ]
-        );
+		$this->add_control(
+			'imgcomp_slider_bg',
+			array(
+				'label'     => __( 'Background', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .wl-img-comp-slider' => 'background: {{VALUE}}',
+				),
+			)
+		);
 
 		$this->add_responsive_control(
-            'imgcomp_slider_width',
-            [
-                'label' 	=> __( 'Width', 'codesigner' ),
-                'type' 		=> Controls_Manager::SLIDER,
-				'size_units'=> [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '.wl {{WRAPPER}} .wl-img-comp-slider' => 'width: {{SIZE}}{{UNIT}}',
-                ],
-                'range'     => [
-                    'px'    => [
-                        'min'   => 1,
-                        'max'   => 500
-                    ],
-                    'em'    => [
-                        'min'   => 1,
-                        'max'   => 30
-                    ],
-                ],
-            ]
-        );
+			'imgcomp_slider_width',
+			array(
+				'label'      => __( 'Width', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
+					'.wl {{WRAPPER}} .wl-img-comp-slider' => 'width: {{SIZE}}{{UNIT}}',
+				),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 500,
+					),
+					'em' => array(
+						'min' => 1,
+						'max' => 30,
+					),
+				),
+			)
+		);
 
-        $this->add_responsive_control(
-            'imgcomp_slider_height',
-            [
-                'label' 	=> __( 'Height', 'codesigner' ),
-                'type' 		=> Controls_Manager::SLIDER,
-				'size_units'=> [ 'px', '%', 'em' ],
-                'selectors' => [
-                    '.wl {{WRAPPER}} .wl-img-comp-slider' => 'height: {{SIZE}}{{UNIT}}',
-                ],
-                'range'     => [
-                    'px'    => [
-                        'min'   => 1,
-                        'max'   => 500
-                    ],
-                    'em'    => [
-                        'min'   => 1,
-                        'max'   => 30
-                    ],
-                ],
-            ]
-        );
+		$this->add_responsive_control(
+			'imgcomp_slider_height',
+			array(
+				'label'      => __( 'Height', 'codesigner' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
+					'.wl {{WRAPPER}} .wl-img-comp-slider' => 'height: {{SIZE}}{{UNIT}}',
+				),
+				'range'      => array(
+					'px' => array(
+						'min' => 1,
+						'max' => 500,
+					),
+					'em' => array(
+						'min' => 1,
+						'max' => 30,
+					),
+				),
+			)
+		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
-			[
-				'name' 		=> 'imgcomp_slider_border',
-				'label' 	=> __( 'Border', 'codesigner' ),
-				'selector' 	=> '.wl {{WRAPPER}} .wl-img-comp-slider',
-			]
+			array(
+				'name'     => 'imgcomp_slider_border',
+				'label'    => __( 'Border', 'codesigner' ),
+				'selector' => '.wl {{WRAPPER}} .wl-img-comp-slider',
+			)
 		);
 
 		$this->add_responsive_control(
-            'imgcomp_slider_border_radius',
-            [
-                'label' 		=> __( 'Border Radius', 'codesigner' ),
-                'type' 			=> Controls_Manager::DIMENSIONS,
-                'size_units' 	=> [ 'px', '%' ],
-                'selectors' 	=> [
-                    '.wl {{WRAPPER}} .wl-img-comp-slider' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-                ],
-            ]
-        );
+			'imgcomp_slider_border_radius',
+			array(
+				'label'      => __( 'Border Radius', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%' ),
+				'selectors'  => array(
+					'.wl {{WRAPPER}} .wl-img-comp-slider' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
 
 		$this->end_controls_section();
 	}
 
 	protected function render() {
 		$settings  = $this->get_settings_for_display();
-        $widget_id = $this->id;
+		$widget_id = $this->id;
 
-        extract( $settings );
+		extract( $settings );
 		?>
 		<div class="wl-image-comparison-panel">
 			<div class="wl-img-comp-container">
@@ -390,9 +390,9 @@ class Image_Comparison extends Widget_Base {
 	}
 
 	protected function render_script() {
-		$settings 			= $this->get_settings_for_display();
+		$settings = $this->get_settings_for_display();
 		extract( $settings );
-		
+
 		$section_id = $this->get_raw_data()['id'];
 		?>
 

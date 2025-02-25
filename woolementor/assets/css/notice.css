@@ -6,10 +6,14 @@
 .notice-info.is-dismissible {
     /* backdrop-filter: blur(22.899999618530273px) */
     background: #1255FF1A;
-
-
 }
-.codesigner-dismissible-notice {
+.notice-info.is-dismissible[data-notice-id="codesigner_setup_wizard"] {
+    background: #fff;
+}
+.notice-info.is-dismissible > p {
+    font-size: 14px;
+}
+.notice-dismiss {
 	/* /* padding: 20px; */
     display: flex;
     align-items: center;
@@ -21,15 +25,8 @@
     /* width: 100%;
     height: 20px; */
 }
-.codesigner-dismissible-notice a {
-	text-decoration: none;
-}
-.codesigner-dismissible-notice .codesigner-notice-image {
-	/* width: 144px;
-    height: 15px; */
-}
 
-.codesigner-dismissible-notice .codesigner-notice-title{
+.codesigner-notice-title{
 	font-family: Inter;
 	font-size: 20px;
 	font-weight: 400;
@@ -40,14 +37,14 @@
 	color: #000000;
 }
 
-.codesigner-dismissible-notice .codesigner-notice-title span{
+.codesigner-notice-title span{
 	font-weight: 800;
     background: url(../img/promo/easycommerce_background_image.png) no-repeat;
     background-size: contain;
     background-position-y: bottom;
     background-size: 155px;
 }
-.codesigner-dismissible-notice .codesigner-dismissible-notice-button {
+.codesigner-dismissible-notice-button {
 	font-size: 16px;
     font-weight: 500;
     color: #2162FF;
@@ -55,19 +52,32 @@
     border: 2px #2162FF solid;
     padding: 10px 22px;
     border-radius: 22px;
+    text-decoration: none;
 }
-.codesigner-dismissible-notice a:focus {
+.notice-dismiss:focus {
 	box-shadow: 0 0 0 0 !important;
 }
-.codesigner-dismissible-notice .codesigner-dismissible-notice-button:hover {
+.codesigner-dismissible-notice-button:hover {
 	/*background: linear-gradient(89.92deg, #2b97ff 1.31%, #a42dff 100.35%);
 	transform: scale(1.2);*/
 	color: #FFFFFF;
 	background: #2162FF;
 }
-.notice.notice-info.is-dismissible.codesigner-dismissible-notice {
+.notice.notice-info.is-dismissible.notice-dismiss {
 	padding-right: 115px;
 }
 .row-actions .codesigner-get-pro a {
 	color: #ff6640;
 }
+@media (max-width: 1440px) {
+    .codesigner-notice-title {
+        font-size: 16px;
+    }
+}
+@media (max-width: 1024px) {
+    .notice.notice-info.is-dismissible {
+        display: none;
+    }
+}
+
+

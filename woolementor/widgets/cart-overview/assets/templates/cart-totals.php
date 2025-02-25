@@ -16,8 +16,8 @@
  */
 
 defined( 'ABSPATH' ) || exit;
-if( isset( $_POST ) && count( $_POST ) > 0 ) {
-	try { 
+if ( isset( $_POST ) && count( $_POST ) > 0 ) {
+	try {
 		WC()->shipping()->reset_shipping();
 		// return;
 
@@ -44,7 +44,7 @@ if( isset( $_POST ) && count( $_POST ) > 0 ) {
 		} else {
 			WC()->customer->set_billing_address_to_base();
 			WC()->customer->set_shipping_address_to_base();
-		update_option( '_test_shipping2', 'set_billing_address_to_base' );
+			update_option( '_test_shipping2', 'set_billing_address_to_base' );
 		}
 
 		update_option( '_test_shipping', $address );
@@ -56,15 +56,14 @@ if( isset( $_POST ) && count( $_POST ) > 0 ) {
 
 		do_action( 'woocommerce_calculated_shipping' );
 
-	} 
-	catch ( Exception $e ) {
+	} catch ( Exception $e ) {
 		if ( ! empty( $e ) ) {
 			wc_add_notice( $e->getMessage(), 'error' );
 		}
 	}
 }
 
-if( is_null( WC()->cart ) ) {
+if ( is_null( WC()->cart ) ) {
 	include_once WC_ABSPATH . 'includes/wc-cart-functions.php';
 	include_once WC_ABSPATH . 'includes/class-wc-cart.php';
 	wc_load_cart();
@@ -73,18 +72,19 @@ WC()->cart->calculate_totals();
 ?>
 <div class="cart_totals <?php echo esc_attr( WC()->customer->has_calculated_shipping() ? 'calculated_shipping' : '' ); ?>">
 
-	<?php 
+	<?php
 		do_action( 'woocommerce_before_cart_totals' );
 
-		if( 'yes' == $settings['section_heading_show_hide'] ): 
+	if ( 'yes' == $settings['section_heading_show_hide'] ) :
 
-			printf( '<%1$s %2$s class="wl-co-title">%3$s</%1$s>',
-				esc_attr( $settings['section_heading_tag'] ),
-				wp_kses_post( $this->get_render_attribute_string( 'section_heading_text' ) ),
-				esc_html( $settings['section_heading_text'] )
-			);
+		printf(
+			'<%1$s %2$s class="wl-co-title">%3$s</%1$s>',
+			esc_attr( $settings['section_heading_tag'] ),
+			wp_kses_post( $this->get_render_attribute_string( 'section_heading_text' ) ),
+			esc_html( $settings['section_heading_text'] )
+		);
 
-		endif; 
+		endif;
 	?>
 
 	<table cellspacing="0" class="shop_table shop_table_responsive">

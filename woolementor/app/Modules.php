@@ -25,72 +25,71 @@ class Modules extends Base {
 
 		$modules = codesigner_modules();
 
-		foreach ( array_keys( get_option( 'codesigner_modules', [] ) ) as $module ) {
+		foreach ( array_keys( get_option( 'codesigner_modules', array() ) ) as $module ) {
 
-			if( ! isset( $modules[ $module ] ) ) continue;
+			if ( ! isset( $modules[ $module ] ) ) {
+				continue;
+			}
 
 			$config = $modules[ $module ];
 
-			if(
+			if (
 				( ! isset( $config['pro'] ) || $config['pro'] !== true )
 				&& file_exists( $file = CODESIGNER_DIR . "/modules/{$module}/{$module}.php" )
 			) {
 
 				require_once $file;
-				$class = "\\Codexpert\\CoDesigner\\Modules\\{$config['class']}"; 
-				
-				$obj = new $class;
+				$class = "\\Codexpert\\CoDesigner\\Modules\\{$config['class']}";
+
+				$obj = new $class();
 
 				/**
 				 * Settings filters
 				 */
-				if( method_exists( $obj, '__settings' ) ) {
+				if ( method_exists( $obj, '__settings' ) ) {
 					$obj->filter( 'codesigner-modules_settings_args', '__settings' );
 				}
-			}
-			elseif(
+			} elseif (
 				defined( 'CODESIGNER_PRO_DIR' )
 				&& file_exists( $file = CODESIGNER_PRO_DIR . "/modules/{$module}/{$module}.php" )
 			) {
-				
+
 				require_once $file;
 				$class = "\\Codexpert\\CoDesigner_Pro\\Modules\\{$config['class']}";
-				
-				$obj = new $class;
+
+				$obj = new $class();
 
 				/**
 				 * Settings filters
 				 */
-				if( method_exists( $obj, '__settings' ) ) {
+				if ( method_exists( $obj, '__settings' ) ) {
 					$obj->filter( 'codesigner-modules_settings_args', '__settings' );
 				}
 			}
-
 		}
 	}
 
-// 	public function init() {
-//     $modules = codesigner_modules();
+	// public function init() {
+	// $modules = codesigner_modules();
 
-//     foreach (array_keys(get_option('codesigner_modules', [])) as $module) {
-//         $config = $modules[$module] ?? null;
+	// foreach (array_keys(get_option('codesigner_modules', [])) as $module) {
+	// $config = $modules[$module] ?? null;
 
-//         if ($config &&
-//             (!isset($config['pro']) || $config['pro'] !== true) &&
-//             file_exists($file = CODESIGNER_DIR . "/modules/{$module}/{$module}.php")
-//         ) {
-//             require_once $file;
-//             $class = "\\Codexpert\\CoDesigner\\Modules\\{$config['class']}";
-//             new $class;
-//         } elseif (
-//             defined('CODESIGNER_PRO_DIR') &&
-//             file_exists($file = CODESIGNER_PRO_DIR . "/modules/{$module}/{$module}.php")
-//         ) {
-//             require_once $file;
-//             $class = "\\Codexpert\\CoDesigner_Pro\\Modules\\{$config['class']}";
-//             new $class;
-//         }
-//     }
-// }
-
+	// if ($config &&
+	// (!isset($config['pro']) || $config['pro'] !== true) &&
+	// file_exists($file = CODESIGNER_DIR . "/modules/{$module}/{$module}.php")
+	// ) {
+	// require_once $file;
+	// $class = "\\Codexpert\\CoDesigner\\Modules\\{$config['class']}";
+	// new $class;
+	// } elseif (
+	// defined('CODESIGNER_PRO_DIR') &&
+	// file_exists($file = CODESIGNER_PRO_DIR . "/modules/{$module}/{$module}.php")
+	// ) {
+	// require_once $file;
+	// $class = "\\Codexpert\\CoDesigner_Pro\\Modules\\{$config['class']}";
+	// new $class;
+	// }
+	// }
+	// }
 }

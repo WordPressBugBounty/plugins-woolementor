@@ -12,19 +12,19 @@ class Product_Short_Description extends Widget_Base {
 
 	public $id;
 
-	public function __construct( $data = [], $args = null ) {
-	    parent::__construct( $data, $args );
+	public function __construct( $data = array(), $args = null ) {
+		parent::__construct( $data, $args );
 
-	    $this->id = wcd_get_widget_id( __CLASS__ );
-	    $this->widget = wcd_get_widget( $this->id );
+		$this->id     = wcd_get_widget_id( __CLASS__ );
+		$this->widget = wcd_get_widget( $this->id );
 	}
 
 	public function get_script_depends() {
-		return [];
+		return array();
 	}
 
 	public function get_style_depends() {
-		return [];
+		return array();
 	}
 
 	public function get_name() {
@@ -52,68 +52,68 @@ class Product_Short_Description extends Widget_Base {
 		 */
 		$this->start_controls_section(
 			'pd_settings',
-			[
-				'label' 		=> __( 'General', 'codesigner' ),
-				'tab'   		=> Controls_Manager::TAB_CONTENT,
-			]
+			array(
+				'label' => __( 'General', 'codesigner' ),
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
 		);
 
 		$this->add_control(
 			'product_description_type',
-			[
-				'label' 		=> __( 'Content Source', 'codesigner' ),
-				'type' 			=> Controls_Manager::SELECT2,
-				'options' 		=> [
-					'default_description'  	=> __( 'Current Product', 'codesigner' ),
-					'custom_description' 	=> __( 'Custom', 'codesigner' ),
-				],
-				'default' 		=> 'default_description' ,
-				'label_block' 	=> true,
-			]
+			array(
+				'label'       => __( 'Content Source', 'codesigner' ),
+				'type'        => Controls_Manager::SELECT2,
+				'options'     => array(
+					'default_description' => __( 'Current Product', 'codesigner' ),
+					'custom_description'  => __( 'Custom', 'codesigner' ),
+				),
+				'default'     => 'default_description',
+				'label_block' => true,
+			)
 		);
 
 		$this->add_control(
 			'pd_product_description',
-			[
-				'label' 	=> __( 'Custom Description', 'codesigner' ),
-				'type' 		=> Controls_Manager::TEXTAREA,
-				'rows' 		=> 10,
-				'default' 	=> __( 'Type your description here', 'codesigner' ),
-				'condition' => [
-                    'product_description_type' => 'custom_description'
-                ],
-			]
+			array(
+				'label'     => __( 'Custom Description', 'codesigner' ),
+				'type'      => Controls_Manager::TEXTAREA,
+				'rows'      => 10,
+				'default'   => __( 'Type your description here', 'codesigner' ),
+				'condition' => array(
+					'product_description_type' => 'custom_description',
+				),
+			)
 		);
 
 		$this->add_control(
 			'pd_alignment',
-			[
-				'label' 		=> __( 'Alignment', 'codesigner' ),
-				'type' 			=> Controls_Manager::CHOOSE,
-				'options' => [
-					'left' => [
+			array(
+				'label'     => __( 'Alignment', 'codesigner' ),
+				'type'      => Controls_Manager::CHOOSE,
+				'options'   => array(
+					'left'    => array(
 						'title' => __( 'Left', 'codesigner' ),
-						'icon' => 'eicon-text-align-left',
-					],
-					'center' => [
+						'icon'  => 'eicon-text-align-left',
+					),
+					'center'  => array(
 						'title' => __( 'Center', 'codesigner' ),
-						'icon' => 'eicon-text-align-center',
-					],
-					'justify' => [
+						'icon'  => 'eicon-text-align-center',
+					),
+					'justify' => array(
 						'title' => __( 'Justified', 'codesigner' ),
-						'icon' => 'eicon-text-align-justify',
-					],
-					'right' => [
+						'icon'  => 'eicon-text-align-justify',
+					),
+					'right'   => array(
 						'title' => __( 'Right', 'codesigner' ),
-						'icon' => 'eicon-text-align-right',
-					],
-				],
-				'default' => 'justify',
-				'toggle' => true,
-				'selectors' => [
+						'icon'  => 'eicon-text-align-right',
+					),
+				),
+				'default'   => 'justify',
+				'toggle'    => true,
+				'selectors' => array(
 					'.wl {{WRAPPER}} .wl-product-description' => 'text-align: {{VALUE}}',
-				],
-			]
+				),
+			)
 		);
 
 		$this->end_controls_section();
@@ -123,139 +123,139 @@ class Product_Short_Description extends Widget_Base {
 		 */
 		$this->start_controls_section(
 			'pd_style',
-			[
-				'label'			=> __( 'Design', 'codesigner' ),
-				'tab'   		=> Controls_Manager::TAB_STYLE,
-			]
+			array(
+				'label' => __( 'Design', 'codesigner' ),
+				'tab'   => Controls_Manager::TAB_STYLE,
+			)
 		);
 
 		$this->add_control(
-		    'payment_default_styles',
-		    [
-		        'label'     => __( 'Display', 'codesigner-pro' ),
-		        'type'      => Controls_Manager::HIDDEN,
-		        'selectors' => [
-		            '.wl {{WRAPPER}} .wl-product-description p' => 'display: inline-block;',
-		        ],
-		        'default' => 'traditional',
-		    ]
+			'payment_default_styles',
+			array(
+				'label'     => __( 'Display', 'codesigner-pro' ),
+				'type'      => Controls_Manager::HIDDEN,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .wl-product-description p' => 'display: inline-block;',
+				),
+				'default'   => 'traditional',
+			)
 		);
 		// end default css
 
 		$this->add_group_control(
-            Group_Control_Gradient_Text::get_type(),
-            [
-                'name' => 'pd_title_gradient_color',
-                'selector' => '.wl {{WRAPPER}} .wl-product-description p',
-            ]
-        );
+			Group_Control_Gradient_Text::get_type(),
+			array(
+				'name'     => 'pd_title_gradient_color',
+				'selector' => '.wl {{WRAPPER}} .wl-product-description p',
+			)
+		);
 
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
-			[
-				'name' => 'pd_typography',
-				'label' => __( 'Typography', 'codesigner' ),
-				'selector' => '.wl {{WRAPPER}} .wl-product-description p',
-				'fields_options' 	=> [
-					'typography' 	=> [ 'default' => 'yes' ],
-					'font_size' 	=> [ 'default' => [ 'size' => 14 ] ],
-				    'font_family' 	=> [ 'default' => 'Montserrat' ],
-				    'font_weight' 	=> [ 'default' => 400 ],
-				],
-			]
+			array(
+				'name'           => 'pd_typography',
+				'label'          => __( 'Typography', 'codesigner' ),
+				'selector'       => '.wl {{WRAPPER}} .wl-product-description p',
+				'fields_options' => array(
+					'typography'  => array( 'default' => 'yes' ),
+					'font_size'   => array( 'default' => array( 'size' => 14 ) ),
+					'font_family' => array( 'default' => 'Montserrat' ),
+					'font_weight' => array( 'default' => 400 ),
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Border::get_type(),
-			[
-				'name'          => 'pd_border',
-				'label'         => __( 'Border', 'codesigner' ),
-				'selector'      => '.wl {{WRAPPER}} .wl-product-description p',
-				'separator'		=> 'before'
-			]
+			array(
+				'name'      => 'pd_border',
+				'label'     => __( 'Border', 'codesigner' ),
+				'selector'  => '.wl {{WRAPPER}} .wl-product-description p',
+				'separator' => 'before',
+			)
 		);
 
 		$this->add_responsive_control(
 			'pd_border_radius',
-			[
-				'label'         => __( 'Border Radius', 'codesigner' ),
-				'type'          => Controls_Manager::DIMENSIONS,
-				'size_units'    => [ 'px', '%', 'em' ],
-				'selectors'     => [
+			array(
+				'label'      => __( 'Border Radius', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .wl-product-description p' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->add_group_control(
 			Group_Control_Box_Shadow::get_type(),
-			[
-				'name' => 'pd_box_shadow',
-				'label' => __( 'Box Shadow', 'codesigner' ),
+			array(
+				'name'     => 'pd_box_shadow',
+				'label'    => __( 'Box Shadow', 'codesigner' ),
 				'selector' => '.wl {{WRAPPER}} .wl-product-description p',
-			]
+			)
 		);
 
 		$this->add_responsive_control(
 			'pd_field_padding',
-			[
-				'label' 		=> __( 'Padding', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Padding', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .wl-product-description p' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-				'separator'		=> 'before',
-			]
+				),
+				'separator'  => 'before',
+			)
 		);
 
 		$this->add_responsive_control(
 			'pd_margin',
-			[
-				'label' 		=> __( 'Margin', 'codesigner' ),
-				'type' 			=> Controls_Manager::DIMENSIONS,
-				'size_units' 	=> [ 'px', '%', 'em' ],
-				'selectors' 	=> [
+			array(
+				'label'      => __( 'Margin', 'codesigner' ),
+				'type'       => Controls_Manager::DIMENSIONS,
+				'size_units' => array( 'px', '%', 'em' ),
+				'selectors'  => array(
 					'.wl {{WRAPPER}} .wl-product-description p' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-				],
-			]
+				),
+			)
 		);
 
 		$this->end_controls_section();
-
 	}
 
 	protected function render() {
 
-		$settings 	= $this->get_settings_for_display();
+		$settings = $this->get_settings_for_display();
 
 		$this->add_inline_editing_attributes( 'pd_product_description', 'basic' );
 
 		$the_excerpt = get_the_excerpt();
 
 		if ( isset( $_POST['product_id'] ) ) {
-			$product_id 	= codesigner_sanitize_number( $_POST['product_id'] );
-			$the_excerpt 	= get_the_excerpt( $product_id );
+			$product_id  = codesigner_sanitize_number( $_POST['product_id'] );
+			$the_excerpt = get_the_excerpt( $product_id );
 		}
 
 		if ( function_exists( 'wc_get_product' ) && ( wcd_is_edit_mode() || wcd_is_preview_mode() ) ) {
-			$product_id 	= wcd_get_product_id();
-			$product 		= wc_get_product( $product_id );
-			$the_excerpt 	= $product->get_short_description();
+			$product_id  = wcd_get_product_id();
+			$product     = wc_get_product( $product_id );
+			$the_excerpt = $product->get_short_description();
 		}
 		?>
 		<div class="wl-product-description">
-			<?php 
+			<?php
 			if ( 'default_description' == $settings['product_description_type'] ) {
-				printf( '<p>%s</p>',
-		            wp_kses_post( stripcslashes( wp_filter_post_kses( $the_excerpt ) ) )
-		        );
-			}
-			else {
-				printf( '<p %s>%s</p>',
-		            wp_kses_post( $this->get_render_attribute_string( 'pd_product_description' ) ),
-		            esc_html( stripcslashes( wp_filter_post_kses( $settings['pd_product_description'] ) ) )
-		        );
+				printf(
+					'<p>%s</p>',
+					wp_kses_post( stripcslashes( wp_filter_post_kses( $the_excerpt ) ) )
+				);
+			} else {
+				printf(
+					'<p %s>%s</p>',
+					wp_kses_post( $this->get_render_attribute_string( 'pd_product_description' ) ),
+					esc_html( stripcslashes( wp_filter_post_kses( $settings['pd_product_description'] ) ) )
+				);
 			}
 			?>
 		</div>

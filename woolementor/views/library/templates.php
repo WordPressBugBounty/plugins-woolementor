@@ -7,7 +7,7 @@ defined( 'ABSPATH' ) || exit;
 
 <script type="text/template" id="tmpl-wl-templates-modal__preview">
 	<div class="tmpl-wl-templates-modal-preview-iframe">
-    	<iframe></iframe>
+		<iframe></iframe>
 	</div>
 </script>
 
