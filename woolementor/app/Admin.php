@@ -402,4 +402,74 @@ class Admin extends Base {
 			add_option( 'codesigner_modules', $codesigner_modules );
 		}
 	}
+
+	public function settings_heading( $config ) {
+
+		$banner 	= CODESIGNER_ASSETS . '/img/general/get-started/rockat-icon.png';
+		$logo 		= CODESIGNER_ASSETS . '/img/icon.png';
+
+		$current_page = isset( $_GET['page'] ) ? $_GET['page'] : 'codesigner';
+
+		$tabs 		= [
+			[
+				'id'	=> 'codesigner',
+				'label' => 'Getting Started'	
+			],
+			[
+				'id' 	=> defined( 'CODESIGNER_PRO' ) ? 'codesigner' : 'codesigner-widgets',
+				'label' => 'Widgets',
+			],
+			[
+				'id' 	=> 'codesigner-modules',
+				'label' => 'Modules',
+			],
+			[
+				'id' 	=> 'codesigner-templates',
+				'label' => 'Templates',
+			],
+			[
+				'id' 	=> 'codesigner-tools',
+				'label' => 'Tools',
+			]
+		];
+
+		if( defined( 'CODESIGNER_PRO' ) ) {
+			array_shift( $tabs );
+
+			$tabs[] = [
+				'id'	=> 'codesigner-pro',
+				'label' => 'License',
+			];
+		}
+
+		?>
+			<header class="cd-started-page-header">
+				<div class="cd-logo-and-tabs">
+					<!-- logo here -->
+					<div class="cd-logo"><img src="<?php echo $logo; ?>" /><span><?php esc_html_e('CoDesigner', 'codesigner' ) ?></span></div>
+					<!-- tab Item -->
+					<ul>
+						<?php 
+							foreach ( $tabs as $tab ) {
+								printf( '<li class="%s"><a href="%s">%s</a></li>', 
+								$current_page == $tab['id'] ? 'active-tab' : '',
+								add_query_arg( 'page', $tab['id'], admin_url( 'admin.php' ) ),
+								$tab['label'] );
+							}
+						?>
+					</ul>
+				</div>
+
+				<?php if( ! defined( 'CODESIGNER_PRO' ) ) : ?>
+					<!-- Upgraded button -->
+					<a class="cd-upgraded-btn" href="https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro"> <img src="<?php echo $banner; ?>" alt=""> Get Pro Now</a>
+				<?php else: ?>
+					<div class="cd-btn-wrapper">
+						<a href="https://help.codexpert.io/docs/codesigner" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>
+						<a href="https://help.pluggable.io/" class="cd-btn"><?php esc_html_e( 'Get Support', 'codesigner' ); ?></a>
+					</div>
+				<?php endif; ?>
+			</header>
+		<?php
+	}
 }

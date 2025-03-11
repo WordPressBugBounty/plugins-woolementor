@@ -40,37 +40,39 @@ class Settings extends Base {
 	public function init_menu() {
 		global $codesigner, $codesigner_pro;
 
-		/**
-		 * Main admin menu
-		 */
-		$dashboard_settings = array(
-			'id'       => $this->slug,
-			'parent'   => $this->slug,
-			// 'label'          => $this->name,
-			'label'    => __( 'Getting Started', 'codesigner' ),
-			'title'    => $this->name,
-			'header'   => $this->name,
-			'icon'     => CODESIGNER_ASSETS . '/img/icon.png',
-			'position' => 58,
-			'topnav'   => 'top',
-			'sections' => array(
-				'codesigner_general' => array(
-					'id'        => 'codesigner_general',
-					'label'     => __( 'General', 'codesigner' ),
-					'icon'      => 'dashicons dashicons-admin-generic',
-					'hide_form' => true,
-					'template'  => CODESIGNER_DIR . '/views/settings/general.php',
+		if( ! defined( 'CODESIGNER_PRO' ) ) {
+			/**
+			 * Main admin menu
+			 */
+			$dashboard_settings = array(
+				'id'       => $this->slug,
+				'parent'   => $this->slug,
+				// 'label'          => $this->name,
+				'label'    => __( 'Getting Started', 'codesigner' ),
+				'title'    => $this->name,
+				'header'   => $this->name,
+				'icon'     => CODESIGNER_ASSETS . '/img/icon.png',
+				'position' => 58,
+				'topnav'   => 'top',
+				'sections' => array(
+					'codesigner_general' => array(
+						'id'        => 'codesigner_general',
+						'label'     => __( 'General', 'codesigner' ),
+						'icon'      => 'dashicons dashicons-admin-generic',
+						'hide_form' => true,
+						'template'  => CODESIGNER_DIR . '/views/settings/general.php',
+					),
 				),
-			),
-		);
+			);
 
-		new Settings_API( apply_filters( 'codesigner-dashboard_settings_args', $dashboard_settings ) );
+			new Settings_API( apply_filters( 'codesigner-dashboard_settings_args', $dashboard_settings ) );
+		}
 
 		/**
 		 * Widgets menu
 		 */
 		$widgets_settings = array(
-			'id'       => "{$this->slug}-widgets",
+			'id'       => defined( 'CODESIGNER_PRO' ) ? $this->slug : "{$this->slug}-widgets",
 			'parent'   => $this->slug,
 			'label'    => __( 'Widgets', 'codesigner' ),
 			'title'    => __( 'Widgets', 'codesigner' ),
@@ -331,18 +333,9 @@ class Settings extends Base {
 			$pro_settings = array(
 				'id'     => "{$this->slug}-get-pro",
 				'parent' => $this->slug,
-				'label'  => __( ' <span style="font-weight: bold;">Upgrade to Pro (Up to 70% OFF)</span>', 'codesigner' ),
-				'title'  => __( 'Upgrade to Pro (Up to 80% OFF)', 'codesigner' ),
-				'header' => __( 'Upgrade to Pro (Up to 80% OFF)', 'codesigner' ),
-				// 'sections'      => [
-				// 'codesigner_upgrade'    => [
-				// 'id'        => 'codesigner_upgrade',
-				// 'label'     => __( 'Upgrade to Pro (Up to 80% OFF)', 'codesigner' ),
-				// 'icon'      => 'dashicons-buddicons-groups',
-				// 'hide_form' => true,
-				// 'template'  => CODESIGNER_DIR . '/views/settings/free-pro.php',
-				// ],
-				// ]
+				'label'  => __( ' <span style="font-weight: bold">Get PRO Today and Save Up To 70%</span>', 'codesigner' ),
+				'title'  => '',
+				'header' => '',
 			);
 
 			new Settings_API( apply_filters( 'codesigner-pro_settings_args', $pro_settings ) );

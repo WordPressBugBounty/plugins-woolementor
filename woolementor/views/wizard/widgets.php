@@ -87,7 +87,7 @@ foreach ( $widgets as $id => $widget ) {
 			?>
 				<div id='wl-<?php echo esc_attr( $id ); ?>' class='wl-widget <?php echo esc_attr( $_class ); ?> <?php echo esc_attr( $_active ); ?>' data-keywords='<?php echo esc_attr( $keywords ); ?>'>
 					<label class='wl-widget-title' for='codesigner-checkbox-{$id}'><?php echo esc_html( $title ); ?></label>
-					<?php echo esc_html( $_button ); ?>
+					<?php echo $_button; ?>
 				</div>
 			<?php
 		}

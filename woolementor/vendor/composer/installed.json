@@ -406,18 +406,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pluggableio/marketing.git",
-                "reference": "4e553e5024fec2c6a059df3356e043e47d4351e9"
+                "reference": "0b1d66bb4ce840789931b4c59772cfae8a377667"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pluggableio/marketing/zipball/4e553e5024fec2c6a059df3356e043e47d4351e9",
-                "reference": "4e553e5024fec2c6a059df3356e043e47d4351e9",
+                "url": "https://api.github.com/repos/pluggableio/marketing/zipball/0b1d66bb4ce840789931b4c59772cfae8a377667",
+                "reference": "0b1d66bb4ce840789931b4c59772cfae8a377667",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.0"
             },
-            "time": "2025-01-01T09:58:23+00:00",
+            "time": "2025-03-10T05:16:53+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",

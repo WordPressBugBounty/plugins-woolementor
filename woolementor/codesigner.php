@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.8.5.1
+ * Version: 4.8.6
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -126,7 +126,7 @@ final class Plugin {
 		$this->plugin['basename']   = plugin_basename( CODESIGNER );
 		$this->plugin['file']       = CODESIGNER;
 		$this->plugin['TextDomain'] = 'codesigner';
-		$this->plugin['Version']    = '4.8.5.1';
+		$this->plugin['Version']    = '4.8.6';
 		$this->plugin['Name']       = 'CoDesigner';
 		$this->plugin['server']     = apply_filters( 'codesigner_server', 'https://my.pluggable.io' );
 		$this->plugin['doc_id']     = 1960;
@@ -173,6 +173,7 @@ final class Plugin {
 			$admin->filter( 'http_request_host_is_external', '__return_true', 10, 3 );
 			$admin->action( 'plugins_loaded', 'admin_notices' );
 			$admin->action( 'cx-plugin_after-nav-items', 'setting_navs_add_item' );
+			$admin->action( 'cx-settings-heading', 'settings_heading' );
 			$admin->filter( 'admin_body_class', 'admin_body_class' );
 			$admin->activate( 'codesigner_widgets_activation' );
 			$admin->activate( 'codesigner_modules_activation' );
@@ -215,7 +216,7 @@ final class Plugin {
 			 *
 			 * @author Codexpert <hi@codexpert.io>
 			 */
-			$feature = new Feature( $this->plugin );
+			$feature = new Feature( $this->plugin, [ 'reserved' => [] ] );
 
 			/**
 			 * Asks to participate in a survey

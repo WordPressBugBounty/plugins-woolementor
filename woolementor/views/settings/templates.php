@@ -57,6 +57,15 @@ echo wp_kses_post( '' );
 	</div>
 </div>
 
+<?php
+if( ! defined( 'ELEMENTOR_VERSION' ) ) {
+	printf(
+		'<p>%s</p>',
+		__( 'Please install and activate Elementor to access the Template Library!', 'codesigner' )
+	);
+}
+?>
+
 <div class="elementor-templates-modal__header tmpl-admin-template-header" style="display: none;">
 	<div class="tmpl-admin-template-logo-area elementor-templates-modal__header__logo-area">
 		<div id="elementor-template-library-header-preview-back" class="tmpl-wl-template-library-header-preview-back">
