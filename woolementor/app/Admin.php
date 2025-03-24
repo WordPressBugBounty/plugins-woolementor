@@ -142,6 +142,9 @@ class Admin extends Base {
 		$support   = array(
 			'support' => sprintf( '<a href="%1$s">' . __( 'Support', 'codesigner' ) . '</a>', 'https://help.codexpert.io/add-ticket/' ),
 		);
+		// if ( !defined( 'CODESIGNER_PRO' ) ) {
+		// $new_links['codesigner-get-pro'] = '<a href="https://codexpert.io/codesigner/pricing/?utm_source=website&utm_medium=floating+bar&utm_campaign=black+friday+2024">' . __('Black Friday Sale (Up to 80% OFF)', 'cx-plugin') . '</a>';
+		// }
 
 		return array_merge( $support, $new_links, $links );
 	}
@@ -187,33 +190,24 @@ class Admin extends Base {
 	}
 
 	public function admin_notices() {
-		/**
-		 * EasyCommerce promo notice
-		 */
-		$ec_notice_id	= 'codesigner-easycommerce_campain';
+		$notice_id	= 'codesigner-easycommerce_campain';
+		$url        = 'https://easycommerce.dev/?utm_source=wp+dashboard&utm_medium=codesigner+notice&utm_campaign=introducing+easycommerce';
+		$image_path = CODESIGNER_ASSETS . '/img/promo/co-logo.png';
 
-		$ec_notice = new Notice( $ec_notice_id );
+		$notice = new Notice( $notice_id );
 
 		$ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
 		$ec_notice->set_expiry( 3 * DAY_IN_SECONDS ); // Don't show after 3 days
 
-		$message = sprintf(
-		    '<div class="codesigner-dismissible-notice-content">
-		        <img src="%1$s" alt="%2$s" class="codesigner-notice-image">
-		        <p class="codesigner-notice-title">%3$s <span>%4$s</span> - %5$s</p>
-		        <div class="button-wrapper">
-		            <a href="%6$s" class="codesigner-dismissible-notice-button" data-id="%7$s">%8$s</a>
+		$message = '
+		        <div class="codesigner-dismissible-notice-content">
+					<img src="' . esc_url( $image_path ) . '" alt="CoDesigner" class="codesigner-notice-image" >
+					<p class="codesigner-notice-title"> Introducing <span>EasyCommerce</span> -  A Revolutionary WordPress Ecommerce Plugin </p>
+		            <div class="button-wrapper">
+		                <a href="' . esc_url( $url ) . '" class="codesigner-dismissible-notice-button" data-id="' . esc_attr( $notice_id ) . '">Check it Out</a>
+		            </div>
 		        </div>
-		    </div>',
-		    esc_url( CODESIGNER_ASSETS . '/img/promo/co-logo.png' ),
-		    esc_attr__( 'CoDesigner', 'codesigner' ),
-		    esc_html__( 'Introducing', 'codesigner' ),
-		    esc_html__( 'EasyCommerce', 'codesigner' ),
-		    esc_html__( 'A Revolutionary WordPress Ecommerce Plugin', 'codesigner' ),
-		    esc_url( 'https://easycommerce.dev/?utm_source=wp+dashboard&utm_medium=codesigner+notice&utm_campaign=introducing+easycommerce' ),
-		    esc_attr( $ec_notice_id ),
-		    esc_html__( 'Check it Out', 'codesigner' )
-		);
+		';
 
 		$ec_notice->set_message( $message );
 		$ec_notice->set_screens( array( 'dashboard', 'toplevel_page_codesigner' ) );
@@ -404,6 +398,13 @@ class Admin extends Base {
 	}
 
 	public function settings_heading( $config ) {
+
+		$screen = get_current_screen();
+		$screen_ids = array( 'toplevel_page_codesigner', 'codesigner_page_codesigner-widgets', 'codesigner_page_codesigner-modules', 'codesigner_page_codesigner-templates', 'codesigner_page_codesigner-tools' );
+		
+		if( ! ( $screen && in_array( $screen->id, $screen_ids ) ) ) {
+			return;
+		}
 
 		$banner 	= CODESIGNER_ASSETS . '/img/general/get-started/rockat-icon.png';
 		$logo 		= CODESIGNER_ASSETS . '/img/icon.png';

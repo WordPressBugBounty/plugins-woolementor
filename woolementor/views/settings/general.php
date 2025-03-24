@@ -12,37 +12,37 @@
 		'Unoptimized+Checkout' => [
 			'title' 	=> 'Unoptimized Checkout',
 			'desc' 		=> 'Your hard-earned store visitors are abandoning their carts due to a unoptimized checkout page. Equip your online store with all the essentials of an easy checkout.',
-			'fix_link' 	=> '#',
+			'fix_link' 	=> 'https://codexpert.io/customize-checkout-page-in-woocommerce/?utm_source=in-pluign&utm_medium=getting+started&utm_campaign=customize+checkout+page',
 			'active' 	=> false
 		],
 		'Basic+Shop+Page' => [
 			'title' 	=> 'Basic Shop Page',
 			'desc' 		=> 'Your shop page feels very basic and poorly designed, causing your store visitors to leave without purchasing. Update it with lucrative shop designs to boost conversions.',
-			'fix_link' 	=> '#',
+			'fix_link' 	=> 'https://codexpert.io/customize-shop-page-in-woocommerce/?utm_source=in-pluign&utm_medium=getting+started&utm_campaign=customize+shop+page',
 			'active' 	=> false
 		],
 		'No+Wishlist+Option' => [
 			'title' 	=> 'No Wishlist Option',
 			'desc' 		=> 'Your product pages are lacking a wishlist option. Add this feature to let visitors bookmark their favorites to increase the likelihood of a return purchase.',
-			'fix_link' 	=> '#',
+			'fix_link' 	=> 'https://codexpert.io/create-wishlist-for-woocommerce-store/?utm_source=in-pluign&utm_medium=getting+started&utm_campaign=create+wishlist',
 			'active' 	=> false
 		],
 		'Missing+Related+Products' => [
 			'title' 	=> 'Missing Related Products',
 			'desc' 		=> 'You\'re missing potential sales due to not showing related products. Add this option to your WooCommerce store, increase upsells and ensure a positive revenue growth.',
-			'fix_link' 	=> '#',
+			'fix_link' 	=> 'https://codexpert.io/how-to-add-related-products-in-woocommerce/?utm_source=in-pluign&utm_medium=getting+started&utm_campaign=add+related+products',
 			'active' 	=> false
 		],
 		'Outdated+Email' => [
 			'title' 	=> 'Outdated Email',
 			'desc' 		=> 'WooCommerce\'s default outdated email layout causes your audience to ignore emails. Use CoDesigner to refresh the design with stunning templates & customization.',
-			'fix_link' 	=> '#',
+			'fix_link' 	=> 'https://codexpert.io/design-woocommerce-email-elementor-codesigner/?utm_source=in-pluign&utm_medium=getting+started&utm_campaign=customize+woocommerce+email',
 			'active' 	=> false
 		],
 		'Missed+Sales+Notifications' => [
 			'title' 	=> 'Missed Sales Notifications',
 			'desc' 		=> 'Your store doesn\'t have any sales notification system. Implement sales alert in your website with CoDesigner to increase authenticity and conversions.',
-			'fix_link' 	=> '#',
+			'fix_link' 	=> 'https://codexpert.io/live-sales-notification-on-woocommerce/?utm_source=in-pluign&utm_medium=getting+started&utm_campaign=add+live+sales+notification',
 			'active' 	=> false
 		],
 	];
@@ -107,7 +107,7 @@
 									<p><?php esc_html_e( $easycommerce_feature['desc'] ); ?></p>
 									<?php if( ! $is_active ) {
 										?>
-										<a href="<?php echo esc_attr( "https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=fix+now+{$id}" ); ?>"><?php esc_html_e( 'Fix Now', 'codesigner' ); ?></a>
+										<a href="<?php echo esc_attr( $easycommerce_feature['fix_link'] ); ?>"><?php esc_html_e( 'Fix Now', 'codesigner' ); ?></a>
 										<?php
 									} ?>
 								</div>

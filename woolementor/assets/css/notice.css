@@ -6,12 +6,8 @@
 .notice-info.is-dismissible {
     /* backdrop-filter: blur(22.899999618530273px) */
     background: #1255FF1A;
-}
-.notice-info.is-dismissible[data-notice-id="codesigner_setup_wizard"] {
-    background: #fff;
-}
-.notice-info.is-dismissible > p {
-    font-size: 14px;
+
+
 }
 .notice-dismiss {
 	/* /* padding: 20px; */

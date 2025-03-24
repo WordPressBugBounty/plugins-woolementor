@@ -16,11 +16,7 @@ $user = wp_get_current_user();
 		<p class="cx-wizard-sub-heading">
 			<?php printf( esc_html__( "It won't take more than 1 minute!.", 'codesigner' ) ); ?>
 		</p>
-		<input id="setup-wizard-email" type="email" name="email" value="<?php echo esc_attr( $user->user_email ); ?>" placeholder="
-																					<?php
-																					echo esc_html__( 'Enter your email address to receive the coupon', 'codesigner' );
-																					?>
-		" />
+		<input id="setup-wizard-email" type="email" name="email" value="<?php echo esc_attr( $user->user_email ); ?>" placeholder="<?php echo esc_attr__( 'Enter your email address to receive the coupon', 'codesigner' ); ?>" />
 		<p class="cx-wizard-desc">
 			<?php printf( esc_html__( 'We will share the latest product updates, tutorials & deals with you. No spamming, Unsubscribe anytime..', 'codesigner' ) ); ?>
 		</p>

@@ -6,7 +6,7 @@ use Codexpert\CoDesigner\Helper;
 if ( ! class_exists( 'Notice' ) ) {
 	class Notice {
 
-		private $intervals = array( 0 );
+		private $intervals = array();
 
 		private $expiry = MONTH_IN_SECONDS;
 
