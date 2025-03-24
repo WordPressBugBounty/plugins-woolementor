@@ -194,7 +194,7 @@ class Admin extends Base {
 		$url        = 'https://easycommerce.dev/?utm_source=wp+dashboard&utm_medium=codesigner+notice&utm_campaign=introducing+easycommerce';
 		$image_path = CODESIGNER_ASSETS . '/img/promo/co-logo.png';
 
-		$notice = new Notice( $notice_id );
+		$ec_notice = new Notice( $notice_id );
 
 		$ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
 		$ec_notice->set_expiry( 3 * DAY_IN_SECONDS ); // Don't show after 3 days
