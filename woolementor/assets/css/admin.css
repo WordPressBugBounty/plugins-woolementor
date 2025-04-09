@@ -1787,7 +1787,6 @@
 	gap: 24px;
 }
 .cd-started-page-main-wrapper {
-	width: calc( 100% - 420px );
 	background-color: #fff;
 	padding: 40px;
 }
@@ -2217,4 +2216,29 @@
 	.wl-card-blog {
 		width: 280px;
 	}
+}
+
+/* EasyCommerce Promo */
+.codesigner:not(.codesigner-pro) .cx-wrapper-outer {
+    display: grid;
+    grid-template-columns: 16fr 5fr;
+    gap: 20px;
+}
+.codesigner:not(.codesigner-pro) .cx-wrapper-outer .cx-wrapper.cx-sections-1 {
+    display: block;
+}
+.codesigner:not(.codesigner-pro) #easycommerce-promo a:focus,
+.codesigner:not(.codesigner-pro) #easycommerce-promo a:active {
+	outline: none;
+	border: none;
+}
+.codesigner:not(.codesigner-pro) #easycommerce-promo img {
+    max-width: 100%;
+    right: 20px;
+}
+.codesigner:not(.codesigner-pro) .cx-sections-wrapper {
+	float: inherit;
+}
+.codesigner:not(.codesigner-pro) .wl-widgets-group {
+    grid-template-columns: repeat(4, 1fr);
 }

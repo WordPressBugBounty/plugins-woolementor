@@ -60,6 +60,14 @@ class Admin extends Base {
 		load_plugin_textdomain( 'codesigner', false, CODESIGNER_DIR . '/languages/' );
 	}
 
+	public function add_body_class( $classes ) {
+		
+		$classes .= ' codesigner';
+		$classes .= defined( 'CODESIGNER_PRO' ) ? ' codesigner-pro' : '';
+
+		return $classes;
+	}
+
 	/**
 	 * Enqueue JavaScripts and stylesheets
 	 */
@@ -264,7 +272,6 @@ class Admin extends Base {
 			<img id="codesigner-modal-loader" alt="Loader" src="' . esc_attr( CODESIGNER_ASSETS . '/img/loader.gif' ) . '" />
 		</div>';
 	}
-
 
 	// Turn on all widgets while activation
 	public function codesigner_widgets_activation() {
@@ -472,5 +479,20 @@ class Admin extends Base {
 				<?php endif; ?>
 			</header>
 		<?php
+	}
+
+	public function show_easycommerce_promo( $config ) {
+
+		if( defined( 'CODESIGNER_PRO' ) ) return;
+
+		
+		$banners = array( 'purple-left-party', 'bullet-points' );
+		$banner = $banners[ array_rand( $banners ) ];
+
+		printf(
+			'<div id="easycommerce-promo"><a href="%1$s" target="_blank"><img src="%2$s" /></a></div>',
+			add_query_arg( [ 'utm_source' => 'in-plugin', 'utm_medium' => 'codesigner', 'utm_campaign' => "banner_{$banner}" ], 'https://easycommerce.dev' ),
+			"https://cdn.easycommerce.dev/images/promo/{$banner}.png"
+		);
 	}
 }

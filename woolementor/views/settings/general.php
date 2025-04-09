@@ -107,7 +107,7 @@
 									<p><?php esc_html_e( $easycommerce_feature['desc'] ); ?></p>
 									<?php if( ! $is_active ) {
 										?>
-										<a href="<?php echo esc_attr( $easycommerce_feature['fix_link'] ); ?>"><?php esc_html_e( 'Fix Now', 'codesigner' ); ?></a>
+										<a href="<?php echo esc_attr( $easycommerce_feature['fix_link'] ); ?>" target="_blank"><?php esc_html_e( 'Fix Now', 'codesigner' ); ?></a>
 										<?php
 									} ?>
 								</div>
@@ -145,7 +145,7 @@
 			<?php endif; ?>
 
 		</main>
-		<aside class="cd-started-page-sidebar-wrapper">
+<!-- 		<aside class="cd-started-page-sidebar-wrapper">
 			<h2><?php esc_html_e( 'Optimize Your Store For More Sales & Revenues', 'codesigner' ); ?></h2>
 			<p><?php esc_html_e( 'CoDesigner gives you complete freedom to get the exact look and feel you desire for your store.', 'codesigner' ); ?></p>
 			<ul>
@@ -164,7 +164,7 @@
 			<a href="https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro">
 				<?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?>
 			</a>
-		</aside>
+		</aside> -->
 	</div>
 
 </div>

@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.8.6.3
+ * Version: 4.8.7
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -126,15 +126,12 @@ final class Plugin {
 		$this->plugin['basename']   = plugin_basename( CODESIGNER );
 		$this->plugin['file']       = CODESIGNER;
 		$this->plugin['TextDomain'] = 'codesigner';
-		$this->plugin['Version']    = '4.8.6.3';
+		$this->plugin['Version']    = '4.8.7';
 		$this->plugin['Name']       = 'CoDesigner';
 		$this->plugin['server']     = apply_filters( 'codesigner_server', 'https://my.pluggable.io' );
 		$this->plugin['doc_id']     = 1960;
 		$this->plugin['icon']       = CODESIGNER_ASSETS . '/img/icon-128.png';
-		$this->plugin['depends']    = array(
-			'woocommerce/woocommerce.php' => __( 'WooCommerce', 'codesigner' ),
-			'elementor/elementor.php'     => __( 'Elementor', 'codesigner' ),
-		);
+		$this->plugin['depends']    = array();
 	}
 
 	/**
@@ -163,6 +160,7 @@ final class Plugin {
 			$admin->activate( 'install' );
 			$admin->action( 'admin_footer', 'modal' );
 			$admin->action( 'init', 'i18n' );
+			$admin->action( 'admin_body_class', 'add_body_class' );
 			$admin->action( 'admin_enqueue_scripts', 'enqueue_scripts' );
 			$admin->action( 'admin_menu', 'add_menus' );
 			$admin->filter( "plugin_action_links_{$this->plugin['basename']}", 'action_links' );
@@ -177,6 +175,7 @@ final class Plugin {
 			$admin->filter( 'admin_body_class', 'admin_body_class' );
 			$admin->activate( 'codesigner_widgets_activation' );
 			$admin->activate( 'codesigner_modules_activation' );
+			$admin->action( 'cx-settings-after_wrapper', 'show_easycommerce_promo' );
 
 			/**
 			 * Settings related hooks
