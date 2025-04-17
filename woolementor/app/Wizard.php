@@ -143,22 +143,7 @@ class Wizard extends Base {
 		new Setup( $this->plugin );
 	}
 
-	public function save_welcome() {
-		if ( isset( $_POST['email'] ) && $_POST['email'] != '' ) {
-			$response = wp_remote_post(
-				'https://codexpert.io/dashboard/?fluentcrm=1&route=contact&hash=c47e9db6-1e4d-4691-ad68-975623d0a942',
-				array(
-					'body' => array(
-						'email'      => sanitize_text_field( $_POST['email'] ),
-						'first_name' => $user->first_name,
-						'last_name'  => $user->last_name,
-						'site_url'   => codesigner_site_url(),
-						'plugin'     => 'codesigner',
-					),
-				)
-			);
-		}
-	}
+	public function save_welcome() {}
 
 	public function save_widgets() {
 		$this->save( 'codesigner_widgets' );

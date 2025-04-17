@@ -37,21 +37,21 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			 * Shop widgets
 			 */
 			'shop-classic'                   => array(
-				'title'      => __( 'Shop Classic', 'codesigner' ),
+				'title'      => 'Shop Classic',
 				'icon'       => 'eicon-gallery-grid' . $branding_class,
 				'categories' => array( 'codesigner-shop' ),
 				'demo'       => "{$demo_base}/shop-classic/",
 				'keywords'   => array( 'cart', 'store', 'products', 'shop', 'grid', 'regular' ),
 			),
 			'shop-standard'                  => array(
-				'title'      => __( 'Shop Standard', 'codesigner' ),
+				'title'      => 'Shop Standard',
 				'icon'       => 'eicon-apps' . $branding_class,
 				'categories' => array( 'codesigner-shop' ),
 				'demo'       => "{$demo_base}/shop-standard/",
 				'keywords'   => array( 'cart', 'store', 'products', 'shop', 'grid', 'regular' ),
 			),
 			'shop-flip'                      => array(
-				'title'       => __( 'Shop Flip', 'codesigner' ),
+				'title'       => 'Shop Flip',
 				'icon'        => 'eicon-flip-box' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-flip/",
@@ -59,7 +59,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-trendy'                    => array(
-				'title'       => __( 'Shop Trendy', 'codesigner' ),
+				'title'       => 'Shop Trendy',
 				'icon'        => 'eicon-products' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-trendy/",
@@ -67,14 +67,14 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-curvy'                     => array(
-				'title'      => __( 'Shop Curvy', 'codesigner' ),
+				'title'      => 'Shop Curvy',
 				'icon'       => 'eicon-posts-grid' . $branding_class,
 				'categories' => array( 'codesigner-shop' ),
 				'demo'       => "{$demo_base}/shop-curvy/",
 				'keywords'   => array( 'cart', 'store', 'products', 'shop', 'grid', 'elegant' ),
 			),
 			'shop-curvy-horizontal'          => array(
-				'title'       => __( 'Shop Curvy Horizontal', 'codesigner' ),
+				'title'       => 'Shop Curvy Horizontal',
 				'icon'        => 'eicon-posts-group' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-curvy-horizontal/",
@@ -82,14 +82,14 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-slider'                    => array(
-				'title'      => __( 'Shop Slider', 'codesigner' ),
+				'title'      => 'Shop Slider',
 				'icon'       => 'eicon-slider-device' . $branding_class,
 				'categories' => array( 'codesigner-shop' ),
 				'demo'       => "{$demo_base}/shop-slider/",
 				'keywords'   => array( 'cart', 'store', 'products', 'shop', 'grid', 'slider' ),
 			),
 			'shop-accordion'                 => array(
-				'title'       => __( 'Shop Accordion', 'codesigner' ),
+				'title'       => 'Shop Accordion',
 				'icon'        => 'eicon-accordion' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-accordion/",
@@ -97,7 +97,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-table'                     => array(
-				'title'       => __( 'Shop Table', 'codesigner' ),
+				'title'       => 'Shop Table',
 				'icon'        => 'eicon-table' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-table/",
@@ -105,7 +105,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-beauty'                    => array(
-				'title'       => __( 'Shop Beauty', 'codesigner' ),
+				'title'       => 'Shop Beauty',
 				'icon'        => 'eicon-thumbnails-half' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-beauty/",
@@ -113,7 +113,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-smart'                     => array(
-				'title'       => __( 'Shop Smart', 'codesigner' ),
+				'title'       => 'Shop Smart',
 				'icon'        => 'eicon-thumbnails-half' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-smart/",
@@ -121,7 +121,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-minimal'                   => array(
-				'title'       => __( 'Shop Minimal', 'codesigner' ),
+				'title'       => 'Shop Minimal',
 				'icon'        => 'eicon-thumbnails-half' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-minimal/",
@@ -129,7 +129,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-wix'                       => array(
-				'title'       => __( 'Shop Wix', 'codesigner' ),
+				'title'       => 'Shop Wix',
 				'icon'        => 'eicon-thumbnails-half' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-wix/",
@@ -137,7 +137,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shop-shopify'                   => array(
-				'title'       => __( 'Shop Shopify', 'codesigner' ),
+				'title'       => 'Shop Shopify',
 				'icon'        => 'eicon-thumbnails-half' . $branding_class,
 				'categories'  => array( 'codesigner-shop' ),
 				'demo'        => "{$demo_base}/shop-shopify/",
@@ -149,14 +149,14 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			 * Shop filter
 			 */
 			'filter-horizontal'              => array(
-				'title'      => __( 'Filter Horizontal', 'codesigner' ),
+				'title'      => 'Filter Horizontal',
 				'icon'       => 'eicon-ellipsis-h' . $branding_class,
 				'categories' => array( 'codesigner-filter' ),
 				'demo'       => "{$demo_base}/filter-horizontal/",
 				'keywords'   => array( 'cart', 'store', 'products', 'product', 'single', 'single-product', 'filter', 'horizontal' ),
 			),
 			'filter-vertical'                => array(
-				'title'       => __( 'Filter Vertical', 'codesigner' ),
+				'title'       => 'Filter Vertical',
 				'icon'        => 'eicon-ellipsis-v' . $branding_class,
 				'categories'  => array( 'codesigner-filter' ),
 				'demo'        => "{$demo_base}/filter-vertical/",
@@ -164,7 +164,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'filter-advance'                 => array(
-				'title'       => __( 'Filter Advance', 'codesigner' ),
+				'title'       => 'Filter Advance',
 				'icon'        => 'eicon-filter' . $branding_class,
 				'categories'  => array( 'codesigner-filter' ),
 				'demo'        => "{$demo_base}/filter-advance/",
@@ -176,84 +176,84 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			* Single Product
 			*/
 			'product-title'                  => array(
-				'title'      => __( 'Product Title', 'codesigner' ),
+				'title'      => 'Product Title',
 				'icon'       => 'eicon-post-title' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'store', 'products', 'product-title', 'single', 'single-product' ),
 			),
 			'product-price'                  => array(
-				'title'      => __( 'Product Price', 'codesigner' ),
+				'title'      => 'Product Price',
 				'icon'       => 'eicon-product-price' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'store', 'products', 'product-price', 'single', 'single-product' ),
 			),
 			'product-rating'                 => array(
-				'title'      => __( 'Product Rating', 'codesigner' ),
+				'title'      => 'Product Rating',
 				'icon'       => 'eicon-product-rating' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'store', 'products', 'product-rating', 'single', 'single-product' ),
 			),
 			'product-breadcrumbs'            => array(
-				'title'      => __( 'Breadcrumbs', 'codesigner' ),
+				'title'      => 'Breadcrumbs',
 				'icon'       => 'eicon-post-navigation' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'breadcrumbs', 'single', 'product' ),
 			),
 			'product-short-description'      => array(
-				'title'      => __( 'Product Short Description', 'codesigner' ),
+				'title'      => 'Product Short Description',
 				'icon'       => 'eicon-product-description' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'products', 'product', 'short', 'description', 'single', 'product' ),
 			),
 			'product-variations'             => array(
-				'title'      => __( 'Product Variations', 'codesigner' ),
+				'title'      => 'Product Variations',
 				'icon'       => 'eicon-product-related' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'store', 'products', 'product-title', 'single', 'single-product' ),
 			),
 			'product-add-to-cart'            => array(
-				'title'      => __( 'Add to Cart', 'codesigner' ),
+				'title'      => 'Add to Cart',
 				'icon'       => 'eicon-cart' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'add to cart', 'add-to-cart', 'short', 'single', 'product' ),
 			),
 			'product-sku'                    => array(
-				'title'      => __( 'Product SKU', 'codesigner' ),
+				'title'      => 'Product SKU',
 				'icon'       => 'eicon-anchor' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'add to cart', 'sku', 'short', 'single', 'product' ),
 			),
 			'product-stock'                  => array(
-				'title'      => __( 'Product Stock', 'codesigner' ),
+				'title'      => 'Product Stock',
 				'icon'       => 'eicon-product-stock' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'add to cart', 'product-stock', 'short', 'single', 'product' ),
 			),
 			'product-additional-information' => array(
-				'title'      => __( 'Additional Information', 'codesigner' ),
+				'title'      => 'Additional Information',
 				'icon'       => 'eicon-product-info' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'add to cart', 'product-additional-information', 'short', 'single', 'product' ),
 			),
 			'product-tabs'                   => array(
-				'title'      => __( 'Product Tabs', 'codesigner' ),
+				'title'      => 'Product Tabs',
 				'icon'       => 'eicon-product-tabs' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'add to cart', 'product-tabs', 'short', 'single', 'product' ),
 			),
 			'product-dynamic-tabs'           => array(
-				'title'       => __( 'Product Dynamic Tabs', 'codesigner' ),
+				'title'       => 'Product Dynamic Tabs',
 				'icon'        => 'eicon-product-tabs' . $branding_class,
 				'categories'  => array( 'codesigner-single' ),
 				'demo'        => "{$demo_base}/{$single_product_url}/",
@@ -261,42 +261,42 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'keywords'    => array( 'cart', 'add to cart', 'product-dynamic-tabs', 'short', 'single', 'product' ),
 			),
 			'product-meta'                   => array(
-				'title'      => __( 'Product Meta', 'codesigner' ),
+				'title'      => 'Product Meta',
 				'icon'       => 'eicon-product-tabs' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'add to cart', 'product-meta', 'short', 'single', 'product' ),
 			),
 			'product-categories'             => array(
-				'title'      => __( 'Product Categories', 'codesigner' ),
+				'title'      => 'Product Categories',
 				'icon'       => 'eicon-flow' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'category', 'categories', 'short', 'single', 'product' ),
 			),
 			'product-tags'                   => array(
-				'title'      => __( 'Product Tags', 'codesigner' ),
+				'title'      => 'Product Tags',
 				'icon'       => 'eicon-tags' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}/",
 				'keywords'   => array( 'cart', 'add to cart', 'tags', 'short', 'single', 'product' ),
 			),
 			'product-thumbnail'              => array(
-				'title'      => __( 'Product Thumbnail', 'codesigner' ),
+				'title'      => 'Product Thumbnail',
 				'icon'       => 'eicon-featured-image' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}",
 				'keywords'   => array( 'cart', 'store', 'products', 'tabs-beauty', 'single', 'single-product', 'category', 'product-thumbnail' ),
 			),
 			'product-gallery'                => array(
-				'title'      => __( 'Product Gallery', 'codesigner' ),
+				'title'      => 'Product Gallery',
 				'icon'       => 'eicon-featured-image' . $branding_class,
 				'categories' => array( 'codesigner-single' ),
 				'demo'       => "{$demo_base}/{$single_product_url}",
 				'keywords'   => array( 'cart', 'store', 'products', 'tabs-beauty', 'single', 'single-product', 'category', 'product-gallery' ),
 			),
 			'product-add-to-wishlist'        => array(
-				'title'       => __( 'Add to Wishlist', 'codesigner' ),
+				'title'       => 'Add to Wishlist',
 				'icon'        => 'eicon-tags' . $branding_class,
 				'categories'  => array( 'codesigner-single' ),
 				'demo'        => "{$demo_base}/{$single_product_url}/",
@@ -304,7 +304,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'keywords'    => array( 'cart', 'add to cart', 'add to wishlist', 'tags', 'short', 'single', 'product' ),
 			),
 			'product-comparison-button'      => array(
-				'title'       => __( 'Add to Compare', 'codesigner' ),
+				'title'       => 'Add to Compare',
 				'icon'        => 'eicon-cart' . $branding_class,
 				'categories'  => array( 'codesigner-single' ),
 				'demo'        => "{$demo_base}/{$single_product_url}",
@@ -312,7 +312,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'ask-for-price'                  => array(
-				'title'       => __( 'Ask for Price', 'codesigner' ),
+				'title'       => 'Ask for Price',
 				'icon'        => 'eicon-cart' . $branding_class,
 				'categories'  => array( 'codesigner-single' ),
 				'demo'        => "{$demo_base}/{$single_product_url}",
@@ -320,7 +320,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'quick-checkout-button'          => array(
-				'title'       => __( 'Quick Checkout Button', 'codesigner' ),
+				'title'       => 'Quick Checkout Button',
 				'icon'        => 'eicon-cart' . $branding_class,
 				'categories'  => array( 'codesigner-single' ),
 				'demo'        => "{$demo_base}/{$single_product_url}",
@@ -328,7 +328,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'product-barcode'                => array(
-				'title'       => __( 'Product Barcode', 'codesigner' ),
+				'title'       => 'Product Barcode',
 				'icon'        => 'eicon-barcode' . $branding_class,
 				'categories'  => array( 'codesigner-single' ),
 				'demo'        => "{$demo_base}/product-comparison",
@@ -340,21 +340,21 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			 * Pricing tables
 			 */
 			'pricing-table-advanced'         => array(
-				'title'      => __( 'Pricing Table Advanced', 'codesigner' ),
+				'title'      => 'Pricing Table Advanced',
 				'icon'       => 'eicon-price-table' . $branding_class,
 				'categories' => array( 'codesigner-pricing' ),
 				'demo'       => "{$demo_base}/pricing-table-advanced/",
 				'keywords'   => array( 'cart', 'single', 'pricing-table', 'pricing' ),
 			),
 			'pricing-table-basic'            => array(
-				'title'      => __( 'Pricing Table Basic', 'codesigner' ),
+				'title'      => 'Pricing Table Basic',
 				'icon'       => 'eicon-price-table' . $branding_class,
 				'categories' => array( 'codesigner-pricing' ),
 				'demo'       => "{$demo_base}/pricing-table-basic/",
 				'keywords'   => array( 'cart', 'single', 'pricing-table', 'pricing' ),
 			),
 			'pricing-table-regular'          => array(
-				'title'       => __( 'Pricing Table Regular', 'codesigner' ),
+				'title'       => 'Pricing Table Regular',
 				'icon'        => 'eicon-price-table' . $branding_class,
 				'categories'  => array( 'codesigner-pricing' ),
 				'demo'        => "{$demo_base}/pricing-table-regular/",
@@ -362,7 +362,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'pricing-table-smart'            => array(
-				'title'       => __( 'Pricing Table Smart', 'codesigner' ),
+				'title'       => 'Pricing Table Smart',
 				'icon'        => 'eicon-price-table' . $branding_class,
 				'categories'  => array( 'codesigner-pricing' ),
 				'demo'        => "{$demo_base}/pricing-table-smart/",
@@ -370,7 +370,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'pricing-table-fancy'            => array(
-				'title'       => __( 'Pricing Table Fancy', 'codesigner' ),
+				'title'       => 'Pricing Table Fancy',
 				'icon'        => 'eicon-price-table' . $branding_class,
 				'categories'  => array( 'codesigner-pricing' ),
 				'demo'        => "{$demo_base}/pricing-table-fancy/",
@@ -382,21 +382,21 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			 * Related Products
 			 */
 			'related-products-classic'       => array(
-				'title'      => __( 'Related Products Classic', 'codesigner' ),
+				'title'      => 'Related Products Classic',
 				'icon'       => 'eicon-gallery-grid' . $branding_class,
 				'categories' => array( 'codesigner-related' ),
 				'demo'       => "{$demo_base}/related-products-classic/",
 				'keywords'   => array( 'cart', 'single', 'pricing-table', 'pricing', 'related-products-classic' ),
 			),
 			'related-products-standard'      => array(
-				'title'      => __( 'Related Products Standard', 'codesigner' ),
+				'title'      => 'Related Products Standard',
 				'icon'       => 'eicon-apps' . $branding_class,
 				'categories' => array( 'codesigner-related' ),
 				'demo'       => "{$demo_base}/related-products-standard/",
 				'keywords'   => array( 'cart', 'single', 'pricing-table', 'pricing', 'related-products-standard' ),
 			),
 			'related-products-flip'          => array(
-				'title'       => __( 'Related Products Flip', 'codesigner' ),
+				'title'       => 'Related Products Flip',
 				'icon'        => 'eicon-flip-box' . $branding_class,
 				'categories'  => array( 'codesigner-related' ),
 				'demo'        => "{$demo_base}/related-products-flip/",
@@ -404,7 +404,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'related-products-trendy'        => array(
-				'title'       => __( 'Related Products Trendy', 'codesigner' ),
+				'title'       => 'Related Products Trendy',
 				'icon'        => 'eicon-products' . $branding_class,
 				'categories'  => array( 'codesigner-related' ),
 				'demo'        => "{$demo_base}/related-products-trendy/",
@@ -412,14 +412,14 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'related-products-curvy'         => array(
-				'title'      => __( 'Related Products Curvy', 'codesigner' ),
+				'title'      => 'Related Products Curvy',
 				'icon'       => 'eicon-posts-grid' . $branding_class,
 				'categories' => array( 'codesigner-related' ),
 				'demo'       => "{$demo_base}/related-products-curvy/",
 				'keywords'   => array( 'cart', 'single', 'pricing-table', 'pricing', 'related-products-curvy' ),
 			),
 			'related-products-accordion'     => array(
-				'title'       => __( 'Related Products Accordion', 'codesigner' ),
+				'title'       => 'Related Products Accordion',
 				'icon'        => 'eicon-accordion' . $branding_class,
 				'categories'  => array( 'codesigner-related' ),
 				'demo'        => "{$demo_base}/related-products-accordion/",
@@ -427,7 +427,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'related-products-table'         => array(
-				'title'       => __( 'Related Products Table', 'codesigner' ),
+				'title'       => 'Related Products Table',
 				'icon'        => 'eicon-table' . $branding_class,
 				'categories'  => array( 'codesigner-related' ),
 				'demo'        => "{$demo_base}/related-products-table/",
@@ -439,21 +439,21 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			 * Photo gallery
 			 */
 			'gallery-fancybox'               => array(
-				'title'      => __( 'Gallery Fancybox', 'codesigner' ),
+				'title'      => 'Gallery Fancybox',
 				'icon'       => 'eicon-slider-push' . $branding_class,
 				'categories' => array( 'codesigner-gallery' ),
 				'demo'       => "{$demo_base}",
 				'keywords'   => array( 'cart', 'single', 'product-gallery-fancybox' ),
 			),
 			'gallery-lc-lightbox'            => array(
-				'title'      => __( 'Gallery LC Lightbox', 'codesigner' ),
+				'title'      => 'Gallery LC Lightbox',
 				'icon'       => 'eicon-gallery-group' . $branding_class,
 				'categories' => array( 'codesigner-gallery' ),
 				'demo'       => "{$demo_base}/",
 				'keywords'   => array( 'cart', 'single', 'product-gallery-lightbox' ),
 			),
 			'gallery-box-slider'             => array(
-				'title'      => __( 'Gallery Box Slider', 'codesigner' ),
+				'title'      => 'Gallery Box Slider',
 				'icon'       => 'eicon-slider-album' . $branding_class,
 				'categories' => array( 'codesigner-gallery' ),
 				'demo'       => "{$demo_base}/",
@@ -464,35 +464,35 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			 * Cart widgets
 			 */
 			'cart-items'                     => array(
-				'title'      => __( 'Cart Items', 'codesigner' ),
+				'title'      => 'Cart Items',
 				'icon'       => 'eicon-products' . $branding_class,
 				'categories' => array( 'codesigner-cart' ),
 				'demo'       => "{$demo_base}/cart/",
 				'keywords'   => array( 'cart', 'store', 'products', 'cart-items-standard' ),
 			),
 			'cart-items-classic'             => array(
-				'title'      => __( 'Cart Items Classic', 'codesigner' ),
+				'title'      => 'Cart Items Classic',
 				'icon'       => 'eicon-products' . $branding_class,
 				'categories' => array( 'codesigner-cart' ),
 				'demo'       => "{$demo_base}/cart/",
 				'keywords'   => array( 'cart', 'store', 'products', 'cart-items-standard' ),
 			),
 			'cart-overview'                  => array(
-				'title'      => __( 'Cart Overview', 'codesigner' ),
+				'title'      => 'Cart Overview',
 				'icon'       => 'eicon-product-price' . $branding_class,
 				'categories' => array( 'codesigner-cart' ),
 				'demo'       => "{$demo_base}/cart/",
 				'keywords'   => array( 'cart', 'store', 'products', 'cart-overview-standard' ),
 			),
 			'coupon-form'                    => array(
-				'title'      => __( 'Coupon Form', 'codesigner' ),
+				'title'      => 'Coupon Form',
 				'icon'       => 'eicon-product-meta' . $branding_class,
 				'categories' => array( 'codesigner-cart' ),
 				'demo'       => "{$demo_base}/cart/",
 				'keywords'   => array( 'cart', 'store', 'products', 'coupon-form-standard' ),
 			),
 			'floating-cart'                  => array(
-				'title'       => __( 'Floating Cart', 'codesigner' ),
+				'title'       => 'Floating Cart',
 				'icon'        => 'eicon-product-meta' . $branding_class,
 				'categories'  => array( 'codesigner-cart' ),
 				'demo'        => "{$demo_base}/cart/",
@@ -504,7 +504,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			*Checkout Page items
 			*/
 			'billing-address'                => array(
-				'title'       => __( 'Billing Address', 'codesigner' ),
+				'title'       => 'Billing Address',
 				'icon'        => 'eicon-google-maps' . $branding_class,
 				'categories'  => array( 'codesigner-checkout' ),
 				'demo'        => "{$demo_base}/checkout/",
@@ -512,7 +512,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'shipping-address'               => array(
-				'title'       => __( 'Shipping Address', 'codesigner' ),
+				'title'       => 'Shipping Address',
 				'icon'        => 'eicon-google-maps' . $branding_class,
 				'categories'  => array( 'codesigner-checkout' ),
 				'demo'        => "{$demo_base}/checkout/",
@@ -520,7 +520,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'order-notes'                    => array(
-				'title'       => __( 'Order Notes', 'codesigner' ),
+				'title'       => 'Order Notes',
 				'icon'        => 'eicon-table-of-contents' . $branding_class,
 				'categories'  => array( 'codesigner-checkout' ),
 				'demo'        => "{$demo_base}/checkout/",
@@ -528,7 +528,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'order-review'                   => array(
-				'title'       => __( 'Order Review', 'codesigner' ),
+				'title'       => 'Order Review',
 				'icon'        => 'eicon-product-info' . $branding_class,
 				'categories'  => array( 'codesigner-checkout' ),
 				'demo'        => "{$demo_base}/checkout/",
@@ -536,7 +536,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'order-pay'                      => array(
-				'title'       => __( 'Order Pay', 'codesigner' ),
+				'title'       => 'Order Pay',
 				'icon'        => 'eicon-product-info' . $branding_class,
 				'categories'  => array( 'codesigner-checkout' ),
 				'demo'        => "{$demo_base}/checkout/",
@@ -544,7 +544,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'payment-methods'                => array(
-				'title'       => __( 'Payment Methods', 'codesigner' ),
+				'title'       => 'Payment Methods',
 				'icon'        => 'eicon-product-upsell' . $branding_class,
 				'categories'  => array( 'codesigner-checkout' ),
 				'demo'        => "{$demo_base}/checkout/",
@@ -552,7 +552,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'thankyou'                       => array(
-				'title'       => __( 'Thank You', 'codesigner' ),
+				'title'       => 'Thank You',
 				'icon'        => 'eicon-nerd' . $branding_class,
 				'categories'  => array( 'codesigner-checkout' ),
 				'demo'        => "{$demo_base}/checkout/",
@@ -560,7 +560,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'checkout-login'                 => array(
-				'title'       => __( 'Checkout Login', 'codesigner' ),
+				'title'       => 'Checkout Login',
 				'icon'        => 'eicon-lock-user' . $branding_class,
 				'categories'  => array( 'codesigner-checkout' ),
 				'demo'        => "{$demo_base}/checkout/",
@@ -572,7 +572,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			* Email Widgets
 			*/
 			'email-header'                   => array(
-				'title'       => __( 'Email Header', 'codesigner' ),
+				'title'       => 'Email Header',
 				'icon'        => 'eicon-header' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -580,7 +580,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'email-footer'                   => array(
-				'title'       => __( 'Email Footer', 'codesigner' ),
+				'title'       => 'Email Footer',
 				'icon'        => 'eicon-footer' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -588,7 +588,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'email-item-details'             => array(
-				'title'       => __( 'Email Item Details', 'codesigner' ),
+				'title'       => 'Email Item Details',
 				'icon'        => 'eicon-kit-details' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -596,7 +596,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'email-billing-addresses'        => array(
-				'title'       => __( 'Email Billing Addresses', 'codesigner' ),
+				'title'       => 'Email Billing Addresses',
 				'icon'        => 'eicon-table-of-contents' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -604,7 +604,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'email-shipping-addresses'       => array(
-				'title'       => __( 'Email Shipping Addresses', 'codesigner' ),
+				'title'       => 'Email Shipping Addresses',
 				'icon'        => 'eicon-purchase-summary' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -612,7 +612,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'email-customer-note'            => array(
-				'title'       => __( 'Email Customer Note', 'codesigner' ),
+				'title'       => 'Email Customer Note',
 				'icon'        => 'eicon-document-file' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -620,7 +620,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'email-order-note'               => array(
-				'title'       => __( 'Email Order Note', 'codesigner' ),
+				'title'       => 'Email Order Note',
 				'icon'        => 'eicon-document-file' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -628,7 +628,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'email-description'              => array(
-				'title'       => __( 'Email Description', 'codesigner' ),
+				'title'       => 'Email Description',
 				'icon'        => 'eicon-menu-toggle' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -636,7 +636,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'email-reminder'                 => array(
-				'title'       => __( 'Email Reminder', 'codesigner' ),
+				'title'       => 'Email Reminder',
 				'icon'        => 'eicon-menu-toggle' . $branding_class,
 				'categories'  => array( 'codesigner-email' ),
 				'demo'        => "{$demo_base}",
@@ -648,14 +648,14 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			* Others Widgets
 			*/
 			'my-account'                     => array(
-				'title'      => __( 'My Account', 'codesigner' ),
+				'title'      => 'My Account',
 				'icon'       => 'eicon-call-to-action' . $branding_class,
 				'categories' => array( 'codesigner' ),
 				'demo'       => "{$demo_base}/my-account/",
 				'keywords'   => array( 'my', 'account', 'cart', 'customer' ),
 			),
 			'my-account-advanced'            => array(
-				'title'       => __( 'My Account Advanced', 'codesigner' ),
+				'title'       => 'My Account Advanced',
 				'icon'        => 'eicon-call-to-action' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/my-account/",
@@ -663,7 +663,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'wishlist'                       => array(
-				'title'       => __( 'Wishlist', 'codesigner' ),
+				'title'       => 'Wishlist',
 				'icon'        => 'eicon-heart-o' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/wishlist/",
@@ -671,14 +671,14 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'customer-reviews-classic'       => array(
-				'title'      => __( 'Customer Reviews Classic', 'codesigner' ),
+				'title'      => 'Customer Reviews Classic',
 				'icon'       => 'eicon-product-rating' . $branding_class,
 				'categories' => array( 'codesigner' ),
 				'demo'       => "{$demo_base}/customer-reviews-classic/",
 				'keywords'   => array( 'cart', 'single', 'shipping', 'address', 'form', 'order', 'notes', 'review', 'customer-reviews-vertical', 'customer-reviews', 'vertical' ),
 			),
 			'customer-reviews-standard'      => array(
-				'title'       => __( 'Customer Reviews Standard', 'codesigner' ),
+				'title'       => 'Customer Reviews Standard',
 				'icon'        => 'eicon-review' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/customer-reviews-standard/",
@@ -686,7 +686,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'customer-reviews-trendy'        => array(
-				'title'       => __( 'Customer Reviews Trendy', 'codesigner' ),
+				'title'       => 'Customer Reviews Trendy',
 				'icon'        => 'eicon-rating' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/customer-reviews-trendy/",
@@ -694,7 +694,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'faqs-accordion'                 => array(
-				'title'       => __( 'FAQs Accordion', 'codesigner' ),
+				'title'       => 'FAQs Accordion',
 				'icon'        => 'eicon-accordion' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/faqs-accordion",
@@ -702,42 +702,42 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'tabs-basic'                     => array(
-				'title'      => __( 'Tabs Basic', 'codesigner' ),
+				'title'      => 'Tabs Basic',
 				'icon'       => 'eicon-tabs' . $branding_class,
 				'categories' => array( 'codesigner' ),
 				'demo'       => "{$demo_base}/tabs-basic/",
 				'keywords'   => array( 'tab', 'tabs', 'content tab', 'menu', 'tabs basic' ),
 			),
 			'tabs-classic'                   => array(
-				'title'      => __( 'Tabs Classic', 'codesigner' ),
+				'title'      => 'Tabs Classic',
 				'icon'       => 'eicon-tabs' . $branding_class,
 				'categories' => array( 'codesigner' ),
 				'demo'       => "{$demo_base}/tabs-classic",
 				'keywords'   => array( 'tab', 'tabs', 'content tab', 'menu', 'tabs classic' ),
 			),
 			'tabs-fancy'                     => array(
-				'title'      => __( 'Tabs Fancy', 'codesigner' ),
+				'title'      => 'Tabs Fancy',
 				'icon'       => 'eicon-tabs' . $branding_class,
 				'categories' => array( 'codesigner' ),
 				'demo'       => "{$demo_base}/tabs-fancy",
 				'keywords'   => array( 'tab', 'tabs', 'content tab', 'menu', 'tabs fancy' ),
 			),
 			'tabs-beauty'                    => array(
-				'title'      => __( 'Tabs Beauty', 'codesigner' ),
+				'title'      => 'Tabs Beauty',
 				'icon'       => 'eicon-tabs' . $branding_class,
 				'categories' => array( 'codesigner' ),
 				'demo'       => "{$demo_base}/tabs-beauty",
 				'keywords'   => array( 'tab', 'tabs', 'content tab', 'menu', 'tabs beauty' ),
 			),
 			'gradient-button'                => array(
-				'title'      => __( 'Gradient Button', 'codesigner' ),
+				'title'      => 'Gradient Button',
 				'icon'       => 'eicon-button' . $branding_class,
 				'categories' => array( 'codesigner' ),
 				'demo'       => "{$demo_base}/gradient-button",
 				'keywords'   => array( 'cart', 'store', 'products', 'tabs-beauty', 'single', 'single-product' ),
 			),
 			'sales-notification'             => array(
-				'title'       => __( 'Sales Notification', 'codesigner' ),
+				'title'       => 'Sales Notification',
 				'icon'        => 'eicon-posts-ticker' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/sales-notification",
@@ -745,7 +745,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'category'                       => array(
-				'title'       => __( 'Shop Categories', 'codesigner' ),
+				'title'       => 'Shop Categories',
 				'icon'        => 'eicon-flow' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/shop-categories",
@@ -753,7 +753,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'basic-menu'                     => array(
-				'title'       => __( 'Basic Menu', 'codesigner' ),
+				'title'       => 'Basic Menu',
 				'icon'        => 'eicon-nav-menu' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/basic-menu",
@@ -761,7 +761,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'dynamic-tabs'                   => array(
-				'title'       => __( 'Dynamic Tabs', 'codesigner' ),
+				'title'       => 'Dynamic Tabs',
 				'icon'        => 'eicon-tabs' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}",
@@ -769,7 +769,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			// 'google-review'      => [
-			// 'title'         => __( 'Google Review', 'codesigner' ),
+			// 'title'         => 'Google Review',
 			// 'icon'          => 'eicon-review' . $branding_class,
 			// 'categories'    => [ 'codesigner' ],
 			// 'demo'          => "{$demo_base}/google-review",
@@ -777,7 +777,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			// 'pro_feature'   => true,
 			// ],
 			'menu-cart'                      => array(
-				'title'       => __( 'Menu Cart', 'codesigner' ),
+				'title'       => 'Menu Cart',
 				'icon'        => 'eicon-cart' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/menu-cart",
@@ -785,7 +785,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'product-comparison'             => array(
-				'title'       => __( 'Product Comparison', 'codesigner' ),
+				'title'       => 'Product Comparison',
 				'icon'        => 'eicon-cart' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/product-comparison",
@@ -793,7 +793,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'product-barcode'                => array(
-				'title'       => __( 'Product Barcode', 'codesigner' ),
+				'title'       => 'Product Barcode',
 				'icon'        => 'eicon-cart' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/product-comparison",
@@ -801,7 +801,7 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'pro_feature' => true,
 			),
 			'image-comparison'               => array(
-				'title'      => __( 'Image Comparison', 'codesigner' ),
+				'title'      => 'Image Comparison',
 				'icon'       => 'eicon-cart' . $branding_class,
 				'categories' => array( 'codesigner' ),
 				'demo'       => "{$demo_base}/product-comparison",
@@ -819,120 +819,120 @@ if ( ! function_exists( 'codesigner_modules' ) ) :
 
 			'email-templates'        => array(
 				'id'    => 'email-templates',
-				'title' => __( 'Email Designer', 'codesigner' ),
-				'desc'  => __( 'This module is a great tool to improve the look and feel of your WooCommerce emails. With this module, you can create WooCommerce emails that are more engaging and more likely to get attention from your users.', 'codesigner' ),
+				'title' => 'Email Designer',
+				'desc'  => 'This module is a great tool to improve the look and feel of your WooCommerce emails. With this module, you can create WooCommerce emails that are more engaging and more likely to get attention from your users.',
 				'class' => 'Email_Templates',
 				'pro'   => true,
 			),
 
 			'invoice-builder'        => array(
 				'id'    => 'invoice-builder',
-				'title' => __( 'Invoice Builder', 'codesigner' ),
-				'desc'  => __( 'The WooCommerce Invoice Builder module allows you to create custom invoices for your WooCommerce store easily. You can also change the design of your invoices. It provides you with the option to add styles and information to make the invoice more personalized.', 'codesigner' ),
+				'title' => 'Invoice Builder',
+				'desc'  => 'The WooCommerce Invoice Builder module allows you to create custom invoices for your WooCommerce store easily. You can also change the design of your invoices. It provides you with the option to add styles and information to make the invoice more personalized.',
 				'class' => 'Invoice_Builder',
 				'pro'   => true,
 			),
 
 			'product-brands'         => array(
 				'id'    => 'product-brands',
-				'title' => __( 'Product Brands', 'codesigner' ),
-				'desc'  => __( 'Let the buyers get the sense of the brand with CoDesigner’s Product Brand Module. This module seamlessly categorizes and showcases your products along with their brand names making it easy for shoppers to discover what they love.', 'codesigner' ),
+				'title' => 'Product Brands',
+				'desc'  => 'Let the buyers get the sense of the brand with CoDesigner’s Product Brand Module. This module seamlessly categorizes and showcases your products along with their brand names making it easy for shoppers to discover what they love.',
 				'class' => 'Product_Brands',
 				'pro'   => false,
 			),
 
 			'cart-button-text'       => array(
 				'id'    => 'cart-button-text',
-				'title' => __( 'Add To Cart Text', 'codesigner' ),
-				'desc'  => __( 'Tired of the generic "Add to Cart"? With CoDesginer, your "Add to Cart" button becomes a powerful conversion tool. Personalize the add to cart button for your WooCommerce shop and single product page with custom text.', 'codesigner' ),
+				'title' => 'Add To Cart Text',
+				'desc'  => 'Tired of the generic "Add to Cart"? With CoDesginer, your "Add to Cart" button becomes a powerful conversion tool. Personalize the add to cart button for your WooCommerce shop and single product page with custom text.',
 				'class' => 'Add_To_Cart_Text',
 				'pro'   => false,
 			),
 
 			'checkout-builder'       => array(
 				'id'    => 'checkout-builder',
-				'title' => __( 'Checkout Builder', 'codesigner' ),
-				'desc'  => __( 'Offer the best user experience by customizing the WooCommerce checkout page using CoDesigner. And, break down the checkout page to make it more manageable with the multistep checkout template.', 'codesigner' ),
+				'title' => 'Checkout Builder',
+				'desc'  => 'Offer the best user experience by customizing the WooCommerce checkout page using CoDesigner. And, break down the checkout page to make it more manageable with the multistep checkout template.',
 				'class' => 'Checkout_Builder',
 				'pro'   => true,
 			),
 
 			'skip-cart-page'         => array(
 				'id'    => 'skip-cart-page',
-				'title' => __( 'Skip Cart Page', 'codesigner' ),
-				'desc'  => __( 'Let your buyers skip the WooCommerce cart page and seamlessly redirect them straight to checkout for a faster, frictionless buying experience. This powerful module streamlines the customer journey by encouraging purchases and maximizing conversions.', 'codesigner' ),
+				'title' => 'Skip Cart Page',
+				'desc'  => 'Let your buyers skip the WooCommerce cart page and seamlessly redirect them straight to checkout for a faster, frictionless buying experience. This powerful module streamlines the customer journey by encouraging purchases and maximizing conversions.',
 				'class' => 'Skip_Cart_Page',
 				'pro'   => false,
 			),
 
 			'variation-swatches'     => array(
 				'id'    => 'variation-swatches',
-				'title' => __( 'Variation Swatches', 'codesigner' ),
-				'desc'  => __( 'CoDesigner variation swatches ensure a refreshing user experience. This module provides an alternative to the default WooCommerce dropdown fields. The variations on your products can be their actual colors, images, labels, etc.', 'codesigner' ),
+				'title' => 'Variation Swatches',
+				'desc'  => 'CoDesigner variation swatches ensure a refreshing user experience. This module provides an alternative to the default WooCommerce dropdown fields. The variations on your products can be their actual colors, images, labels, etc.',
 				'class' => 'variation_swatches',
 				'pro'   => false,
 			),
 
 			'flash-sale'             => array(
 				'id'    => 'flash-sale',
-				'title' => __( 'Flash Sale', 'codesigner' ),
-				'desc'  => __( 'The flash sale module helps to create buzz and anticipation. You can engage customers to purchase products at a discount rate by showing a Flash Sale timer. This creates a sense of urgency among the shoppers to purchase products as fast as possible.', 'codesigner' ),
+				'title' => 'Flash Sale',
+				'desc'  => 'The flash sale module helps to create buzz and anticipation. You can engage customers to purchase products at a discount rate by showing a Flash Sale timer. This creates a sense of urgency among the shoppers to purchase products as fast as possible.',
 				'class' => 'Flash_Sale',
 				'pro'   => false,
 			),
 
 			'partial-payment'        => array(
 				'id'    => 'partial-payment',
-				'title' => __( 'Partial Payment', 'codesigner' ),
-				'desc'  => __( 'CoDesginer\'s "Partial Payment" module helps your customers break down the costs. This makes the larger purchases more attainable. You will be able to get more conversions by providing users this flexibility to make partial payments on your WooCommerce store.', 'codesigner' ),
+				'title' => 'Partial Payment',
+				'desc'  => 'CoDesginer\'s "Partial Payment" module helps your customers break down the costs. This makes the larger purchases more attainable. You will be able to get more conversions by providing users this flexibility to make partial payments on your WooCommerce store.',
 				'class' => 'Partial_Payment',
 				'pro'   => false,
 			),
 
 			'backorder'              => array(
 				'id'    => 'backorder',
-				'title' => __( 'Backorder', 'codesigner' ),
-				'desc'  => __( 'This module lets you confidently sell products even when out of stock. Add an extra capability to set a backorder availability date for your WooCommerce products. Accept orders now, deliver later, and keep conversions going.', 'codesigner' ),
+				'title' => 'Backorder',
+				'desc'  => 'This module lets you confidently sell products even when out of stock. Add an extra capability to set a backorder availability date for your WooCommerce products. Accept orders now, deliver later, and keep conversions going.',
 				'class' => 'Backorder',
 				'pro'   => false,
 			),
 
 			'preorder'               => array(
 				'id'    => 'preorder',
-				'title' => __( 'Preorder', 'codesigner' ),
-				'desc'  => __( 'With this module, you can create buzz and secure sales before products even launch. Set the pre-order availability date and specific release dates for your products in WooCommerce product management dashboard. Build anticipation, drive engagement, and manage releases effortlessly.', 'codesigner' ),
+				'title' => 'Preorder',
+				'desc'  => 'With this module, you can create buzz and secure sales before products even launch. Set the pre-order availability date and specific release dates for your products in WooCommerce product management dashboard. Build anticipation, drive engagement, and manage releases effortlessly.',
 				'class' => 'Preorder',
 				'pro'   => false,
 			),
 
 			'bulk-purchase-discount' => array(
 				'id'    => 'bulk-purchase-discount',
-				'title' => __( 'Bulk Purchase Discount', 'codesigner' ),
-				'desc'  => __( 'Turn casual shoppers into bulk buyers with CoDesginer\'s "Bulk Purchase Discount" module. Set compelling tiered discounts that make it irresistible to stock up. Great technique for driving conversions and exceeding expectations.', 'codesigner' ),
+				'title' => 'Bulk Purchase Discount',
+				'desc'  => 'Turn casual shoppers into bulk buyers with CoDesginer\'s "Bulk Purchase Discount" module. Set compelling tiered discounts that make it irresistible to stock up. Great technique for driving conversions and exceeding expectations.',
 				'class' => 'Bulk_Purchase_Discount',
 				'pro'   => false,
 			),
 
 			'single-product-ajax'    => array(
 				'id'    => 'single-product-ajax',
-				'title' => __( 'Single Product Ajax Add To Cart', 'codesigner' ),
-				'desc'  => __( 'CoDesginer\'s "Single Product Ajax Add To Cart" module creates a frictionless shopping experience. Let users instantly add their products to the cart without any page reload. This helps to guide customers smoothly towards checkout and drive sales.', 'codesigner' ),
+				'title' => 'Single Product Ajax Add To Cart',
+				'desc'  => 'CoDesginer\'s "Single Product Ajax Add To Cart" module creates a frictionless shopping experience. Let users instantly add their products to the cart without any page reload. This helps to guide customers smoothly towards checkout and drive sales.',
 				'class' => 'Single_Product_Ajax',
 				'pro'   => false,
 			),
 
 			'badges'                 => array(
 				'id'    => 'badges',
-				'title' => __( 'Badges', 'codesigner' ),
-				'desc'  => __( 'Highlight your most popular items, new releases, or unique offerings with eye-catching badges that instantly capture attention. Using this module you can use images, icons, or text as product badges to highlight a product on a shop page.', 'codesigner' ),
+				'title' => 'Badges',
+				'desc'  => 'Highlight your most popular items, new releases, or unique offerings with eye-catching badges that instantly capture attention. Using this module you can use images, icons, or text as product badges to highlight a product on a shop page.',
 				'class' => 'Badges',
 				'pro'   => false,
 			),
 
 			'currency-switcher'      => array(
 				'id'    => 'currency-switcher',
-				'title' => __( 'Currency Switcher', 'codesigner' ),
-				'desc'  => __( 'Show customers you value their preferences with CoDesigner’s "Currency Switcher". Let customers view prices in their familiar currencies on all WooCommerce pages including the shop, cart, product, and checkout page. This helps to create a seamless shopping experience that drives international sales.', 'codesigner' ),
+				'title' => 'Currency Switcher',
+				'desc'  => 'Show customers you value their preferences with CoDesigner’s "Currency Switcher". Let customers view prices in their familiar currencies on all WooCommerce pages including the shop, cart, product, and checkout page. This helps to create a seamless shopping experience that drives international sales.',
 				'class' => 'Currency_Switcher',
 				'pro'   => false,
 			),

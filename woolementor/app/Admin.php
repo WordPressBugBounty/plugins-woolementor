@@ -486,7 +486,7 @@ class Admin extends Base {
 		if( defined( 'CODESIGNER_PRO' ) ) return;
 
 		
-		$banners = array( 'purple-left-party', 'bullet-points' );
+		$banners = array( 'purple-left-party' );
 		$banner = $banners[ array_rand( $banners ) ];
 
 		printf(
