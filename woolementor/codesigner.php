@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.8.7
+ * Version: 4.8.8
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -126,12 +126,16 @@ final class Plugin {
 		$this->plugin['basename']   = plugin_basename( CODESIGNER );
 		$this->plugin['file']       = CODESIGNER;
 		$this->plugin['TextDomain'] = 'codesigner';
-		$this->plugin['Version']    = '4.8.7';
+		$this->plugin['Version']    = '4.8.8';
 		$this->plugin['Name']       = 'CoDesigner';
 		$this->plugin['server']     = apply_filters( 'codesigner_server', 'https://my.pluggable.io' );
 		$this->plugin['doc_id']     = 1960;
 		$this->plugin['icon']       = CODESIGNER_ASSETS . '/img/icon-128.png';
 		$this->plugin['depends']    = array();
+
+		$this->plugin['hash_deactivator'] = 'a8626827-be17-472e-a95c-da161a91c2df';
+		$this->plugin['hash_survey']      = 'c399f155-b365-49b9-ac8c-158083f26113';
+		$this->plugin['hash_wizard']      = '86841ad9-3f30-4ca3-bdc4-ac74b53f4bf2';
 	}
 
 	/**
