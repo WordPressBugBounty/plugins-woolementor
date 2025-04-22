@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => 'v4.9',
-        'version' => '4.9.0.0',
-        'reference' => '61ebda8c9c56d52288333035474093fcccbd1d0c',
+        'pretty_version' => 'v4.10',
+        'version' => '4.10.0.0',
+        'reference' => 'ddcddc05d3201aee97c3331d67a333104dbd4fda',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'v4.9',
-            'version' => '4.9.0.0',
-            'reference' => '61ebda8c9c56d52288333035474093fcccbd1d0c',
+            'pretty_version' => 'v4.10',
+            'version' => '4.10.0.0',
+            'reference' => 'ddcddc05d3201aee97c3331d67a333104dbd4fda',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -78,7 +78,7 @@
         'pluggable/marketing' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'c18e78804f0c143e66f1df2d075b68a31c846799',
+            'reference' => 'f07968516a9e47cb830ffc315e4c8c6be078dfef',
             'type' => 'library',
             'install_path' => __DIR__ . '/../pluggable/marketing',
             'aliases' => array(

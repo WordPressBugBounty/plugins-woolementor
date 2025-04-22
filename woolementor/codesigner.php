@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.9
+ * Version: 4.10
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -126,7 +126,7 @@ final class Plugin {
 		$this->plugin['basename']   = plugin_basename( CODESIGNER );
 		$this->plugin['file']       = CODESIGNER;
 		$this->plugin['TextDomain'] = 'codesigner';
-		$this->plugin['Version']    = '4.9';
+		$this->plugin['Version']    = '4.10';
 		$this->plugin['Name']       = 'CoDesigner';
 		$this->plugin['server']     = apply_filters( 'codesigner_server', 'https://my.pluggable.io' );
 		$this->plugin['doc_id']     = 1960;
@@ -171,9 +171,9 @@ final class Plugin {
 			$admin->filter( 'plugin_row_meta', 'plugin_row_meta', 10, 2 );
 			$admin->action( 'admin_footer_text', 'footer_text' );
 			$admin->action( 'after_setup_theme', 'setup' );
-			$admin->action( 'plugins_loaded', 'settings_page_redirect' );
+			$admin->action( 'init', 'settings_page_redirect' );
 			$admin->filter( 'http_request_host_is_external', '__return_true', 10, 3 );
-			$admin->action( 'plugins_loaded', 'admin_notices' );
+			$admin->action( 'admin_notices', 'admin_notices' );
 			$admin->action( 'cx-plugin_after-nav-items', 'setting_navs_add_item' );
 			$admin->action( 'cx-settings-heading', 'settings_heading' );
 			$admin->filter( 'admin_body_class', 'admin_body_class' );
@@ -185,7 +185,7 @@ final class Plugin {
 			 * Settings related hooks
 			 */
 			$settings = new App\Settings( $this->plugin );
-			$settings->action( 'plugins_loaded', 'init_menu', 11 );
+			$settings->action( 'init', 'init_menu', 11 );
 			$settings->action( 'cx-settings-saved', 'reset', 10, 2 );
 			$settings->action( 'admin_init', 'redirect_specific_admin_page' );
 			$settings->action( "{$this->plugin['TextDomain']}_upgraded", 'migrate_settings', 10, 2 );
@@ -288,7 +288,7 @@ final class Plugin {
 		$wizard = new App\Wizard( $this->plugin );
 		$wizard->action( 'admin_print_styles', 'enqueue_styles' );
 		$wizard->action( 'admin_print_scripts', 'enqueue_scripts' );
-		$wizard->action( 'plugins_loaded', 'render' );
+		$wizard->action( 'init', 'render' );
 		$wizard->filter( "plugin_action_links_{$this->plugin['basename']}", 'action_links' );
 
 		/**

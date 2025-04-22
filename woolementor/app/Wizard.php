@@ -33,6 +33,8 @@ class Wizard extends Base {
 
 	public $version;
 
+	public $admin_url;
+
 	public $assets;
 
 	/**
