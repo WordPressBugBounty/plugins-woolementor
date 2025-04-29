@@ -10,13 +10,13 @@
 	font-weight: 700;
 }
 .codesigner-dismissible-notice-content {
-	display: flex;
-	align-items: center;
-	gap: 80px;
-	margin: 0px auto;
-	gap: 170px;
-	padding: 5px;
-	width: 86%;
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    margin: 5px auto;
+    gap: 170px;
+    padding: 5px;
+    width: 89%;
 }
 .codesigner-countdown {
 	margin-left: 100px;

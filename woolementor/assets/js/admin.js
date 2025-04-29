@@ -303,3 +303,40 @@ jQuery(function ($) {
         });
     });
 });
+
+(function() {
+    var secEl = document.getElementById("cd-sec");
+    var minEl = document.getElementById("cd-min");
+    var hrsEl = document.getElementById("cd-hrs");
+    var dayEl = document.getElementById("cd-day");
+
+    if (!secEl || !minEl || !hrsEl || !dayEl) {
+        return;
+    }
+
+    var expiryTimestamp = new Date("2025-05-05T23:59:00").getTime();
+
+    var x = setInterval(function() {
+        var now = new Date().getTime();
+        var distance = expiryTimestamp - now;
+
+        if (distance < 0) {
+            clearInterval(x);
+            secEl.innerHTML = minEl.innerHTML = hrsEl.innerHTML = dayEl.innerHTML = "00";
+            return;
+        }
+
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        // Add leading zeros
+        dayEl.innerHTML = days < 10 ? "0" + days : days;
+        hrsEl.innerHTML = hours < 10 ? "0" + hours : hours;
+        minEl.innerHTML = minutes < 10 ? "0" + minutes : minutes;
+        secEl.innerHTML = seconds < 10 ? "0" + seconds : seconds;
+    }, 1000);
+})();
+
+

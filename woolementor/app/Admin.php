@@ -199,28 +199,58 @@ class Admin extends Base {
 	}
 
 	public function admin_notices() {
-		$notice_id	= 'codesigner-easycommerce_campain';
-		$url        = 'https://easycommerce.dev/?utm_source=wp+dashboard&utm_medium=codesigner+notice&utm_campaign=introducing+easycommerce';
-		$image_path = CODESIGNER_ASSETS . '/img/promo/co-logo.png';
+		if ( ! defined( 'CODESIGNER_PRO' ) ) {
+			$notice_id	= 'codesigner-easycommerce_campain';
+			$url        = 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=spring+2025';
+			$logo_url 	= CODESIGNER_ASSETS . '/img/sale-banner/logo.png';
+			$discount_img_url = CODESIGNER_ASSETS . '/img/sale-banner/discount.png';
 
-		$ec_notice = new Notice( $notice_id );
+			if( get_option( 'codesigner-easycommerce_campain_dismissed' ) !== false ) {
+				return;
+			}
 
-		$ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
-		$ec_notice->set_expiry( 3 * DAY_IN_SECONDS ); // Don't show after 3 days
+			$ec_notice = new Notice( $notice_id );
+			$expiry_timestamp = strtotime( '2025-05-05 23:59:00' );
+			// $ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
+			$ec_notice->set_expiry( $expiry_timestamp );
 
-		$message = '
-		        <div class="codesigner-dismissible-notice-content">
-					<img src="' . esc_url( $image_path ) . '" alt="CoDesigner" class="codesigner-notice-image" >
-					<p class="codesigner-notice-title"> Introducing <span>EasyCommerce</span> -  A Revolutionary WordPress Ecommerce Plugin </p>
-		            <div class="button-wrapper">
-		                <a href="' . esc_url( $url ) . '" class="codesigner-dismissible-notice-button" data-id="' . esc_attr( $notice_id ) . '">Check it Out</a>
-		            </div>
-		        </div>
-		';
+			$message = '
+					<div class="codesigner-spring-deals-notice-content">
+						<img src="' . esc_url( $logo_url ) . '" alt="Thumbpress" class="wc-affiliate-notice-image" >
+						<p class="notice-title">Spring Deals in Full Bloom!</p>
+						<img src="' . esc_url( $discount_img_url ) . '" alt="Spring Deals" class="wc-affiliate-notice-image" >
+						<div class="tp-timer-wrapper">
+							<div class="tp-timer">
+								<div class="tp-count">
+									<span id="days"></span>
+									<label>DAYS</label>
+								</div>
+			
+								<div class="tp-count">
+									<span id="hours"></span>
+									<label>HRS</label>
+								</div>
+								<div class="tp-count">
+									<span id="minutes"></span>
+									<label>MINS</label>
+								</div>
+								<div class="tp-count">
+									<span id="seconds"></span>
+									<label>SEC</label>
+								</div>
+							</div>
+						</div>
+						<a href="' . esc_url( $url ) . '" class="notice-cta-button" data-id="' . esc_attr( $notice_id ) . '" target="_blank">
+						' . __( 'Grab Now', 'wc-affiliate' ) . '
+						</a>
+					</div>
+				';
 
-		$ec_notice->set_message( $message );
-		$ec_notice->set_screens( array( 'dashboard', 'toplevel_page_codesigner' ) );
-		$ec_notice->render();
+			$ec_notice->set_message( $message );
+			$ec_notice->set_screens( array( 'dashboard', 'toplevel_page_codesigner' ) );
+			$ec_notice->render();
+		}
+		
 
 		if( get_option( 'codesigner_setup_done' ) != 1 ) {
 			/**

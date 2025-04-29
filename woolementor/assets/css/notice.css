@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 /* In 2024 New Banner Release for specific time period  */
 .cx-free-banner-img {
 	margin-top: 10px;
 	width: 102%;
 }
 .notice-info.is-dismissible {
-    /* backdrop-filter: blur(22.899999618530273px) */
-    background: #1255FF1A;
-
-
+    background: url(../img/promo/co-notice.png) no-repeat;
+    /* background: #1255FF1A; */
+    height: 61px;
+    background-size: contain;
 }
 .notice-dismiss {
 	/* /* padding: 20px; */
@@ -20,6 +22,37 @@
     background-size: cover; */
     /* width: 100%;
     height: 20px; */
+}
+.codesigner-dismissible-notice-content {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 14px;
+}
+.codesigner-countdown-timer {
+    /* display: flex; */
+    text-align: center;
+    font-weight: bold;
+}
+#codesigner-countdown {
+    justify-content: center;
+    gap: 15px;
+    display: flex;
+    align-items: center;
+}
+#codesigner-countdown .codesigner-countdown-item {
+    width: 48px;
+    height: 42px;
+    border-width: 1px;
+    border-style: solid;
+    border-image-source: linear-gradient(180deg, #FFCEAE 0%, rgba(255, 255, 255, 0) 100%);
+    border-image-slice: 1;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+    background-color: white;
 }
 
 .codesigner-notice-title{
@@ -77,3 +110,96 @@
 }
 
 
+/* Sale Notice */
+.codesigner-spring-deals-notice-content {
+	background: linear-gradient(90deg, #FFF4DB 0%, #FFF0E6 49%, #FFF4DB 100%);
+	padding: 3px;
+	border: none;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.codesigner-spring-deals-notice-content .notice-title {
+	font-family: 'Inter', sans-serif;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 30px;
+	letter-spacing: 0%;
+	text-align: center;
+	color: #411900;
+}
+
+.codesigner-spring-deals-notice-content .notice-cta-button {
+	font-size: 18px;
+    font-weight: 500;
+    line-height: 20px;
+    color: #000000;
+    background-color: #FF873A;
+    padding: 7px 25px;
+    border-radius: 60px;
+    cursor: pointer;
+    border: 2px solid #FF873A;
+    box-shadow: 0px 5px 0px 0px #C7682B;
+	text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.codesigner-spring-deals-notice-content .tp-timer-wrapper {
+    display: flex;
+    gap: 70px;
+}
+
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-timer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-count {
+	width: 48px;
+    height: 42px;
+	background-color: #fff;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+}
+
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-count::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	padding: 1px;
+	border-radius: 5px;
+	background: linear-gradient(180deg, #FFCEAE 0%, rgba(255, 255, 255, 0) 100%);
+	-webkit-mask:
+		linear-gradient(#fff 0 0) content-box, 
+		linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask-composite: exclude;
+	pointer-events: none;
+}
+
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-count span {
+	font-size: 18px;
+    font-weight: 700;
+    line-height: 21px;
+    color: #411900;
+}
+
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-count label {
+	font-size: 10px;
+    font-weight: 400;
+    line-height: 12px;
+    color: #411900;
+}
+.notice[data-notice-id="codesigner-easycommerce_campain"] {
+    padding: 0;
+    height: 100%;
+    padding-right: 0 !important;
+    border: none;
+}

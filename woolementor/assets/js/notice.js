@@ -2,34 +2,40 @@ jQuery(function ($) {
 	if (typeof CODESIGNER_NOTICE == "undefined") {
 		return;
 	}
-});
-document.addEventListener("DOMContentLoaded", function () {
-	var countdownElements = document.querySelectorAll(".codesigner-countdown");
 
-	countdownElements.forEach(function (element) {
-		var endTime = new Date(
-			element.getAttribute("data-countdown-end")
-		).getTime();
-		var timer = setInterval(function () {
+	$(document).ready(function () {
+		// Set the date we're counting down to
+		var countDownDate = new Date("May 05, 2025 23:59:59").getTime();
+
+		// Update the countdown every 1 second
+		var x = setInterval(function () {
+			// Get today's date and time
 			var now = new Date().getTime();
-			var t = endTime - now;
-			if (t >= 0) {
-				element.querySelector("#days").innerText = Math.floor(
-					t / (1000 * 60 * 60 * 24)
-				);
-				element.querySelector("#hours").innerText = Math.floor(
-					(t % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-				);
-				element.querySelector("#minutes").innerText = Math.floor(
-					(t % (1000 * 60 * 60)) / (1000 * 60)
-				);
-				element.querySelector("#seconds").innerText = Math.floor(
-					(t % (1000 * 60)) / 1000
-				);
-			} else {
-				clearInterval(timer);
-				element.innerHTML = "EXPIRED";
+
+			// Find the distance between now and the countdown date
+			var distance = countDownDate - now;
+
+			// Time calculations for days, hours, minutes, and seconds
+			var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+			var hours = Math.floor(
+				(distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+			);
+			var minutes = Math.floor(
+				(distance % (1000 * 60 * 60)) / (1000 * 60)
+			);
+			var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+			// Output the result in the respective elements
+			$("#days").text(days);
+			$("#hours").text(hours);
+			$("#minutes").text(minutes);
+			$("#seconds").text(seconds);
+
+			// If the countdown is over, write some text
+			if (distance < 0) {
+				clearInterval(x);
+				$("#countdown").html("EXPIRED");
 			}
-		}, 1000);
+		}, 1);
 	});
 });
