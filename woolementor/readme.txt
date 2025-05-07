@@ -3,8 +3,8 @@ Contributors: woolementor, codexpert, mukto90
 Donate link: https://codexpert.io/codesigner/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 5.0
-Tested up to: 6.8
-Stable tag: 4.13
+Tested up to: 6.8.1
+Stable tag: 4.14
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -403,6 +403,11 @@ CoDesigner gets regular updates to ensure compatibility, security, and addition 
 Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/docs/codesigner/?utm_campaign=wporg)
 
 == Changelog ==
+
+= v4.14 - 2025-05-07 =
+* [fix] Fixed add to cart issue for variable products when "Bulk Purchase Discount" was enabled
+* [fix] Fixed conflict with add to cart when both "Skip Cart Page" and "Single Product Ajax Add To Cart" were enabled
+* [fix] Fixed unsupported operand error in "Bulk Purchase Discount" module
 
 = v4.13 - 2025-04-30 =
 * [fix] Error fixed related to the "Add to Cart" widget in a template if preorder module is active

@@ -2,6 +2,7 @@
 namespace Codexpert\CoDesigner\Modules;
 
 use Codexpert\Plugin\Base;
+use Codexpert\CoDesigner\Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -32,6 +33,12 @@ class Single_Product_Ajax extends Base {
 	}
 
 	public function enqueue_scripts() {
+		$priv_val = Helper::get_option( 'codesigner_tools', 'redirect_to_checkout' );
+		$new_val  = Helper::get_option( 'codesigner_modules', 'skip-cart-page' );
+		if ( $priv_val || $new_val ) {
+			return wc_get_checkout_url();
+		}
+
 		global $post;
 		if ( function_exists( 'is_product' ) && is_product() ) {
 			$product = wc_get_product( $post->ID );

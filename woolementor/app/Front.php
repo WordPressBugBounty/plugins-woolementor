@@ -213,7 +213,6 @@ class Front extends Base {
 		if ( $enable != 'on' ) {
 			return $url;
 		}
-
 		return wc_get_checkout_url();
 	}
 
