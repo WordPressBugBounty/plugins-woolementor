@@ -200,39 +200,40 @@ class Admin extends Base {
 
 	public function admin_notices() {
 		if ( ! defined( 'CODESIGNER_PRO' ) ) {
-			$notice_id	= 'codesigner-easycommerce_campain';
-			$url        = 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=spring+2025';
+			$notice_id	= 'codesigner-mothers_day_campaign';
+			$url        = 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=mothersday+2025';
 			$logo_url 	= CODESIGNER_ASSETS . '/img/sale-banner/logo.png';
-			$discount_img_url = CODESIGNER_ASSETS . '/img/sale-banner/discount.png';
 
-			if( get_option( 'codesigner-easycommerce_campain_dismissed' ) !== false ) {
+			if( get_option( 'codesigner-mothers_day_campaign_dismissed' ) !== false ) {
 				return;
 			}
 
 			$ec_notice = new Notice( $notice_id );
-			$expiry_timestamp = strtotime( '2025-05-05 23:59:00' );
+			$expiry_timestamp = strtotime( '2025-05-14 23:59:00' ); 
+			// Start - 7 May, 11:59 PM
+			// End - 13 May, 11:59 PM
 			// $ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
 			$ec_notice->set_expiry( $expiry_timestamp );
 
-			$message = '
-					<div class="codesigner-spring-deals-notice-content">
+			$message = '			
+					<div class="codesigner-mothersday-deals-notice-content">
 						<img src="' . esc_url( $logo_url ) . '" alt="Thumbpress" class="wc-affiliate-notice-image" >
-						<p class="notice-title">Spring Deals in Full Bloom!</p>
-						<img src="' . esc_url( $discount_img_url ) . '" alt="Spring Deals" class="wc-affiliate-notice-image" >
+						<p class="notice-title">' . esc_html__( 'Biggest Ever Mother’s Day  Sale', 'codesigner' ) . '</p>
+						<p class="notice-subtitle"><span> <del>' . esc_html__( 'Yearly', 'codesigner' ) . '</del> ' . esc_html__( 'Lifetime Access to All Plans!', 'codesigner' ) . '</span></p>
 						<div class="tp-timer-wrapper">
 							<div class="tp-timer">
 								<div class="tp-count">
 									<span id="days"></span>
-									<label>DAYS</label>
+									<label>DAY</label>
 								</div>
 			
 								<div class="tp-count">
-									<span id="hours"></span>
-									<label>HRS</label>
+									<span id="minutes"></span>
+									<label>MIN</label>
 								</div>
 								<div class="tp-count">
-									<span id="minutes"></span>
-									<label>MINS</label>
+									<span id="hours"></span>
+									<label>HRS</label>
 								</div>
 								<div class="tp-count">
 									<span id="seconds"></span>
@@ -247,7 +248,7 @@ class Admin extends Base {
 				';
 
 			$ec_notice->set_message( $message );
-			$ec_notice->set_screens( array( 'dashboard', 'toplevel_page_codesigner' ) );
+			$ec_notice->set_screens( array( 'dashboard', 'toplevel_page_codesigner','codesigner_page_codesigner-widgets', 'codesigner_page_codesigner-modules', 'codesigner_page_codesigner-templates', 'codesigner_page_codesigner-tools' ) );
 			$ec_notice->render();
 		}
 		
@@ -510,20 +511,5 @@ class Admin extends Base {
 				<?php endif; ?>
 			</header>
 		<?php
-	}
-
-	public function show_easycommerce_promo( $config ) {
-
-		if( defined( 'CODESIGNER_PRO' ) ) return;
-
-		
-		$banners = array( 'purple-left-party' );
-		$banner = $banners[ array_rand( $banners ) ];
-
-		printf(
-			'<div id="easycommerce-promo"><a href="%1$s" target="_blank"><img src="%2$s" /></a></div>',
-			add_query_arg( [ 'utm_source' => 'in-plugin', 'utm_medium' => 'codesigner', 'utm_campaign' => "banner_{$banner}" ], 'https://easycommerce.dev' ),
-			"https://cdn.easycommerce.dev/images/promo/{$banner}.png"
-		);
 	}
 }
