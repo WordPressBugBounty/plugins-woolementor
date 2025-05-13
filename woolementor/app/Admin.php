@@ -215,11 +215,17 @@ class Admin extends Base {
 			// $ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
 			$ec_notice->set_expiry( $expiry_timestamp );
 
+			$allowed_html = [
+				'span' => array(
+					'class' => true
+				)
+			];
+
 			$message = '			
 					<div class="codesigner-mothersday-deals-notice-content">
 						<img src="' . esc_url( $logo_url ) . '" alt="Thumbpress" class="wc-affiliate-notice-image" >
-						<p class="notice-title">' . esc_html__( 'Biggest Ever Mother’s Day  Sale', 'codesigner' ) . '</p>
-						<p class="notice-subtitle"><span> <del>' . esc_html__( 'Yearly', 'codesigner' ) . '</del> ' . esc_html__( 'Lifetime Access to All Plans!', 'codesigner' ) . '</span></p>
+						
+						
 						<div class="tp-timer-wrapper">
 							<div class="tp-timer">
 								<div class="tp-count">
@@ -228,19 +234,25 @@ class Admin extends Base {
 								</div>
 			
 								<div class="tp-count">
-									<span id="minutes"></span>
-									<label>MIN</label>
-								</div>
-								<div class="tp-count">
 									<span id="hours"></span>
 									<label>HRS</label>
 								</div>
+
+								<div class="tp-count">
+									<span id="minutes"></span>
+									<label>MIN</label>
+								</div>
+
 								<div class="tp-count">
 									<span id="seconds"></span>
 									<label>SEC</label>
 								</div>
 							</div>
 						</div>
+
+						<p class="notice-subtitle">' . wp_kses( sprintf( "Last Chance: Mother's Day <span>Lifetime Deal</span> Ending Soon...", 'codesigner' ), $allowed_html ) . '</p>
+
+						
 						<a href="' . esc_url( $url ) . '" class="notice-cta-button" data-id="' . esc_attr( $notice_id ) . '" target="_blank">
 						' . __( 'Grab Now', 'wc-affiliate' ) . '
 						</a>
