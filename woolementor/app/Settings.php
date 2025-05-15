@@ -333,7 +333,7 @@ class Settings extends Base {
 			$pro_settings = array(
 				'id'     => "{$this->slug}-get-pro",
 				'parent' => $this->slug,
-				'label'  => __( ' <span style="font-weight: bold"> <del>Yearly</del> Lifetime Access at Up to 80% OFF! </span>', 'codesigner' ),
+				'label'  => __( ' <span style="font-weight: bold"> Upgrade Today & Save Up to 70%! </span>', 'codesigner' ),
 				'title'  => '',
 				'header' => '',
 			);
@@ -345,7 +345,7 @@ class Settings extends Base {
 	public function redirect_specific_admin_page() {
 		global $pagenow;
 		if ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && $_GET['page'] == 'codesigner-get-pro' && ! defined( 'CODESIGNER_PRO' ) ) {
-			wp_redirect( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=mothersday+2025' );
+			wp_redirect( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=menu+bar&utm_campaign=spring+2025' );
 			exit;
 		}
 	}
