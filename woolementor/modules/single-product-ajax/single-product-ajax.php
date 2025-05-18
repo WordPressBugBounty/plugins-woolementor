@@ -35,7 +35,7 @@ class Single_Product_Ajax extends Base {
 	public function enqueue_scripts() {
 		$priv_val = Helper::get_option( 'codesigner_tools', 'redirect_to_checkout' );
 		$new_val  = Helper::get_option( 'codesigner_modules', 'skip-cart-page' );
-		if ( $priv_val || $new_val ) {
+		if ( ( $priv_val || $new_val ) && function_exists( 'wc_get_checkout_url' ) ) {
 			return wc_get_checkout_url();
 		}
 
