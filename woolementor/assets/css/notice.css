@@ -4,6 +4,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inria+Serif:wght@300;400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sonsie+One&display=swap');
 
 /* In 2024 New Banner Release for specific time period  */
 .cx-free-banner-img {
@@ -116,9 +117,8 @@
 
 
 /* Mothers Day Sale Notice */
-.codesigner-mothersday-deals-notice-content {
-	background: url( '../img/sale-banner/mothersday-discount.png' );
-	padding: 3px 50px;
+.codesigner-spring-deals-notice-content {
+    background: linear-gradient(90deg, #FFF4DB 0%, #FFF0E6 49%, #FFF4DB 100%);
 	border: none;
 	display: flex;
 	align-items: center;
@@ -126,7 +126,7 @@
     height: 60px;
 }
 
-.codesigner-mothersday-deals-notice-content .notice-title {
+.codesigner-spring-deals-notice-content .notice-title {
 	font-family: 'Inria';
 	font-weight: 400;
 	font-size: 24px;
@@ -135,57 +135,62 @@
 	color: #420042;
 }
 
-.codesigner-mothersday-deals-notice-content .notice-subtitle {
-    font-family: 'Inria Serif';
+.codesigner-spring-deals-notice-content .notice-subtitle {
+    font-family: 'Inter';
     font-weight: 700;
-    font-size: 24px;
-    line-height: 100%;
-    color: #420042;
+    font-size: 20px;
+    line-height: 30px;
+    color: #411900;
 }
 
-.codesigner-mothersday-deals-notice-content .notice-subtitle span {
+.codesigner-spring-deals-notice-content .notice-discount {
+    color: #705442;
+    font-size: 16px;
+    line-height: 100%;
+    font-weight: 500;
+    font-family: 'Roboto';
+}
+
+.codesigner-spring-deals-notice-content .notice-discount span {
+    color: #FF5A44;
+    font-size: 40px;
+    line-height: 100%;
+    font-weight: 400;
+    font-family: 'Sonsie One';
+    vertical-align: middle;
+}
+
+.codesigner-spring-deals-notice-content .notice-subtitle span {
     color: #FF1D43;
 }
 
-.codesigner-mothersday-deals-notice-content .notice-cta-button {
-    font-family: 'Roboto';
+.codesigner-spring-deals-notice-content .notice-cta-button {
+    background: #FF873A;
+    padding: 10px 22px;
+    border-radius: 100px;
+    box-shadow: 0px 5px 0px 0px #C7682B;
+    color: #000000;
+    text-decoration: none;
+    font-family: 'Inter';
     font-size: 16px;
     font-weight: 600;
-    line-height: 22px;
-    color: #fff;
-	text-align: center;
-    text-decoration: none;
-	background: linear-gradient(90.21deg, #FF2DA1 0.62%, #2F6AFF 100.27%);
-	transition: background 1s ease-out 0.2s;
-	width: 112px;
-	max-height: 42px;
-	border-radius: 100px;
-	padding: 10px;
-	border: 0;
-	box-shadow: none;
+    line-height: 100%;
+    margin-right: 240px;
 }
 
-.codesigner-mothersday-deals-notice-content .notice-cta-button:hover {
-	background: linear-gradient(270.01deg, #FF2DA1 0.01%, #2F6AFF 99.99%);
-}
-
-.codesigner-mothersday-deals-notice-content .notice-cta-button:focus {
-	background: linear-gradient(270.01deg, rgba(255, 45, 161, 0.7) 0.01%, rgba(47, 106, 255, 0.7) 99.99%);
-}
-
-.codesigner-mothersday-deals-notice-content .tp-timer-wrapper {
-    display: flex;
+.codesigner-spring-deals-notice-content .tp-timer-wrapper {
+    display: none;
     gap: 70px;
 }
 
-.codesigner-mothersday-deals-notice-content .tp-timer-wrapper .tp-timer {
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-timer {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
 
-.codesigner-mothersday-deals-notice-content .tp-timer-wrapper .tp-count {
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-count {
 	width: 50px;
     height: 50px;
 	background-color: #fff;
@@ -197,7 +202,7 @@
 	position: relative;
 }
 
-.codesigner-mothersday-deals-notice-content .tp-timer-wrapper .tp-count::before {
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-count::before {
 	content: '';
 	position: absolute;
 	inset: 0;
@@ -212,7 +217,7 @@
 	pointer-events: none;
 }
 
-.codesigner-mothersday-deals-notice-content .tp-timer-wrapper .tp-count span {
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-count span {
     color: #FF2F63;
     font-family: 'Roboto';
     font-weight: 700;
@@ -221,7 +226,7 @@
     text-align: center;
 }
 
-.codesigner-mothersday-deals-notice-content .tp-timer-wrapper .tp-count label {
+.codesigner-spring-deals-notice-content .tp-timer-wrapper .tp-count label {
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 10px;

@@ -146,6 +146,11 @@ class Bulk_Purchase_Discount extends Base {
 
 	public function add_discount_text() {
 		global $product;
+
+		if ( ! $product instanceof WC_Product ) {
+			return;
+		}
+
 		if ( $product->get_meta( 'cd_bpd_rules' ) ) {
 
 			$rules = $product->get_meta( 'cd_bpd_rules' );

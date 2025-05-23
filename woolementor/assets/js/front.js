@@ -80,4 +80,14 @@ jQuery(function ($) {
             },
         });
     });
+
+    // Add this code to remove the disable attribute issue
+    $('form.variations_form').on('found_variation', function(event, variation) {
+        $('.single_add_to_cart_button').prop('disabled', false).removeClass('disabled');
+    });
+
+    // On reset or invalid variation
+    $('form.variations_form').on('reset_data', function() {
+        $('.single_add_to_cart_button').prop('disabled', true).addClass('disabled');
+    });
 });

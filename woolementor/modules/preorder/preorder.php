@@ -108,6 +108,10 @@ class Preorder extends Base {
 	public function show_preorder_text() {
 		global $product;
 
+		if ( ! $product instanceof WC_Product ) {
+			return;
+		}
+
 		$product       = wc_get_product( $product->get_id() );
 		$show_preorder = Helper::get_option( 'codesigner_preorder', 'show-preorder-text' );
 		$preorder_text = Helper::get_option( 'codesigner_preorder', 'preorder-text', 'Available on Preorder expected availability: %%available_date%%' );

@@ -8,7 +8,7 @@ jQuery(function ($) {
 		$("#adminmenu .toplevel_page_codesigner .wp-submenu-wrap li a[href$='admin.php?page=codesigner-get-pro']").css({"background-color":"#ff6640","font-size":"12px"});
 
 		// Set the date we're counting down to
-		var countDownDate = new Date("May 14, 2025 23:59:59").getTime();
+		var countDownDate = new Date("May 30, 2025 23:59:59").getTime();
 
 		// Update the countdown every 1 second
 		var x = setInterval(function () {

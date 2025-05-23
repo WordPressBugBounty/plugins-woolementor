@@ -201,7 +201,7 @@ class Admin extends Base {
 	public function admin_notices() {
 		if ( ! defined( 'CODESIGNER_PRO' ) ) {
 			$notice_id	= 'codesigner-mothers_day_campaign';
-			$url        = 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=mothersday+2025';
+			$url        = 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=spring+2025';
 			$logo_url 	= CODESIGNER_ASSETS . '/img/sale-banner/logo.png';
 
 			if( get_option( 'codesigner-mothers_day_campaign_dismissed' ) !== false ) {
@@ -209,7 +209,7 @@ class Admin extends Base {
 			}
 
 			$ec_notice = new Notice( $notice_id );
-			$expiry_timestamp = strtotime( '2025-05-14 23:59:00' ); 
+			$expiry_timestamp = strtotime( '2025-05-30 23:59:00' ); 
 			// Start - 7 May, 11:59 PM
 			// End - 13 May, 11:59 PM
 			// $ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
@@ -221,8 +221,9 @@ class Admin extends Base {
 				)
 			];
 
+			$percantage = '70%';
 			$message = '			
-					<div class="codesigner-mothersday-deals-notice-content">
+					<div class="codesigner-spring-deals-notice-content">
 						<img src="' . esc_url( $logo_url ) . '" alt="Thumbpress" class="wc-affiliate-notice-image" >
 						
 						
@@ -250,11 +251,13 @@ class Admin extends Base {
 							</div>
 						</div>
 
-						<p class="notice-subtitle">' . wp_kses( sprintf( "Last Chance: Mother's Day <span>Lifetime Deal</span> Ending Soon...", 'codesigner' ), $allowed_html ) . '</p>
+						<p class="notice-subtitle">' . wp_kses( sprintf( "Spring into Mega Savings with CoDesigner Pro", 'codesigner' ), $allowed_html ) . '</p>
+
+						<p class="notice-discount">' . wp_kses( sprintf( __("Up to <span>%s</span> OFF", 'codesigner'), $percantage ), $allowed_html ) . '</p>
 
 						
 						<a href="' . esc_url( $url ) . '" class="notice-cta-button" data-id="' . esc_attr( $notice_id ) . '" target="_blank">
-						' . __( 'Grab Now', 'wc-affiliate' ) . '
+						' . __( 'Save Now!', 'wc-affiliate' ) . '
 						</a>
 					</div>
 				';
