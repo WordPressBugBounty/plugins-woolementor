@@ -200,11 +200,11 @@ class Admin extends Base {
 
 	public function admin_notices() {
 		if ( ! defined( 'CODESIGNER_PRO' ) ) {
-			$notice_id	= 'codesigner-mothers_day_campaign';
+			$notice_id	= 'codesigner-spring_deal_campaign-5-30';
 			$url        = 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=spring+2025';
 			$logo_url 	= CODESIGNER_ASSETS . '/img/sale-banner/logo.png';
 
-			if( get_option( 'codesigner-mothers_day_campaign_dismissed' ) !== false ) {
+			if( get_option( 'codesigner-spring_deal_campaign-5-30_dismissed' ) !== false ) {
 				return;
 			}
 

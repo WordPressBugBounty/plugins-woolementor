@@ -4,7 +4,7 @@ Donate link: https://codexpert.io/codesigner/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 5.0
 Tested up to: 6.8.1
-Stable tag: 4.20
+Stable tag: 4.21
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -404,7 +404,10 @@ Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/
 
 == Changelog ==
 
-= v4.20 - 2025-05-23 =
+= v4.21 - 2025-05-25 =
+- [fix] Security issues fixed
+
+= v4.20 - 2025-05-22 =
 - [fix] - Make add to cart button enabled from disabled in single codesigner page template
 
 = v4.19 - 2025-05-18 =
