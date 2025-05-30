@@ -501,15 +501,15 @@ class Admin extends Base {
 			<header class="cd-started-page-header">
 				<div class="cd-logo-and-tabs">
 					<!-- logo here -->
-					<div class="cd-logo"><img src="<?php echo $logo; ?>" /><span><?php esc_html_e('CoDesigner', 'codesigner' ) ?></span></div>
+					<div class="cd-logo"><img src="<?php echo esc_url( $logo ); ?>" /><span><?php esc_html_e('CoDesigner', 'codesigner' ) ?></span></div>
 					<!-- tab Item -->
 					<ul>
 						<?php 
 							foreach ( $tabs as $tab ) {
 								printf( '<li class="%s"><a href="%s">%s</a></li>', 
 								$current_page == $tab['id'] ? 'active-tab' : '',
-								add_query_arg( 'page', $tab['id'], admin_url( 'admin.php' ) ),
-								$tab['label'] );
+								esc_url( add_query_arg( 'page', $tab['id'], admin_url( 'admin.php' ) ) ),
+								esc_html( $tab['label'] ) );
 							}
 						?>
 					</ul>
@@ -517,7 +517,7 @@ class Admin extends Base {
 
 				<?php if( ! defined( 'CODESIGNER_PRO' ) ) : ?>
 					<!-- Upgraded button -->
-					<a class="cd-upgraded-btn" href="https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro"> <img src="<?php echo $banner; ?>" alt=""> Get Pro Now</a>
+					<a class="cd-upgraded-btn" href="https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro"> <img src="<?php echo esc_url( $banner ); ?>" alt=""> <?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?></a>
 				<?php else: ?>
 					<div class="cd-btn-wrapper">
 						<a href="https://help.codexpert.io/docs/codesigner" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>

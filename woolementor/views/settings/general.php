@@ -77,7 +77,8 @@
 			<!-- Hero section -->
 			<section class="cd-hero-section-wrapper">
 				<div class="cd-hero-content-section">
-					<span><?php printf( esc_html__( 'Hello, %1$s', 'codesigner' ), get_userdata( get_current_user_id() )->display_name ); ?></span>
+					<span><?php printf( esc_html__( 'Hello, %1$s', 'codesigner' ), esc_html( get_userdata( get_current_user_id() )->display_name ) ); ?></span>
+
 					<h1><?php esc_html_e( 'Welcome to CoDesigner', 'codesigner' ); ?> 🥳</h1>
 					<p><?php esc_html_e( 'Take your ecommerce store to the next level with CoDesigner. Add, customize, and enhance your WooCommerce store’s appearance and functionality to drive more sales and revenues.', 'codesigner' ); ?></p>
 					<div class="cd-btn-wrapper">
@@ -133,7 +134,7 @@
 									</div>
 									<div class="cd-recommeded-item-content">
 										<p><?php esc_html_e( $recommeded_plugin['desc'] ); ?></p>
-										<a href="<?php echo esc_url( $recommeded_plugin['url'] ); ?>">Install Now</a>
+										<a href="<?php echo esc_url( $recommeded_plugin['url'] ); ?>"><?php esc_html_e( 'Install Now', 'codesigner' ); ?></a>
 									</div>
 								</div>
 							<?php
@@ -157,7 +158,7 @@
 						'<strong>130+</strong> Section Templates'
 					];
 					foreach ( $sidebar_lists as $list ) {
-						printf( '<li><img src="%1$s" alt="%2$s">%3$s</li>', $check, 'check', $list );
+						printf( '<li><img src="%1$s" alt="%2$s">%3$s</li>', esc_html( $check ), 'check', esc_html( $list ) );
 					}
 				?>
 			</ul>

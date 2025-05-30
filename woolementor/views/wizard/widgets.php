@@ -61,6 +61,30 @@ foreach ( $widgets as $id => $widget ) {
 				__( 'View Demo', 'codesigner' ),
 			);
 
+			$allowed_html_button = [
+				'span' => [
+					'class' => []
+				],
+				'label' => [
+					'class' => []
+				],
+				'a' => [
+					'href' => [],
+					'title' => [],
+					'target' => [],
+				],
+				'input' => [
+					'type' => [],
+					'class' => [],
+					'id' => [],
+					'name' => [],
+					'checked' => []
+				],
+				'i' => [
+					'class' => []
+				],
+			];
+
 			$_button = "
 			{$pro_html}
 			<label class='wl-toggle-switch'>
@@ -87,7 +111,7 @@ foreach ( $widgets as $id => $widget ) {
 			?>
 				<div id='wl-<?php echo esc_attr( $id ); ?>' class='wl-widget <?php echo esc_attr( $_class ); ?> <?php echo esc_attr( $_active ); ?>' data-keywords='<?php echo esc_attr( $keywords ); ?>'>
 					<label class='wl-widget-title' for='codesigner-checkbox-{$id}'><?php echo esc_html( $title ); ?></label>
-					<?php echo $_button; ?>
+					<?php echo wp_kses( $_button, $allowed_html_button ); ?>
 				</div>
 			<?php
 		}

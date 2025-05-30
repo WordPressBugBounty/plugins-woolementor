@@ -59,10 +59,10 @@ echo wp_kses_post( '' );
 
 <?php
 if( ! defined( 'ELEMENTOR_VERSION' ) ) {
-	printf(
-		'<p>%s</p>',
-		__( 'Please install and activate Elementor to access the Template Library!', 'codesigner' )
-	);
+	$allowed_html = [
+		'p' => []
+	];
+	echo wp_kses( __( '<p>Please install and activate Elementor to access the Template Library!</p>', 'codesigner' ), $allowed_html );
 }
 ?>
 

@@ -1647,7 +1647,7 @@ if ( ! function_exists( 'wcd_price_limit' ) ) :
 	               MAX(CAST(meta_value AS $meta_type)) AS max_price 
 	        FROM $wpdb->postmeta 
 	        WHERE meta_key = %s";
-		$results   = $wpdb->get_row( $wpdb->prepare( $sql, $meta_key ) );
+		$results   = $wpdb->get_row( $wpdb->prepare( $sql, sanitize_key( $meta_key ) ) );
 
 		if ( null === $results ) {
 			return 0;
