@@ -333,7 +333,7 @@ class Settings extends Base {
 			$pro_settings = array(
 				'id'     => "{$this->slug}-get-pro",
 				'parent' => $this->slug,
-				'label'  => __( ' <span style="font-weight: bold"> Upgrade Today & Save Up to 70%! </span>', 'codesigner' ),
+				'label'  => __( ' <span style="font-weight: bold"> Upgrade Today & Save Big (Flat 50% OFF)! </span>', 'codesigner' ),
 				'title'  => '',
 				'header' => '',
 			);
