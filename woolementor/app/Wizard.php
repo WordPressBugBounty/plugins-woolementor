@@ -157,7 +157,7 @@ class Wizard extends Base {
 		$request = isset( $_REQUEST ) ? sanitize_text_field( wp_unslash( $_REQUEST ) ) : null;
 
 		// check if form is submitted
-		if ( isset( $_POST ) && $request['saved'] ) {
+		if ( isset( $_POST ) && ! empty( $request['saved'] ) ) {
 			update_option( $option_name, sanitize_text_field( $_POST ) );
 		}
 	}
