@@ -118,7 +118,7 @@ class Gradient_Button extends Widget_Base {
 		$this->add_control(
 			'gradient_button_icon',
 			array(
-				'label'            => __( 'Icon', 'elementor' ),
+				'label'            => __( 'Icon', 'codesigner' ),
 				'type'             => Controls_Manager::ICONS,
 				'fa4compatibility' => 'icon',
 			)
@@ -127,12 +127,12 @@ class Gradient_Button extends Widget_Base {
 		$this->add_control(
 			'gradient_button_icon_align',
 			array(
-				'label'     => __( 'Icon Position', 'elementor' ),
+				'label'     => __( 'Icon Position', 'codesigner' ),
 				'type'      => Controls_Manager::SELECT,
 				'default'   => 'left',
 				'options'   => array(
-					'left'  => __( 'Before', 'elementor' ),
-					'right' => __( 'After', 'elementor' ),
+					'left'  => __( 'Before', 'codesigner' ),
+					'right' => __( 'After', 'codesigner' ),
 				),
 				'condition' => array(
 					'gradient_button_icon[value]!' => '',

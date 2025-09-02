@@ -47,7 +47,7 @@ class Product_Gallery extends Widget_Base {
 		$this->start_controls_section(
 			'payment_section_title',
 			array(
-				'label' => __( 'Sale', 'codesigner-pro' ),
+				'label' => __( 'Sale', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -80,7 +80,7 @@ class Product_Gallery extends Widget_Base {
 		$this->add_control(
 			'product_gallery_default_styles',
 			array(
-				'label'     => __( 'Display', 'codesigner-pro' ),
+				'label'     => __( 'Display', 'codesigner' ),
 				'type'      => Controls_Manager::HIDDEN,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .wl-product-gallery .woocommerce-product-gallery' => 'width: 100%;',

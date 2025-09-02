@@ -34,7 +34,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'currency_content',
 			array(
-				'label' => __( 'Content', 'codesigner-pro' ),
+				'label' => __( 'Content', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -42,10 +42,10 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_control(
 			'image_show_hide',
 			array(
-				'label'        => __( 'Image Show/Hide', 'codesigner-pro' ),
+				'label'        => __( 'Image Show/Hide', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'codesigner-pro' ),
-				'label_off'    => __( 'Hide', 'codesigner-pro' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -54,10 +54,10 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_control(
 			'title_show_hide',
 			array(
-				'label'        => __( 'Title Show/Hide', 'codesigner-pro' ),
+				'label'        => __( 'Title Show/Hide', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'codesigner-pro' ),
-				'label_off'    => __( 'Hide', 'codesigner-pro' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -71,7 +71,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'currency_style',
 			array(
-				'label' => __( 'Wrapper', 'codesigner-pro' ),
+				'label' => __( 'Wrapper', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -136,7 +136,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'wrapper_width',
 			array(
-				'label'      => __( 'Gap', 'codesigner-pro' ),
+				'label'      => __( 'Gap', 'codesigner' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -163,7 +163,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'           => 'currency_background',
-				'label'          => __( 'Background', 'codesigner-pro' ),
+				'label'          => __( 'Background', 'codesigner' ),
 				'types'          => array( 'classic', 'gradient' ),
 				'selector'       => '.wl {{WRAPPER}} #cd-currency-switcher-warpper',
 				'fields_options' => array(
@@ -177,7 +177,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'border',
-				'label'    => __( 'Border', 'codesigner-pro' ),
+				'label'    => __( 'Border', 'codesigner' ),
 				'selector' => '.wl {{WRAPPER}} #cd-currency-switcher-warpper',
 			)
 		);
@@ -185,7 +185,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'currency_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'codesigner-pro' ),
+				'label'      => __( 'Border Radius', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -199,7 +199,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 			Group_Control_Box_Shadow::get_type(),
 			array(
 				'name'     => 'box_shadow',
-				'label'    => __( 'Box Shadow', 'codesigner-pro' ),
+				'label'    => __( 'Box Shadow', 'codesigner' ),
 				'selector' => '.wl {{WRAPPER}} #cd-currency-switcher-warpper',
 			)
 		);
@@ -207,7 +207,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'currency_padding',
 			array(
-				'label'      => __( 'Padding', 'codesigner-pro' ),
+				'label'      => __( 'Padding', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -222,7 +222,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'list_style',
 			array(
-				'label' => __( 'List', 'codesigner-pro' ),
+				'label' => __( 'List', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -230,7 +230,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_width',
 			array(
-				'label'      => __( 'Width', 'codesigner-pro' ),
+				'label'      => __( 'Width', 'codesigner' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -256,7 +256,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_control(
 			'list_background',
 			array(
-				'label'     => __( 'Background Color', 'codesigner-pro' ),
+				'label'     => __( 'Background Color', 'codesigner' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.wl {{WRAPPER}} #cd-currency-switcher-warpper .cd-single-currency' => 'background-color: {{VALUE}}',
@@ -267,7 +267,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_control(
 			'list_hover_background',
 			array(
-				'label'     => __( 'Background Hover Color', 'codesigner-pro' ),
+				'label'     => __( 'Background Hover Color', 'codesigner' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.wl {{WRAPPER}} #cd-currency-switcher-warpper .cd-single-currency:hover' => 'background-color: {{VALUE}}',
@@ -279,7 +279,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'list_border',
-				'label'    => __( 'Border', 'codesigner-pro' ),
+				'label'    => __( 'Border', 'codesigner' ),
 				'selector' => '.wl {{WRAPPER}} #cd-currency-switcher-warpper .cd-single-currency',
 			)
 		);
@@ -287,7 +287,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'codesigner-pro' ),
+				'label'      => __( 'Border Radius', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -313,7 +313,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_padding',
 			array(
-				'label'      => __( 'Padding', 'codesigner-pro' ),
+				'label'      => __( 'Padding', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -326,7 +326,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'list_margin',
 			array(
-				'label'      => __( 'Margin', 'codesigner-pro' ),
+				'label'      => __( 'Margin', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -341,7 +341,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'image_style',
 			array(
-				'label' => __( 'Image', 'codesigner-pro' ),
+				'label' => __( 'Image', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -349,7 +349,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_width',
 			array(
-				'label'      => __( 'Image Width', 'codesigner-pro' ),
+				'label'      => __( 'Image Width', 'codesigner' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -375,7 +375,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'image_height',
 			array(
-				'label'      => __( 'Image Height', 'codesigner-pro' ),
+				'label'      => __( 'Image Height', 'codesigner' ),
 				'type'       => Controls_Manager::SLIDER,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -402,7 +402,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'img_border',
-				'label'    => __( 'Border', 'codesigner-pro' ),
+				'label'    => __( 'Border', 'codesigner' ),
 				'selector' => '.wl {{WRAPPER}} #cd-currency-switcher-warpper img',
 			)
 		);
@@ -410,7 +410,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'img_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'codesigner-pro' ),
+				'label'      => __( 'Border Radius', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -431,7 +431,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'img_padding',
 			array(
-				'label'      => __( 'Padding', 'codesigner-pro' ),
+				'label'      => __( 'Padding', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -444,7 +444,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'img_margin',
 			array(
-				'label'      => __( 'Margin', 'codesigner-pro' ),
+				'label'      => __( 'Margin', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -459,7 +459,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->start_controls_section(
 			'content_style',
 			array(
-				'label' => __( 'Content', 'codesigner-pro' ),
+				'label' => __( 'Content', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
@@ -468,7 +468,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'           => '_typography',
-				'label'          => __( 'Typography', 'codesigner-pro' ),
+				'label'          => __( 'Typography', 'codesigner' ),
 				'selector'       => '.wl {{WRAPPER}} #cd-currency-switcher-warpper .cd-currency-text',
 				'fields_options' => array(
 					'typography'  => array( 'default' => 'yes' ),
@@ -482,7 +482,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_control(
 			'content_color',
 			array(
-				'label'     => __( 'Message Color', 'codesigner-pro' ),
+				'label'     => __( 'Message Color', 'codesigner' ),
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.wl {{WRAPPER}} #cd-currency-switcher-warpper .cd-currency-text' => 'color: {{VALUE}}',
@@ -495,7 +495,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 			Group_Control_Border::get_type(),
 			array(
 				'name'     => 'content_border',
-				'label'    => __( 'Border', 'codesigner-pro' ),
+				'label'    => __( 'Border', 'codesigner' ),
 				'selector' => '.wl {{WRAPPER}} #cd-currency-switcher-warpper .cd-currency-text',
 			)
 		);
@@ -503,7 +503,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'codesigner-pro' ),
+				'label'      => __( 'Border Radius', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -515,7 +515,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_padding',
 			array(
-				'label'      => __( 'Padding', 'codesigner-pro' ),
+				'label'      => __( 'Padding', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -528,7 +528,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$this->add_responsive_control(
 			'content_margin',
 			array(
-				'label'      => __( 'Margin', 'codesigner-pro' ),
+				'label'      => __( 'Margin', 'codesigner' ),
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px', '%', 'em' ),
 				'selectors'  => array(
@@ -546,7 +546,7 @@ class Currency_Switcher_Widget extends Widget_Base {
 		$settings = $this->get_settings_for_display();
 
 		if ( wcd_is_edit_mode() ) {
-			echo wp_kses_post( wcd_notice( __( 'The actual currency switcher shows at the middle right of this page!', 'codesigner-pro' ) ) );
+			echo wp_kses_post( wcd_notice( __( 'The actual currency switcher shows at the middle right of this page!', 'codesigner' ) ) );
 		}
 		?>
 		<div id="cd-currency-switcher-warpper">

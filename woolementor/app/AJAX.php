@@ -104,10 +104,10 @@ class AJAX extends Base {
 			wp_send_json( $response );
 		}
 
-		$variations        = isset( $_POST['variation'] ) ? array_map( 'codesigner_sanitize_number', $_POST['variation'] ) : array();
-		$product_id        = isset( $_POST['product_id'] ) ? codesigner_sanitize_number( $_POST['product_id'] ) : 0;
-		$attributes        = isset( $_POST['attributes'] ) ? $_POST['attributes'] : array(); // sanitized later @L:110
-		$variation_checked = isset( $_POST['variation_checked'] ) ? array_map( 'sanitize_text_field', $_POST['variation_checked'] ) : array();
+		$variations        = isset( $_POST['variation'] ) ? array_map( 'codesigner_sanitize_number', wp_unslash( $_POST['variation'] ) ) : array();
+		$product_id        = isset( $_POST['product_id'] ) ? codesigner_sanitize_number( wp_unslash( $_POST['product_id'] ) ) : 0;
+		$attributes        = isset( $_POST['attributes'] ) ? wp_unslash( $_POST['attributes'] ) : array(); // sanitized later @L:110
+		$variation_checked = isset( $_POST['variation_checked'] ) ? array_map( 'sanitize_text_field', wp_unslash( $_POST['variation_checked'] ) ) : array();
 
 		$checked_items = array_intersect_key( $variations, $variation_checked );
 
@@ -141,8 +141,8 @@ class AJAX extends Base {
 			wp_send_json( $response );
 		}
 
-		$_checked_items = isset( $_POST['cart_item_ids'] ) ? array_map( 'codesigner_sanitize_number', $_POST['cart_item_ids'] ) : array();
-		$_multiple_qty  = isset( $_POST['multiple_qty'] ) ? array_map( 'codesigner_sanitize_number', $_POST['multiple_qty'] ) : array();
+		$_checked_items = isset( $_POST['cart_item_ids'] ) ? array_map( 'codesigner_sanitize_number', wp_unslash( $_POST['cart_item_ids'] ) ) : array();
+		$_multiple_qty  = isset( $_POST['multiple_qty'] ) ? array_map( 'codesigner_sanitize_number', wp_unslash( $_POST['multiple_qty'] ) ) : array();
 
 		if ( count( $_checked_items ) < 1 ) {
 			$response['message'] = __( 'No products selected!', 'codesigner' );
@@ -199,7 +199,7 @@ class AJAX extends Base {
 		$passed_validation = apply_filters( 'woocommerce_add_to_cart_validation', true, $product_id, $quantity, $variation_id, $variations );
 		$product_status    = get_post_status( $product_id );
 
-		$cart_item_data = $_POST['alldata'];
+		$cart_item_data = wp_unslash( $_POST['alldata'] );
 
 		if ( $passed_validation && 'publish' === $product_status ) {
 
@@ -259,7 +259,7 @@ class AJAX extends Base {
 		}
 
 		$response['status']  = 1;
-		$response['message'] = $_POST['data_key'] . __( '-Close', 'codesigner' );
+		$response['message'] = wp_unslash( $_POST['data_key'] ) . __( '-Close', 'codesigner' );
 		wp_send_json( $response );
 	}
 

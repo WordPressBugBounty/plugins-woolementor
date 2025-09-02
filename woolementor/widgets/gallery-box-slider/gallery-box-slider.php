@@ -153,7 +153,7 @@ class Gallery_Box_Slider extends Widget_Base {
 		$this->start_controls_section(
 			'section_image_gallery',
 			array(
-				'label' => __( 'Gallery', 'plugin-name' ),
+				'label' => __( 'Gallery', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);

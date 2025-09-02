@@ -2393,7 +2393,7 @@ if ( ! function_exists( 'promotional_widgets' ) ) :
 			),
 			array(
 				'name'     => 'codesigner-shop-curvy-horizontal',
-				'title'    => __( 'Shop Curvy Horizontal' . ' ' . $wlbi_promo, 'codesigner' ),
+				'title' => sprintf( __( 'Shop Curvy Horizontal %s', 'codesigner' ), $wlbi_promo ),
 				'icon'     => 'eicon-posts-group',
 				'category' => 'codesigner-shop',
 			),

@@ -374,7 +374,7 @@ class Filter_Horizontal extends Widget_Base {
 		$this->start_controls_section(
 			'fv_ajax_filter',
 			array(
-				'label' => __( 'AJAX Filter', 'codesigner-pro' ),
+				'label' => __( 'AJAX Filter', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -382,10 +382,10 @@ class Filter_Horizontal extends Widget_Base {
 		$this->add_control(
 			'fv_enable_ajax_filter',
 			array(
-				'label'        => __( 'Enable', 'codesigner-pro' ),
+				'label'        => __( 'Enable', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'codesigner-pro' ),
-				'label_off'    => __( 'No', 'codesigner-pro' ),
+				'label_on'     => __( 'Yes', 'codesigner' ),
+				'label_off'    => __( 'No', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'no',
 			)
@@ -498,7 +498,7 @@ class Filter_Horizontal extends Widget_Base {
 		$this->add_control(
 			'search_box_icon',
 			array(
-				'label'     => __( 'Search Icon', 'text-domain' ),
+				'label'     => __( 'Search Icon', 'codesigner' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'eicon-search-bold',
@@ -1233,7 +1233,7 @@ class Filter_Horizontal extends Widget_Base {
 										<?php
 										foreach ( $price_list as $key => $price ) :
 											if ( isset( $_GET['filter']['min_price'] ) && $_GET['filter']['min_price'] != '' ) {
-												$checked = checked( $price['min_price'], $_GET['filter']['min_price'], false );
+												$checked = checked( $price['min_price'], float_val( $_GET['filter']['min_price'] ), false );
 											} else {
 												$checked = '';
 											}
@@ -1278,7 +1278,7 @@ class Filter_Horizontal extends Widget_Base {
 										foreach ( $sort_options as $key => $sort_option ) :
 											if ( in_array( $key, $fh_sort_items ) ) {
 												if ( isset( $_GET['filter']['orderby'] ) ) {
-													$checked = checked( $key, $_GET['filter']['orderby'], false );
+													$checked = checked( $key, sanitize_text_field( $_GET['filter']['orderby'] ), false );
 												} else {
 													$checked = '';
 												}

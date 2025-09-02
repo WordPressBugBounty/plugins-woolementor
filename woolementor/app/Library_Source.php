@@ -50,7 +50,7 @@ class Library_Source extends Source_Base {
 	}
 
 	public function get_title() {
-		return __( 'CoDesigner Library', 'CoDesigner' );
+		return __( 'CoDesigner Library', 'Codesigner' );
 	}
 
 	public function register_data() {}

@@ -132,7 +132,7 @@ class Product_Short_Description extends Widget_Base {
 		$this->add_control(
 			'payment_default_styles',
 			array(
-				'label'     => __( 'Display', 'codesigner-pro' ),
+				'label'     => __( 'Display', 'codesigner' ),
 				'type'      => Controls_Manager::HIDDEN,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .wl-product-description p' => 'display: inline-block;',

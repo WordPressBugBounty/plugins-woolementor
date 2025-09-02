@@ -416,7 +416,7 @@ class Cart_Items extends Widget_Base {
 		$this->add_control(
 			'action_notice',
 			array(
-				'label'           => __( '', 'codesigner' ),
+				'label'           => '',
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => __( 'This section is only visible when the cart is empty.', 'codesigner' ),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
@@ -1807,7 +1807,7 @@ class Cart_Items extends Widget_Base {
 													?>
 													<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-														<td class="product-thumbnail wl-ci-product-thumbnail" data-title="<?php esc_attr_e( 'Thumbnail', 'woocommerce' ); ?>">
+														<td class="product-thumbnail wl-ci-product-thumbnail" data-title="<?php esc_attr_e( 'Thumbnail', 'codesigner' ); ?>">
 
 														<?php
 
@@ -1848,7 +1848,7 @@ class Cart_Items extends Widget_Base {
 
 														</td>
 
-														<td class="product-name wl-ci-product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+														<td class="product-name wl-ci-product-name" data-title="<?php esc_attr_e( 'Product', 'codesigner' ); ?>">
 
 														<?php
 														if ( ! $product_permalink ) {
@@ -1864,7 +1864,7 @@ class Cart_Items extends Widget_Base {
 
 														// Backorder notification.
 														if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-															echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
+															echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'codesigner' ) . '</p>', $product_id ) );
 														}
 														?>
 															<div <?php echo wp_kses( $this->get_render_attribute_string( 'product_category_show_hide' ), array() ); ?>>
@@ -1876,13 +1876,13 @@ class Cart_Items extends Widget_Base {
 															</div>
 														</td>
 
-														<td class="product-price wl-ci-product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+														<td class="product-price wl-ci-product-price" data-title="<?php esc_attr_e( 'Price', 'codesigner' ); ?>">
 															<?php
 																echo wp_kses_post( apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
 															?>
 														</td>
 
-														<td class="product-quantity wl-ci-product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+														<td class="product-quantity wl-ci-product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'codesigner' ); ?>">
 
 														<?php
 														if ( $_product->is_sold_individually() ) {
@@ -1965,7 +1965,7 @@ class Cart_Items extends Widget_Base {
 															if ( wc_coupons_enabled() ) {
 																?>
 																<div class="coupon wl-ci-coupon">
-																	<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> 
+																	<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'codesigner' ); ?></label> 
 																	<input type="text" name="coupon_code" class="wl-ci-coupon-field" id="coupon_code" value="" placeholder="<?php echo esc_attr( $Coupon_button_placeholder ); ?>" />
 
 																	<?php

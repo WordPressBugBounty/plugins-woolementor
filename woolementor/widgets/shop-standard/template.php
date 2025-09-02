@@ -108,7 +108,7 @@ $wishlist = wcd_get_wishlist( $user_id );
 										?>
 										<div class="wl-ss-product-cart">
 											<div class="wl-cart-area">
-												<a href="?add-to-cart=<?php echo esc_attr( $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+												<a href="<?php echo esc_url( '?add-to-cart=' . $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
 											</div>
 										</div>
 									<?php else : ?>

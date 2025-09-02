@@ -82,12 +82,12 @@
 					<h1><?php esc_html_e( 'Welcome to CoDesigner', 'codesigner' ); ?> 🥳</h1>
 					<p><?php esc_html_e( 'Take your ecommerce store to the next level with CoDesigner. Add, customize, and enhance your WooCommerce store’s appearance and functionality to drive more sales and revenues.', 'codesigner' ); ?></p>
 					<div class="cd-btn-wrapper">
-						<a href="https://help.codexpert.io/docs/codesigner" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>
-						<a href="https://help.pluggable.io/" class="cd-btn"><?php esc_html_e( 'Get Support', 'codesigner' ); ?></a>
+						<a href="<?php echo esc_url( 'https://help.codexpert.io/docs/codesigner' ); ?>" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>
+						<a href="<?php echo esc_url( 'https://help.pluggable.io/' ); ?>" class="cd-btn"><?php esc_html_e( 'Get Support', 'codesigner' ); ?></a>
 					</div>
 				</div>
 				<div class="cd-hero-image-section">
-					<img src="<?php esc_attr_e( $hero ); ?>" alt="">
+					<img src="<?php echo esc_attr( $hero ); ?>" alt="">
 				</div>
 			</section>
 
@@ -101,11 +101,11 @@
 							?>
 							<div class="cd-easycommerce-content <?php echo $is_active ? 'cd-success' : 'cd-danger'; ?>">
 								<div class="cd-grid-header">
-									<h3><?php esc_html_e( $easycommerce_feature['title'] ); ?></h3>
-									<img src="<?php esc_attr_e( $is_active ? $checkL : $danger ); ?>" >
+									<h3><?php echo esc_html( $easycommerce_feature['title'] ); ?></h3>
+									<img src="<?php echo esc_attr( $is_active ? $checkL : $danger ); ?>" >
 								</div>
 								<div class="cd-grid-content">
-									<p><?php esc_html_e( $easycommerce_feature['desc'] ); ?></p>
+									<p><?php echo esc_html( $easycommerce_feature['desc'] ); ?></p>
 									<?php if( ! $is_active ) {
 										?>
 										<a href="<?php echo esc_attr( $easycommerce_feature['fix_link'] ); ?>" target="_blank"><?php esc_html_e( 'Fix Now', 'codesigner' ); ?></a>
@@ -129,11 +129,11 @@
 							?>
 								<div class="cd-recommeded-grid-item">
 									<div class="cd-recommeded-item-header">
-										<img src="<?php esc_attr_e( $recommeded_plugin['logo'] ) ?>">
-										<h4><?php esc_html_e( $recommeded_plugin['title'] ); ?></h4>
+										<img src="<?php echo esc_attr( $recommeded_plugin['logo'] ) ?>">
+										<h4><?php esc_html_e( $recommeded_plugin['title'], 'codesigner' ); ?></h4>
 									</div>
 									<div class="cd-recommeded-item-content">
-										<p><?php esc_html_e( $recommeded_plugin['desc'] ); ?></p>
+										<p><?php esc_html_e( $recommeded_plugin['desc'], 'codesigner' ); ?></p>
 										<a href="<?php echo esc_url( $recommeded_plugin['url'] ); ?>"><?php esc_html_e( 'Install Now', 'codesigner' ); ?></a>
 									</div>
 								</div>

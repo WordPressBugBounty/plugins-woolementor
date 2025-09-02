@@ -583,8 +583,8 @@ class Shop_Curvy extends Widget_Base {
 			array(
 				'label'        => __( 'Show Sale Price', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'inline-block',
 				'default'      => 'none',
 				'separator'    => 'before',

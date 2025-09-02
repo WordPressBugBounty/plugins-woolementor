@@ -892,7 +892,7 @@ class Pricing_Table_Smart extends Widget_Base {
 		$this->add_control(
 			'featured_text_color',
 			array(
-				'label'     => __( 'Text Color', 'plugin-domain' ),
+				'label'     => __( 'Text Color', 'codesigner' ),
 				'type'      => Controls_Manager::COLOR,
 				'global'    => array(
 					'default' => Global_Colors::COLOR_PRIMARY,
@@ -925,7 +925,7 @@ class Pricing_Table_Smart extends Widget_Base {
 		$this->add_control(
 			'featured_text_color_hover',
 			array(
-				'label'     => __( 'Text Color', 'plugin-domain' ),
+				'label'     => __( 'Text Color', 'codesigner' ),
 				'type'      => Controls_Manager::COLOR,
 				'global'    => array(
 					'default' => Global_Colors::COLOR_PRIMARY,
@@ -1523,7 +1523,8 @@ class Pricing_Table_Smart extends Widget_Base {
 			return;
 		}
 
-		echo wp_kses_post( wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!' ), $this->get_name(), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) ) );
+		echo wp_kses_post( wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), $this->get_name(), '<a href="' . esc_url( 'https://codexpert.io/codesigner' ) . '" target="_blank">CoDesigner Pro</a>' ) ) );
+
 
 		if ( file_exists( __DIR__ . '/assets/img/screenshot.png' ) ) {
 			?>

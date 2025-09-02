@@ -282,14 +282,14 @@ class Settings extends Base {
 							'type'  => 'switch',
 							'desc'  => __( 'Enable this if you want to enable cross-domain copy &amp; paste feature.', 'codesigner' ),
 						),
-						'reset'                   => array(
+						'reset'        => array(
 							'id'       => 'reset',
 							'label'    => __( 'Reset Settings', 'codesigner' ),
 							'type'     => 'switch',
 							'desc'     => __( 'This will reset every changes you\'ve made. Don\'t do this unless you know what you\'re doing.', 'codesigner' ),
 							'disabled' => false,
 						),
-						'report'                  => array(
+						'report'       => array(
 							'id'       => 'report',
 							'label'    => __( 'Report', 'codesigner' ),
 							'type'     => 'textarea',

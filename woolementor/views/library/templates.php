@@ -89,7 +89,7 @@ defined( 'ABSPATH' ) || exit;
 <script type="text/template" id="tmpl-wl-template-modal__header__actions">
 	<div id="elementor-template-library-header-actions">
 		<!-- <div id="elementor-template-library-header-import" class="elementor-templates-modal__header__item">
-			<i class="eicon-upload-circle-o" aria-hidden="true" title="<?php esc_attr_e( 'Import Template', 'elementor' ); ?>"></i>
+			<i class="eicon-upload-circle-o" aria-hidden="true" title="<?php esc_attr_e( 'Import Template', 'codesigner' ); ?>"></i>
 			<span class="elementor-screen-only"><?php echo esc_html__( 'Import Template', 'codesigner' ); ?></span>
 		</div> -->
 		<div id="elementor-template-library-header-sync" class="elementor-templates-modal__header__item">

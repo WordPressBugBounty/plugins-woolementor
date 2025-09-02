@@ -296,7 +296,7 @@ class My_Account extends Widget_Base {
 		$this->add_control(
 			'img_default_style',
 			array(
-				'label'     => __( 'Display', 'codesigner-pro' ),
+				'label'     => __( 'Display', 'codesigner' ),
 				'type'      => Controls_Manager::HIDDEN,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .wcd-customer-box .wcd-ab-img img' => 'height: 100%; width:100%;',
@@ -467,7 +467,7 @@ class My_Account extends Widget_Base {
 			Group_Control_Typography::get_type(),
 			array(
 				'name'     => 'content_typography',
-				'label'    => __( 'Typography', 'plugin-domain' ),
+				'label'    => __( 'Typography', 'codesigner' ),
 				'global'   => array(
 					'default' => Global_Typography::TYPOGRAPHY_PRIMARY,
 				),
@@ -478,7 +478,7 @@ class My_Account extends Widget_Base {
 		$this->add_control(
 			'name_color',
 			array(
-				'label'     => __( 'Color', 'plugin-domain' ),
+				'label'     => __( 'Color', 'codesigner' ),
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#000',
 				'selectors' => array(
@@ -600,15 +600,15 @@ class My_Account extends Widget_Base {
 		$this->add_control(
 			'tab_position',
 			array(
-				'label'   => __( 'Tab Position', 'plugin-domain' ),
+				'label'   => __( 'Tab Position', 'codesigner' ),
 				'type'    => Controls_Manager::CHOOSE,
 				'options' => array(
 					'left' => array(
-						'title' => __( 'Left', 'plugin-domain' ),
+						'title' => __( 'Left', 'codesigner' ),
 						'icon'  => 'eicon-h-align-left',
 					),
 					'top'  => array(
-						'title' => __( 'Top', 'plugin-domain' ),
+						'title' => __( 'Top', 'codesigner' ),
 						'icon'  => 'eicon-v-align-top',
 					),
 				),

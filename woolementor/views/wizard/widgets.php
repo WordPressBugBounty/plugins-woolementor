@@ -89,7 +89,7 @@ foreach ( $widgets as $id => $widget ) {
 			{$pro_html}
 			<label class='wl-toggle-switch'>
 				{$_demo}
-			  	<input type='checkbox' class='wl-widget-checkbox' id='codesigner-checkbox-{$id}' name='{$id}' {$_checked}>
+			  	<input type='checkbox' class='wl-widget-checkbox' id='codesigner-checkbox-" . esc_attr( $id ) . "' name='" . esc_attr( $id ) . "' " . esc_attr( $_checked ) . ">
 			  	<span class='wl-toggle-slider'></span>
 			</label>
 			";
@@ -99,8 +99,8 @@ foreach ( $widgets as $id => $widget ) {
 				{$pro_html}
 				<label class='wl-toggle-switch wl-pro-popup-show'>
 					{$_demo}
-				  	<input type='checkbox' class='wl-widget-checkbox' id='codesigner-checkbox-{$id}' name='{$id}' {$_checked}>
-				  	<span class='wl-pro-slider' data-demo='{$widget['demo']}'><span class='dashicons dashicons-lock'></span></span>
+				  	<input type='checkbox' class='wl-widget-checkbox' id='codesigner-checkbox-". esc_attr( $id ) ."' name='" . esc_attr( $id ) . "' " . esc_attr( $_checked ) . ">
+				  	<span class='wl-pro-slider' data-demo='" . esc_attr( $widget['demo'] ) . "'><span class='dashicons dashicons-lock'></span></span>
 				</label>
 				";
 			}
@@ -140,7 +140,7 @@ foreach ( $widgets as $id => $widget ) {
 	<img class="wl-pro-popup-img" src="<?php echo esc_url( CODESIGNER_ASSETS . '/img/pro-rocket.png' ); ?>">
 	<p class="wl-pro-popup-txt"><?php echo wp_kses_post( 'Get <b>50+ premium features</b> along with this one and create your dream WooCommerce site in no time.' ); ?></p>
 	<p>
-		<a id="wl-pro-popup-btn" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-popup" target="_blank">
+		<a id="wl-pro-popup-btn" href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-popup' ); ?>" target="_blank">
 			<span class="dashicons dashicons-unlock"></span>
 			<?php esc_html__( 'Unlock Premium Features', 'codesigner' ); ?>
 		</a>

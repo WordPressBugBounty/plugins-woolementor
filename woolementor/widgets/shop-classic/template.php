@@ -100,7 +100,7 @@ extract( $settings );
 									?>
 									<?php if ( 'simple' == $product->get_type() ) : ?>
 										<div class="wl-cart-area">
-											<a href="?add-to-cart=<?php echo esc_attr( $product_id ); ?>" data-quantity="1" class="wl-sc-product-cart button product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+											<a href="<?php echo esc_url( '?add-to-cart=' . $product_id ); ?>" data-quantity="1" class="wl-sc-product-cart button product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
 										</div>
 									<?php else : ?>
 										<div class="wl-cart-area">

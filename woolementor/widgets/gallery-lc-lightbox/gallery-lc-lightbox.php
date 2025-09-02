@@ -92,7 +92,7 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 		$this->start_controls_section(
 			'section_image_gallery',
 			array(
-				'label' => __( 'Gallery', 'plugin-name' ),
+				'label' => __( 'Gallery', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -142,7 +142,7 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 		$this->start_controls_section(
 			'section_gallery_animations',
 			array(
-				'label' => __( 'Animation', 'plugin-name' ),
+				'label' => __( 'Animation', 'codesigner' ),
 				'tab'   => Controls_Manager::TAB_CONTENT,
 			)
 		);
@@ -152,8 +152,8 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 			array(
 				'label'        => __( 'Title', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -164,8 +164,8 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 			array(
 				'label'        => __( 'Description', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -196,8 +196,8 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 			array(
 				'label'        => __( 'Box Shadow', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'your-plugin' ),
-				'label_off'    => __( 'No', 'your-plugin' ),
+				'label_on'     => __( 'Yes', 'codesigner' ),
+				'label_off'    => __( 'No', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -208,8 +208,8 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 			array(
 				'label'        => __( 'Autoplay', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'your-plugin' ),
-				'label_off'    => __( 'No', 'your-plugin' ),
+				'label_on'     => __( 'Yes', 'codesigner' ),
+				'label_off'    => __( 'No', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 				'separator'    => 'before',
@@ -232,8 +232,8 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 			array(
 				'label'        => __( 'Gallery Mode', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'your-plugin' ),
-				'label_off'    => __( 'No', 'your-plugin' ),
+				'label_on'     => __( 'Yes', 'codesigner' ),
+				'label_off'    => __( 'No', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -244,8 +244,8 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 			array(
 				'label'        => __( 'Thumbnail Nav', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'your-plugin' ),
-				'label_off'    => __( 'No', 'your-plugin' ),
+				'label_on'     => __( 'Yes', 'codesigner' ),
+				'label_off'    => __( 'No', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)

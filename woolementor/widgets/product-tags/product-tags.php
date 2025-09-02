@@ -419,11 +419,24 @@ class Product_Tags extends Widget_Base {
 				}
 
 				if ( $product && is_object( $product ) ) {
-					?>
-						<span class="tags_wrapper">
-						<?php echo wp_kses_post( wc_get_product_tag_list( $product->get_id(), ', ', '<span class="tagged_as">' . _n( '<span ' . $this->get_render_attribute_string( 'tag_label' ) . '>' . esc_html( $settings['tag_label'] ) . '</span>', '<span ' . $this->get_render_attribute_string( 'tag_label' ) . '>' . esc_html( $settings['tag_label'] ) . '</span>', count( $product->get_tag_ids() ), 'woocommerce' ) . ' ', '</span>' ) ); ?>
-						</span>
-						<?php
+					$tag_count = count( $product->get_tag_ids() );
+					$tag_label = esc_html( $settings['tag_label'] );
+					$tag_attr  = $this->get_render_attribute_string( 'tag_label' );
+
+					// translators: %s: the tag label (e.g., "Tagged").
+					$tag_text = _n( '%s', '%s', $tag_count, 'codesigner' );
+
+					$tag_html = sprintf(
+						'<span class="tagged_as"><span %s>%s</span> ',
+						$tag_attr,
+						sprintf( $tag_text, $tag_label )
+					);
+
+					echo '<span class="tags_wrapper">';
+					echo wp_kses_post(
+						wc_get_product_tag_list( $product->get_id(), ', ', $tag_html, '</span>' )
+					);
+					echo '</span>';
 				}
 				?>
 

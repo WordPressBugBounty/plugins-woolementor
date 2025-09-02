@@ -16,7 +16,7 @@ $pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner/#pricing' );
 						<?php esc_html_e( 'CoDesigner', 'codesigner' ); ?>
 					</h1>
 					<h1 class="codesigner-title">
-						<?php esc_html_e( 'WooCommerce', 'codesigner' ); ?>
+						<?php esc_html_e( 'codesigner', 'codesigner' ); ?>
 					</h1>
 					<h2 class="codesinger-email-designer">
 						<?php esc_html_e( 'Invoice Builder', 'codesigner' ); ?>

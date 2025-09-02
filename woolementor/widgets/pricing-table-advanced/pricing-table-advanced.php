@@ -309,8 +309,8 @@ class Pricing_Table_Advanced extends Widget_Base {
 			array(
 				'label'        => __( 'Enable/Disable', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'your-plugin' ),
-				'label_off'    => __( 'No', 'your-plugin' ),
+				'label_on'     => __( 'Yes', 'codesigner' ),
+				'label_off'    => __( 'No', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)

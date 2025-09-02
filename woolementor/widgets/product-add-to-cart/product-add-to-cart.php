@@ -112,7 +112,7 @@ class Product_Add_To_Cart extends Widget_Base {
 			$this->add_control(
 				'_preview_important_note',
 				array(
-					'label'           => __( '', 'codesigner' ),
+					'label'           => __( 'Product Type', 'codesigner' ),
 					'type'            => Controls_Manager::RAW_HTML,
 					'raw'             => __( 'Choose a product type to show preview for. Applicable for the edit and preview modes only. The live mode will show the appropriate components. (e.g. Quantity input field for Simple products, Variations\' selection for Variable products etc)', 'codesigner' ),
 					'content_classes' => 'elementor-alert _preview_important_note',

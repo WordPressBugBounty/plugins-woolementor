@@ -144,7 +144,7 @@ class Shop_Slider extends Widget_Base {
 		$this->add_control(
 			'arrow_icon_left',
 			array(
-				'label'     => __( 'Arrow Icon Left', 'text-domain' ),
+				'label'     => __( 'Arrow Icon Left', 'codesigner' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'eicon-chevron-left',
@@ -159,7 +159,7 @@ class Shop_Slider extends Widget_Base {
 		$this->add_control(
 			'arrow_icon_right',
 			array(
-				'label'     => __( 'Arrow Icon Right', 'text-domain' ),
+				'label'     => __( 'Arrow Icon Right', 'codesigner' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'eicon-chevron-right',
@@ -405,7 +405,7 @@ class Shop_Slider extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'widget_box_background',
-				'label'    => __( 'Background', 'plugin-domain' ),
+				'label'    => __( 'Background', 'codesigner' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .wl-ssl-single-widget',
 			)
@@ -500,8 +500,8 @@ class Shop_Slider extends Widget_Base {
 			array(
 				'label'        => __( 'Show Content', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -590,8 +590,8 @@ class Shop_Slider extends Widget_Base {
 			array(
 				'label'        => __( 'Show Sale Price', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'block',
 				'default'      => 'none',
 				'separator'    => 'before',

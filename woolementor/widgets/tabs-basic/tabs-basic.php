@@ -394,13 +394,9 @@ class Tabs_Basic extends Widget_Base {
 		<div class="wl-product-tabs <?php echo esc_attr( $settings['tabs_type'] ); ?>">
 			<div class="wl-pt-navigation-wrapper">
 				<ul>
-					<?php
-					foreach ( $settings['tabs_list'] as $tab ) {
-						?>
-								<li><a href="#tab-<?php echo esc_attr( $tab['_id'] ); ?>"><?php echo esc_html( $tab['tab_name'] ); ?></a></li>
-							<?php
-					}
-					?>
+					<?php foreach ( $settings['tabs_list'] as $tab ) { ?>
+						<li><a href="#tab-<?php echo esc_attr( $tab['_id'] ); ?>"><?php echo esc_html( $tab['tab_name'] ); ?></a></li>
+					<?php } ?>
 				</ul>
 			</div>
 			

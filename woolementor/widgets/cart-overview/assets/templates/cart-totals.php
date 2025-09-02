@@ -31,7 +31,7 @@ if ( isset( $_POST ) && count( $_POST ) > 0 ) {
 		$address = apply_filters( 'woocommerce_cart_calculate_shipping_address', $address );
 
 		if ( $address['postcode'] && ! WC_Validation::is_postcode( $address['postcode'], $address['country'] ) ) {
-			throw new Exception( __( 'Please enter a valid postcode / ZIP.', 'woocommerce' ) );
+			throw new Exception( __( 'Please enter a valid postcode / ZIP.', 'codesigner' ) );
 		} elseif ( $address['postcode'] ) {
 			$address['postcode'] = wc_format_postcode( $address['postcode'], $address['country'] );
 		}
@@ -52,7 +52,7 @@ if ( isset( $_POST ) && count( $_POST ) > 0 ) {
 		WC()->customer->set_calculated_shipping( true );
 		WC()->customer->save();
 
-		wc_add_notice( __( 'Shipping costs updated.', 'woocommerce' ), 'notice' );
+		wc_add_notice( __( 'Shipping costs updated.', 'codesigner' ), 'notice' );
 
 		do_action( 'woocommerce_calculated_shipping' );
 
@@ -90,8 +90,8 @@ WC()->cart->calculate_totals();
 	<table cellspacing="0" class="shop_table shop_table_responsive">
 
 		<tr class="cart-subtotal">
-			<th><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
-			<td data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
+			<th><?php esc_html_e( 'Subtotal', 'codesigner' ); ?></th>
+			<td data-title="<?php esc_attr_e( 'Subtotal', 'codesigner' ); ?>"><?php wc_cart_totals_subtotal_html(); ?></td>
 		</tr>
 
 		<?php foreach ( WC()->cart->get_coupons() as $code => $coupon ) : ?>
@@ -112,8 +112,8 @@ WC()->cart->calculate_totals();
 		<?php elseif ( WC()->cart->needs_shipping() && 'yes' === get_option( 'woocommerce_enable_shipping_calc' ) ) : ?>
 
 			<tr class="shipping">
-				<th><?php esc_html_e( 'Shipping', 'woocommerce' ); ?></th>
-				<td data-title="<?php esc_attr_e( 'Shipping', 'woocommerce' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
+				<th><?php esc_html_e( 'Shipping', 'codesigner' ); ?></th>
+				<td data-title="<?php esc_attr_e( 'Shipping', 'codesigner' ); ?>"><?php woocommerce_shipping_calculator(); ?></td>
 			</tr>
 
 		<?php endif; ?>
@@ -132,7 +132,7 @@ WC()->cart->calculate_totals();
 
 			if ( WC()->customer->is_customer_outside_base() && ! WC()->customer->has_calculated_shipping() ) {
 				/* translators: %s location. */
-				$estimated_text = sprintf( ' <small>' . esc_html__( '(estimated for %s)', 'woocommerce' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] );
+				$estimated_text = sprintf( ' <small>' . esc_html__( '(estimated for %s)', 'codesigner' ) . '</small>', WC()->countries->estimated_for_prefix( $taxable_address[0] ) . WC()->countries->countries[ $taxable_address[0] ] );
 			}
 
 			if ( 'itemized' === get_option( 'woocommerce_tax_total_display' ) ) {
@@ -158,8 +158,8 @@ WC()->cart->calculate_totals();
 		<?php do_action( 'woocommerce_cart_totals_before_order_total' ); ?>
 
 		<tr class="order-total">
-			<th><?php esc_html_e( 'Total', 'woocommerce' ); ?></th>
-			<td data-title="<?php esc_attr_e( 'Total', 'woocommerce' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
+			<th><?php esc_html_e( 'Total', 'codesigner' ); ?></th>
+			<td data-title="<?php esc_attr_e( 'Total', 'codesigner' ); ?>"><?php wc_cart_totals_order_total_html(); ?></td>
 		</tr>
 
 		<?php do_action( 'woocommerce_cart_totals_after_order_total' ); ?>

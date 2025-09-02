@@ -105,8 +105,8 @@ class Variation_Swatches extends Base {
 
 	public function add_term_type( $array ) {
 		if ( isset( $_GET['post_type'] ) && isset( $_GET['page'] ) ) {
-			$param_post = $_GET['post_type'];
-			$param_page = $_GET['page'];
+			$param_post = sanitize_key( $_GET['post_type'] );
+			$param_page = sanitize_key( $_GET['page'] );
 			if ( 'product' == $param_post && 'product_attributes' == $param_page ) {
 				$array = array(
 					'select' => esc_html__( 'Select', 'codesigner' ),
@@ -313,12 +313,12 @@ class Variation_Swatches extends Base {
 		if ( ! wp_verify_nonce( $_POST['_wpnonce'], $this->slug ) ) {
 			wp_send_json( $response );
 		}
-
-		WC()->cart->add_to_cart( $_POST['product_id'], 1 );
+		
+		WC()->cart->add_to_cart( absint( wp_unslash( $_POST['product_id'] ) ), 1 );
 
 		$response['status']  = 1;
 		$response['message'] = __( 'Added to cart', 'codesigner' );
-		$response['html']    = "<a href='" . wc_get_cart_url() . "'>View Cart</a>";
+		$response['html']    = "<a href='" . esc_url( wc_get_cart_url() ) . "'>" . esc_html__( 'View Cart', 'codesigner' ) . "</a>";
 		wp_send_json( $response );
 	}
 

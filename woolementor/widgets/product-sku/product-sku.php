@@ -382,8 +382,8 @@ class Product_Sku extends Widget_Base {
 							esc_html( $settings['sku_label'] )
 						);
 					?>
-
-					<span class="sku"><?php esc_html_e( $sku = $product->get_sku() ) ? $sku : esc_html__( 'N/A', 'woocommerce' ); ?></span>
+					<?php $sku = $product->get_sku(); ?>
+					<span class="sku"><?php echo $sku ? esc_html( $sku ) : esc_html__( 'N/A', 'codesigner' ); ?></span>
 				</p>
 
 					<?php

@@ -420,7 +420,7 @@ class Product_Categories extends Widget_Base {
 					<?php
 					if ( $product ) {
 						echo wp_kses(
-							wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( '<span ' . $this->get_render_attribute_string( 'cat_label' ) . '>' . esc_html( $settings['cat_label'] ) . '</span>', '<span ' . $this->get_render_attribute_string( 'cat_label' ) . '>' . esc_html( $settings['cat_label'] ) . '</span>', count( $product->get_category_ids() ), 'woocommerce' ) . ' ', '</span>' ),
+							wc_get_product_category_list( $product->get_id(), ', ', '<span class="posted_in">' . _n( '<span ' . $this->get_render_attribute_string( 'cat_label' ) . '>' . esc_html( $settings['cat_label'] ) . '</span>', '<span ' . $this->get_render_attribute_string( 'cat_label' ) . '>' . esc_html( $settings['cat_label'] ) . '</span>', count( $product->get_category_ids() ), 'codesigner' ) . ' ', '</span>' ),
 							array(
 								'a' => array(
 									'href'   => array(),

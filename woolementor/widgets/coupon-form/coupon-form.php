@@ -120,7 +120,7 @@ class Coupon_Form extends Widget_Base {
 		$this->add_control(
 			'coupon_input_field_default',
 			array(
-				'label'     => __( 'View', 'plugin-domain' ),
+				'label'     => __( 'View', 'codesigner' ),
 				'type'      => Controls_Manager::HIDDEN,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .wl-cf-apply-coupon' => 'display: flex;align-items: center;justify-content: end;',
@@ -269,7 +269,7 @@ class Coupon_Form extends Widget_Base {
 		$this->add_control(
 			'coupon_button_default',
 			array(
-				'label'     => __( 'View', 'plugin-domain' ),
+				'label'     => __( 'View', 'codesigner' ),
 				'type'      => Controls_Manager::HIDDEN,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .wl-cf-apply-coupon-button.button' => 'position: absolute; right: 0; padding: 10px 30px; cursor: pointer; bottom: 0; top: 0; transition: .4s;',

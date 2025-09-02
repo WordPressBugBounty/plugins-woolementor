@@ -104,7 +104,7 @@ $pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner/pricing/' );
 						<img src="<?php echo esc_attr( CODESIGNER_ASSETS . '/img/free-pro/youtube-icon.svg' ); ?>" alt="icon">
 						<?php esc_html_e( 'Watch Video', 'codesigner' ); ?>
 					</a> -->
-					<a href="https://codexpert.io/codesigner/pro/#codesigner-pro-email" class="cd-pro-module-details">
+					<a href="<?php echo esc_url( 'https://codexpert.io/codesigner/pro/#codesigner-pro-email' ); ?>" class="cd-pro-module-details">
 						<?php esc_html_e( 'View Details', 'codesigner' ); ?>
 					</a>
 				</div>
@@ -122,7 +122,7 @@ $pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner/pricing/' );
 						<img src="<?php echo esc_attr( CODESIGNER_ASSETS . '/img/free-pro/youtube-icon.svg' ); ?>" alt="icon">
 						<?php esc_html_e( 'Watch Video', 'codesigner' ); ?>
 					</a> -->
-					<a href="https://codexpert.io/codesigner/pro/#codesigner-pro-invoice" class="cd-pro-module-details">
+					<a href="<?php echo esc_url( 'https://codexpert.io/codesigner/pro/#codesigner-pro-invoice' ); ?>" class="cd-pro-module-details">
 						<?php esc_html_e( 'View Details', 'codesigner' ); ?>
 					</a>
 				</div>
@@ -140,7 +140,7 @@ $pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner/pricing/' );
 						<img src="<?php echo esc_attr( CODESIGNER_ASSETS . '/img/free-pro/youtube-icon.svg' ); ?>" alt="icon">
 						<?php esc_html_e( 'Watch Video', 'codesigner' ); ?>
 					</a> -->
-					<a href="https://codexpert.io/codesigner/pro/#codesigner-pro-explore" class="cd-pro-module-details">
+					<a href="<?php echo esc_url( 'https://codexpert.io/codesigner/pro/#codesigner-pro-explore' ); ?>" class="cd-pro-module-details">
 						<?php esc_html_e( 'View Details', 'codesigner' ); ?>
 					</a>
 				</div>

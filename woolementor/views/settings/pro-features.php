@@ -57,7 +57,7 @@ $pro_features = array(
 		<div class="wl-pro-features-heading">
 			<p class="wl-desc"><?php esc_html_e( 'Along with the <strong>Award Winning</strong> premium and priority support from our dedicated support team, you\'re going to get these awesome features if you upgrade to CoDesigner Pro. And, you\'re covered under a <strong>14-day 100% refund</strong> policy.', 'codesigner' ); ?></p>
 			<div class="wl-cta-btns">
-				<a class="wl-upgrade-pro-btn" href="https://codexpert.io/codesigner/?utm_source=dashboard&amp;utm_medium=settings&amp;utm_campaign=pro-tab#pricing" target="_blank">Upgrade to PRO</a>
+				<a class="wl-upgrade-pro-btn" href="<?php esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&amp;utm_medium=settings&amp;utm_campaign=pro-tab#pricing' ); ?>" target="_blank">Upgrade to PRO</a>
 			</div>
 		</div>
 
@@ -115,14 +115,14 @@ $pro_features = array(
 			<h4><?php esc_html_e( 'Best Elementor WooCommerce Builder', 'codesigner' ); ?></h4>
 		</div>
 		<div class="wl-cta-btns">
-			<a class="wl-help-support" href="https://help.codexpert.io/tickets/" target='_blank'><?php esc_html_e( 'Help and support', 'codesigner' ); ?></a>
+			<a class="wl-help-support" href="<?php echo esc_url( 'https://help.codexpert.io/tickets/' ); ?>" target='_blank'><?php esc_html_e( 'Help and support', 'codesigner' ); ?></a>
 			<a class="wl-upgrade-pro-btn" href="<?php echo esc_url( $pro_link ); ?>" target='_blank'><?php esc_html_e( 'Upgrade to PRO', 'codesigner' ); ?></a>
 		</div>
 	</div>
 	<!-- <div id="wl-pro-upgrade">
 		<div class="wcd-edf-btns">
-			<a href="<?php echo esc_url( wcd_help_link() ); ?>" target="_blank" class="wcd-edf-btn"><?php esc_html_e( 'I have a question' ); ?></a>
-			<a href="<?php echo esc_url( wcd_home_link() ); ?>" target="_blank" class="wcd-edf-btn active"><?php esc_html_e( 'I\'m ready to upgrade' ); ?></a>
+			<a href="<?php echo esc_url( wcd_help_link() ); ?>" target="_blank" class="wcd-edf-btn"><?php esc_html_e( 'I have a question', 'codesigner' ); ?></a>
+			<a href="<?php echo esc_url( wcd_home_link() ); ?>" target="_blank" class="wcd-edf-btn active"><?php esc_html_e( 'I\'m ready to upgrade', 'codesigner' ); ?></a>
 		</div>
 	</div> -->
 </div>

@@ -146,7 +146,7 @@ class Pricing_Table_Basic extends Widget_Base {
 		$this->add_control(
 			'show_sale_price',
 			array(
-				'label'        => __( 'Show sale Price', 'plugin-domain' ),
+				'label'        => __( 'Show sale Price', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
 				'label_on'     => __( 'Show', 'codesigner' ),
 				'label_off'    => __( 'Hide', 'codesigner' ),

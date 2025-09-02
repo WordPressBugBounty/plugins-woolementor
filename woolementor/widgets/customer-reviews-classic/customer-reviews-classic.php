@@ -369,7 +369,7 @@ class customer_Reviews_Classic extends Widget_Base {
 		$this->add_control(
 			'arrow_icon_left',
 			array(
-				'label'     => __( 'Arrow Icon Left', 'text-domain' ),
+				'label'     => __( 'Arrow Icon Left', 'codesigner' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'fa fa-chevron-left',
@@ -384,7 +384,7 @@ class customer_Reviews_Classic extends Widget_Base {
 		$this->add_control(
 			'arrow_icon_right',
 			array(
-				'label'     => __( 'Arrow Icon Right', 'text-domain' ),
+				'label'     => __( 'Arrow Icon Right', 'codesigner' ),
 				'type'      => Controls_Manager::ICONS,
 				'default'   => array(
 					'value'   => 'fa fa-chevron-right',

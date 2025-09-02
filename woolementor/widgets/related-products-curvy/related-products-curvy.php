@@ -286,7 +286,7 @@ class Related_Products_Curvy extends Widget_Base {
 			Group_Control_Background::get_type(),
 			array(
 				'name'     => 'widget_box_background',
-				'label'    => __( 'Background', 'plugin-domain' ),
+				'label'    => __( 'Background', 'codesigner' ),
 				'types'    => array( 'classic', 'gradient' ),
 				'selector' => '{{WRAPPER}} .wl-rpcr-single-widget',
 			)
@@ -437,8 +437,8 @@ class Related_Products_Curvy extends Widget_Base {
 			array(
 				'label'        => __( 'Show Sale Price', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'block',
 				'default'      => 'none',
 				'separator'    => 'before',
@@ -1173,7 +1173,7 @@ class Related_Products_Curvy extends Widget_Base {
 												?>
 												<div class="wl-rpcr-product-cart">
 													<div class="wl-cart-area">
-														<a href="?add-to-cart=<?php echo esc_attr( $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>" >
+														<a href="<?php echo esc_url( '?add-to-cart=' . $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>" >
 															<i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i>
 														</a>
 													</div>

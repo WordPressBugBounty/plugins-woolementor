@@ -145,11 +145,11 @@ class Admin extends Base {
 		$this->admin_url = admin_url( 'admin.php' );
 		$url             = add_query_arg( 'page', $this->slug, 'https://help.codexpert.io/docs/codesigner/' );
 
-		$new_links = array(
-			'settings' => sprintf( '<a href="%1$s">' . __( 'Docs', 'codesigner' ) . '</a>', $url ),
+		$new_links = array(			
+			'settings' => sprintf( '<a href="%1$s">' . __( 'Docs', 'codesigner' ) . '</a>', esc_url( $url ) ),
 		);
 		$support   = array(
-			'support' => sprintf( '<a href="%1$s">' . __( 'Support', 'codesigner' ) . '</a>', 'https://help.codexpert.io/add-ticket/' ),
+			'support' => sprintf( '<a href="%1$s">' . __( 'Support', 'codesigner' ) . '</a>', esc_url( 'https://help.codexpert.io/add-ticket/' ) ),
 		);
 		// if ( !defined( 'CODESIGNER_PRO' ) ) {
 		// $new_links['codesigner-get-pro'] = '<a href="https://codexpert.io/codesigner/pricing/?utm_source=website&utm_medium=floating+bar&utm_campaign=black+friday+2024">' . __('Black Friday Sale (Up to 80% OFF)', 'cx-plugin') . '</a>';
@@ -161,7 +161,7 @@ class Admin extends Base {
 	public function plugin_row_meta( $plugin_meta, $plugin_file ) {
 
 		if ( $this->plugin['basename'] === $plugin_file ) {
-			$plugin_meta['help'] = '<a href="https://help.codexpert.io/" target="_blank" class="cx-help">' . __( 'Help', 'codesigner' ) . '</a>';
+			$plugin_meta['help'] = '<a href="'. esc_url('https://help.codexpert.io/') . '" target="_blank" class="cx-help">' . __( 'Help', 'codesigner' ) . '</a>';
 		}
 
 		return $plugin_meta;
@@ -173,7 +173,7 @@ class Admin extends Base {
 		}
 
 		// Translators: %1$s represents the plugin name, %2$s represents the URL to leave a rating, and %3$s represents the rating stars.
-		return sprintf( __( 'If you like <strong>%1$s</strong>, please <a href="%2$s" target="_blank">leave us a %3$s rating</a> on WordPress.org! It\'d motivate and inspire us to make the plugin even better!', 'codesigner' ), $this->name, 'https://wordpress.org/support/plugin/woolementor/reviews/?filter=5#new-post', '⭐⭐⭐⭐⭐' );
+		return sprintf( __( 'If you like <strong>%1$s</strong>, please <a href="%2$s" target="_blank">leave us a %3$s rating</a> on WordPress.org! It\'d motivate and inspire us to make the plugin even better!', 'codesigner' ), $this->name, esc_url( 'https://wordpress.org/support/plugin/woolementor/reviews/?filter=5#new-post' ), '⭐⭐⭐⭐⭐' );
 	}
 
 	/**
@@ -257,7 +257,7 @@ class Admin extends Base {
 
 						
 						<a href="' . esc_url( $url ) . '" class="notice-cta-button" data-id="' . esc_attr( $notice_id ) . '" target="_blank">
-						' . __( 'Save Now!', 'wc-affiliate' ) . '
+						' . __( 'Save Now!', 'codesigner' ) . '
 						</a>
 					</div>
 				';
@@ -463,7 +463,7 @@ class Admin extends Base {
 		$banner 	= CODESIGNER_ASSETS . '/img/general/get-started/rockat-icon.png';
 		$logo 		= CODESIGNER_ASSETS . '/img/icon.png';
 
-		$current_page = isset( $_GET['page'] ) ? $_GET['page'] : 'codesigner';
+		$current_page = isset( $_GET['page'] ) ? sanitize_key( $_GET['page'] ) : 'codesigner';
 
 		$tabs 		= [
 			[
@@ -517,11 +517,11 @@ class Admin extends Base {
 
 				<?php if( ! defined( 'CODESIGNER_PRO' ) ) : ?>
 					<!-- Upgraded button -->
-					<a class="cd-upgraded-btn" href="https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro"> <img src="<?php echo esc_url( $banner ); ?>" alt=""> <?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?></a>
+					<a class="cd-upgraded-btn" href="<?php echo esc_url( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro' ); ?>"> <img src="<?php echo esc_url( $banner ); ?>" alt=""> <?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?></a>
 				<?php else: ?>
 					<div class="cd-btn-wrapper">
-						<a href="https://help.codexpert.io/docs/codesigner" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>
-						<a href="https://help.pluggable.io/" class="cd-btn"><?php esc_html_e( 'Get Support', 'codesigner' ); ?></a>
+						<a href="<?php echo esc_url( 'https://help.codexpert.io/docs/codesigner' ); ?>" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>
+						<a href="<?php echo esc_url( 'https://help.pluggable.io/' ); ?>" class="cd-btn"><?php esc_html_e( 'Get Support', 'codesigner' ); ?></a>
 					</div>
 				<?php endif; ?>
 			</header>

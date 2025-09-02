@@ -568,8 +568,8 @@ class Shop_Standard extends Widget_Base {
 			array(
 				'label'        => __( 'Show Sale Price', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'block',
 				'default'      => 'none',
 				'separator'    => 'before',
@@ -1516,7 +1516,7 @@ class Shop_Standard extends Widget_Base {
 		$this->start_controls_tab(
 			'regular_wishlist_color',
 			array(
-				'label' => __( 'Regular', 'plugin-name' ),
+				'label' => __( 'Regular', 'codesigner' ),
 			)
 		);
 
@@ -1547,7 +1547,7 @@ class Shop_Standard extends Widget_Base {
 		$this->start_controls_tab(
 			'active_wishlist_color',
 			array(
-				'label' => __( 'Active', 'plugin-name' ),
+				'label' => __( 'Active', 'codesigner' ),
 			)
 		);
 

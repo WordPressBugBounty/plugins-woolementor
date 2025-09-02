@@ -53,7 +53,7 @@ class Product_Additional_Information extends Widget_Base {
 		$this->add_control(
 			'additinal_info_default_styles',
 			array(
-				'label'     => __( 'Display', 'codesigner-pro' ),
+				'label'     => __( 'Display', 'codesigner' ),
 				'type'      => Controls_Manager::HIDDEN,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .wl-product-additional-information.hide-wlpai-heading h2' => 'display: none;',

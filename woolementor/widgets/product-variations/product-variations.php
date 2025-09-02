@@ -159,8 +159,8 @@ class Product_Variations extends Widget_Base {
 			array(
 				'label'        => __( 'Show Sale Price', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'block',
 				'default'      => 'block',
 				'separator'    => 'after',
@@ -906,7 +906,7 @@ class Product_Variations extends Widget_Base {
 					}
 
 					$.each( $prices,function(){ $sum+=parseFloat(this) || 0; } );
-					$('.wl-pl-<?php esc_html_e( $product_id ); ?>-total-price').html( parseFloat($sum).toFixed(2) )
+					$('.wl-pl-<?php esc_html_e( $product_id, 'codesigner' ); ?>-total-price').html( parseFloat($sum).toFixed(2) )
 				})
 			})
 		</script>

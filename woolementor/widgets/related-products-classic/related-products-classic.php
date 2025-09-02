@@ -494,8 +494,8 @@ class Related_Products_Classic extends Widget_Base {
 			array(
 				'label'        => __( 'Show Sale Price', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'block',
 				'default'      => 'none',
 				'separator'    => 'before',
@@ -1458,7 +1458,7 @@ class Related_Products_Classic extends Widget_Base {
 								</div>
 								<div class="wl-rpc-info-icons">
 									<?php if ( 'yes' == $wishlist_show_hide ) : ?>
-										<div class="wl-rpc-product-fav ajax_add_to_wish <?php echo esc_attr( $fav_item ); ?>" data-product_id="<?php esc_attr_e( $product_id ); ?>">
+										<div class="wl-rpc-product-fav ajax_add_to_wish <?php echo esc_attr( $fav_item ); ?>" data-product_id="<?php echo esc_attr( $product_id ); ?>">
 											<i class="<?php echo esc_attr( $wishlist_icon['value'] ); ?>"></i>
 										</div>
 										<?php
@@ -1469,11 +1469,11 @@ class Related_Products_Classic extends Widget_Base {
 										if ( 'simple' == $product->get_type() ) :
 											?>
 											<div class="wl-cart-area">
-												<a href="?add-to-cart=<?php esc_attr_e( $product_id ); ?>" data-quantity="1" class="wl-rpc-product-cart button product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php esc_attr_e( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+												<a href="<?php echo esc_url( '?add-to-cart=' . $product_id ); ?>" data-quantity="1" class="wl-rpc-product-cart button product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
 											</div>
 										<?php else : ?>
 											<div class="wl-cart-area">
-												<a href="<?php echo esc_url( get_permalink( $product_id ) ); ?>" data-quantity="1" class="wl-rpc-product-cart button product_type_<?php echo esc_attr( $product->get_type() ); ?>" data-product_id="<?php esc_attr_e( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+												<a href="<?php echo esc_url( get_permalink( $product_id ) ); ?>" data-quantity="1" class="wl-rpc-product-cart button product_type_<?php echo esc_attr( $product->get_type() ); ?>" data-product_id="<?php echo esc_attr( $product_id ); ?>" ><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
 											</div>
 											<?php
 										endif;

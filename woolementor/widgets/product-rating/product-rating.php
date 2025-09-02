@@ -56,7 +56,7 @@ class Product_Rating extends Widget_Base {
 		$this->add_control(
 			'price_default_styles',
 			array(
-				'label'     => __( 'Display', 'codesigner-pro' ),
+				'label'     => __( 'Display', 'codesigner' ),
 				'type'      => Controls_Manager::HIDDEN,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .wcd-product-rating' => 'display:flex;margin: 0;',

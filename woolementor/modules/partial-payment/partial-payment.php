@@ -147,6 +147,7 @@ class Partial_Payment extends Base {
 			'exclude_from_search'       => false,
 			'show_in_admin_all_list'    => true,
 			'show_in_admin_status_list' => true,
+			// translators: %s: Number of partially paid orders.
 			'label_count'               => _n_noop(
 				'Partially Paid <span class="count">(%s)</span>',
 				'Partially Paid <span class="count">(%s)</span>',
@@ -387,7 +388,12 @@ class Partial_Payment extends Base {
 			 */
 			foreach ( WC()->cart->get_cart() as $item_key => $cart_item ) {
 				if ( ( $cart_item['product_id'] == $product_id ) && ( $cart_item['variation_id'] == $variation_id ) && ( $cart_item['cd_payment_type'] != $payment_type ) ) {
-					throw new \Exception( esc_html__( 'Item already added in the cart with ' . $cart_item['cd_payment_type'] . ' payment', 'codesigner' ) );
+					throw new \Exception(
+						sprintf(
+							esc_html__( 'Item already added in the cart with %s payment', 'codesigner' ),
+							esc_html( $cart_item['cd_payment_type'] )
+						)
+					);
 				}
 			}
 
@@ -446,7 +452,7 @@ class Partial_Payment extends Base {
 			$second_installment_amount = ( $product_data->get_price() * $cart_item['quantity'] ) - $first_installment_amount;
 
 			$item_data[] = array(
-				'name'    => esc_html__( Helper::get_option( 'codesigner_partial_payment', 'pp-first-label', 'First Installment' ), 'codesigner' ),
+				'name' => esc_html( Helper::get_option( 'codesigner_partial_payment', 'pp-first-label', 'First Installment' ) ),
 				'display' => wc_price( $first_installment_amount ),
 			);
 
@@ -485,7 +491,7 @@ class Partial_Payment extends Base {
 			if ( $is_partial_payment && $subtotal_second_installment > 0 ) {
 				?>
 					<tr class="order-total cd-order-total">
-						<th><?php esc_html_e( 'Order Total', 'woocommerce' ); ?></th>
+						<th><?php esc_html_e( 'Order Total', 'codesigner' ); ?></th>
 						<td><?php echo wp_kses_post( wc_price( $order_total + $subtotal_second_installment ) ); ?></td>
 					</tr>
 					<tr class="cd-order-paid">
@@ -527,17 +533,17 @@ class Partial_Payment extends Base {
 		foreach ( $formatted_meta as $key => $meta ) {
 
 			if ( $meta->key === 'cd_partial_payment_type' ) {
-				$meta->display_key   = esc_html__( Helper::get_option( 'codesigner_partial_payment', 'pp-type-label', 'Payment Type' ), 'codesigner' );
+				$meta->display_key   = esc_html( Helper::get_option( 'codesigner_partial_payment', 'pp-type-label', 'Payment Type' ) );
 				$meta->display_value = ucfirst( strip_tags( trim( $meta->display_value ) ) );
 			}
 
 			if ( $meta->key === 'cd_partial_payment_amount' ) {
-				$meta->display_key   = esc_html__( Helper::get_option( 'codesigner_partial_payment', 'pp-first-label', 'First Installment' ), 'codesigner' );
+				$meta->display_key   = esc_html( Helper::get_option( 'codesigner_partial_payment', 'pp-first-label', 'First Installment' ) );
 				$meta->display_value = wc_price( strip_tags( trim( $meta->display_value ) ) );
 			}
 
 			if ( $meta->key === 'cd_partial_payment_due' ) {
-				$meta->display_key   = esc_html__( Helper::get_option( 'codesigner_partial_payment', 'pp-second-label', 'Second Installment' ), 'codesigner' );
+				$meta->display_key   = esc_html( Helper::get_option( 'codesigner_partial_payment', 'pp-second-label', 'Second Installment' ) );
 				$meta->display_value = wc_price( strip_tags( trim( $meta->display_value ) ) );
 			}
 		}
@@ -699,7 +705,7 @@ class Partial_Payment extends Base {
 				?>
 			<a href="<?php echo esc_url( $due_payment_url ); ?>">
 			<?php
-				esc_html_e( __( 'Pay Now', 'codesigner' ) );
+				esc_html_e( 'Pay Now', 'codesigner' );
 			?>
 			</a></p>
 			<?php

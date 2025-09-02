@@ -3,8 +3,6 @@ namespace Codexpert\CoDesigner\App;
 
 use Codexpert\Plugin\Base;
 use Codexpert\Plugin\Setup;
-use WP_Ajax_Upgrader_Skin as Skin;
-use Plugin_Upgrader as Upgrader;
 
 require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
 require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
@@ -52,7 +50,7 @@ class Wizard extends Base {
 		$this->admin_url = admin_url( 'admin.php' );
 
 		$new_links = array(
-			'wizard' => sprintf( '<a href="%1$s">%2$s</a>', add_query_arg( array( 'page' => "{$this->slug}_setup" ), $this->admin_url ), __( 'Setup Wizard', 'codesigner' ) ),
+			'wizard' => sprintf( '<a href="%1$s">%2$s</a>', esc_url( add_query_arg( array( 'page' => "{$this->slug}_setup" ) ), $this->admin_url ), __( 'Setup Wizard', 'codesigner' ) ),
 		);
 
 		return array_merge( $new_links, $links );
@@ -132,7 +130,7 @@ class Wizard extends Base {
 			'complete' => array(
 				'label'     => __( 'Complete', 'codesigner' ),
 				'template'  => CODESIGNER_DIR . '/views/wizard/complete.php',
-				'action'    => array( $this, 'install_plugin' ),
+				'action'    => array( $this, 'install_plugins' ),
 				'prev_text' => $back,
 				'redirect'  => add_query_arg( array( 'page' => 'codesigner' ), admin_url( 'admin.php' ) ),
 			),
@@ -156,11 +154,11 @@ class Wizard extends Base {
 	}
 
 	public function save( $option_name ) {
-		$request = isset( $_REQUEST ) ? $_REQUEST : null;
+		$request = isset( $_REQUEST ) ? sanitize_text_field( wp_unslash( $_REQUEST ) ) : null;
 
 		// check if form is submitted
 		if ( isset( $_POST ) && $request['saved'] ) {
-			update_option( $option_name, $_POST );
+			update_option( $option_name, sanitize_text_field( $_POST ) );
 		}
 	}
 
@@ -170,26 +168,12 @@ class Wizard extends Base {
 		}
 	}
 
-	public function install_plugin() {
+	public function install_plugins() {
+		$plugins = []; // slug => plugin/file.php
 
-		$skin     = new Skin();
-		$upgrader = new Upgrader( $skin );
-
-		if ( isset( $_POST['image-sizes'] ) ) {
-			$upgrader->install( 'https://downloads.wordpress.org/plugin/image-sizes.latest-stable.zip' );
-			update_option( 'image-sizes_setup_done', 1 );
-			activate_plugin( 'image-sizes/image-sizes.php' );
-		}
-
-		if ( isset( $_POST['wc-affiliate'] ) ) {
-			$upgrader->install( 'https://downloads.wordpress.org/plugin/wc-affiliate.latest-stable.zip' );
-			update_option( 'wc-affiliate_setup', 1 );
-			activate_plugin( 'wc-affiliate/wc-affiliate.php' );
-		}
-
-		if ( isset( $_POST['restrict-elementor-widgets'] ) ) {
-			$upgrader->install( 'https://downloads.wordpress.org/plugin/restrict-elementor-widgets.latest-stable.zip' );
-			activate_plugin( 'restrict-elementor-widgets/restrict-elementor-widgets.php' );
+		if ( isset( $_POST['install_easycommerce'] ) ) {
+			$plugins['easycommerce'] = 'easycommerce/easycommerce.php';
+			wp_schedule_single_event( time(), 'codesigner_install_plugins', [ 'plugins' => $plugins ] );
 		}
 	}
 }

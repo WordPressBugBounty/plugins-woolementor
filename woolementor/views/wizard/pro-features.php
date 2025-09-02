@@ -24,14 +24,14 @@ $features_bg   = CODESIGNER_ASSETS . '/img/features-bg.png';
 				);
 				?>
 				</p>
-				<a target="_blank" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
+				<a target="_blank" href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing' ); ?>"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
 			</div>
 		</div>
 		<div class="setup-wizard-pro-feature">
 			<div class="setup-wizard-pro-features-content">
 				<h4><?php echo esc_html__( 'Customizable Transactional Emails', 'codesigner' ); ?> 🔥</h4>
 				<p><?php echo esc_html__( 'Now you can customize WooCommerce emails with Elementor. The system-generated emails were not customizable with Elementor until CoDesigner made it possible.', 'codesigner' ); ?></p>
-				<a target="_blank" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
+				<a target="_blank" href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing' ); ?>"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
 			</div>
 			<div class="setup-wizard-pro-features-img">
 				<img src="<?php echo esc_url( $emails ); ?>" alt="">
@@ -44,14 +44,14 @@ $features_bg   = CODESIGNER_ASSETS . '/img/features-bg.png';
 			<div class="setup-wizard-pro-features-content">
 				<h4><?php echo esc_html__( 'Header, Footer, Archive & Much More', 'codesigner' ); ?> 🔥</h4>
 				<p><?php echo esc_html__( 'CoDesigner made it possible to create Elementor templates like Header, Footer, Single Product & Shop pages. You can decide where to show your templates based on product categories, product ID etc.', 'codesigner' ); ?></p>
-				<a target="_blank" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
+				<a target="_blank" href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing' ); ?>"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
 			</div>
 		</div>
 		<div class="setup-wizard-pro-feature">
 			<div class="setup-wizard-pro-features-content">
 				<h4><?php echo esc_html__( 'Content Restriction', 'codesigner' ); ?> 🔥</h4>
 				<p><?php echo esc_html__( 'Want to hide some of your contents from non-logged in users? Or perhaps a message needs to be shown during the night while your support is offline? We\'ve got your covered.', 'codesigner' ); ?></p>
-				<a target="_blank" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
+				<a target="_blank" href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing' ); ?>"><button type="button"><?php echo esc_html__( 'Learn More..', 'codesigner' ); ?></button></a>
 			</div>
 			<div class="setup-wizard-pro-features-img">
 				<img src="<?php echo esc_url( $restriction ); ?>" alt="">
@@ -62,22 +62,22 @@ $features_bg   = CODESIGNER_ASSETS . '/img/features-bg.png';
 		<h2><?php echo esc_html__( 'More Features', 'codesigner' ); ?></h2>
 		<div class="setup-wizard-more-features">
 			<div class="setup-wizard-more-feature">
-				<h4><a href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab" target="_blank"><?php echo esc_html__( 'More Shop Widgets', 'codesigner' ); ?></a></h4>
+				<h4><a href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab' ); ?>" target="_blank"><?php echo esc_html__( 'More Shop Widgets', 'codesigner' ); ?></a></h4>
 			</div>
 			<div class="setup-wizard-more-feature">
-				<h4><a href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab" target="_blank"><?php echo esc_html__( 'Ready-Made Templates', 'codesigner' ); ?> 🔥</a></h4>
+				<h4><a href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab' ); ?>" target="_blank"><?php echo esc_html__( 'Ready-Made Templates', 'codesigner' ); ?> 🔥</a></h4>
 			</div>
 			<div class="setup-wizard-more-feature">
-				<h4><a href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab" target="_blank"><?php echo esc_html__( 'Amazing Pricing Tables', 'codesigner' ); ?></a></h4>
+				<h4><a href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab' ); ?>" target="_blank"><?php echo esc_html__( 'Amazing Pricing Tables', 'codesigner' ); ?></a></h4>
 			</div>
 			<div class="setup-wizard-more-feature">
-				<h4><a href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab" target="_blank"><?php echo esc_html__( 'Smart Wishlist Management', 'codesigner' ); ?>🔥</a></h4>
+				<h4><a href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab' ); ?>" target="_blank"><?php echo esc_html__( 'Smart Wishlist Management', 'codesigner' ); ?>🔥</a></h4>
 			</div>
 			<div class="setup-wizard-more-feature">
-				<h4><a href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab" target="_blank"><?php echo esc_html__( 'Display Recent Sales', 'codesigner' ); ?></a></h4>
+				<h4><a href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab' ); ?>" target="_blank"><?php echo esc_html__( 'Display Recent Sales', 'codesigner' ); ?></a></h4>
 			</div>
 			<div class="setup-wizard-more-feature">
-				<h4><a href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab" target="_blank"><?php echo esc_html__( 'And much more...', 'codesigner' ); ?></a></h4>
+				<h4><a href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab' ); ?>" target="_blank"><?php echo esc_html__( 'And much more...', 'codesigner' ); ?></a></h4>
 			</div>
 		</div>
 	</div>
@@ -93,7 +93,7 @@ $features_bg   = CODESIGNER_ASSETS . '/img/features-bg.png';
 			<h4><?php echo esc_html__( 'Get these Premium Features', 'codesigner' ); ?></h4>
 			<p><?php echo esc_html__( 'These features are only available in <u>CoDesigner Pro</u>!', 'codesigner' ); ?></p>
 			<p><?php echo esc_html__( 'Make a smart choice today; a <u>small investment</u> can lead to a <u>big boost</u> in your sales. Your decision can make a significant difference.', 'codesigner' ); ?></p>
-			<a target="_blank" href="https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing"><button type="button"><?php echo esc_html__( 'Upgrade to Pro', 'codesigner' ); ?></button></a>
+			<a target="_blank" href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing' ); ?>"><button type="button"><?php echo esc_html__( 'Upgrade to Pro', 'codesigner' ); ?></button></a>
 
 			<div class="cx-field-wrap ">
 				<label class="cx-toggle">

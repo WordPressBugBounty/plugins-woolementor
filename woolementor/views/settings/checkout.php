@@ -30,7 +30,7 @@ $pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner/#pricing' );
 							'codesigner'
 						);
 						?>
-											</p>
+					</p>
 					<div class="codesinger-get-start-btn-wrap codesigner-checkout-get-start">
 						<a href="<?php echo esc_url( $pro_link ); ?>" target="_blank" class="codesign-get-start-btn">
 							<?php esc_html_e( 'Get Started', 'codesigner' ); ?>

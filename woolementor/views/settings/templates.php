@@ -70,21 +70,21 @@ if( ! defined( 'ELEMENTOR_VERSION' ) ) {
 	<div class="tmpl-admin-template-logo-area elementor-templates-modal__header__logo-area">
 		<div id="elementor-template-library-header-preview-back" class="tmpl-wl-template-library-header-preview-back">
 			<i class="eicon-" aria-hidden="true"></i>
-			<span><?php esc_attr_e( 'Back to Library', 'codesigner-pro' ); ?></span>
+			<span><?php esc_html_e( 'Back to Library', 'codesigner' ); ?></span>
 		</div>
 	</div>
 	<div class="tmpl-admin-template-menu-area elementor-templates-modal__header__menu-area">
 		<div class="elementor-component-tab wl__responsive-menu-item elementor-active" data-tab="desktop">
 			<i class="eicon-device-desktop" aria-hidden="true" title="Desktop view"></i>
-			<span class="elementor-screen-only"><?php esc_attr_e( 'Desktop view', 'codesigner-pro' ); ?></span>
+			<span class="elementor-screen-only"><?php esc_attr_e( 'Desktop view', 'codesigner' ); ?></span>
 		</div>
 		<div class="elementor-component-tab wl__responsive-menu-item" data-tab="tab">
 			<i class="eicon-device-tablet" aria-hidden="true" title="Tab view"></i>
-			<span class="elementor-screen-only"><?php esc_attr_e( 'Tab view', 'codesigner-pro' ); ?></span>
+			<span class="elementor-screen-only"><?php esc_attr_e( 'Tab view', 'codesigner' ); ?></span>
 		</div>
 		<div class="elementor-component-tab wl__responsive-menu-item" data-tab="mobile">
 			<i class="eicon-device-mobile" aria-hidden="true" title="Mobile view"></i>
-			<span class="elementor-screen-only"><?php esc_attr_e( 'Mobile view', 'codesigner-pro' ); ?></span>
+			<span class="elementor-screen-only"><?php esc_attr_e( 'Mobile view', 'codesigner' ); ?></span>
 		</div>
 	</div>
 </div>

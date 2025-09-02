@@ -408,7 +408,7 @@ class Product_Dynamic_Tabs extends Widget_Base {
 		}
 
 		// Translators: 1: Widget title, 2: Link to CoDesigner Pro.
-		echo wp_kses_post( wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), esc_html( $this->get_title() ), '<a href="https://codexpert.io/codesigner" target="_blank">CoDesigner Pro</a>' ) ) );
+		echo wp_kses_post( wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), esc_html( $this->get_title() ), '<a href="' . esc_url( 'https://codexpert.io/codesigner' ) . '" target="_blank">CoDesigner Pro</a>' ) ) );
 
 		if ( file_exists( __DIR__ . '/assets/img/screenshot.png' ) ) {
 			?>

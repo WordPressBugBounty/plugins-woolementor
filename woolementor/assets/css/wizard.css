@@ -173,17 +173,6 @@
 .thumb_size_italic {
     font-style: italic;
 }
-.cx-wizard-grab {
-    margin-top: 35px;
-}
-.cx-wizard-grab a {
-    background: #3d44ff;
-    border-color: #3d44ff;
-    border-radius: 4px;
-    padding: 11px 20px !important;
-    text-decoration: unset;
-    color: white;
-}
 /*switch*/
 .cx-toggle {
     cursor: pointer;
@@ -406,6 +395,10 @@
     color: #562dd4;
     font-weight: 400;
 }
+.setup-wizard-complete-panel h2{
+    color: #5a2ed2;
+    font-size: 32px;
+}
 .setup-wizard-complete-content {
     width: 720px;
     margin: 0 auto;
@@ -420,6 +413,152 @@
     margin-top: 5px;
     margin-left: 25px;
 }
+/* *************************************************** */
+.setup-wizard-complete-easycommerce{
+  max-width:720px;
+  text-align: initial;
+  margin:28px auto;
+  background:#ffffff;
+  padding:28px;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(32,32,60,0.06);
+  border:1px solid rgba(15,15,20,0.04);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Headline */
+.setup-wizard-complete-easycommerce h2{
+  margin:0 0 12px;
+  font-size:22px;
+  line-height:1.18;
+  font-weight:700;
+  color:#2b2b2b;
+  letter-spacing:0.2px;
+}
+
+/* Feature list */
+.setup-wizard-complete-easycommerce ul.small{
+  margin:10px 0 16px;
+  padding-left:20px;
+  font-size:14px;
+  color:#444;
+  line-height:1.5;
+}
+.setup-wizard-complete-easycommerce ul.small li{
+  margin:6px 0;
+}
+
+/* Paragraph */
+.setup-wizard-complete-easycommerce p{
+  margin:0 0 14px;
+  color:#555;
+  font-size:14px;
+  line-height:1.45;
+}
+
+/* Checkbox block */
+.setup-wizard-complete-easycommerce label{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:10px;
+  background:#fbfbfd;
+  border:1px solid rgb(20 20 215 / 78%);
+  cursor:pointer;
+  user-select:none;
+  margin-top:6px;
+  color:#1f1f1f;
+  font-size:15px;
+}
+
+/* Native checkbox styling (modern browsers) */
+.setup-wizard-complete-easycommerce input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  margin:0;
+  flex:0 0 18px;
+  -webkit-appearance:checkbox;
+  appearance:checkbox;
+  accent-color: #6b46ff; /* purple accent for checkmark */
+}
+
+/* Hover / focus states */
+.setup-wizard-complete-easycommerce label:hover{
+  box-shadow:0 6px 18px rgba(40,40,80,0.04);
+  border-color: rgba(107,70,255,0.12);
+}
+.setup-wizard-complete-easycommerce input[type="checkbox"]:focus-visible{
+  outline:3px solid rgba(107,70,255,0.18);
+  outline-offset:2px;
+  border-radius:4px;
+}
+
+/* Muted link style if used inside */
+.setup-wizard-complete-easycommerce a{
+  color:#5a3dff;
+  text-decoration:underline;
+}
+.setup-wizard-complete-easycommerce a:hover{
+  text-decoration:none;
+}
+
+/* Compact / responsive adjustments */
+@media (max-width:620px){
+  .setup-wizard-complete-easycommerce{
+    padding:16px;
+    margin:16px;
+    border-radius:10px;
+  }
+  .setup-wizard-complete-easycommerce h2{ font-size:18px; }
+  .setup-wizard-complete-easycommerce ul.small{ font-size:13px; padding-left:18px; }
+  .setup-wizard-complete-easycommerce p, .setup-wizard-complete-easycommerce label{ font-size:14px; }
+}
+#ec-cta-wrap {
+    margin: 20px auto 0 auto;
+    width: 300px;
+}
+#ec-cta {
+  display: block;
+  padding: 18px 22px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #f5e9ff, #e0f7ff, #ffe9f5);
+  border: 1px solid rgba(180, 100, 255, 0.4);
+  box-shadow: 0 6px 18px rgba(180, 100, 255, 0.2),
+              0 0 20px rgba(0, 200, 255, 0.15);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 300px;
+}
+
+#ec-cta:hover {
+  box-shadow: 0 10px 28px rgba(180, 100, 255, 0.3),
+              0 0 30px rgba(255, 100, 200, 0.25),
+              0 0 40px rgba(0, 200, 255, 0.2);
+  border-color: rgba(140, 80, 220, 0.6);
+}
+
+#ec-cta input[type="checkbox"] {
+  margin-right: 2px;
+  width: 18px;
+  height: 18px;
+  accent-color: #9b4dff;
+  cursor: pointer;
+}
+
+#ec-cta strong {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3a0066; /* dark enough to contrast */
+}
+#ec-cta strong span {
+    font-size: 20px;
+}
+
+/* *************************************************** */
 .setup-wizard-more-features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);

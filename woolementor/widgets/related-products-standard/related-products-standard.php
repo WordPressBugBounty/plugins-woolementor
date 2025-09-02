@@ -474,8 +474,8 @@ class Related_products_Standard extends Widget_Base {
 			array(
 				'label'        => __( 'Show Content', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -556,8 +556,8 @@ class Related_products_Standard extends Widget_Base {
 			array(
 				'label'        => __( 'Show Sale Price', 'codesigner' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Show', 'your-plugin' ),
-				'label_off'    => __( 'Hide', 'your-plugin' ),
+				'label_on'     => __( 'Show', 'codesigner' ),
+				'label_off'    => __( 'Hide', 'codesigner' ),
 				'return_value' => 'block',
 				'default'      => 'none',
 				'separator'    => 'before',
@@ -1280,7 +1280,7 @@ class Related_products_Standard extends Widget_Base {
 		$this->start_controls_tab(
 			'regular_wishlist_color',
 			array(
-				'label' => __( 'Regular', 'plugin-name' ),
+				'label' => __( 'Regular', 'codesigner' ),
 			)
 		);
 
@@ -1311,7 +1311,7 @@ class Related_products_Standard extends Widget_Base {
 		$this->start_controls_tab(
 			'active_wishlist_color',
 			array(
-				'label' => __( 'Active', 'plugin-name' ),
+				'label' => __( 'Active', 'codesigner' ),
 			)
 		);
 
@@ -1486,7 +1486,7 @@ class Related_products_Standard extends Widget_Base {
 										?>
 										<div class="wl-rps-product-cart">
 											<div class="wl-cart-area">
-												<a href="?add-to-cart=<?php echo esc_attr( $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>"><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
+												<a href="<?php echo esc_url( '?add-to-cart=' . $product_id ); ?>" data-quantity="1" class="product_type_<?php echo esc_attr( $product->get_type() ); ?> add_to_cart_button ajax_add_to_cart" data-product_id="<?php echo esc_attr( $product_id ); ?>"><i class="<?php echo esc_attr( $cart_icon['value'] ); ?>"></i></a>
 											</div>
 										</div>
 									<?php else : ?>

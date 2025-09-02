@@ -173,7 +173,7 @@ class Cart_Items_Classic extends Widget_Base {
 		$this->add_control(
 			'action_notice',
 			array(
-				'label'           => __( '', 'codesigner' ),
+				'label'           => __( 'Empty Section', 'codesigner' ),
 				'type'            => Controls_Manager::RAW_HTML,
 				'raw'             => __( 'This section is only visible when the cart is empty.', 'codesigner' ),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-info',
@@ -1385,11 +1385,11 @@ class Cart_Items_Classic extends Widget_Base {
 					<thead>
 						<tr class="wl-cic-heading-nav">
 							<th class="product-remove">&nbsp;</th>
-							<th class="product-thumbnail"><?php esc_html_e( 'Thumbnail', 'woocommerce' ); ?></th>
-							<th class="product-name"><?php esc_html_e( 'Product', 'woocommerce' ); ?></th>
-							<th class="product-price"><?php esc_html_e( 'Price', 'woocommerce' ); ?></th>
-							<th class="product-quantity"><?php esc_html_e( 'Quantity', 'woocommerce' ); ?></th>
-							<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'woocommerce' ); ?></th>
+							<th class="product-thumbnail"><?php esc_html_e( 'Thumbnail', 'codesigner' ); ?></th>
+							<th class="product-name"><?php esc_html_e( 'Product', 'codesigner' ); ?></th>
+							<th class="product-price"><?php esc_html_e( 'Price', 'codesigner' ); ?></th>
+							<th class="product-quantity"><?php esc_html_e( 'Quantity', 'codesigner' ); ?></th>
+							<th class="product-subtotal"><?php esc_html_e( 'Subtotal', 'codesigner' ); ?></th>
 						</tr>
 					</thead>
 					<tbody>
@@ -1413,7 +1413,7 @@ class Cart_Items_Classic extends Widget_Base {
 												sprintf(
 													'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s"><i class="' . $remove_icon . '"></i></a>',
 													esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-													esc_html__( 'Remove this item', 'woocommerce' ),
+													esc_html__( 'Remove this item', 'codesigner' ),
 													esc_attr( $product_id ),
 													esc_attr( $_product->get_sku() )
 												),
@@ -1446,7 +1446,7 @@ class Cart_Items_Classic extends Widget_Base {
 									?>
 									</td>
 
-									<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'woocommerce' ); ?>">
+									<td class="product-name" data-title="<?php esc_attr_e( 'Product', 'codesigner' ); ?>">
 									<?php
 
 									if ( ! $product_permalink ) {
@@ -1462,18 +1462,18 @@ class Cart_Items_Classic extends Widget_Base {
 
 									// Backorder notification.
 									if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
-										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
+										echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'codesigner' ) . '</p>', $product_id ) );
 									}
 									?>
 									</td>
 
-									<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'woocommerce' ); ?>">
+									<td class="product-price" data-title="<?php esc_attr_e( 'Price', 'codesigner' ); ?>">
 										<?php
 											echo wp_kses_post( apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
 										?>
 									</td>
 
-									<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
+									<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'codesigner' ); ?>">
 									<?php
 									if ( $_product->is_sold_individually() ) {
 										$product_quantity = sprintf( '1 <input type="hidden" name="cart[%s][qty]" value="1" />', $cart_item_key );
@@ -1519,7 +1519,7 @@ class Cart_Items_Classic extends Widget_Base {
 									?>
 									</td>
 
-									<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+									<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'codesigner' ); ?>">
 										<?php
 											echo wp_kses_post( apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ) ); // PHPCS: XSS ok.
 										?>
@@ -1537,13 +1537,13 @@ class Cart_Items_Classic extends Widget_Base {
 								<div class="wl-cic-actions">
 									<div class="coupon">
 									<?php if ( wc_coupons_enabled() && $settings['coupon_show_hide'] == 'yes' ) { ?>
-										<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'woocommerce' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php esc_attr_e( $settings['coupon_placeholder'] ); ?>" /> <button type="submit" class="button wl-cic-coupon-button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'woocommerce' ); ?>"><?php esc_attr_e( $settings['coupon_btn_text'] ); ?></button>
+										<label for="coupon_code"><?php esc_html_e( 'Coupon:', 'codesigner' ); ?></label> <input type="text" name="coupon_code" class="input-text" id="coupon_code" value="" placeholder="<?php echo esc_attr( $settings['coupon_placeholder'] ); ?>" /> <button type="submit" class="button wl-cic-coupon-button" name="apply_coupon" value="<?php esc_attr_e( 'Apply coupon', 'codesigner' ); ?>"><?php echo esc_attr( $settings['coupon_btn_text'] ); ?></button>
 											<?php do_action( 'woocommerce_cart_coupon' ); ?>
 									<?php } ?>
 										</div>
 
 									<?php if ( $settings['update_cart_show_hide'] == 'yes' ) : ?>
-									<button type="submit" class="button wl-cic-update-cart-button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'woocommerce' ); ?>"><?php esc_html_e( $settings['update_cart_btn_text'] ); ?></button>
+									<button type="submit" class="button wl-cic-update-cart-button" name="update_cart" value="<?php esc_attr_e( 'Update cart', 'codesigner' ); ?>"><?php echo esc_html( $settings['update_cart_btn_text'] ); ?></button>
 
 										<?php
 									endif;
