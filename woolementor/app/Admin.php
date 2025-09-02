@@ -451,6 +451,12 @@ class Admin extends Base {
 		}
 	}
 
+	public function maybe_redirect() {
+		if( get_option( 'codesigner_setup_done' ) != 1 ) {
+			wp_safe_redirect( add_query_arg( [ 'page' => 'codesigner_setup' ], admin_url( 'admin.php' ) ) );
+		}
+	}
+
 	public function settings_heading( $config ) {
 
 		$screen = get_current_screen();

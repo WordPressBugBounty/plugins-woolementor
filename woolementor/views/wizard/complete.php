@@ -40,8 +40,7 @@ $congratulations = CODESIGNER_ASSETS . '/img/congratulations.png';
 		<div id="ec-cta-wrap">
 			<label id="ec-cta">
 			  <input type="checkbox" name="install_easycommerce">
-			  <!-- <strong>Install and activate EasyCommerce to try it out</strong> -->
-			  <strong>👈</span> Be one of the first to try it</strong>
+			  <strong><span>👈</span> Be one of the first to try it</strong>
 			</label>
 		</div>
 	</div>

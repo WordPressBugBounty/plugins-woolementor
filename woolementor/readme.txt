@@ -4,7 +4,7 @@ Donate link: https://codexpert.io/codesigner/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 5.0
 Tested up to: 6.8.2
-Stable tag: 4.25
+Stable tag: 4.25.1
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -404,9 +404,11 @@ Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/
 
 == Changelog ==
 
+= v4.25.1 - 2025-09-02 =
+- [fix] Fixed the redirection to setup wizard
+
 = v4.25 - 2025-09-02 =
 - [imp] Version compatibility tested with WordPress 6.8.2
-- [fix] Plugins list now properly shows installed plugins in the list page
 - [update] Updated texts across multiple screens
 - [fix] Escaped and sanitized data for name, id, value, placeholder HTML attributes
 - [fix] Solved text-domain and translation issues
