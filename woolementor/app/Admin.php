@@ -523,7 +523,8 @@ class Admin extends Base {
 
 				<?php if( ! defined( 'CODESIGNER_PRO' ) ) : ?>
 					<!-- Upgraded button -->
-					<a class="cd-upgraded-btn" href="<?php echo esc_url( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro' ); ?>"> <img src="<?php echo esc_url( $banner ); ?>" alt=""> <?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?></a>
+					
+					<a class="cd-upgraded-btn" target="_blank" href="<?php echo esc_url( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro' ); ?>"> <img src="<?php echo esc_url( $banner ); ?>" alt=""> <?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?></a>
 				<?php else: ?>
 					<div class="cd-btn-wrapper">
 						<a href="<?php echo esc_url( 'https://help.codexpert.io/docs/codesigner' ); ?>" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>

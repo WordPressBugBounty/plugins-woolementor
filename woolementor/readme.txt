@@ -4,7 +4,7 @@ Donate link: https://codexpert.io/codesigner/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 5.0
 Tested up to: 6.8.2
-Stable tag: 4.25.2
+Stable tag: 4.26
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -403,6 +403,16 @@ CoDesigner gets regular updates to ensure compatibility, security, and addition 
 Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/docs/codesigner/?utm_campaign=wporg)
 
 == Changelog ==
+
+= v4.26 - 2025-09-22 =
+- [new] Added new SVG backgrounds and icons for EasyCommerce campaign UI and dashboard  
+- [improve] Enhanced premium features layout with grid display, new images, and responsive adjustments  
+- [improve] Refactored upgrade call-to-action and premium features sections for cleaner UI and better readability  
+- [improve] Updated button links and hover states across dashboard  
+- [improve] Replaced inline/internal CSS with admin CSS files for cleaner codebase  
+- [improve] General UI/UX enhancements in new dashboard design  
+
+- [remove] Removed old version images to clean up assets
 
 = v4.25.2 - 2025-09-02 =
 - [fix] Fixed a fatal error in the setup wizard
