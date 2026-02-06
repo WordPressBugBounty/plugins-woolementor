@@ -12,6 +12,7 @@ use Codexpert\CoDesigner\App\Controls\Group_Control_Gradient_Text;
 class Gallery_Box_Slider extends Widget_Base {
 
 	public $id;
+	public $widget;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );

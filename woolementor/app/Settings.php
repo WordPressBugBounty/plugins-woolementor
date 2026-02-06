@@ -333,7 +333,7 @@ class Settings extends Base {
 			$pro_settings = array(
 				'id'     => "{$this->slug}-get-pro",
 				'parent' => $this->slug,
-				'label'  => __( ' <span style="font-weight: bold"> Upgrade Today & Save Big (Flat 50% OFF)! </span>', 'codesigner' ),
+				'label'  => __( ' <span style="font-weight: bold"> Celebrate Year-End with 50% Off </span>', 'codesigner' ),
 				'title'  => '',
 				'header' => '',
 			);
@@ -345,7 +345,7 @@ class Settings extends Base {
 	public function redirect_specific_admin_page() {
 		global $pagenow;
 		if ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && $_GET['page'] == 'codesigner-get-pro' && ! defined( 'CODESIGNER_PRO' ) ) {
-			wp_redirect( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=menu+bar&utm_campaign=spring+2025' );
+			wp_redirect( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' );
 			exit;
 		}
 	}

@@ -62,7 +62,7 @@ class Admin extends Base {
 	}
 
 	public function add_body_class( $classes ) {
-		
+
 		$classes .= ' codesigner';
 		$classes .= defined( 'CODESIGNER_PRO' ) ? ' codesigner-pro' : '';
 
@@ -145,7 +145,7 @@ class Admin extends Base {
 		$this->admin_url = admin_url( 'admin.php' );
 		$url             = add_query_arg( 'page', $this->slug, 'https://help.codexpert.io/docs/codesigner/' );
 
-		$new_links = array(			
+		$new_links = array(
 			'settings' => sprintf( '<a href="%1$s">' . __( 'Docs', 'codesigner' ) . '</a>', esc_url( $url ) ),
 		);
 		$support   = array(
@@ -168,7 +168,8 @@ class Admin extends Base {
 	}
 
 	public function footer_text( $text ) {
-		if ( get_current_screen()->parent_base != $this->slug ) {
+		$screen = get_current_screen();
+		if ( ! $screen || $screen->parent_base != $this->slug ) {
 			return $text;
 		}
 
@@ -199,74 +200,54 @@ class Admin extends Base {
 	}
 
 	public function admin_notices() {
-		if ( ! defined( 'CODESIGNER_PRO' ) ) {
-			$notice_id	= 'codesigner-spring_deal_campaign-5-30';
-			$url        = 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=spring+2025';
-			$logo_url 	= CODESIGNER_ASSETS . '/img/sale-banner/logo.png';
+		$is_year_end_campaign_active = apply_filters( 'is_year_end_campaign_active', false );
+		
+		if ( $is_year_end_campaign_active ) {
+			return;
+		}
 
-			if( get_option( 'codesigner-spring_deal_campaign-5-30_dismissed' ) !== false ) {
+		if ( ! defined( 'CODESIGNER_PRO' ) ) {
+			$notice_id	 		= 'codesigner-year_end_deal_campaign-dec-21';
+			$url        		= 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=dashboard&utm_campaign=year-end';
+			$discount_img 		= CODESIGNER_ASSETS . '/img/sale-banner/discount.gif';
+
+			$dismissed_time 	= get_option( 'codesigner-year_end_deal_campaign-dec-21_dismissed' );
+			$current_time 		= date_i18n( 'U' );
+			$five_days    		= 5 * DAY_IN_SECONDS;
+
+			if( $dismissed_time !== false && $current_time <= ( $dismissed_time + $five_days ) ) {
 				return;
 			}
 
-			$ec_notice = new Notice( $notice_id );
-			$expiry_timestamp = strtotime( '2025-05-30 23:59:00' ); 
-			// Start - 7 May, 11:59 PM
-			// End - 13 May, 11:59 PM
-			// $ec_notice->set_intervals( array( DAY_IN_SECONDS ) ); // Show at 0s (immediately)
-			$ec_notice->set_expiry( $expiry_timestamp );
+			$sale_notice = new Notice( $notice_id );
+			$start_timestamp  = strtotime( '2025-12-20 23:59:59' );
+			$expiry_timestamp = strtotime( '2026-1-10 23:59:00' );
+			$sale_notice->set_start_time( $start_timestamp );
+			$sale_notice->set_expiry( $expiry_timestamp );
+            $sale_notice->set_screens( array( 'dashboard', 'codesigner' ) );
 
-			$allowed_html = [
-				'span' => array(
-					'class' => true
-				)
-			];
+			$message = '
+				<div class="codesigner-year-end-deals-notice">
+					<div class="discount-image">
+						<img src="' . esc_url( $discount_img ) . '" alt="Codesigner" class="wc-affiliate-notice-image" >
+					</div>
 
-			$percantage = '70%';
-			$message = '			
-					<div class="codesigner-spring-deals-notice-content">
-						<img src="' . esc_url( $logo_url ) . '" alt="Thumbpress" class="wc-affiliate-notice-image" >
-						
-						
-						<div class="tp-timer-wrapper">
-							<div class="tp-timer">
-								<div class="tp-count">
-									<span id="days"></span>
-									<label>DAY</label>
-								</div>
-			
-								<div class="tp-count">
-									<span id="hours"></span>
-									<label>HRS</label>
-								</div>
-
-								<div class="tp-count">
-									<span id="minutes"></span>
-									<label>MIN</label>
-								</div>
-
-								<div class="tp-count">
-									<span id="seconds"></span>
-									<label>SEC</label>
-								</div>
-							</div>
-						</div>
-
-						<p class="notice-subtitle">' . wp_kses( sprintf( "Spring into Mega Savings with CoDesigner Pro", 'codesigner' ), $allowed_html ) . '</p>
-
-						<p class="notice-discount">' . wp_kses( sprintf( __("Up to <span>%s</span> OFF", 'codesigner'), $percantage ), $allowed_html ) . '</p>
-
-						
+					<div class="year-end-content">
+						<p class="title">' . __( 'Celebrate Year-End with CoDesigner!', 'codesigner' ) . '</p>
+						<p class="description">' . __( 'Get 50% OFF and design stunning WooCommerce stores effortlessly with Elementor+CoDesigner Pro!', 'codesigner' ) . '</p>
 						<a href="' . esc_url( $url ) . '" class="notice-cta-button" data-id="' . esc_attr( $notice_id ) . '" target="_blank">
-						' . __( 'Save Now!', 'codesigner' ) . '
+						' . __( 'Save 50% Now', 'codesigner' ) . '
 						</a>
 					</div>
-				';
+				</div>
+			';
 
-			$ec_notice->set_message( $message );
-			$ec_notice->set_screens( array( 'dashboard', 'toplevel_page_codesigner','codesigner_page_codesigner-widgets', 'codesigner_page_codesigner-modules', 'codesigner_page_codesigner-templates', 'codesigner_page_codesigner-tools' ) );
-			$ec_notice->render();
+			$sale_notice->set_message( $message );
+			$sale_notice->set_screens( array( 'dashboard', 'toplevel_page_codesigner' ) );
+			$sale_notice->render();
+
+			add_filter( 'is_year_end_campaign_active', '__return_true' );
 		}
-		
 
 		if( get_option( 'codesigner_setup_done' ) != 1 ) {
 			/**
@@ -283,7 +264,7 @@ class Admin extends Base {
 			    esc_html__( 'Click here', 'codesigner' ),
 			    esc_html__( 'to start the setup wizard and bring your store to life!', 'codesigner' )
 			);
-			
+
 			$wizard_notice->set_message( $message );
 			$wizard_notice->render();
 		}
@@ -295,7 +276,7 @@ class Admin extends Base {
 			'utm_medium'   => 'settings',
 			'utm_campaign' => 'pro-tab',
 		);
-		$pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner/#pricing' );
+		$pro_link = add_query_arg( $utm, 'https://codesigner.dev/pricing?utm_source=inplugin&utm_medium=button&utm_campaign=bfcm' );
 
 		if ( ! wcd_is_pro_activated() && $settings->config['id'] == 'codesigner' ) {
 			echo '<li><a href="' . esc_url( $pro_link ) . '">Get Pro</a></li>';
@@ -461,7 +442,7 @@ class Admin extends Base {
 
 		$screen = get_current_screen();
 		$screen_ids = array( 'toplevel_page_codesigner', 'codesigner_page_codesigner-widgets', 'codesigner_page_codesigner-modules', 'codesigner_page_codesigner-templates', 'codesigner_page_codesigner-tools' );
-		
+
 		if( ! ( $screen && in_array( $screen->id, $screen_ids ) ) ) {
 			return;
 		}
@@ -474,7 +455,7 @@ class Admin extends Base {
 		$tabs 		= [
 			[
 				'id'	=> 'codesigner',
-				'label' => 'Getting Started'	
+				'label' => 'Getting Started'
 			],
 			[
 				'id' 	=> defined( 'CODESIGNER_PRO' ) ? 'codesigner' : 'codesigner-widgets',
@@ -510,9 +491,9 @@ class Admin extends Base {
 					<div class="cd-logo"><img src="<?php echo esc_url( $logo ); ?>" /><span><?php esc_html_e('CoDesigner', 'codesigner' ) ?></span></div>
 					<!-- tab Item -->
 					<ul>
-						<?php 
+						<?php
 							foreach ( $tabs as $tab ) {
-								printf( '<li class="%s"><a href="%s">%s</a></li>', 
+								printf( '<li class="%s"><a href="%s">%s</a></li>',
 								$current_page == $tab['id'] ? 'active-tab' : '',
 								esc_url( add_query_arg( 'page', $tab['id'], admin_url( 'admin.php' ) ) ),
 								esc_html( $tab['label'] ) );
@@ -523,8 +504,8 @@ class Admin extends Base {
 
 				<?php if( ! defined( 'CODESIGNER_PRO' ) ) : ?>
 					<!-- Upgraded button -->
-					
-					<a class="cd-upgraded-btn" target="_blank" href="<?php echo esc_url( 'https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro' ); ?>"> <img src="<?php echo esc_url( $banner ); ?>" alt=""> <?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?></a>
+
+					<a class="cd-upgraded-btn" target="_blank" href="<?php echo esc_url( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' ); ?>"> <img src="<?php echo esc_url( $banner ); ?>" alt=""> <?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?></a>
 				<?php else: ?>
 					<div class="cd-btn-wrapper">
 						<a href="<?php echo esc_url( 'https://help.codexpert.io/docs/codesigner' ); ?>" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>

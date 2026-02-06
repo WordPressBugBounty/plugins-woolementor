@@ -62,8 +62,8 @@ class Bulk_Purchase_Discount extends Base {
 			</h4>
 			<?php foreach ( $cd_bpd_rules as $index => $values ) { ?>
 				<div class="cd-single-discount-rule">
-					<input type="text" name="cd_bpd_rules[<?php echo esc_attr( $index ); ?>][cd_bpd_quantatity]" value="<?php echo esc_attr( $values['cd_bpd_quantatity'] ); ?>" placeholder="<?php esc_attr_e( 'Quantity', 'codesigner' ); ?>" />
-					<input type="text" name="cd_bpd_rules[<?php echo esc_attr( $index ); ?>][cd_bpd_amount]" value="<?php echo esc_attr( $values['cd_bpd_amount'] ); ?>" placeholder="<?php esc_attr_e( 'Discount Amount', 'codesigner' ); ?>" />
+					<input type="number" name="cd_bpd_rules[<?php echo esc_attr( $index ); ?>][cd_bpd_quantatity]" value="<?php echo esc_attr( $values['cd_bpd_quantatity'] ); ?>" placeholder="<?php esc_attr_e( 'Quantity', 'codesigner' ); ?>" />
+					<input type="number" name="cd_bpd_rules[<?php echo esc_attr( $index ); ?>][cd_bpd_amount]" value="<?php echo esc_attr( $values['cd_bpd_amount'] ); ?>" placeholder="<?php esc_attr_e( 'Discount Amount', 'codesigner' ); ?>" />
 					<a class="cd-add-row">+</a>
 					<a class="cd-remove-row">-</a>
 				</div>
@@ -87,21 +87,17 @@ class Bulk_Purchase_Discount extends Base {
 	
 		<div class="cd-bpd-wrapper">
 		<h4><?php echo esc_attr( __( 'CoDesigner bulk Purchase Discount Rules', 'codesigner' ) ); ?></h4>
+		
+		<?php foreach ( $cd_bpd_rules as $index => $values ) { ?>
+			<div class="cd-single-discount-rule">
+				<input type="number" name="cd_bpd_rules[<?php echo esc_attr( $index ); ?>][cd_bpd_quantatity]" value="<?php echo esc_attr( $values['cd_bpd_quantatity'] ); ?>" placeholder="<?php esc_attr_e( 'Quantity', 'codesigner' ); ?>" />
+				<input type="number" name="cd_bpd_rules[<?php echo esc_attr( $index ); ?>][cd_bpd_amount]" value="<?php echo esc_attr( $values['cd_bpd_amount'] ); ?>" placeholder="<?php esc_attr_e( 'Discount Amount', 'codesigner' ); ?>" />
+				<a class="cd-add-row">+</a>
+				<a class="cd-remove-row">-</a>
+			</div>
+		<?php } ?>
 
-		<?php
-
-		foreach ( $cd_bpd_rules as $index => $values ) {
-			?>
-				<div class="cd-single-discount-rule">
-					<input type="text" name="cd_bpd_rules[' . esc_attr( $index ) . '][cd_bpd_quantatity]" value="' . esc_attr( $values['cd_bpd_quantatity'] ) . '" placeholder="'. esc_attr( 'Quantity' ) .'" />
-					<input type="text" name="cd_bpd_rules[' . esc_attr( $index ) . '][cd_bpd_amount]" value="' . esc_attr( $values['cd_bpd_amount'] ) . '" placeholder="'. esc_attr( 'Discount Amount' ) .'" />
-					<a class="cd-add-row">+</a>
-					<a class="cd-remove-row">-</a>
-				</div>
-			<?php
-		}
-
-		echo wp_kses_post( '</div>' );
+		<?php echo wp_kses_post( '</div>' );
 	}
 
 	public function save_data( $post_id ) {

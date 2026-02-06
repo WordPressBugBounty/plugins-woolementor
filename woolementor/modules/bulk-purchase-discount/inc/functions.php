@@ -28,7 +28,6 @@ if ( ! function_exists( 'cd_bulk_discount_amount' ) ) :
 				if ( isset( $item['cd_bpd_quantatity'], $item['cd_bpd_amount'] ) ) {
 					if ( $item['cd_bpd_quantatity'] <= $quantity ) {
 						$difference = abs( intval( $quantity ) - intval( $item['cd_bpd_quantatity'] ) );
-						$difference = abs( $quantity - $item['cd_bpd_quantatity'] );
 						if ( $difference < $closest_difference ) {
 							$closest_difference = $difference;
 							$closest_amount     = $item['cd_bpd_amount'];

@@ -11,6 +11,7 @@ use Elementor\Group_Control_Typography;
 class Tabs_Beauty extends Widget_Base {
 
 	public $id;
+	public $widget;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );

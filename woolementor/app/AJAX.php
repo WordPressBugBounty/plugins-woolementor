@@ -35,8 +35,13 @@ class AJAX extends Base {
 		$this->name    = $this->plugin['Name'];
 		$this->version = $this->plugin['Version'];
 	}
+	
+	public function fetch_docs() { 
+		// Check capability to prevent unauthorized access
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_die( __( 'You do not have sufficient permissions to access this page.', 'codesigner' ) );
+		}
 
-	public function fetch_docs() {
 		if ( ! is_wp_error( $_posts_data = wp_remote_get( "https://help.codexpert.io/wp-json/wp/v2/docs/?parent={$this->plugin['doc_id']}&per_page=100" ) ) && is_array( $posts = json_decode( $_posts_data['body'], true ) ) && count( $posts ) > 0 ) {
 			update_option( 'codesigner-docs_json', $posts );
 		}
@@ -173,6 +178,12 @@ class AJAX extends Base {
 			wp_send_json( $response );
 		}
 
+		// Check capability to prevent unauthorized access
+		if ( ! current_user_can( 'manage_options' ) ) {
+			$response['message'] = __( 'You do not have sufficient permissions to sync templates.', 'codesigner' );
+			wp_send_json( $response );
+		}
+
 		if ( ! defined( 'ELEMENTOR_VERSION' ) ) {
 			$response['message'] = __( 'Elementor not installed!', 'codesigner' );
 			wp_send_json( $response );
@@ -230,6 +241,13 @@ class AJAX extends Base {
 			wp_send_json( $response );
 		}
 
+		// Check capability to prevent unauthorized access
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			$response['status']  = 0;
+			$response['message'] = __( 'You do not have sufficient permissions to perform this action.', 'codesigner' );
+			wp_send_json( $response );
+		}
+
 		update_option( 'mother_day_pointer_dismiss', 1 );
 
 		$response['status']  = 1;
@@ -242,6 +260,13 @@ class AJAX extends Base {
 		if ( ! wp_verify_nonce( $_POST['_wpnonce'], 'admin_notice' ) ) {
 			$response['status']  = 0;
 			$response['message'] = __( 'Unauthorized!', 'codesigner' );
+			wp_send_json( $response );
+		}
+
+		// Check capability to prevent unauthorized access
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			$response['status']  = 0;
+			$response['message'] = __( 'You do not have sufficient permissions to perform this action.', 'codesigner' );
 			wp_send_json( $response );
 		}
 
@@ -263,33 +288,18 @@ class AJAX extends Base {
 		wp_send_json( $response );
 	}
 
-	// private function dismiss_notice_generic($notice_type) {
-
-	// if (! wp_verify_nonce($_POST['_wpnonce'])) {
-	// $response['status']     = 0;
-	// $response['message'] = __('Unauthorized!', 'codesigner');
-	// wp_send_json($response);
-	// }
-
-	// update_option($notice_type, true);
-
-	// $response['status']     = 1;
-	// $response['message']    = __('Notice Removed!', 'codesigner');
-	// wp_send_json($response);
-	// }
-
-	// public function register_dismiss_notice_actions() {
-	// $notice_types = ['checkout', 'email', 'invoice'];
-	// foreach ($notice_types as $type) {
-	// dismiss_notice_generic("codesigner_dismiss_notice_$type");
-	// }
-	// }
-
 	public function dismiss_notice_checkout() {
 
 		if ( ! wp_verify_nonce( $_POST['_wpnonce'] ) ) {
 			$response['status']  = 0;
 			$response['message'] = __( 'Unauthorized!', 'codesigner' );
+			wp_send_json( $response );
+		}
+
+		// Check capability to prevent unauthorized access
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			$response['status']  = 0;
+			$response['message'] = __( 'You do not have sufficient permissions to perform this action.', 'codesigner' );
 			wp_send_json( $response );
 		}
 
@@ -308,6 +318,13 @@ class AJAX extends Base {
 			wp_send_json( $response );
 		}
 
+		// Check capability to prevent unauthorized access
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			$response['status']  = 0;
+			$response['message'] = __( 'You do not have sufficient permissions to perform this action.', 'codesigner' );
+			wp_send_json( $response );
+		}
+
 		update_option( 'codesigner_dismiss_notice_email', true );
 
 		$response['status']  = 1;
@@ -320,6 +337,13 @@ class AJAX extends Base {
 		if ( ! wp_verify_nonce( $_POST['_wpnonce'] ) ) {
 			$response['status']  = 0;
 			$response['message'] = __( 'Unauthorized!', 'codesigner' );
+			wp_send_json( $response );
+		}
+
+		// Check capability to prevent unauthorized access
+		if ( ! current_user_can( 'edit_posts' ) ) {
+			$response['status']  = 0;
+			$response['message'] = __( 'You do not have sufficient permissions to perform this action.', 'codesigner' );
 			wp_send_json( $response );
 		}
 

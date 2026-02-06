@@ -7,20 +7,20 @@ namespace Composer\Autoload;
 class ComposerStaticInit06f298ff9e1527e6943ffaea8ab0a8cf
 {
     public static $prefixLengthsPsr4 = array (
-        'n' => 
+        'n' =>
         array (
             'nguyenary\\QRCodeMonkey\\' => 23,
         ),
-        'c' => 
+        'c' =>
         array (
             'chillerlan\\Settings\\' => 20,
             'chillerlan\\QRCode\\' => 18,
         ),
-        'P' => 
+        'P' =>
         array (
             'Picqer\\Barcode\\' => 15,
         ),
-        'C' => 
+        'C' =>
         array (
             'Codexpert\\CoDesigner\\App\\' => 25,
             'Codexpert\\CoDesigner\\API\\' => 25,
@@ -29,40 +29,40 @@ class ComposerStaticInit06f298ff9e1527e6943ffaea8ab0a8cf
     );
 
     public static $prefixDirsPsr4 = array (
-        'nguyenary\\QRCodeMonkey\\' => 
+        'nguyenary\\QRCodeMonkey\\' =>
         array (
             0 => __DIR__ . '/..' . '/nguyenary/qr-code-monkey/src',
         ),
-        'chillerlan\\Settings\\' => 
+        'chillerlan\\Settings\\' =>
         array (
             0 => __DIR__ . '/..' . '/chillerlan/php-settings-container/src',
         ),
-        'chillerlan\\QRCode\\' => 
+        'chillerlan\\QRCode\\' =>
         array (
             0 => __DIR__ . '/..' . '/chillerlan/php-qrcode/src',
         ),
-        'Picqer\\Barcode\\' => 
+        'Picqer\\Barcode\\' =>
         array (
             0 => __DIR__ . '/..' . '/picqer/php-barcode-generator/src',
         ),
-        'Codexpert\\CoDesigner\\App\\' => 
+        'Codexpert\\CoDesigner\\App\\' =>
         array (
             0 => __DIR__ . '/../..' . '/app',
         ),
-        'Codexpert\\CoDesigner\\API\\' => 
+        'Codexpert\\CoDesigner\\API\\' =>
         array (
             0 => __DIR__ . '/../..' . '/api',
         ),
-        'Codexpert\\CoDesigner\\' => 
+        'Codexpert\\CoDesigner\\' =>
         array (
             0 => __DIR__ . '/../..' . '/classes',
         ),
     );
 
     public static $prefixesPsr0 = array (
-        'C' => 
+        'C' =>
         array (
-            'Curl' => 
+            'Curl' =>
             array (
                 0 => __DIR__ . '/..' . '/curl/curl/src',
             ),

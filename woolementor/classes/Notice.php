@@ -8,6 +8,8 @@ if ( ! class_exists( 'Notice' ) ) {
 
 		private $intervals = array();
 
+		private $start_time = MONTH_IN_SECONDS;
+
 		private $expiry = MONTH_IN_SECONDS;
 
 		private $message = '';
@@ -29,13 +31,17 @@ if ( ! class_exists( 'Notice' ) ) {
 				update_option( $this->install_time, $this->current_time );
 			}
 
-			add_action( 'wp_ajax_cx_hide_notice', array( $this, 'hide_notice' ) );
+			add_action( 'wp_ajax_codesigner_bfcm_hide_notice', array( $this, 'hide_notice' ) );
 		}
 
 		public function set_intervals( $intervals ) {
 			if ( is_array( $intervals ) ) {
 				$this->intervals = $intervals;
 			}
+		}
+
+		public function set_start_time( $start_time = MONTH_IN_SECONDS ) {
+			$this->start_time = $start_time;
 		}
 
 		public function set_expiry( $expiry = MONTH_IN_SECONDS ) {
@@ -78,6 +84,7 @@ if ( ! class_exists( 'Notice' ) ) {
 			$last_dismissed = get_option( $this->id . '_dismissed', 0 );
 		
 			if (
+				$this->current_time >= $this->start_time &&
 				$this->current_time <= $this->expiry &&
 				$last_dismissed < $this->install_time
 			) {
@@ -89,7 +96,7 @@ if ( ! class_exists( 'Notice' ) ) {
 		public function output_notice() {
 			$screen = get_current_screen();
 
-			if ( ! empty( $this->screens ) && ! in_array( $screen->id, $this->screens, true ) ) {
+			if ( ! $screen || ( ! empty( $this->screens ) && ! in_array( $screen->id, $this->screens, true ) ) ) {
 				return;
 			}
 
@@ -103,7 +110,7 @@ if ( ! class_exists( 'Notice' ) ) {
 						console.log('Notice dismissed');
 						console.log(ajaxurl);
 						$.post(ajaxurl, {
-							action: 'cx_hide_notice',
+							action: 'codesigner_bfcm_hide_notice',
 							notice_id: '<?php echo esc_js( $this->id ); ?>',
 						});
 					});

@@ -13,6 +13,7 @@ use Elementor\Core\Kits\Documents\Tabs\Global_Colors;
 class Product_Categories extends Widget_Base {
 
 	public $id;
+	public $widget;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
@@ -91,7 +92,7 @@ class Product_Categories extends Widget_Base {
 			array(
 				'label'       => __( 'Label', 'codesigner' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => 'Category: ',
+				'default'     => __( 'Category: ', 'codesigner' ),
 				'label_block' => true,
 			)
 		);

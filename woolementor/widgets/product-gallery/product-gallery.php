@@ -10,6 +10,7 @@ use Elementor\Group_Control_Image_Size;
 class Product_Gallery extends Widget_Base {
 
 	public $id;
+	public $widget;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );

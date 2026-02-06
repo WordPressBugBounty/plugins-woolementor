@@ -707,7 +707,7 @@ $pricing_redirect = add_query_arg( $pricing_url, 'https://codexpert.io/codesigne
 
 	<div class="wl-cta-sec">
 		<h1>Unlock all the features with CoDesigner Pro and design your dream WooCommerce store.</h1>
-		<a href="https://codexpert.io/codesigner/pricing?utm_source=in+plugin&utm_medium=getting+started&utm_campaign=get+pro">Get Pro Now</a>
+		<a href="https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end">Get Pro Now</a>
 	</div>
 
 	<div class="wl-blog-sec">

@@ -14,6 +14,7 @@ use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 class Filter_Horizontal extends Widget_Base {
 
 	public $id;
+	public $widget;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
@@ -1228,7 +1229,7 @@ class Filter_Horizontal extends Widget_Base {
 						<?php if ( 'yes' == $filter_horizontal_price ) : ?>
 							<div class="wl-fh-single-filter wl-fh-single-filter-<?php echo esc_attr( $section_id ); ?>">
 								<div class="wl-fh-single-filter-wrap">
-									<div class="wl-fh-accordion-title wl-fh-tab-label wl-fh-item wl-fh-item-<?php echo esc_attr( $section_id ); ?>"><?php echo esc_html( $fh_price_title ); ?></div>
+									<div class="wl-fh-accordion-title wl-fh-tab-label wl-fh-item wl-fh-item-<?php echo esc_attr( $section_id ); ?>"><?php printf( __( '%s', 'codesigner' ), esc_html( $fh_price_title ) ); ?></div>
 									<div class="wl-fh-filter-content wl-fh-item-data wl-fh-item-data-<?php echo esc_attr( $section_id ); ?>">
 										<?php
 										foreach ( $price_list as $key => $price ) :
@@ -1397,7 +1398,7 @@ endforeach;
 								<?php
 								$search = isset( $_GET['filter']['q'] ) ? sanitize_text_field( $_GET['filter']['q'] ) : '';
 								?>
-								<input type="search" name="filter[q]" value="<?php echo esc_attr( $search ); ?>" placeholder="<?php echo esc_html( $fh_search_title ); ?>">
+								<input type="search" name="filter[q]" value="<?php echo esc_attr( $search ); ?>" placeholder="<?php printf( __( '%s', 'codesigner' ), esc_html( $fh_search_title ) ); ?>">
 								<button class="wl-fh-search-button"><i class="<?php echo esc_attr( $search_box_icon['value'] ); ?>"></i></button>
 							</div>
 						</div>

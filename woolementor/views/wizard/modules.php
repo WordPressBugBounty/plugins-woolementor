@@ -68,7 +68,7 @@ $active_modules = get_option( 'codesigner_modules', array() );
 	<img class="wl-pro-popup-img" src="<?php echo esc_url( CODESIGNER_ASSETS . '/img/pro-rocket.png' ); ?>">
 	<p class="wl-pro-popup-txt"><?php echo wp_kses_post( 'Get <b>50+ premium features</b> along with this one and create your dream WooCommerce site in no time.' ); ?></p>
 	<p>
-		<a id="wl-pro-popup-btn" href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-popup' ); ?>" target="_blank">
+		<a id="wl-pro-popup-btn" href="<?php echo esc_url( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' ); ?>" target="_blank">
 			<span class="dashicons dashicons-unlock"></span>
 			<?php echo esc_html__( 'Unlock Premium Features', 'codesigner' ); ?>
 		</a>

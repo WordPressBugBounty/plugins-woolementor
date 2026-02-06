@@ -3,8 +3,8 @@ Contributors: woolementor, codexpert, mukto90
 Donate link: https://codexpert.io/codesigner/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 5.0
-Tested up to: 6.8.2
-Stable tag: 4.26
+Tested up to: 6.8.3
+Stable tag: 4.28.2
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -15,11 +15,11 @@ Design stunning WooCommerce sites that sell with 94+ Widgets, 14+ Modules, & 150
 
 Crafting stunning WooCommerce sites with Elementor has never been easy! With CoDesigner WooCommerce Builder you can create and customize your WooCommerce site with exceptional precision without writing a single line of code.
 
-Our intuitive no-code drag-and-drop interface lets you upgrade Elementor's design capabilities and customize shop pages, product filters, checkout processes, and much more within minutes! 
+Our intuitive no-code drag-and-drop interface lets you upgrade Elementor's design capabilities and customize shop pages, product filters, checkout processes, and much more within minutes!
 
 Customize your Elementor WooCommerce site and craft pixel-perfect websites effortlessly with the best Elementor WooCommerce builder in the market - CoDesigner.
 
-⭐ [94+ Widgets](https://codexpert.io/codesigner/) 
+⭐ [94+ Widgets](https://codexpert.io/codesigner/)
 
 ⭐ [14+ Modules](https://codexpert.io/codesigner/modules/)
 
@@ -29,9 +29,9 @@ Customize your Elementor WooCommerce site and craft pixel-perfect websites effor
 
 ⭐ [Support](https://help.codexpert.io/)
 
-A plain Elementor WooCommerce website often leads to abandoned cart pages, lower conversion rates, and ultimately, lost revenue opportunities. 
+A plain Elementor WooCommerce website often leads to abandoned cart pages, lower conversion rates, and ultimately, lost revenue opportunities.
 
-With **94+ Widgets, 150+ Templates, and 14+ Modules**, you can easily customize your WooCommerce store's appearance to get better reach, sales, and returning customers. 
+With **94+ Widgets, 150+ Templates, and 14+ Modules**, you can easily customize your WooCommerce store's appearance to get better reach, sales, and returning customers.
 
 Our Elementor WooCommerce builder will help you craft your brand identity and ensure you get the ideal look and feel for your website instantly!
 
@@ -40,11 +40,11 @@ Our Elementor WooCommerce builder will help you craft your brand identity and en
 🚀 94+ drag-and-drop Elementor WooCommerce Builder Widgets
 🚀 14+ Essential WooCommerce Shop Modules
 🚀 150+ Ready-Made Elementor Builder Templates
-🚀 Enable and Disable Any Widget/Module 
+🚀 Enable and Disable Any Widget/Module
 🚀 Custom WooCommerce Product Template Builder
-🚀 Optimize Elementor WooCommerce Shop 
-🚀 Works with Other Elementor WooCommerce plugins 
-🚀 AJAX-Based Shop Filter and Pagination 
+🚀 Optimize Elementor WooCommerce Shop
+🚀 Works with Other Elementor WooCommerce plugins
+🚀 AJAX-Based Shop Filter and Pagination
 🚀 Multi-language Supported builder
 🚀 Compatible with All Popular WordPress Themes
 🚀 No Coding Skills Required
@@ -54,19 +54,19 @@ Our Elementor WooCommerce builder will help you craft your brand identity and en
 
 ### **Introducing ⭐ CoDesigner Widgets ⭐ for Elementor WooCommerce Shop **
 
-CoDesigner Elementor WooCommerce builder offers an extensive collection of 94+ stunning widgets, each carefully crafted to elevate every aspect of your WooCommerce store. 
+CoDesigner Elementor WooCommerce builder offers an extensive collection of 94+ stunning widgets, each carefully crafted to elevate every aspect of your WooCommerce store.
 
 From related products to advanced menu cart options, these drag-and-drop widgets give you the flexibility to optimize your WooCommerce shop with Elementor in an instant!
 
 **💥 94+ WooCommerce Widgets 💥**
 
-✔️ WooCommerce Related Product 
+✔️ WooCommerce Related Product
 ✔️ WooCommerce Product Variations
 ✔️ WooCommerce My Account
 ✔️ WooCommerce Breadcrumbs
 ✔️ WooCommerce Shop Standard
 ✔️ WooCommerce Shop Slider
-✔️ WooCommerce Shop Curvy 
+✔️ WooCommerce Shop Curvy
 ✔️ WooCommerce Shop Classic
 ✔️ Tabs WooCommerce Widget
 ✔️ Ask for Price
@@ -89,11 +89,11 @@ You can find the full list of free & pro widgets here 👉 [https://codexpert.io
 
 #### 🚀 WooCommerce Shop Builder
 
-Design your store's layout in an instant with our drag-and-drop functionality. Our ready-made Elementor WooCommerce shop widgets let you effortlessly create a custom shopping experience that highlights your products whilst elevating your brand image. 
+Design your store's layout in an instant with our drag-and-drop functionality. Our ready-made Elementor WooCommerce shop widgets let you effortlessly create a custom shopping experience that highlights your products whilst elevating your brand image.
 
 #### 🚀 WooCommerce Order Widgets
 
-Simplify your order management using Elementor WooCommerce builder widgets, designed to display order details clearly and concisely. Improve the customer's post-purchase experience by adding cart functions, checkout, and Thank You and My Account pages. 
+Simplify your order management using Elementor WooCommerce builder widgets, designed to display order details clearly and concisely. Improve the customer's post-purchase experience by adding cart functions, checkout, and Thank You and My Account pages.
 
 #### 🚀 WooCommerce Email Builder
 
@@ -109,19 +109,19 @@ Showcase your products and services by using clear, comparative pricing tables. 
 
 #### 🚀 WooCommerce Review Widgets
 
-Use customer reviews and ratings to create trust and credibility with our WooCommerce builder. Boost sales by showcasing social proof and customer feedback directly on your eCommerce platform. 
+Use customer reviews and ratings to create trust and credibility with our WooCommerce builder. Boost sales by showcasing social proof and customer feedback directly on your eCommerce platform.
 
 #### 🚀 WooCommerce Tab Widgets
 
-Organize product information neatly with customizable tabs for descriptions, specifications, reviews, and more using CoDesigner WooCommerce builder. 
+Organize product information neatly with customizable tabs for descriptions, specifications, reviews, and more using CoDesigner WooCommerce builder.
 
 #### 🚀 WooCommerce Related Product
 
-Showcase related products to encourage additional purchases and improve cross-selling opportunities. CoDesigner’s WooCommerce builder features easy drag-and-drop functionality to customize related product layouts to match your store's design. 
+Showcase related products to encourage additional purchases and improve cross-selling opportunities. CoDesigner’s WooCommerce builder features easy drag-and-drop functionality to customize related product layouts to match your store's design.
 
 #### 🚀 WooCommerce Single Product
 
-Create detailed and immersive single-product pages in your WooCommerce site that highlight features, benefits, and customization options, all in one convenient section with our WooCommerce builder. 
+Create detailed and immersive single-product pages in your WooCommerce site that highlight features, benefits, and customization options, all in one convenient section with our WooCommerce builder.
 
 #### 🚀 WooCommerce Basic Menu
 
@@ -129,13 +129,13 @@ Design and add a straightforward navigation menu with our Elementor builder, ens
 
 ### 💥 Introducing CoDesigner Modules for WooCommerce Elementor 💥
 
-Upgrade your WooCommerce store by adding a large spectrum of eCommerce needs with CoDesigner's suite of 15 modules. Our sleek modules let you drag and drop all essential WooCommerce functionality into the page builder, without writing a single line of code. 
+Upgrade your WooCommerce store by adding a large spectrum of eCommerce needs with CoDesigner's suite of 15 modules. Our sleek modules let you drag and drop all essential WooCommerce functionality into the page builder, without writing a single line of code.
 
 **💥 15 Elementor WooCommerce Builder Modules 💥**
 
 ✔️ WooCommerce Currency Switcher
-✔️ WooCommerce Email Templates 
-✔️ WooCommerce Preorder 
+✔️ WooCommerce Email Templates
+✔️ WooCommerce Preorder
 ✔️ WooCommerce Variation Swatches
 ✔️ WooCommerce Product Brands
 ✔️ WooCommerce Skip Cart Page
@@ -151,7 +151,7 @@ Upgrade your WooCommerce store by adding a large spectrum of eCommerce needs wit
 
 You can find the full list of our free & pro Elementor WooCommerce builder modules here 👉 [https://codexpert.io/codesigner/]
 
-#### 🚀 WooCommerce Currency Switcher 
+#### 🚀 WooCommerce Currency Switcher
 
 Allow customers to switch between currencies based on their preferences using our Elementor WooCommerce builder. This feature will enhance your sales strategy, especially if you want to attract visitors from multiple locations and generate sales in your WooCommerce site.
 
@@ -161,15 +161,15 @@ Edit customer emails using our professionally designed templates for your WooCom
 
 #### 🚀 WooCommerce Preorder
 
-Enable customers to preorder products before their official release using our WooCommerce builder to help boost sales and better gauge demand for your products. 
+Enable customers to preorder products before their official release using our WooCommerce builder to help boost sales and better gauge demand for your products.
 
 #### 🚀 WooCommerce Variation Swatches
 
-Replace dropdown fields with swatches for color, image, and label variations, making product customization intuitive and visually pleasing with our Elementor WooCommerce builder. 
+Replace dropdown fields with swatches for color, image, and label variations, making product customization intuitive and visually pleasing with our Elementor WooCommerce builder.
 
 #### 🚀 WooCommerce Product Brands
 
-Use our intuitive page builder to effectively display and organize products by brands, enhancing browsing convenience and boosting brand recognition on your site. 
+Use our intuitive page builder to effectively display and organize products by brands, enhancing browsing convenience and boosting brand recognition on your site.
 
 #### 🚀 WooCommerce Skip Cart Page
 
@@ -181,7 +181,7 @@ Create urgency and get more sales with time-limited offers, displaying countdown
 
 #### 🚀 WooCommerce Backorder
 
-Manage backorders efficiently by letting customers purchase out-of-stock items and deliver them when available with our Elementor WooCommerce addon. 
+Manage backorders efficiently by letting customers purchase out-of-stock items and deliver them when available with our Elementor WooCommerce addon.
 
 #### 🚀 WooCommerce Badges
 
@@ -193,9 +193,9 @@ Upgrade user experience with our WooCommerce site builder by adding Ajax add-to-
 
 ### 💥 Introducing CoDesigner Templates for WooCommerce Elementor  💥
 
-CoDesigner page builder offers an extensive collection of 150+ pre-designed templates, empowering users to effortlessly design WooCommerce sites with ease. 
+CoDesigner page builder offers an extensive collection of 150+ pre-designed templates, empowering users to effortlessly design WooCommerce sites with ease.
 
-Our Elementor WooCommerce addon shop templates are carefully designed to cater to a wide range of styles and industry demands, so your online store stands out from the competition. 
+Our Elementor WooCommerce addon shop templates are carefully designed to cater to a wide range of styles and industry demands, so your online store stands out from the competition.
 
 **💥 150+ WooCommerce Elementor Ready-made Templates 💥**
 
@@ -205,10 +205,10 @@ Our Elementor WooCommerce addon shop templates are carefully designed to cater t
 ✔️ Footer Templates
 ✔️ Landing Page Templates
 ✔️ Pricing Table Templates
-✔️ Related Products 
-✔️ Section Templates 
-✔️ Shop Templates 
-✔️ Single Product Templates 
+✔️ Related Products
+✔️ Section Templates
+✔️ Shop Templates
+✔️ Single Product Templates
 
 You can find the full list of free & pro WooCommerce Elementor templates here 👉 [https://codexpert.io/codesigner/]
 
@@ -218,15 +218,15 @@ Design your cart page for improved user engagement with our WooCommerce cart tem
 
 #### 🚀 Checkout Templates
 
-Get a quick, secure, and user-friendly payment experience for your WooCommerce shop with CoDesigner's customizable WooCommerce checkout templates. Edit each element of your checkout page to boost conversions and reduce abandoned carts on your WooCommerce site. 
+Get a quick, secure, and user-friendly payment experience for your WooCommerce shop with CoDesigner's customizable WooCommerce checkout templates. Edit each element of your checkout page to boost conversions and reduce abandoned carts on your WooCommerce site.
 
 #### 🚀 Filter Templates
 
-Intuitive product filtering makes it easier for customers to find what they're looking for. Our Elementor filter templates offer smooth integration of AJAX-based filters into your store for a better shopping experience. 
+Intuitive product filtering makes it easier for customers to find what they're looking for. Our Elementor filter templates offer smooth integration of AJAX-based filters into your store for a better shopping experience.
 
 #### 🚀 Footer Templates
 
-Make the perfect footer for your store’s website with our Elementor footer templates. Add essential information and navigation links in a convenient and sleek layout. 
+Make the perfect footer for your store’s website with our Elementor footer templates. Add essential information and navigation links in a convenient and sleek layout.
 
 #### 🚀 Landing Page Templates
 
@@ -238,7 +238,7 @@ Our WooCommerce builder pricing table templates give customers clear product com
 
 #### 🚀 Related Products
 
-CoDesigner WooCommerce page builder’s ready-made related product templates will help you improve cross-selling opportunities by encouraging customers to explore and buy complementary items. 
+CoDesigner WooCommerce page builder’s ready-made related product templates will help you improve cross-selling opportunities by encouraging customers to explore and buy complementary items.
 
 #### 🚀 Section Templates
 
@@ -270,7 +270,7 @@ Highlight each product's features and benefits with CoDesigner WooCommerce page 
 
 ### Need help?
 
-> Got any questions about our features? Need help setting up the plugin? Please read our [documentation](https://help.codexpert.io/docs/codesigner/?utm_campaign=wporg) or raise a [ticket](https://help.codexpert.io/new-ticket/) and we’ll get back to you in 24 hours. 
+> Got any questions about our features? Need help setting up the plugin? Please read our [documentation](https://help.codexpert.io/docs/codesigner/?utm_campaign=wporg) or raise a [ticket](https://help.codexpert.io/new-ticket/) and we’ll get back to you in 24 hours.
 
 == Screenshots ==
 
@@ -292,7 +292,7 @@ Highlight each product's features and benefits with CoDesigner WooCommerce page 
 
 = 1. What is CoDesigner? =
 
-CoDesigner, previously Woolementor, integrates Elementor and WooCommerce, offering 90+ widgets, 15 modules, and 130+ templates to build for your online store. With its advanced customizability, CoDesigner lets you edit every element of your site to create a stunning look. 
+CoDesigner, previously Woolementor, integrates Elementor and WooCommerce, offering 90+ widgets, 15 modules, and 130+ templates to build for your online store. With its advanced customizability, CoDesigner lets you edit every element of your site to create a stunning look.
 
 = 2. What can I customize with CoDesigner? =
 
@@ -304,7 +304,7 @@ CoDesigner provides over 40 free WooCommerce widgets, including Elementor widget
 
 = 4. What premium WooCommerce widgets are available in CoDesigner? =
 
-CoDesigner offers 54 premium WooCommerce Elementor widgets, including advanced WooCommerce shop layouts, WooCommerce cart page customization, WooCommerce email template customization, and edit WooCommerce checkout page. 
+CoDesigner offers 54 premium WooCommerce Elementor widgets, including advanced WooCommerce shop layouts, WooCommerce cart page customization, WooCommerce email template customization, and edit WooCommerce checkout page.
 
 = 5. Is there documentation available for CoDesigner? =
 
@@ -316,7 +316,7 @@ Yes, CoDesigner allows you to customize WooCommerce email templates using Elemen
 
 = 7. What are the options for customizing WooCommerce product pricing tables with CoDesigner? =
 
-CoDesigner offers different Elementor pricing table widgets, including Pricing Table Advanced, Pricing Table Smart, Pricing Table Basic, Pricing Table Regular, and Pricing Table Fancy, to help you present product prices transparently. 
+CoDesigner offers different Elementor pricing table widgets, including Pricing Table Advanced, Pricing Table Smart, Pricing Table Basic, Pricing Table Regular, and Pricing Table Fancy, to help you present product prices transparently.
 
 = 8. How does CoDesigner help streamline content organization with Dynamic Tabs? =
 
@@ -336,7 +336,7 @@ CoDesigner's WooCommerce Wishlist widget allows customers to create personalized
 
 = 12. How can CoDesigner help me personalize my WooCommerce My Account page? =
 
-CoDesigner provides My Account widgets, including My Account and My Account Advanced (Pro), to help you tailor your My Account page's orientation, style, typography, and more. 
+CoDesigner provides My Account widgets, including My Account and My Account Advanced (Pro), to help you tailor your My Account page's orientation, style, typography, and more.
 
 = 13. Do the CoDesigner filter widgets work with the regular Elementor Pro shop widget? =
 
@@ -384,7 +384,7 @@ CoDesigner Elementor widgets can be used on various pages of your WooCommerce we
 
 = 24. Can I integrate CoDesigner with other WordPress plugins and themes? =
 
-CoDesigner is designed to work smoothly with other WordPress plugins and themes. 
+CoDesigner is designed to work smoothly with other WordPress plugins and themes.
 
 = 25. Can I use CoDesigner without installing WooCommerce? =
 
@@ -404,13 +404,29 @@ Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/
 
 == Changelog ==
 
+= v4.28.2 - 2026-01-13 =
+- [remove] Removed the notice for the Year End sale campaign.
+
+= v4.28.1 - 2025-12-23 =
+- [added] Added a new notice for the Year End sale campaign.
+
+= v4.28 - 2025-11-09 =
+- [added] Added a new notice for the upcoming BFCM campaign.
+
+= v4.27 - 2025-10-22 =
+
+- [fix] Fixed critical error in Bulk Purchase Discount module for variable products
+- [fix] Resolved authorization vulnerability in multiple files for improved security
+- [remove] Removed unwanted promo banner for Spring Deal campaign
+- [remove] Deleted duplicate and commented-out code across modules for a cleaner codebase
+
 = v4.26 - 2025-09-22 =
-- [new] Added new SVG backgrounds and icons for EasyCommerce campaign UI and dashboard  
-- [improve] Enhanced premium features layout with grid display, new images, and responsive adjustments  
-- [improve] Refactored upgrade call-to-action and premium features sections for cleaner UI and better readability  
-- [improve] Updated button links and hover states across dashboard  
-- [improve] Replaced inline/internal CSS with admin CSS files for cleaner codebase  
-- [improve] General UI/UX enhancements in new dashboard design  
+- [new] Added new SVG backgrounds and icons for EasyCommerce campaign UI and dashboard
+- [improve] Enhanced premium features layout with grid display, new images, and responsive adjustments
+- [improve] Refactored upgrade call-to-action and premium features sections for cleaner UI and better readability
+- [improve] Updated button links and hover states across dashboard
+- [improve] Replaced inline/internal CSS with admin CSS files for cleaner codebase
+- [improve] General UI/UX enhancements in new dashboard design
 
 - [remove] Removed old version images to clean up assets
 
@@ -528,7 +544,7 @@ Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/
 
 = v4.7.14 – 2024-12-08 =
 * [remove] removed promotional link from plugin list
-* [imp] update promotional link & text from plugin menu 
+* [imp] update promotional link & text from plugin menu
 
 = v4.7.13 – 2024-12-05 =
 * [fix] fixed Codesigner get pro link update

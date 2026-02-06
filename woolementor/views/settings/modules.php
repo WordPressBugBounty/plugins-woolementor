@@ -91,7 +91,7 @@ $active_modules = get_option( 'codesigner_modules', array() );
 	<p class="wl-pro-popup-txt"><?php echo wp_kses( 'This feature is only available in <strong>CoDesigner Pro</strong>!', 'codesigner' ); ?></p>
 	<p class="wl-pro-popup-txt"><?php echo wp_kses( 'Make a smart choice today; a <strong>small investment</strong> can lead to a <strong>big boost</strong> in your sales. Your decision can make a significant difference.', 'codesigner' ); ?></p>
 	<p>
-		<a id="wl-pro-popup-btn" href="<?php echo esc_url( 'https://codexpert.io/codesigner/pro/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-popup' ); ?>" target="_blank">
+		<a id="wl-pro-popup-btn" href="<?php echo esc_url( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' ); ?>" target="_blank">
 			<span class="dashicons dashicons-unlock"></span>
 			<?php esc_attr_e( 'Unlock Premium Features', 'codesigner' ); ?>
 		</a>

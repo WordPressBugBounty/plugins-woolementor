@@ -93,7 +93,7 @@ $features_bg   = CODESIGNER_ASSETS . '/img/features-bg.png';
 			<h4><?php echo esc_html__( 'Get these Premium Features', 'codesigner' ); ?></h4>
 			<p><?php echo esc_html__( 'These features are only available in <u>CoDesigner Pro</u>!', 'codesigner' ); ?></p>
 			<p><?php echo esc_html__( 'Make a smart choice today; a <u>small investment</u> can lead to a <u>big boost</u> in your sales. Your decision can make a significant difference.', 'codesigner' ); ?></p>
-			<a target="_blank" href="<?php echo esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=settings&utm_campaign=pro-tab#pricing' ); ?>"><button type="button"><?php echo esc_html__( 'Upgrade to Pro', 'codesigner' ); ?></button></a>
+			<a target="_blank" href="<?php echo esc_url( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' ); ?>"><button type="button"><?php echo esc_html__( 'Upgrade to Pro', 'codesigner' ); ?></button></a>
 
 			<div class="cx-field-wrap ">
 				<label class="cx-toggle">

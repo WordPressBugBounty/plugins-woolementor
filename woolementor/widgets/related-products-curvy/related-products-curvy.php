@@ -15,6 +15,7 @@ use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 class Related_Products_Curvy extends Widget_Base {
 
 	public $id;
+	public $widget;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );

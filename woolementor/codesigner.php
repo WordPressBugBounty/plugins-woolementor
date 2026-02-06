@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.26
+ * Version: 4.28.2
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -126,7 +126,7 @@ final class Plugin {
 		$this->plugin['basename']   = plugin_basename( CODESIGNER );
 		$this->plugin['file']       = CODESIGNER;
 		$this->plugin['TextDomain'] = 'codesigner';
-		$this->plugin['Version']    = '4.26';
+		$this->plugin['Version']    = '4.28.2';
 		$this->plugin['Name']       = 'CoDesigner';
 		$this->plugin['server']     = apply_filters( 'codesigner_server', 'https://my.pluggable.io' );
 		$this->plugin['doc_id']     = 1960;
@@ -173,14 +173,13 @@ final class Plugin {
 			$admin->action( 'after_setup_theme', 'setup' );
 			$admin->action( 'init', 'settings_page_redirect' );
 			$admin->filter( 'http_request_host_is_external', '__return_true', 10, 3 );
-			$admin->action( 'init', 'admin_notices' );
+			// $admin->action( 'init', 'admin_notices' );
 			$admin->action( 'cx-plugin_after-nav-items', 'setting_navs_add_item' );
 			$admin->action( 'cx-settings-heading', 'settings_heading' );
 			$admin->filter( 'admin_body_class', 'admin_body_class' );
 			$admin->activate( 'codesigner_widgets_activation' );
 			$admin->activate( 'codesigner_modules_activation' );
 			$admin->action( 'plugins_loaded', 'maybe_redirect' );
-			// $admin->action( 'cx-settings-after_wrapper', 'show_easycommerce_promo' );
 
 			/**
 			 * Settings related hooks
@@ -299,11 +298,11 @@ final class Plugin {
 		$ajax->all( 'multiple-product-add-to-cart', 'multiple_product_add_to_cart' );
 		$ajax->priv( 'wcd-template-sync', 'template_sync' );
 		$ajax->all( 'wl_single_insert_to_cart', 'wl_single_cart' );
-		$ajax->all( 'codesigner_admin_notice', 'admin_notice' );
-		$ajax->all( 'complete-setting-close', 'complete_setting_close' );
-		$ajax->all( 'dismiss_notice_checkout', 'dismiss_notice_checkout' );
-		$ajax->all( 'dismiss_notice_email', 'dismiss_notice_email' );
-		$ajax->all( 'dismiss_notice_invoice', 'dismiss_notice_invoice' );
+		$ajax->priv( 'codesigner_admin_notice', 'admin_notice' );
+		$ajax->priv( 'complete-setting-close', 'complete_setting_close' );
+		$ajax->priv( 'dismiss_notice_checkout', 'dismiss_notice_checkout' );
+		$ajax->priv( 'dismiss_notice_email', 'dismiss_notice_email' );
+		$ajax->priv( 'dismiss_notice_invoice', 'dismiss_notice_invoice' );
 	}
 
 	/**

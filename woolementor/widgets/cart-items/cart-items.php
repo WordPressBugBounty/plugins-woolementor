@@ -1854,7 +1854,7 @@ class Cart_Items extends Widget_Base {
 														if ( ! $product_permalink ) {
 															echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;' );
 														} else {
-															echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">%s</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
+															echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', sprintf( '<a href="%s">'. __( '%s', 'codesigner' ) .'</a>', esc_url( $product_permalink ), $_product->get_name() ), $cart_item, $cart_item_key ) );
 														}
 
 														do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
@@ -1970,7 +1970,7 @@ class Cart_Items extends Widget_Base {
 
 																	<?php
 																	printf(
-																		'<button %1$s type="submit" name="apply_coupon" value="%2$s">%2$s</button>',
+																		'<button %1$s type="submit" name="apply_coupon" value="%2$s">' . __( '%2$s', 'codesigner' ) . '</button>',
 																		wp_kses_post( $this->get_render_attribute_string( 'Coupon_button_name' ) ),
 																		esc_html( $Coupon_button_name )
 																	);
@@ -1989,7 +1989,7 @@ class Cart_Items extends Widget_Base {
 														if ( 'yes' == $update_cart_show_hide ) :
 															echo wp_kses_post( '<div>' );
 															printf(
-																'<button %1$s type="submit" name="update_cart" value="%2$s">%2$s</button>',
+																'<button %1$s type="submit" name="update_cart" value="%2$s">' . __( '%2$s', 'codesigner' ) . '</button>',
 																wp_kses_post( $this->get_render_attribute_string( 'update_cart_button_name' ) ),
 																esc_html( $update_cart_button_name )
 															);
@@ -2003,7 +2003,7 @@ class Cart_Items extends Widget_Base {
 
 																<?php
 																printf(
-																	'<a %s href="%s">%s</a>',
+																	'<a %s href="%s">' . __( '%s', 'codesigner' ) . '</a>',
 																	wp_kses_post( $this->get_render_attribute_string( 'checkout_button_name' ) ),
 																	esc_url( get_permalink( wc_get_page_id( 'checkout' ) ) ),
 																	esc_html( $checkout_button_name )

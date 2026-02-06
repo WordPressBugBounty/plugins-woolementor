@@ -6,7 +6,7 @@ $utm           = array(
 	'utm_medium'   => 'settings',
 	'utm_campaign' => 'pro-tab',
 );
-$pro_link      = add_query_arg( $utm, 'https://codexpert.io/codesigner/#pricing' );
+$pro_link      = add_query_arg( $utm, 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' );
 $fire_features = array( 'email-header', 'email-footer', 'email-item-details', 'email-billing-addresses', 'email-shipping-addresses', 'email-customer-note', 'email-description', 'wishlist', 'billing-address', 'shipping-address', 'payment-methods', 'shop-accordion', 'shop-table', 'dynamic-tabs', 'menu-cart', 'filter-vertical', 'product-comparison' );
 
 $pro_features = array(
@@ -57,7 +57,7 @@ $pro_features = array(
 		<div class="wl-pro-features-heading">
 			<p class="wl-desc"><?php esc_html_e( 'Along with the <strong>Award Winning</strong> premium and priority support from our dedicated support team, you\'re going to get these awesome features if you upgrade to CoDesigner Pro. And, you\'re covered under a <strong>14-day 100% refund</strong> policy.', 'codesigner' ); ?></p>
 			<div class="wl-cta-btns">
-				<a class="wl-upgrade-pro-btn" href="<?php esc_url( 'https://codexpert.io/codesigner/?utm_source=dashboard&amp;utm_medium=settings&amp;utm_campaign=pro-tab#pricing' ); ?>" target="_blank">Upgrade to PRO</a>
+				<a class="wl-upgrade-pro-btn" href="<?php esc_url( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' ); ?>" target="_blank">Upgrade to PRO</a>
 			</div>
 		</div>
 

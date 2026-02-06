@@ -14,6 +14,7 @@ class My_Account extends Widget_Base {
 
 	public $id;
 	protected $form_close = '';
+	public $widget;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );

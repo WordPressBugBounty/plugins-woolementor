@@ -1780,7 +1780,6 @@ a[href$="admin.php?page=codesigner-get-pro"] {
     display: flex;
     align-items: center;
     gap: 6px;
-    border: 2px solid #0059f2;
 }
 .cd-upgraded-btn:active,
 .cd-upgraded-btn:focus {
@@ -2191,7 +2190,7 @@ a[href$="admin.php?page=codesigner-get-pro"] {
     width: 100%;
     margin: 80px auto 0px;
     display: grid;
-    grid-template-columns: 1186px 444px;
+    grid-template-columns: 1130px 444px;
     gap: 35px;
     justify-content: center;
     align-items: start;
@@ -2200,7 +2199,7 @@ a[href$="admin.php?page=codesigner-get-pro"] {
     position: relative;
     padding: 0;
     margin: 0;
-    max-width: 1186px;
+    max-width: 1130px;
 }
 .cd-premium-features-wrapper .cd-grid {
     display: grid;
@@ -2264,19 +2263,18 @@ a[href$="admin.php?page=codesigner-get-pro"] {
     color: #626AFF;
 }
 
-
-
 .cd-upgrade-cta {
 	background: url(../img/general/get-started/new/upgrade-to-pro-cta-background.svg);
     background-size: cover, contain;
 	background-position: center;
 	background-repeat: no-repeat;
     border-radius: 16px;
-    padding: 92px;
+    padding: 92px 0px;
     text-align: center;
-    margin-top: 61px;
     position: relative;
     overflow: hidden;
+	width: 100%;
+	max-width: 100%;
 }
 .cd-upgrade-cta h3 {
 	font-family: "Inter", sans-serif;
@@ -2495,7 +2493,7 @@ a[href$="admin.php?page=codesigner-get-pro"] {
 }
 
 .easycommerce-campaign.cd-campaign-content .cd-btn-wrapper {
-    margin-top: 42px;
+    margin-top: 24px;
 }
 
 .easycommerce-campaign.cd-campaign-content .cd-btn-wrapper a {
@@ -2725,3 +2723,313 @@ a[href$="admin.php?page=codesigner-get-pro"] {
     grid-template-columns: repeat(4, 1fr);
 }
 
+@media (max-width: 1680px) {
+
+/* premium section */
+.cd-premium-section-container {
+    max-width: 1580px;
+    width: 100%;
+    margin: 80px auto 0px;
+    display: grid;
+    grid-template-columns: 962px 380px;
+    gap: 35px;
+    justify-content: center;
+    align-items: start;
+}
+.cd-premium-features-wrapper {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    max-width: 1000px;
+}
+.cd-premium-features-wrapper .cd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 32px;
+}
+/* sidebar */
+.cd-campaign-sidebar {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    max-width: 380px;
+    width: 100%;
+    overflow: hidden;
+}
+.cd-campaign-content {
+    border-radius: 20px;
+}
+.cd-campaign-header h4 {
+    font-size: 24px;
+}
+.easycommerce-campaign .cd-campaign-content-body p {
+    font-size: 14px;
+}
+.easycommerce-campaign.cd-campaign-content .cd-btn-wrapper {
+    margin-top: 16px;
+}
+/* uograde-cta */
+.cd-upgrade-cta {
+    border-radius: 16px;
+    padding: 72px 0px;
+	width: 100%;
+	max-width: 100%;
+	margin-top: 40px;
+}
+.cd-upgrade-cta h3 {
+    font-size: 38px;
+    margin: 0 0 16px 0;
+}
+.cd-upgrade-cta p {
+    font-size: 16px;
+    max-width: 460px;
+    margin: 10px auto 32px !important;
+    position: relative;
+    z-index: 2;
+}
+}
+
+@media (max-width: 1440px) {
+
+/* premium section */
+.cd-premium-section-container {
+    max-width: 1380px;
+    width: 100%;
+    margin: 80px auto 0px;
+    display: grid;
+    grid-template-columns: 725px 380px;
+    gap: 35px;
+    justify-content: center;
+    align-items: start;
+}
+.cd-premium-features-wrapper {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    max-width: 1000px;
+}
+.cd-premium-features-wrapper .cd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 32px;
+}
+/* sidebar */
+.cd-campaign-sidebar {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    max-width: 380px;
+    width: 100%;
+    overflow: hidden;
+}
+.cd-campaign-content {
+    border-radius: 20px;
+}
+.cd-campaign-header h4 {
+    font-size: 24px;
+}
+.easycommerce-campaign .cd-campaign-content-body p {
+    font-size: 14px;
+}
+.easycommerce-campaign.cd-campaign-content .cd-btn-wrapper {
+    margin-top: 16px;
+}
+/* uograde-cta */
+.cd-upgrade-cta {
+    border-radius: 16px;
+    padding: 72px 0px;
+	width: 100%;
+	max-width: 100%;
+	margin-top: 40px;
+}
+.cd-upgrade-cta h3 {
+    font-size: 38px;
+    margin: 0 0 16px 0;
+}
+.cd-upgrade-cta p {
+    font-size: 16px;
+    max-width: 460px;
+    margin: 10px auto 32px !important;
+    position: relative;
+    z-index: 2;
+}
+}
+
+@media (max-width: 1280px) {
+	.cd-started-page-content-wrapper {
+		width: 100%;
+		max-width: 1180px;
+		margin: 0 auto;
+	}
+
+	.cd-hero-section-wrapper .cd-hero-content-section h1 {
+		font-size: 32px;
+		line-height: 40px;
+	}
+
+	.cd-hero-section-wrapper .cd-hero-content-section p {
+		font-size: 18px;
+		line-height: 26px;
+		margin-bottom: 32px !important;
+	}
+
+	.cd-premium-section-container {
+        max-width: 1180px;
+        grid-template-columns: 646px 308px;
+        gap: 25px;
+        justify-content: center;
+        align-items: start;
+    }
+
+	.cd-premium-section-wrapper h2 {
+		font-size: 48px;
+		line-height: 52px;
+		margin-bottom: 30px;
+	}
+
+	.cd-premium-features-wrapper .cd-feature-content .cd-grid-header h3 {
+		font-size: 20px;
+		line-height: 28px;
+	}
+
+	.cd-campaign-content-body p {
+		font-size: 14px;
+	}
+
+	.cd-campaign-content .cd-btn-wrapper .cd-btn {
+		padding: 14px 0;
+	}
+
+	.cd-campaign-header h4 {
+        font-size: 18px;
+    }
+
+	.easycommerce-campaign {
+		padding: 30px 24px;
+	}
+
+}
+
+
+@media (max-width: 1024px) {
+.cd-logo {
+	padding-left: 16px;
+	gap: 8px;
+	height: 25px;
+}
+.cd-logo img {
+	width: 25px;
+	height: 25px;
+}
+.cd-logo span {
+	font-size: 20px;
+}
+.cd-started-page-header ul {
+	gap: 12px;
+	margin-left: 24px;
+}
+.cd-started-page-header ul li a {
+    font-size: 14px;
+    padding: 11px;
+}
+.cd-upgraded-btn {
+    padding: 8px;
+    font-size: 14px;
+    margin-right: 16px;
+	margin-top: 16px;
+}
+/* hero section */
+.cd-hero-section-wrapper {
+	padding-top: 36px;
+    margin-bottom: 50px;
+}
+.cd-hero-section-wrapper .cd-hero-content-section h1 {
+    font-size: 24px;
+    line-height: 32px;
+	margin-bottom: 16px !important;
+}
+.cd-hero-section-wrapper .cd-hero-content-section p {
+    font-size: 14px;
+    line-height: 26px;
+    margin-bottom: 44px !important;
+}
+/* premium section */
+.cd-premium-section-wrapper {
+    padding: 0 30px 118px 30px;
+}
+.cd-premium-section-wrapper h2 {
+    font-size: 48px;
+    line-height: 58px;
+    margin-bottom: 20px;
+}
+.cd-premium-section-container {
+    max-width: 980px;
+    width: 100%;
+    margin: 50px auto 0px;
+    display: grid;
+    grid-template-columns: 100%;
+    gap: 35px;
+    justify-content: center;
+    align-items: start;
+}
+.cd-premium-features-wrapper {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    max-width: 980px;
+}
+.cd-premium-features-wrapper .cd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 32px;
+}
+/* sidebar */
+.cd-campaign-sidebar {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+.cd-campaign-sidebar .cd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+	width: 100%;
+}
+.cd-campaign-content {
+    border-radius: 20px;
+}
+.cd-campaign-header h4 {
+    font-size: 24px;
+}
+.easycommerce-campaign .cd-campaign-content-body p {
+    font-size: 14px;
+}
+.easycommerce-campaign.cd-campaign-content .cd-btn-wrapper {
+    margin-top: 16px;
+}
+/* uograde-cta */
+.cd-upgrade-cta {
+    border-radius: 16px;
+    padding: 72px 0px;
+	width: 100%;
+	max-width: 100%;
+	margin-top: 40px;
+}
+.cd-upgrade-cta h3 {
+    font-size: 38px;
+    margin: 0 0 16px 0;
+}
+.cd-upgrade-cta p {
+    font-size: 16px;
+    max-width: 460px;
+    margin: 10px auto 32px !important;
+    position: relative;
+    z-index: 2;
+}
+}

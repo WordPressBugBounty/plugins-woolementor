@@ -12,6 +12,7 @@ use Elementor\Core\Kits\Documents\Tabs\Global_Typography;
 class Product_Tags extends Widget_Base {
 
 	public $id;
+	public $widget;
 
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
@@ -90,7 +91,7 @@ class Product_Tags extends Widget_Base {
 			array(
 				'label'       => __( 'Label', 'codesigner' ),
 				'type'        => Controls_Manager::TEXT,
-				'default'     => 'Tag: ',
+				'default'     => __( 'Tag: ', 'codesigner' ),
 				'label_block' => true,
 			)
 		);

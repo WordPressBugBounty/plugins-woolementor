@@ -21,6 +21,8 @@ class Cart_Items_Classic extends Widget_Base {
 
 	public $version;
 
+	public $widget;
+
 	public function __construct( $data = array(), $args = null ) {
 		parent::__construct( $data, $args );
 
