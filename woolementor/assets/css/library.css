@@ -253,6 +253,16 @@
 #elementor-template-library-header-preview-back i::before {
 	content: "";
 }
+.wcd-missing-elementor {
+    color: #d54343;
+    font-size: 16px;
+    border: 1px solid #ffbebe;
+    border-radius: 6px;
+    padding: 10px 15px;
+    text-align: center;
+    background: #ffd4d4a8;
+    /* width: 600px; */
+}
 .elementor-loader-wrapper {
 	position: absolute;
 	top: 50%;

@@ -13,7 +13,7 @@ jQuery(function ($) {
 		$(".wcd-tmpl-wrapper").show();
 		$(".tmpl-wl-templates-modal-preview-iframe iframe").attr("src", "");
 	});
-
+	$('#tmpl_pages').click();
 	$("#wl_faq").click(function (e) {
 		$("#wl_vidtt, #wl_support").removeClass("active");
 		$(this).addClass("active");
@@ -135,8 +135,6 @@ jQuery(function ($) {
 
 	/**
 	 * Template Libray synce
-	 *
-	 * @author Jakaria Istauk <jakariamd35@gmail.com>
 	 */
 	$(document).on("click", "#wcd-template-sync.clickable", function (e) {
 		e.preventDefault();
@@ -151,7 +149,7 @@ jQuery(function ($) {
 			type: "POST",
 			dataType: "JSON",
 			success: function (resp) {
-				console.log(resp.message);
+				alert(resp.message);
 				sync_btn.removeClass("spin").addClass("clickable");
 				if (resp.status == 1) {
 					window.location.href = "";

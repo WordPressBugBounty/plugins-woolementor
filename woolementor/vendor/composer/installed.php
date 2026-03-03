@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => '__root__',
-        'pretty_version' => 'v4.28.2',
-        'version' => '4.28.2.0',
-        'reference' => 'eff068b08fa5086fa8b4206c5b1800b4ee71f4eb',
+        'pretty_version' => 'v4.29',
+        'version' => '4.29.0.0',
+        'reference' => 'a2df5330d4dac95a092542059913e082c3a21229',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -11,9 +11,9 @@
     ),
     'versions' => array(
         '__root__' => array(
-            'pretty_version' => 'v4.28.2',
-            'version' => '4.28.2.0',
-            'reference' => 'eff068b08fa5086fa8b4206c5b1800b4ee71f4eb',
+            'pretty_version' => 'v4.29',
+            'version' => '4.29.0.0',
+            'reference' => 'a2df5330d4dac95a092542059913e082c3a21229',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -89,7 +89,7 @@
         'pluggable/plugin' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '1ce640c37aa4ff32dc1b7107ad140d6255047bc3',
+            'reference' => '65c6a22e97398423e8775fcd29f18d6a7939c2d4',
             'type' => 'library',
             'install_path' => __DIR__ . '/../pluggable/plugin',
             'aliases' => array(

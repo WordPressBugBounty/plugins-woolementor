@@ -14,27 +14,27 @@ if ( ! defined( 'ABSPATH' ) ) {
  * @author Pluggable <hi@pluggable.io>
  */
 class License {
-	
+
 	/**
 	 * @var the plugin data array
 	 */
 	public $plugin;
-	
+
 	/**
 	 * @var plugin slug
 	 */
 	public $slug;
-	
+
 	/**
 	 * @var plugin name
 	 */
 	public $name;
-	
+
 	/**
 	 * @var the server URL
 	 */
 	public $server;
-	
+
 	/**
 	 * @var where we should redirect after activation
 	 */
@@ -53,7 +53,7 @@ class License {
 
 	/**
 	 * @param string $plugin the plugin __FILE__
-	 * 
+	 *
 	 * @since 0.93
 	 * @param array $args[
 	 * 		string $redirect where it should take after activating a license
@@ -76,7 +76,7 @@ class License {
 		$this->server 		= untrailingslashit( $this->args['server'] );
 		$this->redirect 	= $this->args['redirect'];
 		$this->item_id		= $this->args['item_id'];
-		
+
 		$this->plugin['license']	= $this;
 		$this->plugin['basename'] = plugin_basename( $this->file );
 		$update	= new Update( $this->plugin, $this->server );
@@ -133,7 +133,7 @@ class License {
 	}
 
 	public function init() {
-		
+
 		if( ! isset( $_GET['pl-license'] ) ) return;
 
 		if( $_GET['pl-license'] == 'deactivate' ) {
@@ -217,10 +217,10 @@ class License {
 			$deactivation_url	= $this->get_deactivation_url();
 			$deactivate_label	= apply_filters( "{$this->slug}_deactivate_label", __( 'Deactivate', 'pluggable' ), $this->plugin );
 			$license_meta		= $this->get_license_meta();
-			
+
 			$html .= '<p class="pl-desc">' . sprintf( __( 'Congratulations! Your license for <strong>%s</strong> is activated. 🎉', 'pluggable' ), $this->name ) . '</p>';
-			
-			
+
+
 			if( isset( $license_meta->customer_name ) ) {
 				$html .= '<p class="pl-info">' . sprintf( __( 'Name: %s', 'pluggable' ), $license_meta->customer_name ) . '</p>';
 			}
@@ -256,9 +256,9 @@ class License {
 	}
 
 	public function callback_action( $request ) {
-		
+
 		add_filter( 'pluggable-is_forced', '__return_true' );
-		
+
 		$parameters = $request->get_params();
 		return $this->do( $parameters['action'], $parameters['license_key'], $parameters['item_name'] );
 	}
@@ -292,7 +292,7 @@ class License {
 		];
 
 		$response		= wp_remote_get( $this->server, [ 'timeout' => 15, 'sslverify' => false, 'body' => $api_params ] );
-		
+
 		$license_data	= json_decode( wp_remote_retrieve_body( $response ) );
 
 		// make sure the response came back okay
@@ -365,7 +365,7 @@ class License {
 
 				$_response['status']	= $license_data;
 				$_response['message']	= __( 'License activated', 'pluggable' );
-			} 
+			}
 
 		}
 
@@ -489,7 +489,7 @@ class License {
 
 	public function get_license_expiry() {
 		$expiry = get_option( $this->get_license_expiry_name() );
-		
+
 		if( $expiry == 4765132799 ) return 'lifetime';
 
 		return date_i18n( get_option( 'date_format' ), $expiry );
@@ -497,6 +497,56 @@ class License {
 
 	public function get_license_meta() {
 		return get_option( $this->get_license_meta_name() );
+	}
+
+	/**
+	 * Get the license customer name.
+	 *
+	 * @return string Customer name or empty string if not set.
+	 */
+	public function get_license_customer_name() {
+		$license_meta = $this->get_license_meta();
+
+		if( isset( $license_meta->customer_name ) ) {
+			return $license_meta->customer_name;
+		}
+
+		return '';
+	}
+
+	/**
+	 * Get the license customer email.
+	 *
+	 * @return string Customer email or empty string if not set.
+	 */
+	public function get_license_customer_email() {
+		$license_meta = $this->get_license_meta();
+
+		if( isset( $license_meta->customer_email ) ) {
+			return $license_meta->customer_email;
+		}
+
+		return '';
+	}
+
+	/**
+	 * Get the license type.
+	 *
+	 * @return string License type or empty string if not set.
+	 */
+	public function get_license_type() {
+		$license_meta = $this->get_license_meta();
+
+		if( isset( $license_meta->license_limit ) ) {
+
+			if( $license_meta->license_limit == 0 ) {
+				return 'unlimited';
+			}
+
+			return sprintf( _n( '%s site', '%s sites', $license_meta->license_limit, 'pluggable' ), number_format_i18n( $license_meta->license_limit ) );
+		}
+
+		return '';
 	}
 
 	public function _is_activated() {

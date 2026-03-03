@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codexpert.io/codesigner/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.28.2
+ * Version: 4.29
  * Requires at least: 5.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -114,7 +114,7 @@ final class Plugin {
 		define( 'CODESIGNER_DIR', dirname( CODESIGNER ) );
 		define( 'CODESIGNER_ASSETS', plugins_url( 'assets', CODESIGNER ) );
 		define( 'CODESIGNER_DEBUG', apply_filters( 'codesigner_debug', true ) );
-		define( 'CODESIGNER_LIB_URL', 'https://codexpert.io/codesigner-library/wp-json/templates/v3' );
+		define( 'CODESIGNER_LIB_URL', 'https://library.templatic.dev/wp-json/templatic/v1' );
 
 		/**
 		 * The plugin data
@@ -126,7 +126,7 @@ final class Plugin {
 		$this->plugin['basename']   = plugin_basename( CODESIGNER );
 		$this->plugin['file']       = CODESIGNER;
 		$this->plugin['TextDomain'] = 'codesigner';
-		$this->plugin['Version']    = '4.28.2';
+		$this->plugin['Version']    = '4.29';
 		$this->plugin['Name']       = 'CoDesigner';
 		$this->plugin['server']     = apply_filters( 'codesigner_server', 'https://my.pluggable.io' );
 		$this->plugin['doc_id']     = 1960;

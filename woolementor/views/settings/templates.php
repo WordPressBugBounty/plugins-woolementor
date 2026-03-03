@@ -17,8 +17,8 @@ $categories = isset( $library['categories'] ) ? $library['categories'] : array()
 <?php
 
 $args      = array(
-	'tmpl_blocks' => __( 'Blocks', 'codesigner' ),
 	'tmpl_pages'  => __( 'Pages', 'codesigner' ),
+	'tmpl_blocks' => __( 'Blocks', 'codesigner' ),
 );
 $tab_links = apply_filters( 'wcd_help_tab_link', $args );
 
@@ -60,9 +60,9 @@ echo wp_kses_post( '' );
 <?php
 if( ! defined( 'ELEMENTOR_VERSION' ) ) {
 	$allowed_html = [
-		'p' => []
+		'p' => [ 'class' => [] ]
 	];
-	echo wp_kses( __( '<p>Please install and activate Elementor to access the Template Library!</p>', 'codesigner' ), $allowed_html );
+	echo wp_kses( __( '<p class="wcd-missing-elementor">Please install and activate Elementor to access the Template Library!</p>', 'codesigner' ), $allowed_html );
 }
 ?>
 

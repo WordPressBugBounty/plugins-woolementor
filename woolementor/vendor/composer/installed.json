@@ -457,18 +457,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/pluggableio/plugin.git",
-                "reference": "1ce640c37aa4ff32dc1b7107ad140d6255047bc3"
+                "reference": "65c6a22e97398423e8775fcd29f18d6a7939c2d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pluggableio/plugin/zipball/1ce640c37aa4ff32dc1b7107ad140d6255047bc3",
-                "reference": "1ce640c37aa4ff32dc1b7107ad140d6255047bc3",
+                "url": "https://api.github.com/repos/pluggableio/plugin/zipball/65c6a22e97398423e8775fcd29f18d6a7939c2d4",
+                "reference": "65c6a22e97398423e8775fcd29f18d6a7939c2d4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.2.0"
             },
-            "time": "2024-12-15T04:29:35+00:00",
+            "time": "2026-02-09T05:17:15+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",
@@ -490,14 +490,14 @@
                 }
             ],
             "description": "License management toolkit for Pluggable plugins",
-            "homepage": "https://bitbucket.org/pluggableio/plugin/",
+            "homepage": "https://github.com/pluggableio/plugin/",
             "keywords": [
                 "pluggable",
                 "plugin"
             ],
             "support": {
                 "issues": "https://github.com/pluggableio/plugin/issues",
-                "source": "https://github.com/pluggableio/plugin/tree/master"
+                "source": "https://github.com/pluggableio/plugin/tree/1.0.0"
             },
             "install-path": "../pluggable/plugin"
         }

@@ -1,0 +1,20 @@
+Template categories: http://easy.wp/wp-json/templatic/v1/categories/
+
+Sample response:
+```
+{"success":true,"data":[{"id":23,"name":"Checkout","slug":"checkout","description":"","count":0},{"id":25,"name":"Home","slug":"home","description":"","count":0},{"id":24,"name":"Landing","slug":"landing","description":"","count":0},{"id":22,"name":"Store","slug":"store","description":"","count":0}]}
+```
+
+Template archive: http://easy.wp/wp-json/templatic/v1/templates/
+
+Sample response:
+```
+{"success":true,"data":[{"id":271,"title":"Super Shop","url":"http:\/\/easy.wp\/?elementor_library=super-shop","thumbnail":"http:\/\/easy.wp\/wp-content\/uploads\/2025\/11\/Screenshot-from-2025-11-14-19-29-50-300x239.png","type":"page","categories":[{"id":22,"name":"Store","slug":"store"}],"dependencies":[{"id":26,"name":"EasyCommerce","slug":"easycommerce"}],"created_at":"2025-11-28T15:53:01+00:00","modified_at":"2025-11-28T15:53:34+00:00"},{"id":267,"title":"Checkout One","url":"http:\/\/easy.wp\/?elementor_library=checkout-one","thumbnail":"http:\/\/easy.wp\/wp-content\/uploads\/2025\/11\/Screenshot-from-2025-11-26-23-03-09-300x86.png","type":"page","categories":[{"id":23,"name":"Checkout","slug":"checkout"}],"dependencies":[{"id":26,"name":"EasyCommerce","slug":"easycommerce"}],"created_at":"2025-11-28T15:28:50+00:00","modified_at":"2025-11-28T15:52:41+00:00"},{"id":266,"title":"Default Kit","url":"http:\/\/easy.wp\/?elementor_library=default-kit","thumbnail":"","type":"kit","categories":[],"dependencies":[],"created_at":"2025-11-28T14:56:05+00:00","modified_at":"2025-11-28T14:56:05+00:00"}]}
+```
+
+Single template: http://easy.wp/wp-json/templatic/v1/templates/271
+
+Sample response:
+```
+{"success":true,"data":{"id":271,"title":"Super Shop","url":"http:\/\/easy.wp\/?elementor_library=super-shop","thumbnail":"http:\/\/easy.wp\/wp-content\/uploads\/2025\/11\/Screenshot-from-2025-11-14-19-29-50.png","json":"[{\"id\":\"93e6dfa\",\"elType\":\"container\",\"settings\":[],\"elements\":[{\"id\":\"fbe1670\",\"elType\":\"widget\",\"settings\":{\"youtube_url\":\"https:\\\/\\\/www.youtube.com\\\/watch?v=XHOmBV4js_E\",\"vimeo_url\":\"https:\\\/\\\/vimeo.com\\\/235215203\",\"dailymotion_url\":\"https:\\\/\\\/www.dailymotion.com\\\/video\\\/x6tqhqb\",\"videopress_url\":\"https:\\\/\\\/videopress.com\\\/v\\\/ZCAOzTNk\"},\"elements\":[],\"widgetType\":\"video\"}],\"isInner\":false}]","type":"page","categories":[{"id":22,"name":"Store","slug":"store"}],"dependencies":[{"id":26,"name":"EasyCommerce","slug":"easycommerce"}],"created_at":"2025-11-28T15:53:01+00:00","modified_at":"2025-11-28T15:53:34+00:00"}}
+```

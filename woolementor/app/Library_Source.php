@@ -38,12 +38,12 @@ class Library_Source extends Source_Base {
 	 *
 	 * Updated api to v2 in version 2.15.0
 	 */
-	const API_TEMPLATES_INFO_URL = CODESIGNER_LIB_URL . '/list/';
+	const API_TEMPLATES_INFO_URL = CODESIGNER_LIB_URL . '/templates/';
 
 	/**
 	 * Template data api url
 	 */
-	const API_TEMPLATE_DATA_URL = CODESIGNER_LIB_URL . '/get/';
+	const API_TEMPLATE_DATA_URL = CODESIGNER_LIB_URL . '/templates/';
 
 	public function get_id() {
 		return 'codesigner-library';
@@ -110,8 +110,8 @@ class Library_Source extends Source_Base {
 			'type'        => $template_data['type'],
 			'thumbnail'   => $template_data['thumbnail'],
 			'date'        => $template_data['created_at'],
-			'tags'        => $template_data['tags'],
-			'isPro'       => $template_data['is_pro'],
+			'tags'        => isset( $template_data['categories'] ) ? $template_data['categories'] : array(),
+			'isPro'       => isset( $template_data['is_pro'] ) ? $template_data['is_pro'] : false,
 			'url'         => $template_data['url'],
 		);
 	}
@@ -150,7 +150,12 @@ class Library_Source extends Source_Base {
 			 */
 			$categories_data = json_decode( wp_remote_retrieve_body( $categories_response ), true );
 
-			$data['categories'] = $categories_data['data'];
+			if ( ! isset( $categories_data['success'] ) || ! $categories_data['success'] ) {
+				update_option( self::LIBRARY_CACHE_KEY, array() );
+				return false;
+			}
+
+			$data['categories'] = wp_list_pluck( $categories_data['data'], 'name', 'slug' );
 
 			/**
 			 * Pages
@@ -168,6 +173,11 @@ class Library_Source extends Source_Base {
 			}
 
 			$pages_data = json_decode( wp_remote_retrieve_body( $page_response ), true );
+
+			if ( ! isset( $pages_data['success'] ) || ! $pages_data['success'] ) {
+				update_option( self::LIBRARY_CACHE_KEY, array() );
+				return false;
+			}
 
 			// $data['pages'] = $pages_data['data'];
 
@@ -188,7 +198,10 @@ class Library_Source extends Source_Base {
 
 			$products_data = json_decode( wp_remote_retrieve_body( $product_response ), true );
 
-			// $data['pages'] = $products_data['data'];
+			if ( ! isset( $products_data['success'] ) || ! $products_data['success'] ) {
+				update_option( self::LIBRARY_CACHE_KEY, array() );
+				return false;
+			}
 
 			$data['pages'] = array_merge( $pages_data['data'], $products_data['data'] );
 
@@ -196,7 +209,7 @@ class Library_Source extends Source_Base {
 			 * Blocks
 			 */
 			$blocks_response = wp_remote_get(
-				self::API_TEMPLATES_INFO_URL . '?type=block',
+				self::API_TEMPLATES_INFO_URL . '?type=section',
 				array(
 					'timeout' => $timeout,
 				)
@@ -208,6 +221,11 @@ class Library_Source extends Source_Base {
 			}
 
 			$blocks_data = json_decode( wp_remote_retrieve_body( $blocks_response ), true );
+
+			if ( ! isset( $blocks_data['success'] ) || ! $blocks_data['success'] ) {
+				update_option( self::LIBRARY_CACHE_KEY, array() );
+				return false;
+			}
 
 			$data['blocks'] = $blocks_data['data'];
 
@@ -290,14 +308,21 @@ class Library_Source extends Source_Base {
 	 * @return array|\WP_Error Remote Template data.
 	 */
 	public function get_data( array $args, $context = 'display' ) {
-		$data = self::request_template_data( $args['template_id'] );
+		$response_body = self::request_template_data( $args['template_id'] );
 
-		$data = json_decode( $data, true );
+		$data = json_decode( $response_body, true );
 
-		if ( empty( $data ) || empty( $data['content'] ) ) {
+		if ( empty( $data ) || ! isset( $data['success'] ) || ! $data['success'] || empty( $data['data'] ) ) {
 			throw new \Exception( esc_attr( __( 'Template does not have any content', 'codesigner' ) ) );
 		}
 
+		$template_data = $data['data'];
+
+		if ( empty( $template_data['json'] ) ) {
+			throw new \Exception( esc_attr( __( 'Template does not have any content', 'codesigner' ) ) );
+		}
+
+		$data['content'] = json_decode( $template_data['json'], true );
 		$data['content'] = $this->replace_elements_ids( $data['content'] );
 		$data['content'] = $this->process_export_import_content( $data['content'], 'on_import' );
 
