@@ -115,7 +115,7 @@ $pro_features = array(
 			<h4><?php esc_html_e( 'Best Elementor WooCommerce Builder', 'codesigner' ); ?></h4>
 		</div>
 		<div class="wl-cta-btns">
-			<a class="wl-help-support" href="<?php echo esc_url( 'https://help.codexpert.io/tickets/' ); ?>" target='_blank'><?php esc_html_e( 'Help and support', 'codesigner' ); ?></a>
+			<a class="wl-help-support" href="<?php echo esc_url( 'https://help.pluggable.io/tickets/' ); ?>" target='_blank'><?php esc_html_e( 'Help and support', 'codesigner' ); ?></a>
 			<a class="wl-upgrade-pro-btn" href="<?php echo esc_url( $pro_link ); ?>" target='_blank'><?php esc_html_e( 'Upgrade to PRO', 'codesigner' ); ?></a>
 		</div>
 	</div>

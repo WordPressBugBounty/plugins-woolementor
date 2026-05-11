@@ -42,7 +42,7 @@ class AJAX extends Base {
 			wp_die( __( 'You do not have sufficient permissions to access this page.', 'codesigner' ) );
 		}
 
-		if ( ! is_wp_error( $_posts_data = wp_remote_get( "https://help.codexpert.io/wp-json/wp/v2/docs/?parent={$this->plugin['doc_id']}&per_page=100" ) ) && is_array( $posts = json_decode( $_posts_data['body'], true ) ) && count( $posts ) > 0 ) {
+		if ( ! is_wp_error( $_posts_data = wp_remote_get( "https://help.pluggable.io/wp-json/wp/v2/docs/?parent={$this->plugin['doc_id']}&per_page=100" ) ) && is_array( $posts = json_decode( $_posts_data['body'], true ) ) && count( $posts ) > 0 ) {
 			update_option( 'codesigner-docs_json', $posts );
 		}
 	}

@@ -133,7 +133,7 @@ class Product_Tags extends Widget_Base {
 					array(
 						'tag_name' => __( 'tag #1', 'codesigner' ),
 						'tag_link' => array(
-							'url'         => 'https://codexpert.io/codesigner',
+							'url'         => 'https://codesigner.dev',
 							'is_external' => false,
 							'nofollow'    => false,
 						),
@@ -141,7 +141,7 @@ class Product_Tags extends Widget_Base {
 					array(
 						'tag_name' => __( 'tag #2', 'codesigner' ),
 						'tag_link' => array(
-							'url'         => 'https://codexpert.io/codesigner',
+							'url'         => 'https://codesigner.dev',
 							'is_external' => false,
 							'nofollow'    => false,
 						),

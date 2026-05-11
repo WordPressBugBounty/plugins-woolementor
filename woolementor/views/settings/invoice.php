@@ -4,7 +4,7 @@ $utm      = array(
 	'utm_medium'   => 'settings',
 	'utm_campaign' => 'pro-tab',
 );
-$pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner/#pricing' );
+$pro_link = add_query_arg( $utm, 'https://codesigner.dev/#pricing' );
 
 ?>
 <section class="codesigner-hero-section-wrapper codesigner-invoice-hero-section">

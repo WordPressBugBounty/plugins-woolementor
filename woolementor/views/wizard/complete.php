@@ -18,7 +18,7 @@ $congratulations = CODESIGNER_ASSETS . '/img/congratulations.png';
 		<!-- p class="cx-wizard-sub"> 
 			<?php 
 			echo wp_kses( __( 'As a token of appreciation for installing <strong>CoDesigner</strong>, we\'ve reserved a special mystery deal for you that <strong>expires in 6 hours!</strong>', 'codesigner' ), $allowed_html ); 
-			?> <a target="_blank"  href="<?php echo esc_url( 'https://codexpert.io/codesigner/special-new-user-pricing/?utm_source=wp+dashboard&utm_medium=setup+wizard&utm_campaign=appreciation+deal' ); ?>">
+			?> <a target="_blank"  href="<?php echo esc_url( 'https://codesigner.dev/special-new-user-pricing/?utm_source=wp+dashboard&utm_medium=setup+wizard&utm_campaign=appreciation+deal' ); ?>">
 				<?php echo esc_html__( 'Unveil Now..', 'codesigner' ); ?>
 			</a>⏳
 		</p -->

@@ -1,10 +1,10 @@
 === CoDesigner - All in One Elementor WooCommerce Builder ===
 Contributors: woolementor, codexpert, mukto90
-Donate link: https://codexpert.io/codesigner/?utm_campaign=wporg
+Donate link: https://codesigner.dev/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 5.0
 Tested up to: 6.8.3
-Stable tag: 4.29
+Stable tag: 4.30
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -19,15 +19,15 @@ Our intuitive no-code drag-and-drop interface lets you upgrade Elementor's desig
 
 Customize your Elementor WooCommerce site and craft pixel-perfect websites effortlessly with the best Elementor WooCommerce builder in the market - CoDesigner.
 
-⭐ [94+ Widgets](https://codexpert.io/codesigner/)
+⭐ [94+ Widgets](https://codesigner.dev/)
 
-⭐ [14+ Modules](https://codexpert.io/codesigner/modules/)
+⭐ [14+ Modules](https://codesigner.dev/modules/)
 
 ⭐ [150+ Templates](https://codexpert.io/codesigner-library/)
 
-⭐ [Documentation](https://help.codexpert.io/docs/codesigner/)
+⭐ [Documentation](https://codesigner.dev/docs/)
 
-⭐ [Support](https://help.codexpert.io/)
+⭐ [Support](https://help.pluggable.io/)
 
 A plain Elementor WooCommerce website often leads to abandoned cart pages, lower conversion rates, and ultimately, lost revenue opportunities.
 
@@ -85,7 +85,7 @@ From related products to advanced menu cart options, these drag-and-drop widgets
 ✔️ WooCommerce Product Comparison
 ✔️ WooCommerce Dynamic Tab
 
-You can find the full list of free & pro widgets here 👉 [https://codexpert.io/codesigner/]
+You can find the full list of free & pro widgets here 👉 [https://codesigner.dev/]
 
 #### 🚀 WooCommerce Shop Builder
 
@@ -149,7 +149,7 @@ Upgrade your WooCommerce store by adding a large spectrum of eCommerce needs wit
 ✔️ WooCommerce Add To Cart Text
 ✔️ WooCommerce Partial Payment
 
-You can find the full list of our free & pro Elementor WooCommerce builder modules here 👉 [https://codexpert.io/codesigner/]
+You can find the full list of our free & pro Elementor WooCommerce builder modules here 👉 [https://codesigner.dev/]
 
 #### 🚀 WooCommerce Currency Switcher
 
@@ -210,7 +210,7 @@ Our Elementor WooCommerce addon shop templates are carefully designed to cater t
 ✔️ Shop Templates
 ✔️ Single Product Templates
 
-You can find the full list of free & pro WooCommerce Elementor templates here 👉 [https://codexpert.io/codesigner/]
+You can find the full list of free & pro WooCommerce Elementor templates here 👉 [https://codesigner.dev/]
 
 #### 🚀 Cart Templates
 
@@ -270,7 +270,7 @@ Highlight each product's features and benefits with CoDesigner WooCommerce page 
 
 ### Need help?
 
-> Got any questions about our features? Need help setting up the plugin? Please read our [documentation](https://help.codexpert.io/docs/codesigner/?utm_campaign=wporg) or raise a [ticket](https://help.codexpert.io/new-ticket/) and we’ll get back to you in 24 hours.
+> Got any questions about our features? Need help setting up the plugin? Please read our [documentation](https://codesigner.dev/docs/?utm_campaign=wporg) or raise a [ticket](https://help.pluggable.io/new-ticket/) and we’ll get back to you in 24 hours.
 
 == Screenshots ==
 
@@ -308,7 +308,7 @@ CoDesigner offers 54 premium WooCommerce Elementor widgets, including advanced W
 
 = 5. Is there documentation available for CoDesigner? =
 
-Yes, CoDesigner offers a comprehensive [documentation](https://codexpert.io/codesigner/docs/general/) that includes a getting-started guide, widget descriptions, installation instructions, configuration guidelines, FAQs, examples, and more.
+Yes, CoDesigner offers a comprehensive [documentation](https://codesigner.dev/docs/general/) that includes a getting-started guide, widget descriptions, installation instructions, configuration guidelines, FAQs, examples, and more.
 
 = 6. Can I customize WooCommerce email notifications with CoDesigner? =
 
@@ -360,15 +360,15 @@ Yes, CoDesigner WooCommerce builder offers an [affiliate program](https://codexp
 
 = 18. How can I contact support for CoDesigner? =
 
-CoDesigner provides support over the [wordpress.org community forum](https://wordpress.org/support/plugin/woolementor/) for free version users, and if you are a premium plugin user, please submit a [support ticket](https://help.codexpert.io/new-ticket/).
+CoDesigner provides support over the [wordpress.org community forum](https://wordpress.org/support/plugin/woolementor/) for free version users, and if you are a premium plugin user, please submit a [support ticket](https://help.pluggable.io/new-ticket/).
 
 = 19. Are there any restrictions on the number of websites where I can use CoDesigner? =
 
-The free version of CoDesigner does not impose restrictions on the number of websites where you can use this WooCommerce builder plugin. So, you can use it on multiple WordPress sites at the same time. For the Pro version please check the details [here](https://codexpert.io/codesigner/pricing/).
+The free version of CoDesigner does not impose restrictions on the number of websites where you can use this WooCommerce builder plugin. So, you can use it on multiple WordPress sites at the same time. For the Pro version please check the details [here](https://codesigner.dev/pricing/).
 
 = 20. Does CoDesigner offer any discounts or promotions for the Pro plugin? =
 
-CoDesigner occasionally offers discounts and promotions for the premium versions. You can stay updated on these offers by connecting with our [official Facebook page](https://www.facebook.com/codexpert.io) and checking our [website](https://codexpert.io/codesigner/).
+CoDesigner occasionally offers discounts and promotions for the premium versions. You can stay updated on these offers by connecting with our [official Facebook page](https://www.facebook.com/codexpert.io) and checking our [website](https://codesigner.dev/).
 
 = 21. Is CoDesigner suitable for beginners with limited coding experience? =
 
@@ -400,9 +400,14 @@ CoDesigner gets regular updates to ensure compatibility, security, and addition 
 
 = 28. I can’t find the answer to my question =
 
-Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/docs/codesigner/?utm_campaign=wporg)
+Please reach out to us at [Support](https://help.pluggable.io/new-ticket/?utm_campaign=wporg)
 
 == Changelog ==
+
+= v4.30 - 2026-05-11 =
+- [fix] Fixed textdomain too-early load notice for WordPress 6.7+ JIT
+- [imp] Updated plugin website URLs from codexpert.io to codesigner.dev
+- [chore] Added PR description template for better contribution workflow
 
 = v4.29 - 2026-03-03 =
 - [fix] Fixed templates issue
@@ -746,6 +751,6 @@ Please reach out to us at [https://help.codexpert.io](https://help.codexpert.io/
 * [imp] Compat tested with WooCommerce 8.4
 * [imp] Compat tested with Elementor 3.18.3
 
-View detailed Changelog from [here](https://codexpert.io/codesigner/changelog/).
+View detailed Changelog from [here](https://codesigner.dev/changelog/).
 
 == Upgrade Notice ==

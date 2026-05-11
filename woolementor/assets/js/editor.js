@@ -111,7 +111,7 @@
 								blockStart: "-7",
 							},
 							actionButton: {
-								url: "https://codexpert.io/codesigner/pricing?utm_source=live+editor&utm_medium=in-plugin&utm_campaign=widgets",
+								url: "https://codesigner.dev/pricing?utm_source=live+editor&utm_medium=in-plugin&utm_campaign=widgets",
 								text: "Get CoDesigner Pro",
 								classes: [
 									"elementor-button",

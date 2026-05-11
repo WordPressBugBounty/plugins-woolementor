@@ -9,37 +9,37 @@
 			'title' => '10+ Customizable Premium Shop Widgets',
 			'desc'  => 'Pre-designed widgets you can customize to match your brand, giving your store a modern look that sells. ',
             'img'   => CODESIGNER_ASSETS . '/img/general/get-started/new/customizable-shop-widgets.svg',
-			'link' 	=> 'https://codexpert.io/codesigner/shop-widgets/?utm_source=in+plugin&utm_medium=codesigner+shop&utm_campaign=dashboard#shop-flip',
+			'link' 	=> 'https://codesigner.dev/shop-widgets/?utm_source=in+plugin&utm_medium=codesigner+shop&utm_campaign=dashboard#shop-flip',
 		],
 		[
 			'title' => 'Lucrative Checkout Widgets and Templates',
 			'desc' 	=> 'Boost sales with ready-made checkout templates that make buying easy and reduce cart abandonment. ',
             'img'   => CODESIGNER_ASSETS . '/img/general/get-started/new/lucrative-checkout-widgets.svg',
-			'link' 	=> 'https://codexpert.io/codesigner/checkout-widgets?utm_source=in+plugin&utm_medium=codesigner+checkout&utm_campaign=dashboard',
+			'link' 	=> 'https://codesigner.dev/checkout-widgets?utm_source=in+plugin&utm_medium=codesigner+checkout&utm_campaign=dashboard',
 		],
 		[
 			'title' => 'Related Product Widgets for Smart Cross-sells',
 			'desc' 	=> 'Automatically show personalized product suggestions to increase average order value and encourage repeat. ',
             'img'   => CODESIGNER_ASSETS . '/img/general/get-started/new/related-product-widgets.svg',
-			'link' 	=> 'https://codexpert.io/codesigner/related-product-widgets/?utm_source=in+plugin&utm_medium=codesigner+related+product&utm_campaign=dashboard#related-products-flip',
+			'link' 	=> 'https://codesigner.dev/related-product-widgets/?utm_source=in+plugin&utm_medium=codesigner+related+product&utm_campaign=dashboard#related-products-flip',
 		],
 		[
 			'title' => 'Live Sales Notifications for real-time purchase alerts.',
 			'desc' 	=> 'Build trust and urgency by displaying real-time sales popups, inspiring confidence, and making faster customer. ',
             'img'   => CODESIGNER_ASSETS . '/img/general/get-started/new/live-sales-notifications-widgets.svg',
-			'link' 	=> 'https://codexpert.io/codesigner/general-widgets/?utm_source=in+plugin&utm_medium=codesigner+sales+notification&utm_campaign=dashboard#sales-notification',
+			'link' 	=> 'https://codesigner.dev/general-widgets/?utm_source=in+plugin&utm_medium=codesigner+sales+notification&utm_campaign=dashboard#sales-notification',
 		],
 		[
 			'title' => 'Personalized Invoice Builder with Templates',
 			'desc' 	=> 'Instantly create stylish, branded invoices designed for each customer to enhance your brand image and customer. ',
             'img'   => CODESIGNER_ASSETS . '/img/general/get-started/new/personalized-invoice-builder-widgets.svg',
-			'link' 	=> 'https://codexpert.io/codesigner/modules/?utm_source=in+plugin&utm_medium=codesigner+invoice&utm_campaign=dashboard',
+			'link' 	=> 'https://codesigner.dev/modules/?utm_source=in+plugin&utm_medium=codesigner+invoice&utm_campaign=dashboard',
 		],
 		[
 			'title' => 'Single Product Widgets for Beautiful Stores',
 			'desc' 	=> 'Highlight individual products with detail-rich widgets designed to maximize engagement and conversions. ',
             'img'   => CODESIGNER_ASSETS . '/img/general/get-started/new/single-product-widgets.svg',
-			'link' 	=> 'https://codexpert.io/codesigner/single-product-widgets/?utm_source=in+plugin&utm_medium=codesigner+single+product&utm_campaign=dashboard',
+			'link' 	=> 'https://codesigner.dev/single-product-widgets/?utm_source=in+plugin&utm_medium=codesigner+single+product&utm_campaign=dashboard',
 		],
 	];
 

@@ -194,7 +194,7 @@ defined( 'ABSPATH' ) || exit;
 </script>
 
 <!-- <script type="text/template" id="tmpl-wl-template-library-pro-button">
-	<a class="elementor-template-library-template-action elementor-button tmpl-wl-template-pro-button" href="https://codexpert.io/codesigner/#free-vs-pro" target="_blank">
+	<a class="elementor-template-library-template-action elementor-button tmpl-wl-template-pro-button" href="https://codesigner.dev/#free-vs-pro" target="_blank">
 		<i class="eicon-external-link-square" aria-hidden="true"></i>
 		<span class="elementor-button-title"><?php esc_html_e( 'Get Pro', 'codesigner' ); ?></span>
 	</a>

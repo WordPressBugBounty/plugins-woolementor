@@ -143,16 +143,16 @@ class Admin extends Base {
 
 	public function action_links( $links ) {
 		$this->admin_url = admin_url( 'admin.php' );
-		$url             = add_query_arg( 'page', $this->slug, 'https://help.codexpert.io/docs/codesigner/' );
+		$url             = add_query_arg( 'page', $this->slug, 'https://codesigner.dev/docs/' );
 
 		$new_links = array(
 			'settings' => sprintf( '<a href="%1$s">' . __( 'Docs', 'codesigner' ) . '</a>', esc_url( $url ) ),
 		);
 		$support   = array(
-			'support' => sprintf( '<a href="%1$s">' . __( 'Support', 'codesigner' ) . '</a>', esc_url( 'https://help.codexpert.io/add-ticket/' ) ),
+			'support' => sprintf( '<a href="%1$s">' . __( 'Support', 'codesigner' ) . '</a>', esc_url( 'https://help.pluggable.io/new-ticket/' ) ),
 		);
 		// if ( !defined( 'CODESIGNER_PRO' ) ) {
-		// $new_links['codesigner-get-pro'] = '<a href="https://codexpert.io/codesigner/pricing/?utm_source=website&utm_medium=floating+bar&utm_campaign=black+friday+2024">' . __('Black Friday Sale (Up to 80% OFF)', 'cx-plugin') . '</a>';
+		// $new_links['codesigner-get-pro'] = '<a href="https://codesigner.dev/pricing/?utm_source=website&utm_medium=floating+bar&utm_campaign=black+friday+2024">' . __('Black Friday Sale (Up to 80% OFF)', 'cx-plugin') . '</a>';
 		// }
 
 		return array_merge( $support, $new_links, $links );
@@ -161,7 +161,7 @@ class Admin extends Base {
 	public function plugin_row_meta( $plugin_meta, $plugin_file ) {
 
 		if ( $this->plugin['basename'] === $plugin_file ) {
-			$plugin_meta['help'] = '<a href="'. esc_url('https://help.codexpert.io/') . '" target="_blank" class="cx-help">' . __( 'Help', 'codesigner' ) . '</a>';
+			$plugin_meta['help'] = '<a href="'. esc_url('https://help.pluggable.io/new-ticket/') . '" target="_blank" class="cx-help">' . __( 'Help', 'codesigner' ) . '</a>';
 		}
 
 		return $plugin_meta;
@@ -508,7 +508,7 @@ class Admin extends Base {
 					<a class="cd-upgraded-btn" target="_blank" href="<?php echo esc_url( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' ); ?>"> <img src="<?php echo esc_url( $banner ); ?>" alt=""> <?php esc_html_e( 'Get Pro Now', 'codesigner' ); ?></a>
 				<?php else: ?>
 					<div class="cd-btn-wrapper">
-						<a href="<?php echo esc_url( 'https://help.codexpert.io/docs/codesigner' ); ?>" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>
+						<a href="<?php echo esc_url( 'https://help.pluggable.io/docs/codesigner' ); ?>" class="cd-btn active"><?php esc_html_e( 'Documentation', 'codesigner' ); ?></a>
 						<a href="<?php echo esc_url( 'https://help.pluggable.io/' ); ?>" class="cd-btn"><?php esc_html_e( 'Get Support', 'codesigner' ); ?></a>
 					</div>
 				<?php endif; ?>

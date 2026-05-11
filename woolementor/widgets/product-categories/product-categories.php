@@ -134,7 +134,7 @@ class Product_Categories extends Widget_Base {
 					array(
 						'cat_name' => __( 'Category #1', 'codesigner' ),
 						'cat_link' => array(
-							'url'         => 'https://codexpert.io/codesigner',
+							'url'         => 'https://codesigner.dev',
 							'is_external' => false,
 							'nofollow'    => false,
 						),
@@ -142,7 +142,7 @@ class Product_Categories extends Widget_Base {
 					array(
 						'cat_name' => __( 'Category #2', 'codesigner' ),
 						'cat_link' => array(
-							'url'         => 'https://codexpert.io/codesigner',
+							'url'         => 'https://codesigner.dev',
 							'is_external' => false,
 							'nofollow'    => false,
 						),

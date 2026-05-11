@@ -380,7 +380,7 @@ class Pricing_Table_Smart extends Widget_Base {
 				'label'       => __( 'Link', 'codesigner' ),
 				'type'        => Controls_Manager::URL,
 				'label_block' => true,
-				'placeholder' => 'https://codexpert.io/codesigner/',
+				'placeholder' => 'https://codesigner.dev/',
 				'dynamic'     => array(
 					'active' => true,
 				),
@@ -1524,7 +1524,7 @@ class Pricing_Table_Smart extends Widget_Base {
 			return;
 		}
 
-		echo wp_kses_post( wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), $this->get_name(), '<a href="' . esc_url( 'https://codexpert.io/codesigner' ) . '" target="_blank">CoDesigner Pro</a>' ) ) );
+		echo wp_kses_post( wcd_notice( sprintf( __( 'This beautiful widget, <strong>%1$s</strong> is a premium widget. Please upgrade to <strong>%2$s</strong> or activate your license if you already have upgraded!', 'codesigner' ), $this->get_name(), '<a href="' . esc_url( 'https://codesigner.dev' ) . '" target="_blank">CoDesigner Pro</a>' ) ) );
 
 
 		if ( file_exists( __DIR__ . '/assets/img/screenshot.png' ) ) {

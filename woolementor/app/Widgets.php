@@ -50,9 +50,6 @@ class Widgets extends Base {
 		$this->slug            = $this->plugin['TextDomain'];
 		$this->name            = $this->plugin['Name'];
 		$this->version         = $this->plugin['Version'];
-		$this->widgets         = codesigner_widgets();
-		$this->active_widgets  = wcd_active_widgets();
-		$this->active_controls = $this->active_widgets;
 		$this->assets          = CODESIGNER_ASSETS;
 	}
 	public function enqueue_styles( $class ) {
@@ -123,6 +120,9 @@ class Widgets extends Base {
 	public function register_widgets() {
 
 		$widgets_manager = Elementor_Plugin::instance()->widgets_manager;
+
+		$this->active_widgets  = wcd_active_widgets();
+		$this->active_controls = $this->active_widgets;
 
 		foreach ( $this->active_widgets as $active_widget ) {
 

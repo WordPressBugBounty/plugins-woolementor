@@ -340,7 +340,7 @@ class Pricing_Table_Advanced extends Widget_Base {
 				'label'       => __( 'Link', 'codesigner' ),
 				'type'        => Controls_Manager::URL,
 				'label_block' => true,
-				'placeholder' => 'https://codexpert.io/codesigner/',
+				'placeholder' => 'https://codesigner.dev/',
 				'dynamic'     => array(
 					'active' => true,
 				),

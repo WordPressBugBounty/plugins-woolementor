@@ -20,21 +20,21 @@ $utm      = array(
 	'utm_medium'   => 'In-plugin+overview',
 	'utm_campaign' => 'at+a+glance',
 );
-$pro_link = add_query_arg( $utm, 'https://codexpert.io/codesigner' );
+$pro_link = add_query_arg( $utm, 'https://codesigner.dev' );
 
 $home_url      = array(
 	'source' => 'dashboard',
 	'medium' => 'settings',
 	'url'    => 'home-url',
 );
-$home_redirect = add_query_arg( $home_url, 'https://codexpert.io/codesigner/' );
+$home_redirect = add_query_arg( $home_url, 'https://codesigner.dev/' );
 
 $pricing_url      = array(
 	'source' => 'dashboard',
 	'medium' => 'settings',
 	'url'    => 'pricing-url',
 );
-$pricing_redirect = add_query_arg( $pricing_url, 'https://codexpert.io/codesigner/pricing' );
+$pricing_redirect = add_query_arg( $pricing_url, 'https://codesigner.dev/pricing' );
 ?>
 
 <div class="wl-general-content">
@@ -45,10 +45,10 @@ $pricing_redirect = add_query_arg( $pricing_url, 'https://codexpert.io/codesigne
 	</div>
 
 	<div class="wl-options">
-		<a class="wl-item" href="https://help.codexpert.io/docs/codesigner" target="_blank">
+		<a class="wl-item" href="https://help.pluggable.io/docs/codesigner" target="_blank">
 			<img src="<?php echo esc_url( $item_1 ); ?>" alt="docs">
 		</a>
-		<a class="wl-item" href="https://help.codexpert.io/tickets/" target="_blank">
+		<a class="wl-item" href="https://help.pluggable.io/tickets/" target="_blank">
 			<img src="<?php echo esc_url( $item_2 ); ?>" alt="support">
 		</a>
 		<a class="wl-item" href="https://wordpress.org/support/plugin/woolementor/reviews/?filter=5#new-post"
