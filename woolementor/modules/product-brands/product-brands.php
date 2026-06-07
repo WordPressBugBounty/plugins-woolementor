@@ -171,15 +171,14 @@ class Product_Brands extends Base {
 			?>
 			<span class="brand_wrapper">
 				<?php
-				echo esc_html_e( Helper::get_option( 'codesigner_product_brands', 'pb_singular_name' ) . ' : ', 'codesigner' );
-				foreach ( $terms as $key => $term ) {
-					$term_links[ esc_url( get_term_link( $term, Helper::get_option( 'codesigner_product_brands', 'pb_singular_name' ) ) ) ] = esc_html( $term->name );
-				}
+				echo esc_html( Helper::get_option( 'codesigner_product_brands', 'pb_singular_name' ) . ' : ' );
 				$links = array();
-				if ( ! is_wp_error( $term_links ) ) {
-					foreach ( $term_links as $key => $value ) {
-						$links[] = '<a href="' . esc_url( $key ) . '">' . esc_html( $value ) . '</a>';
+				foreach ( $terms as $term ) {
+					$link = get_term_link( $term, $term->taxonomy );
+					if ( is_wp_error( $link ) ) {
+						continue;
 					}
+					$links[] = '<a href="' . esc_url( $link ) . '">' . esc_html( $term->name ) . '</a>';
 				}
 				echo wp_kses_post( implode( ', ', $links ) );
 				?>

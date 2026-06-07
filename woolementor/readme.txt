@@ -2,9 +2,9 @@
 Contributors: woolementor, codexpert, mukto90
 Donate link: https://codesigner.dev/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
-Requires at least: 5.0
-Tested up to: 6.8.3
-Stable tag: 4.30
+Requires at least: 6.0
+Tested up to: 7.0
+Stable tag: 4.31
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -403,6 +403,10 @@ CoDesigner gets regular updates to ensure compatibility, security, and addition 
 Please reach out to us at [Support](https://help.pluggable.io/new-ticket/?utm_campaign=wporg)
 
 == Changelog ==
+
+= v4.31 - 2026-06-07 =
+
+- [Fix] Product brands meta crashes on invalid taxonomy
 
 = v4.30 - 2026-05-11 =
 - [fix] Fixed textdomain too-early load notice for WordPress 6.7+ JIT
