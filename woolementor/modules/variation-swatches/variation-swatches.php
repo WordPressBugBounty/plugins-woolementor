@@ -90,14 +90,14 @@ class Variation_Swatches extends Base {
 		$attribute      = wc_get_attribute( $attribute_id );
 		$attribute_type = $attribute->type;
 
-		if ( $attribute_type == 'color' ) {
-			update_term_meta( $term_id, 'codesigner-vs-color', sanitize_text_field( $_POST['codesigner-vs-color'] ) );
+		if ( $attribute_type == 'color' && isset( $_POST['codesigner-vs-color'] ) ) {
+			update_term_meta( $term_id, 'codesigner-vs-color', sanitize_text_field( wp_unslash( $_POST['codesigner-vs-color'] ) ) );
 		}
-		if ( $attribute_type == 'label' ) {
-			update_term_meta( $term_id, 'codesigner-taxonomy-label', sanitize_text_field( $_POST['codesigner-taxonomy-label'] ) );
+		if ( $attribute_type == 'label' && isset( $_POST['codesigner-taxonomy-label'] ) ) {
+			update_term_meta( $term_id, 'codesigner-taxonomy-label', sanitize_text_field( wp_unslash( $_POST['codesigner-taxonomy-label'] ) ) );
 		}
-		if ( $attribute_type == 'image' ) {
-			update_term_meta( $term_id, 'codesigner-image_url', sanitize_text_field( $_POST['codesigner-image_url'] ) );
+		if ( $attribute_type == 'image' && isset( $_POST['codesigner-image_url'] ) ) {
+			update_term_meta( $term_id, 'codesigner-image_url', sanitize_text_field( wp_unslash( $_POST['codesigner-image_url'] ) ) );
 		}
 
 		update_term_meta( $term_id, 'codesigner-texo_type', $attribute_type );
@@ -246,7 +246,7 @@ class Variation_Swatches extends Base {
 						?>
 				<div class="form-field term-color-wrap">
 					<label for="tag-color" style="display: inline-block;width: 215px;"><b><?php esc_attr_e( 'Color', 'codesigner' ); ?></b></label>
-					<input type="color" id="codesigner-vs-color" name="codesigner-vs-color" value="<?php esc_attr( $term_data ); ?>">
+					<input type="color" id="codesigner-vs-color" name="codesigner-vs-color" value="<?php echo esc_attr( $term_data ); ?>">
 					<p style="margin-left: 27%;"> <?php esc_attr( $term_data ); ?> 
 						<?php esc_attr_e( 'Input color if you want to use this as color taxonomy for CoDesigner variation swatches module Widget', 'codesigner' ); ?>
 					</p>
@@ -255,7 +255,7 @@ class Variation_Swatches extends Base {
 					}
 
 					if ( 'image' == $attribute->type ) {
-						$term_data = get_term_meta( $term_id, 'codesigner-image_url' ) ? get_term_meta( $term_id, 'codesigner-image_url', true ) : '#';
+						$term_data = get_term_meta( $term_id, 'codesigner-image_url' ) ? get_term_meta( $term_id, 'codesigner-image_url', true ) : '';
 						?>
 				<table class="form-table">
 					<div id="codesigner-taxonomy_image" class="codesigner-taxonomy" >
@@ -265,7 +265,7 @@ class Variation_Swatches extends Base {
 							</th>
 							<td>
 							<img id="codesigner-texo-image-preview" name="codesigner-texo-image" src="<?php echo esc_url( $term_data ); ?>" style="max-width: 25%; height: 25%;">
-							<input type="hidden" id="codesigner-texo-image-url" name="codesigner-image_url">
+							<input type="hidden" id="codesigner-texo-image-url" name="codesigner-image_url" value="<?php echo esc_url( $term_data ); ?>">
 						</td>
 						</tr>
 					</div>
@@ -279,7 +279,7 @@ class Variation_Swatches extends Base {
 					<table class="form-table">
 						<tr>
 							<th><?php esc_attr_e( 'Label', 'codesigner' ); ?></th>
-							<td><input type="text" name="codesigner-taxonomy-label" value="<?php esc_attr( $term_data ); ?>" ></td>
+							<td><input type="text" name="codesigner-taxonomy-label" value="<?php echo esc_attr( $term_data ); ?>" ></td>
 						</tr>
 					</table>
 						<?php

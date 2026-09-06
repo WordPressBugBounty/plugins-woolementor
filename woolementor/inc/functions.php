@@ -1735,7 +1735,7 @@ if ( ! function_exists( 'wcd_get_product_id' ) ) :
 
 		$result = new \WP_Query( $args );
 
-		return $result->post->ID;
+		return isset( $result->post->ID ) ? $result->post->ID : 0;
 	}
 endif;
 

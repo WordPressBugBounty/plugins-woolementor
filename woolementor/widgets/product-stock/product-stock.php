@@ -174,6 +174,11 @@ class Product_Stock extends Widget_Base {
 		if ( empty( $product ) && ( wcd_is_edit_mode() || wcd_is_preview_mode() ) ) {
 			$product_id   = wcd_get_product_id();
 			$product      = wc_get_product( $product_id );
+
+			if ( ! $product ) {
+				return;
+			}
+
 			$stock_status = $product->get_stock_status();
 			$stock_qty    = $product->get_stock_quantity();
 

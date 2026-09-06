@@ -308,6 +308,68 @@ class Partial_Payment extends Base {
 		}
 	}
 
+	private function get_partial_payment_type( $product_id ) {
+		if ( 'yes' !== get_post_meta( $product_id, 'cd_enable_partial_payment', true ) ) {
+			return false;
+		}
+
+		$type = get_post_meta( $product_id, 'cd_partial_amount_type', true );
+
+		return in_array( $type, array( 'percentage', 'fixed', 'custom' ), true ) ? $type : false;
+	}
+
+	private function get_minimum_payment_amount( $product_id ) {
+		$minimum = get_post_meta( $product_id, 'cd_minimum_payment_amount', true );
+
+		if ( ! is_numeric( $minimum ) ) {
+			$minimum = Helper::get_option( 'codesigner_partial_payment', 'pp-default-custom', 10 );
+		}
+
+		return max( 0, (float) $minimum );
+	}
+
+	/**
+	 * @return float|false
+	 */
+	private function get_first_installment_amount( $product_id, $variation_id, $payment_type, $custom_amount = null ) {
+		$product = $variation_id ? wc_get_product( $variation_id ) : wc_get_product( $product_id );
+
+		if ( ! $product || $this->get_partial_payment_type( $product_id ) !== $payment_type ) {
+			return false;
+		}
+
+		$price = (float) $product->get_price();
+
+		if ( 'percentage' === $payment_type ) {
+			$amount = $price * (float) get_post_meta( $product_id, 'cd_percentage_payment_amount', true ) / 100;
+		} elseif ( 'fixed' === $payment_type ) {
+			$amount = (float) get_post_meta( $product_id, 'cd_fixed_payment_amount', true );
+		} else {
+			$minimum = $this->get_minimum_payment_amount( $product_id );
+			$amount  = max( is_numeric( $custom_amount ) ? (float) $custom_amount : $minimum, $minimum );
+		}
+
+		$amount = min( $amount, $price );
+
+		return $amount > 0 ? $amount : false;
+	}
+
+	/**
+	 * @return float|false
+	 */
+	private function get_cart_item_installment( $cart_item ) {
+		$payment_type = isset( $cart_item['cd_payment_type'] ) ? $cart_item['cd_payment_type'] : null;
+
+		if ( ! $payment_type || 'full' === $payment_type ) {
+			return false;
+		}
+
+		$variation_id = isset( $cart_item['variation_id'] ) && $cart_item['variation_id'] > 0 ? $cart_item['variation_id'] : null;
+		$custom       = isset( $cart_item['cd_custom_amount'] ) ? $cart_item['cd_custom_amount'] : null;
+
+		return $this->get_first_installment_amount( $cart_item['product_id'], $variation_id, $payment_type, $custom );
+	}
+
 	public function display_payment_option() {
 		$product_id = get_the_ID();
 		$product    = wc_get_product( $product_id );
@@ -320,7 +382,7 @@ class Partial_Payment extends Base {
 			$partial_amount_type       = get_post_meta( $product_id, 'cd_partial_amount_type', true );
 			$percentage_payment_amount = get_post_meta( $product_id, 'cd_percentage_payment_amount', true );
 			$fixed_payment_amount      = get_post_meta( $product_id, 'cd_fixed_payment_amount', true );
-			$minimum_payment_amount    = get_post_meta( $product_id, 'cd_minimum_payment_amount', true );
+			$minimum_payment_amount    = $this->get_minimum_payment_amount( $product_id );
 			$select_field_text         = ucwords( $partial_amount_type ) . ' Payment';
 
 			?>
@@ -367,6 +429,8 @@ class Partial_Payment extends Base {
 							name        = "cd_custom_payment" 
 							id          = "cd_custom_payment" 
 							min         = "<?php echo esc_attr( $minimum_payment_amount ); ?>"
+							max         = "<?php echo esc_attr( $product->get_price() ); ?>"
+							step        = "any"
 							value       = "<?php echo esc_attr( $minimum_payment_amount ); ?>"
 							placeholder = "<?php printf( esc_attr( __( 'Minimum Amount is %1$0.2f%2$2s', 'codesigner' ) ), esc_attr( $minimum_payment_amount ), esc_attr( get_woocommerce_currency_symbol() ) ); ?>" 
 						>
@@ -378,45 +442,71 @@ class Partial_Payment extends Base {
 	}
 
 	public function add_cart_item_data( $cart_item_data, $product_id, $variation_id, $quantity ) {
-		if ( isset( $_POST['cd_partial_payment_type'] ) ) {
-			$product      = wc_get_product( $product_id );
-			$payment_type = $this->sanitize( $_POST['cd_partial_payment_type'] );
+		if ( ! is_array( $cart_item_data ) ) {
+			$cart_item_data = array();
+		}
 
-			/**
-			 * Check is product already added in the cart
-			 * with full/custom/percentage payment
-			 */
-			foreach ( WC()->cart->get_cart() as $item_key => $cart_item ) {
-				if ( ( $cart_item['product_id'] == $product_id ) && ( $cart_item['variation_id'] == $variation_id ) && ( $cart_item['cd_payment_type'] != $payment_type ) ) {
-					throw new \Exception(
-						sprintf(
-							esc_html__( 'Item already added in the cart with %s payment', 'codesigner' ),
-							esc_html( $cart_item['cd_payment_type'] )
-						)
-					);
-				}
-			}
+		unset( $cart_item_data['cd_payment_type'], $cart_item_data['cd_percentage_amount'], $cart_item_data['cd_fixed_amount'], $cart_item_data['cd_custom_amount'] );
 
-			$cart_item_data['cd_payment_type'] = $payment_type;
+		if ( ! isset( $_POST['cd_partial_payment_type'] ) ) {
+			return $cart_item_data;
+		}
 
-			// check payment type
-			if ( $payment_type === 'full' ) {
-				return $cart_item_data;
-			}
+		$payment_type = $this->sanitize( $_POST['cd_partial_payment_type'] );
 
-			if ( $payment_type === 'percentage' ) {
-				$percentage_amount = get_post_meta( $product_id, 'cd_percentage_payment_amount', true );
-				$first_installment = $product->get_price() * $percentage_amount / 100;
-
-				$cart_item_data[ 'cd_' . $payment_type . '_amount' ] = $first_installment;
-			} elseif ( $payment_type === 'fixed' ) {
-				$fixed_amount = get_post_meta( $product_id, 'cd_fixed_payment_amount', true );
-
-				$cart_item_data[ 'cd_' . $payment_type . '_amount' ] = $fixed_amount;
-			} elseif ( $payment_type === 'custom' ) {
-				$cart_item_data[ 'cd_' . $payment_type . '_amount' ] = $this->sanitize( $_POST[ 'cd_' . $payment_type . '_payment' ] );
+		/**
+		 * Check is product already added in the cart
+		 * with full/custom/percentage payment
+		 */
+		foreach ( WC()->cart->get_cart() as $item_key => $cart_item ) {
+			if ( isset( $cart_item['cd_payment_type'] ) && ( $cart_item['product_id'] == $product_id ) && ( $cart_item['variation_id'] == $variation_id ) && ( $cart_item['cd_payment_type'] != $payment_type ) ) {
+				throw new \Exception(
+					sprintf(
+						esc_html__( 'Item already added in the cart with %s payment', 'codesigner' ),
+						esc_html( $cart_item['cd_payment_type'] )
+					)
+				);
 			}
 		}
+
+		// check payment type
+		if ( $payment_type === 'full' ) {
+			$cart_item_data['cd_payment_type'] = $payment_type;
+
+			return $cart_item_data;
+		}
+
+		if ( $this->get_partial_payment_type( $product_id ) !== $payment_type ) {
+			throw new \Exception( esc_html__( 'Partial payment is not available for this product.', 'codesigner' ) );
+		}
+
+		$custom_amount = null;
+
+		if ( $payment_type === 'custom' ) {
+			$product       = $variation_id ? wc_get_product( $variation_id ) : wc_get_product( $product_id );
+			$price         = $product ? (float) $product->get_price() : 0;
+			$minimum       = $this->get_minimum_payment_amount( $product_id );
+			$custom_amount = isset( $_POST['cd_custom_payment'] ) ? $this->sanitize( $_POST['cd_custom_payment'] ) : '';
+
+			if ( ! is_numeric( $custom_amount ) || (float) $custom_amount < $minimum || (float) $custom_amount > $price ) {
+				throw new \Exception(
+					sprintf(
+						esc_html__( 'Enter a partial payment amount between %1$s and %2$s.', 'codesigner' ),
+						esc_html( wp_strip_all_tags( wc_price( $minimum ) ) ),
+						esc_html( wp_strip_all_tags( wc_price( $price ) ) )
+					)
+				);
+			}
+		}
+
+		$first_installment = $this->get_first_installment_amount( $product_id, $variation_id, $payment_type, $custom_amount );
+
+		if ( false === $first_installment ) {
+			throw new \Exception( esc_html__( 'Partial payment is not available for this product.', 'codesigner' ) );
+		}
+
+		$cart_item_data['cd_payment_type']                   = $payment_type;
+		$cart_item_data[ 'cd_' . $payment_type . '_amount' ] = $first_installment;
 
 		return $cart_item_data;
 	}
@@ -431,11 +521,10 @@ class Partial_Payment extends Base {
 	}
 
 	public function update_cart_item_subtotal( $subtotal, $cart_item, $cart_item_key ) {
-		$payment_type = isset( $cart_item['cd_payment_type'] ) ? $cart_item['cd_payment_type'] : null;
+		$first_installment = $this->get_cart_item_installment( $cart_item );
 
-		if ( $payment_type && $payment_type !== 'full' ) {
-			$partial_amount = $cart_item[ 'cd_' . $payment_type . '_amount' ] * $cart_item['quantity'];
-			$subtotal       = wc_price( $partial_amount );
+		if ( false !== $first_installment ) {
+			$subtotal = wc_price( $first_installment * $cart_item['quantity'] );
 		}
 
 		return $subtotal;
@@ -445,10 +534,10 @@ class Partial_Payment extends Base {
 		$product_id   = $cart_item['product_id'];
 		$variation_id = isset( $cart_item['variation_id'] ) && $cart_item['variation_id'] > 0 ? $cart_item['variation_id'] : null;
 		$product_data = $variation_id ? wc_get_product( $variation_id ) : wc_get_product( $product_id );
-		$payment_type = isset( $cart_item['cd_payment_type'] ) ? $cart_item['cd_payment_type'] : null;
+		$installment  = $this->get_cart_item_installment( $cart_item );
 
-		if ( $payment_type && $payment_type !== 'full' ) {
-			$first_installment_amount  = $cart_item[ 'cd_' . $payment_type . '_amount' ] * $cart_item['quantity'];
+		if ( false !== $installment ) {
+			$first_installment_amount  = $installment * $cart_item['quantity'];
 			$second_installment_amount = ( $product_data->get_price() * $cart_item['quantity'] ) - $first_installment_amount;
 
 			$item_data[] = array(
@@ -476,11 +565,11 @@ class Partial_Payment extends Base {
 				$product_id   = $cart_item['product_id'];
 				$variation_id = isset( $cart_item['variation_id'] ) && $cart_item['variation_id'] > 0 ? $cart_item['variation_id'] : null;
 				$product      = $variation_id ? wc_get_product( $variation_id ) : wc_get_product( $product_id );
-				$payment_type = isset( $cart_item['cd_payment_type'] ) ? $cart_item['cd_payment_type'] : null;
+				$installment  = $this->get_cart_item_installment( $cart_item );
 
-				if ( $payment_type && $payment_type !== 'full' ) {
+				if ( false !== $installment ) {
 					$is_partial_payment = true;
-					$first_installment  = $cart_item[ 'cd_' . $payment_type . '_amount' ] * $cart_item['quantity'];
+					$first_installment  = $installment * $cart_item['quantity'];
 					$second_installment = ( $product->get_price() * $cart_item['quantity'] ) - $first_installment;
 
 					$subtotal_first_installment  += $first_installment;
@@ -519,10 +608,11 @@ class Partial_Payment extends Base {
 		$product_id     = $cart_item['product_id'];
 		$variation_id   = isset( $cart_item['variation_id'] ) && $cart_item['variation_id'] > 0 ? $cart_item['variation_id'] : null;
 		$product        = $variation_id ? wc_get_product( $variation_id ) : wc_get_product( $product_id );
-		$currently_paid = $cart_item[ 'cd_' . $cart_item['cd_payment_type'] . '_amount' ];
-		$due_amount     = $order->get_meta( 'cd-order-due' ) ? $order->get_meta( 'cd-order-due' ) : $product->get_price() - $cart_item[ 'cd_' . $cart_item['cd_payment_type'] . '_amount' ];
+		$currently_paid = $this->get_cart_item_installment( $cart_item );
 
-		if ( isset( $cart_item['cd_payment_type'] ) && $cart_item['cd_payment_type'] !== 'full' ) {
+		if ( false !== $currently_paid ) {
+			$due_amount = $order->get_meta( 'cd-order-due' ) ? $order->get_meta( 'cd-order-due' ) : $product->get_price() - $currently_paid;
+
 			$item->add_meta_data( 'cd_partial_payment_type', __( 'Partial Payment', 'codesigner' ), true );
 			$item->add_meta_data( 'cd_partial_payment_amount', $currently_paid, true );
 			$item->add_meta_data( 'cd_partial_payment_due', $due_amount, true );
@@ -557,10 +647,10 @@ class Partial_Payment extends Base {
 			$product_id   = $cart_item['product_id'];
 			$variation_id = isset( $cart_item['variation_id'] ) && $cart_item['variation_id'] > 0 ? $cart_item['variation_id'] : null;
 			$product      = $variation_id ? wc_get_product( $variation_id ) : wc_get_product( $product_id );
-			$payment_type = isset( $cart_item['cd_payment_type'] ) ? $cart_item['cd_payment_type'] : null;
+			$installment  = $this->get_cart_item_installment( $cart_item );
 
-			if ( $payment_type && $payment_type !== 'full' ) {
-				$first_installment  = $cart_item[ 'cd_' . $payment_type . '_amount' ] * $cart_item['quantity'];
+			if ( false !== $installment ) {
+				$first_installment  = $installment * $cart_item['quantity'];
 				$second_installment = ( $product->get_price() * $cart_item['quantity'] ) - $first_installment;
 
 				$subtotal_first_installment  += $first_installment;
@@ -569,7 +659,7 @@ class Partial_Payment extends Base {
 		}
 
 		if ( $subtotal_second_installment > 0 ) {
-			return $total - $subtotal_second_installment;
+			return max( 0, $total - $subtotal_second_installment );
 		}
 
 		return $total;
@@ -587,10 +677,10 @@ class Partial_Payment extends Base {
 				$product_id   = $cart_item['product_id'];
 				$variation_id = isset( $cart_item['variation_id'] ) && $cart_item['variation_id'] > 0 ? $cart_item['variation_id'] : null;
 				$product      = $variation_id ? wc_get_product( $variation_id ) : wc_get_product( $product_id );
-				$payment_type = isset( $cart_item['cd_payment_type'] ) ? $cart_item['cd_payment_type'] : null;
+				$installment  = $this->get_cart_item_installment( $cart_item );
 
-				if ( $payment_type && $payment_type !== 'full' ) {
-					$first_installment  = $cart_item[ 'cd_' . $payment_type . '_amount' ] * $cart_item['quantity'];
+				if ( false !== $installment ) {
+					$first_installment  = $installment * $cart_item['quantity'];
 					$second_installment = ( $product->get_price() * $cart_item['quantity'] ) - $first_installment;
 
 					$subtotal_first_installment  += $first_installment;

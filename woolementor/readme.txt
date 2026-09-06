@@ -4,7 +4,7 @@ Donate link: https://codesigner.dev/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 4.31
+Stable tag: 4.40
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -403,6 +403,14 @@ CoDesigner gets regular updates to ensure compatibility, security, and addition 
 Please reach out to us at [Support](https://help.pluggable.io/new-ticket/?utm_campaign=wporg)
 
 == Changelog ==
+
+= v4.40 - 2026-09-06 =
+
+- [Fix] Variation swatches widget crashed product pages for products without variations
+- [Fix] Variation swatch colour, label and image were cleared when a product attribute term was saved
+- [Fix] Add to cart requests could fail with a critical error when sent unexpected data
+- [Fix] Adding several products to the cart at once reported success without adding anything
+- [Fix] Critical error in the Elementor editor on a store with no published products
 
 = v4.31 - 2026-06-07 =
 

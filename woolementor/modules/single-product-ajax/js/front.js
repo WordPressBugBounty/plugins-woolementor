@@ -46,7 +46,7 @@
             //action:'wl_single_insert_to_cart'
         };
 
-        var alldata = data.all_data + '&product_id='+ data.product_id + '&product_sku='+ data.product_sku + '&quantity='+ data.quantity + '&variation_id='+ data.variation_id + '&variations='+ JSON.stringify( data.variations ) +'&action=wl_single_insert_to_cart';
+        var alldata = data.all_data + '&product_id='+ data.product_id + '&product_sku='+ data.product_sku + '&quantity='+ data.quantity + '&variation_id='+ data.variation_id + '&variations='+ JSON.stringify( data.variations ) +'&_wpnonce='+ CODESIGNER._wpnonce +'&action=wl_single_insert_to_cart';
         $( document.body ).trigger('adding_to_cart', [$this, alldata]);
         $.ajax({
             type: 'POST',

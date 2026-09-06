@@ -1059,3 +1059,108 @@
     animation: glowing 0.8s infinite;
     font-weight: bold;
 }
+
+
+/* ==========================================================================
+   Setup wizard — Community section (replaces the newsletter email capture)
+   ========================================================================== */
+.cx-community {
+    width: 100%;
+    max-width: 960px;
+    margin: 40px auto 0 auto;
+}
+.cx-community-card {
+    display: grid;
+    grid-template-columns: minmax(0, 46%) minmax(0, 54%);
+    gap: 32px;
+    align-items: center;
+    padding: 40px 44px;
+    background: #fff;
+    border: 1px solid #ece7f7;
+    border-radius: 18px;
+    box-shadow: 0 18px 42px rgba(69, 33, 200, 0.05);
+}
+.cx-community-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+}
+/* Specificity bumped to beat `.setup-wizard-welcome-panel img { width: 80px }`. */
+.cx-community .cx-community-illustration {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    object-fit: contain;
+}
+.cx-community-content {
+    min-width: 0;
+    text-align: center;
+}
+.cx-community-title {
+    margin: 0 0 14px;
+    font-size: 30px;
+    line-height: 1.25;
+    font-weight: 800;
+    font-family: "Nunito", sans-serif;
+    color: #5a2ed2;
+}
+.cx-community-desc {
+    margin: 0 auto 24px;
+    max-width: 440px;
+    font-size: 17px;
+    line-height: 1.55;
+    color: #5f5f5f;
+}
+.cx-community-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #fff !important;
+    text-decoration: none;
+    background: linear-gradient(90deg, #5b2de1 0%, #6b32e8 100%);
+    border-radius: 10px;
+    box-shadow: 0 10px 22px rgba(90, 46, 210, 0.20);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.cx-community-cta:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 15px 28px rgba(90, 46, 210, 0.30);
+}
+.cx-community-cta:focus-visible {
+    outline: 3px solid rgba(90, 46, 210, 0.32);
+    outline-offset: 3px;
+}
+.cx-community-cta-icon {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+@media (max-width: 900px) {
+    .cx-community-card {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 28px 22px;
+    }
+    .cx-community .cx-community-illustration {
+        max-width: 320px;
+    }
+    .cx-community-cta {
+        width: 100%;
+        max-width: 380px;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    .cx-community-cta {
+        transition: none;
+    }
+    .cx-community-cta:hover {
+        transform: none;
+    }
+}

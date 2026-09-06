@@ -4,7 +4,7 @@ use Codexpert\CoDesigner\Helper;
 $product_id = get_the_ID();
 $product    = wc_get_product( $product_id );
 
-if ( ! $product ) {
+if ( ! $product instanceof WC_Product_Variable ) {
 	return;
 }
 

@@ -241,7 +241,7 @@ class Product_Short_Description extends Widget_Base {
 		if ( function_exists( 'wc_get_product' ) && ( wcd_is_edit_mode() || wcd_is_preview_mode() ) ) {
 			$product_id  = wcd_get_product_id();
 			$product     = wc_get_product( $product_id );
-			$the_excerpt = $product->get_short_description();
+			$the_excerpt = $product ? $product->get_short_description() : $the_excerpt;
 		}
 		?>
 		<div class="wl-product-description">

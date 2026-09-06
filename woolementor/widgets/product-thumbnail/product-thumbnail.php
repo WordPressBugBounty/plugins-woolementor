@@ -119,6 +119,11 @@ class Product_Thumbnail extends Widget_Base {
 		if ( wcd_is_edit_mode() || wcd_is_preview_mode() ) {
 			$product_id    = wcd_get_product_id();
 			$product       = wc_get_product( $product_id );
+
+			if ( ! $product ) {
+				return;
+			}
+
 			$thumbnail_id  = $product->get_image_id();
 			$product_name  = $product->get_name();
 			$product_image = wp_get_attachment_image_src( $thumbnail_id, $settings['product_thumbnail_size'] );
