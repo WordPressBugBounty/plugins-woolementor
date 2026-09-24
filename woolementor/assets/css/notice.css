@@ -109,37 +109,3 @@
 [data-notice-id="codesigner-bfcm_deal_campaign-dec-7"] {
   border-left-color: #626AFF !important;
 }
-
-.codesigner-year-end-deals-notice {
-	display: flex;
-	gap: 30px;
-	padding: 10px;
-}
-
-.codesigner-year-end-deals-notice .year-end-content .title {
-	color: #3c434a;
-	font-size: 20px;
-	font-weight: 600;
-	margin: 0;
-}
-
-.codesigner-year-end-deals-notice .year-end-content .description {
-	color: #3c434a;
-	font-size: 14px;
-	margin: 0;
-}
-
-.codesigner-year-end-deals-notice .year-end-content a {
-	display: inline-block;
-	color: #2271b1;
-	font-size: 14px;
-	padding: 8px 16px;
-	text-decoration: none;
-	border: 1px solid #2271b1;
-	border-radius: 4px;	
-	margin-top: 12px;
-}
-
-.codesigner-year-end-deals-notice .year-end-content a:hover {
-	text-decoration: underline;
-}

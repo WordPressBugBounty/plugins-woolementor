@@ -333,7 +333,7 @@ class Settings extends Base {
 			$pro_settings = array(
 				'id'     => "{$this->slug}-get-pro",
 				'parent' => $this->slug,
-				'label'  => __( ' <span style="font-weight: bold"> Celebrate Year-End with 50% Off </span>', 'codesigner' ),
+				'label'  => __( ' <span style="font-weight: bold"> Get Pro </span>', 'codesigner' ),
 				'title'  => '',
 				'header' => '',
 			);
@@ -345,7 +345,7 @@ class Settings extends Base {
 	public function redirect_specific_admin_page() {
 		global $pagenow;
 		if ( $pagenow == 'admin.php' && isset( $_GET['page'] ) && $_GET['page'] == 'codesigner-get-pro' && ! defined( 'CODESIGNER_PRO' ) ) {
-			wp_redirect( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end' );
+			wp_redirect( 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=upgrade' );
 			exit;
 		}
 	}

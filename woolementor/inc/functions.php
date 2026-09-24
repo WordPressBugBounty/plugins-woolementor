@@ -635,14 +635,6 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 				'keywords'    => array( 'email', 'email-description' ),
 				'pro_feature' => true,
 			),
-			'email-reminder'                 => array(
-				'title'       => __( 'Email Reminder', 'codesigner' ),
-				'icon'        => 'eicon-menu-toggle' . $branding_class,
-				'categories'  => array( 'codesigner-email' ),
-				'demo'        => "{$demo_base}",
-				'keywords'    => array( 'email', 'email-reminder' ),
-				'pro_feature' => true,
-			),
 
 			/*
 			* Others Widgets
@@ -786,14 +778,6 @@ if ( ! function_exists( 'codesigner_widgets' ) ) :
 			),
 			'product-comparison'             => array(
 				'title'       => __( 'Product Comparison', 'codesigner' ),
-				'icon'        => 'eicon-cart' . $branding_class,
-				'categories'  => array( 'codesigner' ),
-				'demo'        => "{$demo_base}/product-comparison",
-				'keywords'    => array( 'cart', 'store', 'products', 'tabs-beauty', 'single', 'single-product', 'category', 'product-comparison' ),
-				'pro_feature' => true,
-			),
-			'product-barcode'                => array(
-				'title'       => __( 'Product Barcode', 'codesigner' ),
 				'icon'        => 'eicon-cart' . $branding_class,
 				'categories'  => array( 'codesigner' ),
 				'demo'        => "{$demo_base}/product-comparison",
@@ -2329,7 +2313,7 @@ if ( ! function_exists( 'codesigner_notices_values' ) ) :
 				'from'   => $current_time,
 				'to'     => strtotime( '2025-01-20 00:00:00' ),
 				'button' => __( 'Grab Now', 'codesigner' ),
-				'url'    => 'https://codesigner.dev/pricing?utm_source=in+plugin&utm_medium=notice&utm_campaign=new-year-2025',
+				'url'    => 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=upgrade',
 			),
 		);
 	}
@@ -2622,12 +2606,6 @@ if ( ! function_exists( 'promotional_widgets' ) ) :
 			array(
 				'name'     => 'codesigner-email-description',
 				'title'    => __( 'Email Description', 'codesigner' ),
-				'icon'     => 'eicon-menu-toggle' . ' ' . $wlbi_promo,
-				'category' => 'codesigner-email',
-			),
-			array(
-				'name'     => 'codesigner-email-reminder',
-				'title'    => __( 'Email Reminder', 'codesigner' ),
 				'icon'     => 'eicon-menu-toggle' . ' ' . $wlbi_promo,
 				'category' => 'codesigner-email',
 			),

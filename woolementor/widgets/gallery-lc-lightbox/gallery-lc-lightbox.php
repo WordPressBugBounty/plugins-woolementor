@@ -564,7 +564,8 @@ class Gallery_Lc_Lightbox extends Widget_Base {
 
 						<div class="wl-gll-single-wrapper">
 						
-						<span class="wl-gll-single-image" href="<?php echo esc_url( $thumbnail_full[0] ); ?>" title="<?php echo esc_attr( wp_get_attachment_caption( $image['id'] ) ); ?>" data-lcl-txt="<?php echo esc_attr( $attachment['description'] ); ?>">
+						<?php // lc_lightbox re-parses both attributes as HTML, so escaping alone is undone. ?>
+						<span class="wl-gll-single-image" href="<?php echo esc_url( $thumbnail_full[0] ); ?>" title="<?php echo esc_attr( wp_strip_all_tags( wp_get_attachment_caption( $image['id'] ) ) ); ?>" data-lcl-txt="<?php echo esc_attr( wp_strip_all_tags( $attachment['description'] ) ); ?>">
 							<img src="<?php echo esc_url( $thumbnail[0] ); ?>" />
 						</span>
 

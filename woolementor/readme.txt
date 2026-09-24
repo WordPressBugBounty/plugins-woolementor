@@ -4,7 +4,7 @@ Donate link: https://codesigner.dev/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 4.40
+Stable tag: 4.41
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -403,6 +403,17 @@ CoDesigner gets regular updates to ensure compatibility, security, and addition 
 Please reach out to us at [Support](https://help.pluggable.io/new-ticket/?utm_campaign=wporg)
 
 == Changelog ==
+
+= v4.41 - 2026-09-24 =
+
+- [Add] Hover colour controls for the headings, product titles, categories, prices, quantities, subtotals and remove buttons in the Cart Items and Cart Items Classic widgets
+- [Add] Hover colour control for the Cart Overview section title
+- [Add] Hover colour controls for the Coupon Form input field and apply button
+- [Fix] Security: an image caption or description could run a script when a Lightbox Gallery image was opened
+- [Fix] Product Barcode widget was listed under the general category instead of Single Product
+- [Fix] Setup wizard notice could stop appearing once a promotional notice had been shown
+- [Fix] Email Reminder appeared in the widget list although no such widget existed, so it could never be added to a page
+- [Remove] Outdated year-end promotion from the admin menu and the dashboard notice
 
 = v4.40 - 2026-09-06 =
 

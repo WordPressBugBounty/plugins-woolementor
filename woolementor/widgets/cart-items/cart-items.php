@@ -568,6 +568,17 @@ class Cart_Items extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'cart_heading_color_hover',
+			array(
+				'label'     => __( 'Text Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} thead tr.wl-ci-heading-nav th.wl-ci-heading:hover' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			array(
@@ -833,6 +844,17 @@ class Cart_Items extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'title_color_hover',
+			array(
+				'label'     => __( 'Text Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .wl-ci-product-name.product-name > a:hover' => 'color: {{VALUE}}; -webkit-text-fill-color: {{VALUE}};',
+				),
+			)
+		);
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			array(
@@ -887,6 +909,17 @@ class Cart_Items extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'category_label_color_hover',
+			array(
+				'label'     => __( 'Text Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .wl-ci-cart-category span:hover' => 'color: {{VALUE}}; -webkit-text-fill-color: {{VALUE}};',
+				),
+			)
+		);
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			array(
@@ -920,6 +953,17 @@ class Cart_Items extends Widget_Base {
 			array(
 				'name'     => 'category_gradient_color',
 				'selector' => '.wl {{WRAPPER}} .wl-ci-cart-category a',
+			)
+		);
+
+		$this->add_control(
+			'category_color_hover',
+			array(
+				'label'     => __( 'Text Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .wl-ci-cart-category a:hover' => 'color: {{VALUE}}; -webkit-text-fill-color: {{VALUE}};',
+				),
 			)
 		);
 
@@ -968,6 +1012,17 @@ class Cart_Items extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'price_color_hover',
+			array(
+				'label'     => __( 'Font Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .product-price.wl-ci-product-price .woocommerce-Price-amount.amount:hover' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			array(
@@ -1007,6 +1062,17 @@ class Cart_Items extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .product-quantity.wl-ci-product-quantity .input-text.qty.text' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'quantity_font_color_hover',
+			array(
+				'label'     => __( 'Font Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .product-quantity.wl-ci-product-quantity .input-text.qty.text:hover' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1068,6 +1134,29 @@ class Cart_Items extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'quantity_icon_color_hover',
+			array(
+				'label'     => __( 'Icon Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .product-quantity.wl-ci-product-quantity input[type=button]:hover' => 'color: {{VALUE}}',
+				),
+				'separator' => 'before',
+			)
+		);
+
+		$this->add_control(
+			'quantity_icon_bg_color_hover',
+			array(
+				'label'     => __( 'Background (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .product-quantity.wl-ci-product-quantity input[type=button]:hover' => 'background: {{VALUE}}',
+				),
+			)
+		);
+
 		$this->end_controls_section();
 
 		/**
@@ -1088,6 +1177,17 @@ class Cart_Items extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .product-subtotal.wl-ci-product-subtotal .woocommerce-Price-amount.amount' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'subtotal_color_hover',
+			array(
+				'label'     => __( 'Font Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .product-subtotal.wl-ci-product-subtotal .woocommerce-Price-amount.amount:hover' => 'color: {{VALUE}}',
 				),
 			)
 		);
@@ -1154,6 +1254,28 @@ class Cart_Items extends Widget_Base {
 				'type'      => Controls_Manager::COLOR,
 				'selectors' => array(
 					'.wl {{WRAPPER}} .product-remove.wl-ci-product-remove a.remove' => 'background: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'section_product_remove_color_hover',
+			array(
+				'label'     => __( 'Icon Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .product-remove.wl-ci-product-remove a.remove:hover' => 'color: {{VALUE}} !important',
+				),
+			)
+		);
+
+		$this->add_control(
+			'section_product_remove_bg_hover',
+			array(
+				'label'     => __( 'Background (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .product-remove.wl-ci-product-remove a.remove:hover' => 'background: {{VALUE}}',
 				),
 			)
 		);

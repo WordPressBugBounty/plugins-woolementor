@@ -29,12 +29,7 @@ $home_url      = array(
 );
 $home_redirect = add_query_arg( $home_url, 'https://codesigner.dev/' );
 
-$pricing_url      = array(
-	'source' => 'dashboard',
-	'medium' => 'settings',
-	'url'    => 'pricing-url',
-);
-$pricing_redirect = add_query_arg( $pricing_url, 'https://codesigner.dev/pricing' );
+$pricing_redirect = 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=upgrade';
 ?>
 
 <div class="wl-general-content">
@@ -707,7 +702,7 @@ $pricing_redirect = add_query_arg( $pricing_url, 'https://codesigner.dev/pricing
 
 	<div class="wl-cta-sec">
 		<h1>Unlock all the features with CoDesigner Pro and design your dream WooCommerce store.</h1>
-		<a href="https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=year-end">Get Pro Now</a>
+		<a href="https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=upgrade">Get Pro Now</a>
 	</div>
 
 	<div class="wl-blog-sec">

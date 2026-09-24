@@ -1,10 +1,5 @@
 <?php
-$utm      = array(
-	'utm_source'   => 'In-plugin',
-	'utm_medium'   => 'In-plugin+upgrade',
-	'utm_campaign' => 'upgrade+to+pro',
-);
-$pro_link = add_query_arg( $utm, 'https://codesigner.dev/pricing/' );
+$pro_link = 'https://codesigner.dev/pricing/?utm_source=inplugin&utm_medium=button&utm_campaign=upgrade';
 
 ?>
 <div class="cd-free-pro-wrapper">

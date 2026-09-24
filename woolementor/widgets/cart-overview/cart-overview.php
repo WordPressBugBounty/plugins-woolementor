@@ -210,6 +210,18 @@ class Cart_Overview extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'cart_table_title_color_hover',
+			array(
+				'label'     => __( 'Text Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'{{WRAPPER}} .wl-cart-overview .cart_totals .wl-co-title:hover' => 'color: {{VALUE}}; -webkit-text-fill-color: {{VALUE}};',
+					'{{WRAPPER}} .wl-cart-overview .cart_totals .elementor-inline-editing:hover' => 'color: {{VALUE}}; -webkit-text-fill-color: {{VALUE}};',
+				),
+			)
+		);
+
 		$this->end_controls_section();
 
 		/**

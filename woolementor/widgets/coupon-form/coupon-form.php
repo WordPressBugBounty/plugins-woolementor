@@ -180,6 +180,28 @@ class Coupon_Form extends Widget_Base {
 			)
 		);
 
+		$this->add_control(
+			'coupon_input_color_hover',
+			array(
+				'label'     => __( 'Text Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} input.wl-cf-apply-coupon-input:hover' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'coupon_input_bg_hover',
+			array(
+				'label'     => __( 'Background Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} input.wl-cf-apply-coupon-input:hover' => 'background-color: {{VALUE}}',
+				),
+			)
+		);
+
 		$this->add_group_control(
 			Group_Control_Typography::get_type(),
 			array(
@@ -319,6 +341,28 @@ class Coupon_Form extends Widget_Base {
 					'.wl {{WRAPPER}} .wl-cf-apply-coupon-button.button:hover' => 'background: {{VALUE}}',
 				),
 				'default'   => '#584899',
+			)
+		);
+
+		$this->add_control(
+			'coupon_button_color_hover',
+			array(
+				'label'     => __( 'Text Color (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .wl-cf-apply-coupon-button.button:hover' => 'color: {{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'coupon_button_bg_hover',
+			array(
+				'label'     => __( 'Background (Hover)', 'codesigner' ),
+				'type'      => Controls_Manager::COLOR,
+				'selectors' => array(
+					'.wl {{WRAPPER}} .wl-cf-apply-coupon-button.button:hover' => 'background: {{VALUE}}',
+				),
 			)
 		);
 
