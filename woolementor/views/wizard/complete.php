@@ -23,24 +23,30 @@ $congratulations = CODESIGNER_ASSETS . '/img/congratulations.png';
 			</a>⏳
 		</p -->
 	</div>
-	<div class="setup-wizard-complete-easycommerce">
-		<h2>🔥 Next: Power Up Your Store with AI</h2>
-		<p><strong>Want to simplify everything?</strong> Try <strong><a href="https://easycommerce.dev/?utm_source=codesigner&utm_medium=setup_wizard&utm_campaign=success_screen" target="_blank">EasyCommerce</a></strong> - the all-in-one AI-powered Ecommerce plugin, designed to be faster and smarter than WooCommerce.</p>
-
-		<h4>🚀 With EasyCommerce, you get:</h4>
-
-		<ul class="small">
-			<li>✨ AI-generated content & product images</li>
-			<li>⚡ Simplified dashboard & management</li>
-			<li>🔍 Voice search & smart recommendations</li>
-		</ul>
-
-		<p><strong>Your WooCommerce data remains safe.</strong> Install now to try.</p>
-
-		<div id="ec-cta-wrap">
-			<label id="ec-cta">
-			  <input type="checkbox" name="install_easycommerce">
-			  <strong><span>👈</span> Be one of the first to try it</strong>
+	<div class="cd-more-codexpert">
+		<?php wp_nonce_field( 'codesigner_wizard_install', 'codesigner_wizard_nonce' ); ?>
+		<h3><?php esc_html_e( 'More from Codexpert', 'codesigner' ); ?></h3>
+		<p class="cd-more-sub"><?php esc_html_e( 'Optional. Ticked plugins install when you click Finish.', 'codesigner' ); ?></p>
+		<div class="cd-more-grid">
+			<label class="cd-more-card">
+				<span class="cd-more-head"><img src="<?php echo esc_url( \Codexpert\CoDesigner\Promo::logo_url( 'nirohelp' ) ); ?>" alt="" width="24" height="24"><strong>NiroHelp</strong><em><?php esc_html_e( 'Free', 'codesigner' ); ?></em></span>
+				<span class="cd-more-desc"><?php esc_html_e( 'Help desk with knowledge base and AI replies', 'codesigner' ); ?></span>
+				<span class="cd-more-pick"><input type="checkbox" name="install_nirohelp"> <?php esc_html_e( 'Automate your support', 'codesigner' ); ?></span>
+			</label>
+			<label class="cd-more-card">
+			    <span class="cd-more-head"><img src="<?php echo esc_url( \Codexpert\CoDesigner\Promo::logo_url( 'thumbpress' ) ); ?>" alt="" width="24" height="24"><strong>Thumbpress</strong><em><?php esc_html_e( 'Free', 'codesigner' ); ?></em></span>
+				<span class="cd-more-desc"><?php esc_html_e( 'Compress images and convert to WebP, AVIF', 'codesigner' ); ?></span>
+				<span class="cd-more-pick"><input type="checkbox" name="install_thumbpress"> <?php esc_html_e( 'Speed up your site', 'codesigner' ); ?></span>
+			</label>
+			<label class="cd-more-card">
+                <span class="cd-more-head"><img src="<?php echo esc_url( \Codexpert\CoDesigner\Promo::logo_url( 'wcaffiliate' ) ); ?>" alt="" width="24" height="24"><strong>WC Affiliate</strong><em><?php esc_html_e( 'Free', 'codesigner' ); ?></em></span>
+				<span class="cd-more-desc"><?php esc_html_e( 'Run your own affiliate program in WooCommerce', 'codesigner' ); ?></span>
+				<span class="cd-more-pick"><input type="checkbox" name="install_wc_affiliate"> <?php esc_html_e( 'Grow with affiliates', 'codesigner' ); ?></span>
+			</label>
+			<label class="cd-more-card">
+			    <span class="cd-more-head"><img src="<?php echo esc_url( \Codexpert\CoDesigner\Promo::logo_url( 'easycommerce' ) ); ?>" alt="" width="24" height="24"><strong>Easycommerce</strong><em><?php esc_html_e( 'Free', 'codesigner' ); ?></em></span>
+				<span class="cd-more-desc"><?php esc_html_e( 'AI-powered ecommerce, faster and smarter than WooCommerce', 'codesigner' ); ?></span>
+				<span class="cd-more-pick"><input type="checkbox" name="install_easycommerce"> <?php esc_html_e( 'Sell with AI', 'codesigner' ); ?></span>
 			</label>
 		</div>
 	</div>

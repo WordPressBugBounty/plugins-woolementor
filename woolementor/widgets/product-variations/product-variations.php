@@ -810,8 +810,10 @@ class Product_Variations extends Widget_Base {
 									<div class="wl-pl-item-details">
 
 										<?php
-										foreach ( $attributes as $attribute ) :
+										foreach ( $attributes as $attr_key => $attribute ) :
 											if ( $attribute != '' ) :
+												$attr_term = get_term_by( 'slug', $attribute, str_replace( 'attribute_', '', $attr_key ) );
+												$attribute = $attr_term ? $attr_term->name : $attribute;
 												?>
 												<span class="pl-item-attr"><?php echo esc_html( ucfirst( $attribute ) ); ?></span>
 												<?php
@@ -828,8 +830,7 @@ class Product_Variations extends Widget_Base {
 											<table class="wl-pl-select-tbl">
 												<?php
 												foreach ( $extra_attrs as $key => $attributes ) :
-													$name = str_replace( 'attribute_', '', $key );
-													$name = str_replace( 'pa_', '', $name );
+													$name = wc_attribute_label( str_replace( 'attribute_', '', $key ) );
 													$name = str_replace( '_', ' ', $name );
 
 													if ( count( $attributes ) == 1 ) {

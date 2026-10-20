@@ -299,6 +299,13 @@ class Settings extends Base {
 							'default'  => json_encode( $site_config, JSON_PRETTY_PRINT ),
 							'readonly' => true,
 						),
+						'support'      => array(
+							'id'       => 'support',
+							'label'    => __( 'Support', 'codesigner' ),
+							'type'     => 'group',
+							'items'    => array(),
+							'template' => $this->get_promo_html( 'nirohelp-tools' ),
+						),
 					),
 				),
 			),
@@ -423,5 +430,11 @@ class Settings extends Base {
 				update_option( 'codesigner_tools', $tools );
 			}
 		}
+	}
+
+	private function get_promo_html( $view ) {
+		ob_start();
+		include CODESIGNER_DIR . "/views/promo/{$view}.php";
+		return ob_get_clean();
 	}
 }

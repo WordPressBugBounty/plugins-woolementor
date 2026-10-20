@@ -89,15 +89,21 @@ class Currency_Switcher extends Base {
 		wp_enqueue_style( 'cd-currency-switcher-css', plugins_url( 'css/front.css', __FILE__ ), '', $this->version, 'all' );
 	}
 
+	/**
+	 * Swap the store currency for the visitor's choice.
+	 *
+	 * Only a currency from the configured list is allowed through. Anything
+	 * else keeps the store's base currency, so a crafted cookie cannot
+	 * relabel an order in a currency the store owner never set up.
+	 *
+	 * @param string $currency_code Base currency code.
+	 * @return string
+	 */
 	public function change_currency( $currency_code ) {
-		$user_id = get_current_user_id();
-		if ( $user_id && get_user_meta( $user_id, 'cd_currency_code' ) ) {
-			$currency_code = get_user_meta( $user_id, 'cd_currency_code', true );
-		} elseif ( isset( $_COOKIE['cd_currency_code'] ) ) {
-			$currency_code = sanitize_text_field( $_COOKIE['cd_currency_code'] );
-		}
 
-		return $currency_code;
+		$selected = codesigner_get_selected_currency();
+
+		return '' !== $selected ? $selected : $currency_code;
 	}
 
 	public function change_price( $price, $original_price ) {
@@ -105,6 +111,11 @@ class Currency_Switcher extends Base {
 		return $price * $rate;
 	}
 
+	/**
+	 * Store the visitor's currency choice.
+	 *
+	 * @return void
+	 */
 	public function save_user_currency() {
 
 		$response = array(
@@ -112,17 +123,26 @@ class Currency_Switcher extends Base {
 			'message' => __( 'Unauthorized!', 'codesigner' ),
 		);
 
-		if ( ! wp_verify_nonce( $_POST['_wpnonce'], $this->slug ) ) {
+		$nonce = isset( $_POST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) : '';
+
+		if ( ! wp_verify_nonce( $nonce, $this->slug ) ) {
 			wp_send_json( $response );
 		}
 
-		$user_id       = get_current_user_id();
-		$currency_code = sanitize_text_field( $_POST['currency'] );
+		$currency_code = isset( $_POST['currency'] ) ? sanitize_text_field( wp_unslash( $_POST['currency'] ) ) : '';
+		$currency_code = strtoupper( trim( $currency_code ) );
+
+		if ( ! codesigner_is_valid_currency( $currency_code ) ) {
+			$response['message'] = __( 'Invalid currency!', 'codesigner' );
+			wp_send_json( $response );
+		}
+
+		$user_id = get_current_user_id();
 
 		if ( $user_id ) {
 			update_user_meta( $user_id, 'cd_currency_code', $currency_code );
 		} else {
-			setcookie( 'cd_currency_code', $currency_code, date_i18n( 'U' ) + 86400, COOKIEPATH, COOKIE_DOMAIN );
+			setcookie( 'cd_currency_code', $currency_code, time() + DAY_IN_SECONDS, COOKIEPATH, COOKIE_DOMAIN, is_ssl(), true );
 		}
 
 		$response['status']  = 1;

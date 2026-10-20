@@ -4,7 +4,7 @@ Donate link: https://codesigner.dev/?utm_campaign=wporg
 Tags: elementor woocommerce builder, woocommerce builder, elementor woocommerce, woocommerce page builder, woocommerce elementor
 Requires at least: 6.0
 Tested up to: 7.0
-Stable tag: 4.41
+Stable tag: 4.42
 Requires PHP: 7.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -403,6 +403,15 @@ CoDesigner gets regular updates to ensure compatibility, security, and addition 
 Please reach out to us at [Support](https://help.pluggable.io/new-ticket/?utm_campaign=wporg)
 
 == Changelog ==
+
+= v4.42 - 2026-10-20 =
+
+- [Fix] Security: the setup wizard plugin installer now checks permissions before installing a plugin
+- [Fix] Security: a visitor could be charged in a currency the store owner never configured in the Currency Switcher
+- [Fix] Currency Switcher cookie now expires at the correct time and is stored securely
+- [Fix] Variation swatches and the Product Variations widget showed encoded text instead of the attribute and term names for non-English attributes
+- [Fix] Clicking a variation swatch caused an error when the term slug contained special characters
+- [Fix] Cart Items thumbnail alt text overlapped when the image failed to load
 
 = v4.41 - 2026-09-24 =
 

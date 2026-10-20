@@ -97,7 +97,7 @@ $variation_data = array(
 		foreach ( $used_terms as $attr_name => $values ) {
 			$prefix = 'attribute_pa_';
 			$_name  = substr( $attr_name, strlen( $prefix ) );
-			$name   = $settings[ $_name ] ? $settings[ $_name ] : $_name;
+			$name   = $settings[ $_name ] ? $settings[ $_name ] : wc_attribute_label( 'pa_' . $_name );
 			?>
 			<div class="<?php echo esc_attr( $attr_name ); ?> codesigner-vs-wrapper">
 			<p class="codesigner-tax-name"><?php echo esc_html( ucfirst( $name ) ); ?></p>
@@ -110,7 +110,7 @@ $variation_data = array(
 					$data = $terms_values[ $term_name ]['value'];
 				} else {
 					/* translators: %1$s: Term name */
-					printf( esc_attr( __( '%1$s not configured', 'codesigner' ) ), esc_attr( $term_name ) );
+					printf( esc_attr( __( '%1$s not configured', 'codesigner' ) ), esc_attr( $terms_values[ $term_name ]['name'] ) );
 				}
 
 				if ( $terms_values[ $term_name ]['type'] == 'image' ) {

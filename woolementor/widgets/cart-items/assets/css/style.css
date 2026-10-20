@@ -393,7 +393,6 @@ input[type="reset"][disabled]:hover,
 }
 /*product image*/
 .product-thumbnail.wl-ci-product-thumbnail {
-	line-height: 0.5em !important;
 	height: auto;
 }
 .product-thumbnail.wl-ci-product-thumbnail img {

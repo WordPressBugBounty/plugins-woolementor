@@ -109,10 +109,10 @@ jQuery(function ($) {
                         var fieldId = "codesigner_vs_" + termName + "_" + productId;
 
                         if ( finalAllMatch[attrName] && !finalAllMatch[attrName].includes( termName ) ) {
-                            $("#" + fieldId).prop("disabled", true);
+                            $(document.getElementById(fieldId)).prop("disabled", true);
                         }
                         if (matchValArray.includes(termName)) {
-                            $("#" + fieldId).prop("checked", true);
+                            $(document.getElementById(fieldId)).prop("checked", true);
                         }
                     });
                 });

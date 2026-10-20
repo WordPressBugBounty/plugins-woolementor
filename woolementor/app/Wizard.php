@@ -171,8 +171,28 @@ class Wizard extends Base {
 	public function install_plugins() {
 		$plugins = []; // slug => plugin/file.php
 
-		if ( isset( $_POST['install_easycommerce'] ) ) {
-			$plugins['easycommerce'] = 'easycommerce/easycommerce.php';
+		if ( ! current_user_can( 'install_plugins' ) || ! current_user_can( 'activate_plugins' ) ) {
+			return;
+		}
+
+		if ( ! isset( $_POST['codesigner_wizard_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['codesigner_wizard_nonce'] ) ), 'codesigner_wizard_install' ) ) {
+			return;
+		}
+
+		$optional = [
+			'install_nirohelp'     => [ 'nirohelp', 'nirohelp/nirohelp.php' ],
+			'install_thumbpress'   => [ 'image-sizes', 'image-sizes/image-sizes.php' ],
+			'install_wc_affiliate' => [ 'wc-affiliate', 'wc-affiliate/wc-affiliate.php' ],
+			'install_easycommerce' => [ 'easycommerce', 'easycommerce/easycommerce.php' ],
+		];
+
+		foreach ( $optional as $field => $plugin ) {
+			if ( isset( $_POST[ $field ] ) ) {
+				$plugins[ $plugin[0] ] = $plugin[1];
+			}
+		}
+
+		if ( ! empty( $plugins ) ) {
 			wp_schedule_single_event( time(), 'codesigner_install_plugins', [ 'plugins' => $plugins ] );
 		}
 	}

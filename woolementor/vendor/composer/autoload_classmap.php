@@ -18,6 +18,7 @@ return array(
     'Codexpert\\CoDesigner\\App\\Wizard' => $baseDir . '/app/Wizard.php',
     'Codexpert\\CoDesigner\\Helper' => $baseDir . '/classes/Helper.php',
     'Codexpert\\CoDesigner\\Notice' => $baseDir . '/classes/Notice.php',
+    'Codexpert\\CoDesigner\\Promo' => $baseDir . '/classes/Promo.php',
     'Codexpert\\Plugin\\Base' => $vendorDir . '/codexpert/plugin/src/Base.php',
     'Codexpert\\Plugin\\Fields' => $vendorDir . '/codexpert/plugin/src/Fields.php',
     'Codexpert\\Plugin\\Metabox' => $vendorDir . '/codexpert/plugin/src/Metabox.php',

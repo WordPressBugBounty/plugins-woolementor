@@ -1164,3 +1164,18 @@
         transform: none;
     }
 }
+
+/* More from Codexpert */
+.cd-more-codexpert{max-width:900px;margin:24px auto 0;text-align:center}
+.cd-more-codexpert h3{margin:0 0 4px;font-size:16px;color:#1d2327}
+.cd-more-sub{margin:0 0 14px;font-size:12px;color:#646970}
+.cd-more-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;text-align:left}
+.cd-more-card{display:flex;flex-direction:column;gap:8px;padding:12px;border:1px solid #e5e7eb;border-radius:10px;background:#fff;cursor:pointer}
+.cd-more-card:hover{border-color:#3757e7}
+.cd-more-head{display:flex;align-items:center;gap:8px}
+.cd-more-head strong{flex:1;font-size:14px;color:#1d2327}
+.cd-more-head em{font-style:normal;font-size:10px;font-weight:600;color:#067647;background:#e7f8ef;border-radius:99px;padding:2px 7px}
+.cd-more-icon{display:inline-flex;align-items:center;justify-content:center;width:24px;height:24px;border-radius:6px;color:#fff;font-size:10px;font-weight:700;background:#5b3fd1}
+.cd-more-desc{font-size:12px;color:#50575e;line-height:1.5;flex:1}
+.cd-more-pick{display:flex;align-items:center;gap:6px;border-top:1px solid #eef0f3;padding-top:8px;font-size:13px;font-weight:600;color:#2a1a6e}
+@media (max-width:782px){.cd-more-grid{grid-template-columns:repeat(2,1fr)}}

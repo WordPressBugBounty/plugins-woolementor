@@ -5,6 +5,7 @@ namespace Codexpert\CoDesigner\App;
 use Codexpert\Plugin\Base;
 use Codexpert\CoDesigner\Helper;
 use Codexpert\CoDesigner\Notice;
+use Codexpert\CoDesigner\Promo;
 
 /**
  * if accessed directly, exit.
@@ -220,6 +221,23 @@ class Admin extends Base {
 			$wizard_notice->set_message( $message );
 			$wizard_notice->render();
 		}
+	}
+
+	/**
+	 * NiroHelp cross-promo notice, CoDesigner screens only
+	 */
+	public function nirohelp_notice() {
+		$screen = get_current_screen();
+
+		if ( ! $screen || false === strpos( $screen->id, 'codesigner' ) || false !== strpos( $screen->id, 'codesigner_setup' ) ) {
+			return;
+		}
+
+		if ( ! current_user_can( 'manage_options' ) || ! Promo::is_visible() || ! Promo::notice_is_due( get_current_user_id() ) ) {
+			return;
+		}
+
+		include CODESIGNER_DIR . '/views/promo/nirohelp-notice.php';
 	}
 
 	public function setting_navs_add_item( $settings ) {

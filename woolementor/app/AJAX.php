@@ -284,6 +284,27 @@ class AJAX extends Base {
 		wp_send_json( $response );
 	}
 
+	public function dismiss_nirohelp_notice() {
+
+		if ( ! isset( $_POST['_wpnonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ), 'codesigner_nirohelp_notice' ) ) {
+			wp_send_json( [ 'status' => 0, 'message' => __( 'Unauthorized!', 'codesigner' ) ] );
+		}
+
+		if ( ! current_user_can( 'manage_options' ) ) {
+			wp_send_json( [ 'status' => 0, 'message' => __( 'You do not have sufficient permissions to perform this action.', 'codesigner' ) ] );
+		}
+
+		$user_id = get_current_user_id();
+
+		if ( isset( $_POST['snooze'] ) ) {
+			update_user_meta( $user_id, 'codesigner_nirohelp_notice_snooze', time() + MONTH_IN_SECONDS );
+		} else {
+			update_user_meta( $user_id, 'codesigner_nirohelp_notice_dismissed', 1 );
+		}
+
+		wp_send_json( [ 'status' => 1, 'message' => __( 'Notice Removed!', 'codesigner' ) ] );
+	}
+
 	public function dismiss_notice_checkout() {
 
 		if ( ! wp_verify_nonce( $_POST['_wpnonce'] ) ) {

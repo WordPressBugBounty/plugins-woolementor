@@ -82,6 +82,7 @@ class ComposerStaticInit06f298ff9e1527e6943ffaea8ab0a8cf
         'Codexpert\\CoDesigner\\App\\Wizard' => __DIR__ . '/../..' . '/app/Wizard.php',
         'Codexpert\\CoDesigner\\Helper' => __DIR__ . '/../..' . '/classes/Helper.php',
         'Codexpert\\CoDesigner\\Notice' => __DIR__ . '/../..' . '/classes/Notice.php',
+        'Codexpert\\CoDesigner\\Promo' => __DIR__ . '/../..' . '/classes/Promo.php',
         'Codexpert\\Plugin\\Base' => __DIR__ . '/..' . '/codexpert/plugin/src/Base.php',
         'Codexpert\\Plugin\\Fields' => __DIR__ . '/..' . '/codexpert/plugin/src/Fields.php',
         'Codexpert\\Plugin\\Metabox' => __DIR__ . '/..' . '/codexpert/plugin/src/Metabox.php',

@@ -148,7 +148,7 @@
                                     <a target="_blank" href="<?php echo esc_url( 'https://easycommerce.dev/?utm_source=in+plugin&utm_medium=codesigner&utm_campaign=dashboard' ); ?>">
                                         <img src="<?php echo esc_url( $easycommerce ); ?>" alt="<?php esc_html_e( 'EasyCommerce', 'codesigner' ); ?>" class="cd-campaign-logo">
                                     </a>
-                                    <h4><?php esc_html_e('AI-Powered WordPress Ecommcece Plugin', 'codesign' ) ?></h4>
+                                    <h4><?php esc_html_e('AI-Powered WordPress Ecommerce Plugin', 'codesigner' ) ?></h4>
                                 </div>
                                 <div class="cd-campaign-content-body">
                                     <p><?php esc_html_e( 'AI Content Writer, Image Generator, Template Builder, AI Smart Search and lot more..', 'codesigner' ); ?></p>
@@ -164,6 +164,12 @@
                                     </a>
                                 </div>
                             </div>
+
+                            <?php
+                            if ( \Codexpert\CoDesigner\Promo::is_visible() ) {
+                                include CODESIGNER_DIR . '/views/promo/nirohelp-sidebar.php';
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>

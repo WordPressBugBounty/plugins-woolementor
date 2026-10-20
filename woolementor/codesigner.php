@@ -4,7 +4,7 @@
  * Description: <strong>CoDesigner (Formerly Woolementor)</strong> connects the #1 page builder plugin on the earth, <strong>Elementor</strong> with the most popular eCommerce plugin, <strong>WooCommerce</strong>.
  * Plugin URI: https://codesigner.dev/?utm_source=dashboard&utm_medium=plugins&utm_campaign=plugin-uri
  * Author: Codexpert, Inc
- * Version: 4.41
+ * Version: 4.42
  * Requires at least: 6.0
  * Requires PHP: 7.0
  * Author URI: https://codexpert.io/?utm_source=dashboard&utm_medium=plugins&utm_campaign=author-uri
@@ -126,7 +126,7 @@ final class Plugin {
 		$this->plugin['basename']   = plugin_basename( CODESIGNER );
 		$this->plugin['file']       = CODESIGNER;
 		$this->plugin['TextDomain'] = 'codesigner';
-		$this->plugin['Version']    = '4.41';
+		$this->plugin['Version']    = '4.42';
 		$this->plugin['Name']       = 'CoDesigner';
 		$this->plugin['server']     = apply_filters( 'codesigner_server', 'https://my.pluggable.io' );
 		$this->plugin['doc_id']     = 1960;
@@ -174,6 +174,7 @@ final class Plugin {
 			$admin->action( 'init', 'settings_page_redirect' );
 			$admin->filter( 'http_request_host_is_external', '__return_true', 10, 3 );
 			// $admin->action( 'init', 'admin_notices' );
+			$admin->action( 'admin_notices', 'nirohelp_notice', 99 );
 			$admin->action( 'cx-plugin_after-nav-items', 'setting_navs_add_item' );
 			$admin->action( 'cx-settings-heading', 'settings_heading' );
 			$admin->filter( 'admin_body_class', 'admin_body_class' );
@@ -300,6 +301,7 @@ final class Plugin {
 		$ajax->all( 'wl_single_insert_to_cart', 'wl_single_cart' );
 		$ajax->priv( 'codesigner_admin_notice', 'admin_notice' );
 		$ajax->priv( 'complete-setting-close', 'complete_setting_close' );
+		$ajax->priv( 'dismiss_nirohelp_notice', 'dismiss_nirohelp_notice' );
 		$ajax->priv( 'dismiss_notice_checkout', 'dismiss_notice_checkout' );
 		$ajax->priv( 'dismiss_notice_email', 'dismiss_notice_email' );
 		$ajax->priv( 'dismiss_notice_invoice', 'dismiss_notice_invoice' );

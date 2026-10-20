@@ -46,6 +46,7 @@ $settings->end_controls_section();
 
 foreach ( $attributes as $attribute_key => $attribute ) {
 	$name           = substr( $attribute_key, 3 );
+	$label          = wc_attribute_label( $attribute_key );
 	$selector       = '.attribute_' . $attribute_key;
 	$id             = $attribute->get_id();
 	$attribute_type = codesigner_get_attribute_type_by_id( $id );
@@ -54,7 +55,7 @@ foreach ( $attributes as $attribute_key => $attribute ) {
 		"vs_{$attribute_key}",
 		array(
 			/* translators: %s: Name of the attribute */
-			'label'     => sprintf( __( 'VS %s', 'codesigner' ), ucfirst( $name ) ),
+			'label'     => sprintf( __( 'VS %s', 'codesigner' ), ucfirst( $label ) ),
 			'tab'       => Controls_Manager::TAB_CONTENT,
 			'condition' => array(
 				'vs_show_hide' => 'yes',
@@ -67,7 +68,7 @@ foreach ( $attributes as $attribute_key => $attribute ) {
 		array(
 			'label'   => __( 'Label Text', 'codesigner' ),
 			'type'    => Controls_Manager::TEXT,
-			'default' => ucfirst( $name ),
+			'default' => ucfirst( $label ),
 		)
 	);
 
@@ -77,7 +78,7 @@ foreach ( $attributes as $attribute_key => $attribute ) {
 		"vs_style_{$attribute_key}",
 		array(
 			/* translators: %s: Name of the attribute */
-			'label'     => sprintf( __( 'VS %s', 'codesigner' ), ucfirst( $name ) ),
+			'label'     => sprintf( __( 'VS %s', 'codesigner' ), ucfirst( $label ) ),
 			'tab'       => Controls_Manager::TAB_STYLE,
 			'condition' => array(
 				'vs_show_hide' => 'yes',
